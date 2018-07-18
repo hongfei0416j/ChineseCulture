@@ -26,6 +26,33 @@ namespace ChineseCulture.Admin
                       "~/Content/bootstrap.css",
                         "~/Content/assets/scss/_common.scss",
                       "~/Content/site.css"));
+            
+            bundles.Add(new ScriptBundle("~/bundles/h-ui-js").Include(
+                 "~/Content/lib/layer/2.4/layer.js",
+                 "~/Content/lib/jquery.validation/1.14.0/jquery.validate.js",
+                 "~/Content/lib/jquery.validation/1.14.0/validate-methods.js",
+                 "~/Content/lib/jquery.validation/1.14.0/essages_zh.js",
+                 "~/Content/h-ui/js/H-ui.js",
+                 "~/Content/h-ui.admin/js/H-ui.admin.page.js"
+                    ));
+            bundles.Add(new StyleBundle("~/Content/h-ui-css").Include(
+                      "~/Content/h-ui/css/H-ui.min.css",
+                       "~/Content/h-ui.admin/css/H-ui.admin.css",
+                       "~/Content/h-ui.admin/css/style.css",
+                        "~/Content/h-ui.admin/skin/default/skin.css",
+                        "~/Content/h-ui.admin/css/H-ui.login.css",
+                        "~/Content/lib/Hui-iconfont/1.0.8/iconfont.css"
+                      ));
+
         }
     }
 }
+
+/*
+ <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
+
+<script type="text/javascript" src="static/h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="static/h-ui.admin/js/H-ui.admin.page.js"></script>
+
+     */
