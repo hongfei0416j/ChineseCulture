@@ -6,14 +6,10 @@ using System.Web.Mvc;
 
 namespace ChineseCulture.Admin.Controllers
 {
-    public class AdminController : FunctionController
+    public class ApplicationController : Controller
     {
-        // GET: Admin
+        // GET: Application
         public ActionResult Index()
-        {
-            return View();
-        }
-        public ActionResult Login()
         {
             return View();
         }

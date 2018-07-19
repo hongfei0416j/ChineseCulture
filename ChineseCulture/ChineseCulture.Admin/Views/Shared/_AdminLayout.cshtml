@@ -2,6 +2,14 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    @Styles.Render("~/Content/h-ui-css")
+
+    @Scripts.Render("~/bundles/h-ui-js")
+
+    @RenderSection("scripts", required: false)
     <meta charset="utf-8">
     <meta name="renderer" content="webkit|ie-comp|ie-stand">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -19,7 +27,7 @@
     <![endif]-->
     <!--/meta 作为公共模版分离出去-->
 
-    <title>H-ui.admin v3.0</title>
+    <title>中国校园文化网管理系统</title>
     <meta name="keywords" content="H-ui.admin v3.0,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
     <meta name="description" content="H-ui.admin v3.0，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
 </head>
@@ -45,7 +53,7 @@
                 @RenderBody()
             </article>
 
-            @RenderPage("_FooterLayout.cshtml")
+            <!--@RenderPage("_FooterLayout.cshtml")-->
         </div>
     </section>
 
@@ -53,13 +61,4 @@
 
 </body>
 </html>
-
-@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/bootstrap")
-
-@Styles.Render("~/Content/h-ui-css")
-
-@Scripts.Render("~/bundles/h-ui-js")
-
-@RenderSection("scripts", required: false)
 

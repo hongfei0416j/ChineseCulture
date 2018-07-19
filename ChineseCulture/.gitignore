@@ -16,8 +16,8 @@ build/
 SitePath/
 x64/
 .vs/
-ChineseCulture/[Dd]ebug/
-ChineseCulture/obj/
+**/[Dd]ebug/
+**/obj/
 
 ChineseCulture.Admin/[Dd]ebug/
 ChineseCulture.Admin/obj/
