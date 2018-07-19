@@ -7,6 +7,7 @@
 *.sln.docstates
 
 # Build results
+
 [Dd]ebug/
 [Rr]elease/
 [Bb]in/
@@ -15,7 +16,11 @@ build/
 SitePath/
 x64/
 .vs/
+ChineseCulture/[Dd]ebug/
+ChineseCulture/obj/
 
+ChineseCulture.Admin/[Dd]ebug/
+ChineseCulture.Admin/obj/
 # Enable "build/" folder in the NuGet Packages folder since NuGet packages use it for MSBuild targets
 !packages/*/build/
 
