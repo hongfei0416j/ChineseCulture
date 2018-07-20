@@ -3,7 +3,7 @@
 <html>
 <head>
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+
 
     @Styles.Render("~/Content/h-ui-css")
 
@@ -37,8 +37,8 @@
 
     <!--/_header 作为公共模版分离出去-->
     <!--_menu 作为公共模版分离出去-->
-
-    @RenderPage("_MenuLayout.cshtml")
+    @{Html.RenderAction("AdminMenu", "Admin");}
+  
     <!--/_menu 作为公共模版分离出去-->
 
     <section class="Hui-article-box">

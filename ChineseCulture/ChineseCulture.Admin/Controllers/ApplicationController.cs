@@ -11,7 +11,7 @@ namespace ChineseCulture.Admin.Controllers
         // GET: Application
         public ActionResult Index()
         {
-            return View();
+            return PartialView();
         }
     }
 }

@@ -12,7 +12,7 @@ namespace ChineseCulture.Admin.Controllers
         // GET: Function
         public ActionResult Index()
         {
-            AdminLayoutViewModel adminLayoutViewModel = new AdminLayoutViewModel();
+            AdminMenuViewModel adminLayoutViewModel = new AdminMenuViewModel();
 
             return View(adminLayoutViewModel);
         }
