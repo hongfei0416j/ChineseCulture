@@ -62,15 +62,14 @@ namespace ChineseCulture.Admin.Controllers
                 }
                 else
                 {
-
-                    Session["logingmessage"] = "賬號或者密碼錯誤,請重新輸入!!!";
+                    Session["logingmessage"] = "账号或者密码错误，请重新登陆!!!";
                     return RedirectToAction("login", "Admin");
                     //Response.End();
                 }
             }
             catch (Exception ex)
             {
-                Session["logingmessage"] = "賬號或者密碼錯誤,請重新輸入!!!";
+                Session["logingmessage"] = "账号或者密码错误!!!";
                 return RedirectToAction("Login", "Admin");
             }
         }

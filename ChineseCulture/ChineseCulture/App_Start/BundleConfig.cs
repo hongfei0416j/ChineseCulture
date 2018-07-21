@@ -25,6 +25,23 @@ namespace ChineseCulture
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/homepage").Include(
+                      "~/Content/css/global.css",
+                       "~/Content/css/swiper.min.css",
+                        "~/Content/css/style.css"
+                     ));
+            bundles.Add(new ScriptBundle("~/bundles/homepage").Include(
+                     "~/Content/js/swiper.min.js",
+                     "~/Content/js/date.js",
+                     "~/Content/js/fun.js"
+                     ));
+            /*
+             * <script src="js/swiper.min.js"></script>
+    <script src="js/fun.js"></script>
+             <link rel="stylesheet" type="text/css" href="./css/global.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+             */
         }
     }
 }

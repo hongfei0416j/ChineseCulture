@@ -1,31 +1,3993 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿@{ Layout = null;}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>中国校园文化网</title>
+    @Styles.Render("~/Content/homepage")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/homepage")
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+</head>
+<body>
+    <header class="header c-con">
+        <div class="hd-con">
+            <a href="#" class="logo"><img src="/images/logo.png" alt=" "></a>
+            <div class="city">
+                城市切换【<a href="javascript:;">郑州</a>】
+            </div>
+            <div class="search clear">
+                <p>搜&nbsp;&nbsp;索</p>
+                <p><input type="text" placeholder="大家正在搜：东北虎胖成气球"></p>
+                <p><input type="submit" value="&#xe66c;"></p>
+            </div>
+            <div class="sitedate" id="sitedate">
+                <span id="date">
+                </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">会员登录</a>&nbsp;&nbsp;&nbsp;&nbsp;（<a href="#">注册</a>）
+            </div>
+        </div>
+    </header>
+    @{Html.RenderAction("HomePageMenu", "Partinal");}
+    @{Html.RenderAction("HomePageCategoryMenu", "Partinal");}
+    <section class="notic c-con">
+        <div class="notic-cen">
+            <div class="nc-list clear">
+                <marquee direction="left" scrollamount="100" scrolldelay="1000" width="100%" onmouseover="this.stop();" onmouseout="this.start();">
+                    首届全国校园之星原创文艺作品争霸赛国家级总决赛与颁奖文艺晚会将于2018年7月29日举行，独家冠名与赞助企业火爆招商中，面向全国各省市诚招大学校园代理和赛区、分赛区与海选城市承办组织单位。服务热线：0371-65339250   15938726942
+                </marquee>
+            </div>
+        </div>
+    </section>
+    <section class="main c-con clear">
+        <div class="swiper-container swiper1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
+                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
+                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
+                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
+                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
+                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
+            </div>
+            <div class="swiper-pagination swiper-pagination1"></div>
+        </div>
+        <section class="affiche">
+            <h3>网站公告</h3>
+            <div class="affiche-list">
+                <ul>
+                    <li><a href="#">校园之星原创文艺作品争霸赛入围选手明星集训</a></li>
+                    <li><a href="#">首届全国校园之星原创文艺作品争霸赛初赛获奖榜单</a></li>
+                    <li><a href="#">世界校园之星原创文艺作品争霸赛赛区管理条例</a></li>
+                    <li><a href="#">首届全国校园之星原创文艺作品争霸赛独家冠名招商</a></li>
+                    <li><a href="#">世界校园之星原创文艺作品争霸赛赛区管理条例</a></li>
+                    <li><a href="#">首届全国校园之星原创文艺作品争霸赛中原赛区初赛</a></li>
+                    <li><a href="#">世界校园之星原创文艺作品争霸赛总体规划与布局</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="hots">
+            <div class="news">
+                <h3>最新资讯</h3>
+                <div class="news-list">
+                    <ul>
+                        <li><a href="#">首届全国校园之星原创文艺作品争霸赛海选全面启动</a></li>
+                        <li><a href="#">首届全国校园之星原创文艺作品争霸赛初赛即将开赛</a></li>
+                        <li><a href="#">教育部关于开展校外培训机构 专项治理行动的通知</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="sjzp">
+                <h3>书籍与文学作品</h3>
+                <div class="sjzp-list">
+                    <ul>
+                        <li><p><a href="#">诗歌</a></p><p><a href="#">《剪不断的思念》</a></p><p>文清/著</p></li>
+                        <li><p><a href="#">散文</a></p><p><a href="#">《黄河摊上的明珠》</a></p><p>文清/著</p></li>
+                        <li><p><a href="#">小说</a></p><p><a href="#">《美丽的海岸》</a></p><p>文清/著</p></li>
+                        <li><p><a href="#">论文</a></p><p><a href="#">《成才的基石》</a></p><p>文清/著</p></li>
+                        <li><p><a href="#">作品集</a></p><p><a href="#">《粉红色的相思带》</a></p><p>文清/著</p></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="cols">
+            <header class="col1-tab clear">
+                <p class="on">学校</p>
+                <p>幼儿园</p>
+                <p>早教</p>
+                <p>学前班</p>
+                <p>小学</p>
+                <p>初中</p>
+                <p>高中</p>
+                <p>大学</p>
+                <p>职业院校</p>
+                <p>特殊教育</p>
+                <a href="#">更多</a>
+            </header>
+            <div class="col1-con">
+                <div class="col1-item clear">
+                    <div class="c1-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>全日制</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>自学考试</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>成人教育</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c1-item-video">
+                        <video id="video" poster=".//images/emp-05.png" controls preload="auto" style="width:484px; height:380px;">
+                            <source src="./video/video.iphone.mp4" type="video/mp4"></source>
+                            <source src="./videvideo.mp4" type="video/mp4"></source>
+                            <source src="./videvideo.ogv" type="video/ogg"></source>
+                            <source src="./videvideo.webm" type="video/webm"></source>
+                        </video>
+                    </div>
+                </div>
+                <div class="col1-item clear">
+                    <div class="c1-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>全日制</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>自学考试</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>成人教育</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c1-item-hot">
+                        <a href="#">
+                            <h3>幼儿园名称</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col1-item clear">
+                    <div class="c1-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>全日制</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>自学考试</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>成人教育</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c1-item-hot">
+                        <a href="#">
+                            <h3>早教园名称</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col1-item clear">
+                    <div class="c1-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>全日制</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>自学考试</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>成人教育</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c1-item-hot">
+                        <a href="#">
+                            <h3>学前班园名称</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col1-item clear">
+                    <div class="c1-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>全日制</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>自学考试</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>成人教育</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c1-item-hot">
+                        <a href="#">
+                            <h3>小学名称</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col1-item clear">
+                    <div class="c1-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>全日制</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>自学考试</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>成人教育</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c1-item-hot">
+                        <a href="#">
+                            <h3>初中名称</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col1-item clear">
+                    <div class="c1-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>全日制</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>自学考试</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>成人教育</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c1-item-hot">
+                        <a href="#">
+                            <h3>高中名称</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col1-item clear">
+                    <div class="c1-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>全日制</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>自学考试</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>成人教育</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c1-item-hot">
+                        <a href="#">
+                            <h3>大学名称</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col1-item clear">
+                    <div class="c1-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>全日制</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>自学考试</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>成人教育</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c1-item-hot">
+                        <a href="#">
+                            <h3>职业院校名称</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col1-item clear">
+                    <div class="c1-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>全日制</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>自学考试</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>成人教育</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c1-item-hot">
+                        <a href="#">
+                            <h3>特殊教育院校名称</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cols">
+            <header class="col2-tab clear">
+                <p class="on">培训机构</p>
+                <p>文化课</p>
+                <p>艺术课</p>
+                <p>心理咨询</p>
+                <p>野外训练</p>
+                <p>能力拓展</p>
+                <p>考研辅导</p>
+                <p>企业管理</p>
+                <p>资质认证</p>
+                <p>岗前培训</p>
+                <a href="#">更多</a>
+            </header>
+            <div class="col2-con">
+                <div class="col2-item clear">
+                    <div class="swiper-container swiper2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="/images/emp-05.png"></div>
+                            <div class="swiper-slide"><img src="/images/emp-10.png"></div>
+                            <div class="swiper-slide"><img src="/images/emp-11.png"></div>
+                            <div class="swiper-slide"><img src="/images/emp-12.png"></div>
+                            <div class="swiper-slide"><img src="/images/emp-13.png"></div>
+                            <div class="swiper-slide"><img src="/images/emp-11.png"></div>
+                        </div>
+                        <div class="swiper-pagination swiper-pagination2"></div>
+                    </div>
+                    <div class="c2-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>兴趣培养</p></h3>
+                                <a href="#">
+                                    <h4>戏曲小品</h4>
+                                    <p>戏曲有舞台、演员、道具和乐队组成，仅河南就分为二进弦、四平调、落腔等剧种</p>
+                                </a>
+                                <a href="#">
+                                    <h4>影视表演</h4>
+                                    <p>文化修养和理论、文学艺术素质、专业知识、创造能力和协同能力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>播音主持</h4>
+                                    <p>幼儿、少儿口才班和高三考生培训配音、朗诵、演讲和唱腔模仿</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>励志感恩</p></h3>
+                                <a href="#">
+                                    <h4>花开有声</h4>
+                                    <p>讲述了一个失去丈夫的乡村女子，在自己孩子受伤后收养3个孤儿并抚养成人的故事。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>毛泽东</h4>
+                                    <p>电视剧讲述了毛泽东，从上学到走上革命的艰难道路，向我们展示了他。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>光武大帝</h4>
+                                    <p>刘秀是继刘邦之后中国历史上第二个布衣皇帝；他卧薪尝胆、顾全大局。</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>习惯养成</p></h3>
+                                <a href="#">
+                                    <h4>名家作品模仿</h4>
+                                    <p>主要包括戏曲、歌曲相声、小品和影视剧片段，还可以分为表情、动作、手势</p>
+                                </a>
+                                <a href="#">
+                                    <h4>学习年级规划</h4>
+                                    <p>1-3年级的学生，主要是培养学生的兴趣想象能力和动手能力4-5年级主要是阅读等</p>
+                                </a>
+                                <a href="#">
+                                    <h4>经典文学</h4>
+                                    <p>主要包括戏曲、歌曲、相声、小品、和影视剧片段，还可以分为表情等</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col2-item clear">
+                    <div class="c2-item-hot">
+                        <a href="#">
+                            <h3>文化课</h3>
+                            <p><img src="/images/emp-08.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c2-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>兴趣培养</p></h3>
+                                <a href="#">
+                                    <h4>戏曲小品</h4>
+                                    <p>戏曲有舞台、演员、道具和乐队组成，仅河南就分为二进弦、四平调、落腔等剧种</p>
+                                </a>
+                                <a href="#">
+                                    <h4>影视表演</h4>
+                                    <p>文化修养和理论、文学艺术素质、专业知识、创造能力和协同能力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>播音主持</h4>
+                                    <p>幼儿、少儿口才班和高三考生培训配音、朗诵、演讲和唱腔模仿</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>励志感恩</p></h3>
+                                <a href="#">
+                                    <h4>花开有声</h4>
+                                    <p>讲述了一个失去丈夫的乡村女子，在自己孩子受伤后收养3个孤儿并抚养成人的故事。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>毛泽东</h4>
+                                    <p>电视剧讲述了毛泽东，从上学到走上革命的艰难道路，向我们展示了他。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>光武大帝</h4>
+                                    <p>刘秀是继刘邦之后中国历史上第二个布衣皇帝；他卧薪尝胆、顾全大局。</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>习惯养成</p></h3>
+                                <a href="#">
+                                    <h4>名家作品模仿</h4>
+                                    <p>主要包括戏曲、歌曲相声、小品和影视剧片段，还可以分为表情、动作、手势</p>
+                                </a>
+                                <a href="#">
+                                    <h4>学习年级规划</h4>
+                                    <p>1-3年级的学生，主要是培养学生的兴趣想象能力和动手能力4-5年级主要是阅读等</p>
+                                </a>
+                                <a href="#">
+                                    <h4>经典文学</h4>
+                                    <p>主要包括戏曲、歌曲、相声、小品、和影视剧片段，还可以分为表情等</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col2-item clear">
+                    <div class="c2-item-hot">
+                        <a href="#">
+                            <h3>艺术课</h3>
+                            <p><img src="/images/emp-08.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c2-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>兴趣培养</p></h3>
+                                <a href="#">
+                                    <h4>戏曲小品</h4>
+                                    <p>戏曲有舞台、演员、道具和乐队组成，仅河南就分为二进弦、四平调、落腔等剧种</p>
+                                </a>
+                                <a href="#">
+                                    <h4>影视表演</h4>
+                                    <p>文化修养和理论、文学艺术素质、专业知识、创造能力和协同能力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>播音主持</h4>
+                                    <p>幼儿、少儿口才班和高三考生培训配音、朗诵、演讲和唱腔模仿</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>励志感恩</p></h3>
+                                <a href="#">
+                                    <h4>花开有声</h4>
+                                    <p>讲述了一个失去丈夫的乡村女子，在自己孩子受伤后收养3个孤儿并抚养成人的故事。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>毛泽东</h4>
+                                    <p>电视剧讲述了毛泽东，从上学到走上革命的艰难道路，向我们展示了他。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>光武大帝</h4>
+                                    <p>刘秀是继刘邦之后中国历史上第二个布衣皇帝；他卧薪尝胆、顾全大局。</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>习惯养成</p></h3>
+                                <a href="#">
+                                    <h4>名家作品模仿</h4>
+                                    <p>主要包括戏曲、歌曲相声、小品和影视剧片段，还可以分为表情、动作、手势</p>
+                                </a>
+                                <a href="#">
+                                    <h4>学习年级规划</h4>
+                                    <p>1-3年级的学生，主要是培养学生的兴趣想象能力和动手能力4-5年级主要是阅读等</p>
+                                </a>
+                                <a href="#">
+                                    <h4>经典文学</h4>
+                                    <p>主要包括戏曲、歌曲、相声、小品、和影视剧片段，还可以分为表情等</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col2-item clear">
+                    <div class="c2-item-hot">
+                        <a href="#">
+                            <h3>心理咨询</h3>
+                            <p><img src="/images/emp-08.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c2-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>兴趣培养</p></h3>
+                                <a href="#">
+                                    <h4>戏曲小品</h4>
+                                    <p>戏曲有舞台、演员、道具和乐队组成，仅河南就分为二进弦、四平调、落腔等剧种</p>
+                                </a>
+                                <a href="#">
+                                    <h4>影视表演</h4>
+                                    <p>文化修养和理论、文学艺术素质、专业知识、创造能力和协同能力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>播音主持</h4>
+                                    <p>幼儿、少儿口才班和高三考生培训配音、朗诵、演讲和唱腔模仿</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>励志感恩</p></h3>
+                                <a href="#">
+                                    <h4>花开有声</h4>
+                                    <p>讲述了一个失去丈夫的乡村女子，在自己孩子受伤后收养3个孤儿并抚养成人的故事。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>毛泽东</h4>
+                                    <p>电视剧讲述了毛泽东，从上学到走上革命的艰难道路，向我们展示了他。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>光武大帝</h4>
+                                    <p>刘秀是继刘邦之后中国历史上第二个布衣皇帝；他卧薪尝胆、顾全大局。</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>习惯养成</p></h3>
+                                <a href="#">
+                                    <h4>名家作品模仿</h4>
+                                    <p>主要包括戏曲、歌曲相声、小品和影视剧片段，还可以分为表情、动作、手势</p>
+                                </a>
+                                <a href="#">
+                                    <h4>学习年级规划</h4>
+                                    <p>1-3年级的学生，主要是培养学生的兴趣想象能力和动手能力4-5年级主要是阅读等</p>
+                                </a>
+                                <a href="#">
+                                    <h4>经典文学</h4>
+                                    <p>主要包括戏曲、歌曲、相声、小品、和影视剧片段，还可以分为表情等</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col2-item clear">
+                    <div class="c2-item-hot">
+                        <a href="#">
+                            <h3>野外训练</h3>
+                            <p><img src="/images/emp-08.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c2-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>兴趣培养</p></h3>
+                                <a href="#">
+                                    <h4>戏曲小品</h4>
+                                    <p>戏曲有舞台、演员、道具和乐队组成，仅河南就分为二进弦、四平调、落腔等剧种</p>
+                                </a>
+                                <a href="#">
+                                    <h4>影视表演</h4>
+                                    <p>文化修养和理论、文学艺术素质、专业知识、创造能力和协同能力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>播音主持</h4>
+                                    <p>幼儿、少儿口才班和高三考生培训配音、朗诵、演讲和唱腔模仿</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>励志感恩</p></h3>
+                                <a href="#">
+                                    <h4>花开有声</h4>
+                                    <p>讲述了一个失去丈夫的乡村女子，在自己孩子受伤后收养3个孤儿并抚养成人的故事。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>毛泽东</h4>
+                                    <p>电视剧讲述了毛泽东，从上学到走上革命的艰难道路，向我们展示了他。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>光武大帝</h4>
+                                    <p>刘秀是继刘邦之后中国历史上第二个布衣皇帝；他卧薪尝胆、顾全大局。</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>习惯养成</p></h3>
+                                <a href="#">
+                                    <h4>名家作品模仿</h4>
+                                    <p>主要包括戏曲、歌曲相声、小品和影视剧片段，还可以分为表情、动作、手势</p>
+                                </a>
+                                <a href="#">
+                                    <h4>学习年级规划</h4>
+                                    <p>1-3年级的学生，主要是培养学生的兴趣想象能力和动手能力4-5年级主要是阅读等</p>
+                                </a>
+                                <a href="#">
+                                    <h4>经典文学</h4>
+                                    <p>主要包括戏曲、歌曲、相声、小品、和影视剧片段，还可以分为表情等</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col2-item clear">
+                    <div class="c2-item-hot">
+                        <a href="#">
+                            <h3>能力拓展</h3>
+                            <p><img src="/images/emp-08.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c2-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>兴趣培养</p></h3>
+                                <a href="#">
+                                    <h4>戏曲小品</h4>
+                                    <p>戏曲有舞台、演员、道具和乐队组成，仅河南就分为二进弦、四平调、落腔等剧种</p>
+                                </a>
+                                <a href="#">
+                                    <h4>影视表演</h4>
+                                    <p>文化修养和理论、文学艺术素质、专业知识、创造能力和协同能力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>播音主持</h4>
+                                    <p>幼儿、少儿口才班和高三考生培训配音、朗诵、演讲和唱腔模仿</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>励志感恩</p></h3>
+                                <a href="#">
+                                    <h4>花开有声</h4>
+                                    <p>讲述了一个失去丈夫的乡村女子，在自己孩子受伤后收养3个孤儿并抚养成人的故事。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>毛泽东</h4>
+                                    <p>电视剧讲述了毛泽东，从上学到走上革命的艰难道路，向我们展示了他。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>光武大帝</h4>
+                                    <p>刘秀是继刘邦之后中国历史上第二个布衣皇帝；他卧薪尝胆、顾全大局。</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>习惯养成</p></h3>
+                                <a href="#">
+                                    <h4>名家作品模仿</h4>
+                                    <p>主要包括戏曲、歌曲相声、小品和影视剧片段，还可以分为表情、动作、手势</p>
+                                </a>
+                                <a href="#">
+                                    <h4>学习年级规划</h4>
+                                    <p>1-3年级的学生，主要是培养学生的兴趣想象能力和动手能力4-5年级主要是阅读等</p>
+                                </a>
+                                <a href="#">
+                                    <h4>经典文学</h4>
+                                    <p>主要包括戏曲、歌曲、相声、小品、和影视剧片段，还可以分为表情等</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col2-item clear">
+                    <div class="c2-item-hot">
+                        <a href="#">
+                            <h3>游游学</h3>
+                            <p><img src="/images/emp-08.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c2-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>兴趣培养</p></h3>
+                                <a href="#">
+                                    <h4>戏曲小品</h4>
+                                    <p>戏曲有舞台、演员、道具和乐队组成，仅河南就分为二进弦、四平调、落腔等剧种</p>
+                                </a>
+                                <a href="#">
+                                    <h4>影视表演</h4>
+                                    <p>文化修养和理论、文学艺术素质、专业知识、创造能力和协同能力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>播音主持</h4>
+                                    <p>幼儿、少儿口才班和高三考生培训配音、朗诵、演讲和唱腔模仿</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>励志感恩</p></h3>
+                                <a href="#">
+                                    <h4>花开有声</h4>
+                                    <p>讲述了一个失去丈夫的乡村女子，在自己孩子受伤后收养3个孤儿并抚养成人的故事。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>毛泽东</h4>
+                                    <p>电视剧讲述了毛泽东，从上学到走上革命的艰难道路，向我们展示了他。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>光武大帝</h4>
+                                    <p>刘秀是继刘邦之后中国历史上第二个布衣皇帝；他卧薪尝胆、顾全大局。</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>习惯养成</p></h3>
+                                <a href="#">
+                                    <h4>名家作品模仿</h4>
+                                    <p>主要包括戏曲、歌曲相声、小品和影视剧片段，还可以分为表情、动作、手势</p>
+                                </a>
+                                <a href="#">
+                                    <h4>学习年级规划</h4>
+                                    <p>1-3年级的学生，主要是培养学生的兴趣想象能力和动手能力4-5年级主要是阅读等</p>
+                                </a>
+                                <a href="#">
+                                    <h4>经典文学</h4>
+                                    <p>主要包括戏曲、歌曲、相声、小品、和影视剧片段，还可以分为表情等</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col2-item clear">
+                    <div class="c2-item-hot">
+                        <a href="#">
+                            <h3>企业管理</h3>
+                            <p><img src="/images/emp-08.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c2-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>兴趣培养</p></h3>
+                                <a href="#">
+                                    <h4>戏曲小品</h4>
+                                    <p>戏曲有舞台、演员、道具和乐队组成，仅河南就分为二进弦、四平调、落腔等剧种</p>
+                                </a>
+                                <a href="#">
+                                    <h4>影视表演</h4>
+                                    <p>文化修养和理论、文学艺术素质、专业知识、创造能力和协同能力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>播音主持</h4>
+                                    <p>幼儿、少儿口才班和高三考生培训配音、朗诵、演讲和唱腔模仿</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>励志感恩</p></h3>
+                                <a href="#">
+                                    <h4>花开有声</h4>
+                                    <p>讲述了一个失去丈夫的乡村女子，在自己孩子受伤后收养3个孤儿并抚养成人的故事。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>毛泽东</h4>
+                                    <p>电视剧讲述了毛泽东，从上学到走上革命的艰难道路，向我们展示了他。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>光武大帝</h4>
+                                    <p>刘秀是继刘邦之后中国历史上第二个布衣皇帝；他卧薪尝胆、顾全大局。</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>习惯养成</p></h3>
+                                <a href="#">
+                                    <h4>名家作品模仿</h4>
+                                    <p>主要包括戏曲、歌曲相声、小品和影视剧片段，还可以分为表情、动作、手势</p>
+                                </a>
+                                <a href="#">
+                                    <h4>学习年级规划</h4>
+                                    <p>1-3年级的学生，主要是培养学生的兴趣想象能力和动手能力4-5年级主要是阅读等</p>
+                                </a>
+                                <a href="#">
+                                    <h4>经典文学</h4>
+                                    <p>主要包括戏曲、歌曲、相声、小品、和影视剧片段，还可以分为表情等</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col2-item clear">
+                    <div class="c2-item-hot">
+                        <a href="#">
+                            <h3>口才学</h3>
+                            <p><img src="/images/emp-08.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c2-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>兴趣培养</p></h3>
+                                <a href="#">
+                                    <h4>戏曲小品</h4>
+                                    <p>戏曲有舞台、演员、道具和乐队组成，仅河南就分为二进弦、四平调、落腔等剧种</p>
+                                </a>
+                                <a href="#">
+                                    <h4>影视表演</h4>
+                                    <p>文化修养和理论、文学艺术素质、专业知识、创造能力和协同能力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>播音主持</h4>
+                                    <p>幼儿、少儿口才班和高三考生培训配音、朗诵、演讲和唱腔模仿</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>励志感恩</p></h3>
+                                <a href="#">
+                                    <h4>花开有声</h4>
+                                    <p>讲述了一个失去丈夫的乡村女子，在自己孩子受伤后收养3个孤儿并抚养成人的故事。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>毛泽东</h4>
+                                    <p>电视剧讲述了毛泽东，从上学到走上革命的艰难道路，向我们展示了他。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>光武大帝</h4>
+                                    <p>刘秀是继刘邦之后中国历史上第二个布衣皇帝；他卧薪尝胆、顾全大局。</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>习惯养成</p></h3>
+                                <a href="#">
+                                    <h4>名家作品模仿</h4>
+                                    <p>主要包括戏曲、歌曲相声、小品和影视剧片段，还可以分为表情、动作、手势</p>
+                                </a>
+                                <a href="#">
+                                    <h4>学习年级规划</h4>
+                                    <p>1-3年级的学生，主要是培养学生的兴趣想象能力和动手能力4-5年级主要是阅读等</p>
+                                </a>
+                                <a href="#">
+                                    <h4>经典文学</h4>
+                                    <p>主要包括戏曲、歌曲、相声、小品、和影视剧片段，还可以分为表情等</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+                <div class="col2-item clear">
+                    <div class="c2-item-hot">
+                        <a href="#">
+                            <h3>岗前培训</h3>
+                            <p><img src="/images/emp-08.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c2-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>兴趣培养</p></h3>
+                                <a href="#">
+                                    <h4>戏曲小品</h4>
+                                    <p>戏曲有舞台、演员、道具和乐队组成，仅河南就分为二进弦、四平调、落腔等剧种</p>
+                                </a>
+                                <a href="#">
+                                    <h4>影视表演</h4>
+                                    <p>文化修养和理论、文学艺术素质、专业知识、创造能力和协同能力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>播音主持</h4>
+                                    <p>幼儿、少儿口才班和高三考生培训配音、朗诵、演讲和唱腔模仿</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>励志感恩</p></h3>
+                                <a href="#">
+                                    <h4>花开有声</h4>
+                                    <p>讲述了一个失去丈夫的乡村女子，在自己孩子受伤后收养3个孤儿并抚养成人的故事。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>毛泽东</h4>
+                                    <p>电视剧讲述了毛泽东，从上学到走上革命的艰难道路，向我们展示了他。</p>
+                                </a>
+                                <a href="#">
+                                    <h4>光武大帝</h4>
+                                    <p>刘秀是继刘邦之后中国历史上第二个布衣皇帝；他卧薪尝胆、顾全大局。</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>习惯养成</p></h3>
+                                <a href="#">
+                                    <h4>名家作品模仿</h4>
+                                    <p>主要包括戏曲、歌曲相声、小品和影视剧片段，还可以分为表情、动作、手势</p>
+                                </a>
+                                <a href="#">
+                                    <h4>学习年级规划</h4>
+                                    <p>1-3年级的学生，主要是培养学生的兴趣想象能力和动手能力4-5年级主要是阅读等</p>
+                                </a>
+                                <a href="#">
+                                    <h4>经典文学</h4>
+                                    <p>主要包括戏曲、歌曲、相声、小品、和影视剧片段，还可以分为表情等</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="cols">
+            <header class="col3-tab clear">
+                <p class="on">求职招聘</p>
+                <p>人才档案</p>
+                <p>名企招聘</p>
+                <p>定岗派遣</p>
+                <p>学校招教</p>
+                <p>求职信息</p>
+                <p>专家顾问</p>
+                <p>就业指导</p>
+                <p>实习单位</p>
+                <p>管理储备</p>
+                <a href="#">更多</a>
+            </header>
+            <div class="col3-con">
+                <div class="col3-item clear">
+                    <div class="c3-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>核心管理</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>中层骨干</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>基层员工</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c3-item-hot">
+                        <a href="#">
+                            <h3>求职招聘</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col3-item clear">
+                    <div class="c3-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>核心管理</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>中层骨干</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>基层员工</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c3-item-hot">
+                        <a href="#">
+                            <h3>人才档案</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col3-item clear">
+                    <div class="c3-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>核心管理</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>中层骨干</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>基层员工</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c1-item-hot">
+                        <a href="#">
+                            <h3>名企招聘</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col3-item clear">
+                    <div class="c3-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>核心管理</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>中层骨干</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>基层员工</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c3-item-hot">
+                        <a href="#">
+                            <h3>定岗派遣</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col3-item clear">
+                    <div class="c3-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>核心管理</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>中层骨干</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>基层员工</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c3-item-hot">
+                        <a href="#">
+                            <h3>学校招教</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col3-item clear">
+                    <div class="c3-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>核心管理</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>中层骨干</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>基层员工</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c1-item-hot">
+                        <a href="#">
+                            <h3>求职信息</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col3-item clear">
+                    <div class="c3-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>核心管理</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>中层骨干</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>基层员工</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c3-item-hot">
+                        <a href="#">
+                            <h3>专家顾问</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col3-item clear">
+                    <div class="c3-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>核心管理</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>中层骨干</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>基层员工</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c3-item-hot">
+                        <a href="#">
+                            <h3>就业指导</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col3-item clear">
+                    <div class="c3-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>核心管理</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>中层骨干</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>基层员工</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c3-item-hot">
+                        <a href="#">
+                            <h3>实习单位</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col3-item clear">
+                    <div class="c3-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>核心管理</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>中层骨干</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>基层员工</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c3-item-hot">
+                        <a href="#">
+                            <h3>管理储备</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cols">
+            <header class="col4-tab clear">
+                <p class="on">专家讲师</p>
+                <p>创业培训</p>
+                <p>家庭教育</p>
+                <p>拓展训练</p>
+                <p>习惯养成</p>
+                <p>影视制作</p>
+                <p>运营管理</p>
+                <p>潜能开发</p>
+                <p>应用系统</p>
+                <p>人才资源</p>
+                <a href="#">更多</a>
+            </header>
+            <div class="col4-con">
+                <div class="col4-item clear">
+                    <div class="swiper-container swiper4">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="/images/emp-05.png"></div>
+                            <div class="swiper-slide"><img src="/images/emp-10.png"></div>
+                            <div class="swiper-slide"><img src="/images/emp-11.png"></div>
+                            <div class="swiper-slide"><img src="/images/emp-12.png"></div>
+                            <div class="swiper-slide"><img src="/images/emp-13.png"></div>
+                            <div class="swiper-slide"><img src="/images/emp-11.png"></div>
+                        </div>
+                        <div class="swiper-pagination swiper-pagination4"></div>
+                    </div>
+                    <div class="c4-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>图形设计</p></h3>
+                                <a href="#">
+                                    <h4>平面图形</h4>
+                                    <p>不仅出现在数学上的教材上，还出现在我们的生活中</p>
+                                </a>
+                                <a href="#">
+                                    <h4>建筑图像</h4>
+                                    <p>主要内容分为：服务区域、装修风格和服务类型三个方面</p>
+                                </a>
+                                <a href="#">
+                                    <h4>网页设计</h4>
+                                    <p>主要网站内容的前台展示部分，分为首页和频道与子网页</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>团队组建</p></h3>
+                                <a href="#">
+                                    <h4>股份招募</h4>
+                                    <p>通过授权股份吸引资金和人才（包含管理权、技术股和资源股）</p>
+                                </a>
+                                <a href="#">
+                                    <h4>员工招聘</h4>
+                                    <p>招聘每一个行业的精英将每个行业做到最好最具有创新力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>业务外包</h4>
+                                    <p>是将公司业务、项目或客户需求，承包给他单位或第三方个人</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>企业定位</p></h3>
+                                <a href="#">
+                                    <h4>组合型</h4>
+                                    <p>对于一个企业而言，能力与性格互补型人才核心团队极为重要</p>
+                                </a>
+                                <a href="#">
+                                    <h4>多元化</h4>
+                                    <p>一个公司，从成立到发展上市；一般都会经历一个项目向多个项目同时发展的过程</p>
+                                </a>
+                                <a href="#">
+                                    <h4>精品店</h4>
+                                    <p>主要指特色店、加盟店和专卖店，以服装、小吃和培训居多，使我们生活中的风景</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col4-item clear">
+                    <div class="c4-item-hot">
+                        <a href="#">
+                            <h3>创业培训</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c4-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>图形设计</p></h3>
+                                <a href="#">
+                                    <h4>平面图形</h4>
+                                    <p>不仅出现在数学上的教材上，还出现在我们的生活中</p>
+                                </a>
+                                <a href="#">
+                                    <h4>建筑图像</h4>
+                                    <p>主要内容分为：服务区域、装修风格和服务类型三个方面</p>
+                                </a>
+                                <a href="#">
+                                    <h4>网页设计</h4>
+                                    <p>主要网站内容的前台展示部分，分为首页和频道与子网页</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>团队组建</p></h3>
+                                <a href="#">
+                                    <h4>股份招募</h4>
+                                    <p>通过授权股份吸引资金和人才（包含管理权、技术股和资源股）</p>
+                                </a>
+                                <a href="#">
+                                    <h4>员工招聘</h4>
+                                    <p>招聘每一个行业的精英将每个行业做到最好最具有创新力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>业务外包</h4>
+                                    <p>是将公司业务、项目或客户需求，承包给他单位或第三方个人</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>企业定位</p></h3>
+                                <a href="#">
+                                    <h4>组合型</h4>
+                                    <p>对于一个企业而言，能力与性格互补型人才核心团队极为重要</p>
+                                </a>
+                                <a href="#">
+                                    <h4>多元化</h4>
+                                    <p>一个公司，从成立到发展上市；一般都会经历一个项目向多个项目同时发展的过程</p>
+                                </a>
+                                <a href="#">
+                                    <h4>精品店</h4>
+                                    <p>主要指特色店、加盟店和专卖店，以服装、小吃和培训居多，使我们生活中的风景</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col4-item clear">
+                    <div class="c4-item-hot">
+                        <a href="#">
+                            <h3>家庭教育</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c4-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>图形设计</p></h3>
+                                <a href="#">
+                                    <h4>平面图形</h4>
+                                    <p>不仅出现在数学上的教材上，还出现在我们的生活中</p>
+                                </a>
+                                <a href="#">
+                                    <h4>建筑图像</h4>
+                                    <p>主要内容分为：服务区域、装修风格和服务类型三个方面</p>
+                                </a>
+                                <a href="#">
+                                    <h4>网页设计</h4>
+                                    <p>主要网站内容的前台展示部分，分为首页和频道与子网页</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>团队组建</p></h3>
+                                <a href="#">
+                                    <h4>股份招募</h4>
+                                    <p>通过授权股份吸引资金和人才（包含管理权、技术股和资源股）</p>
+                                </a>
+                                <a href="#">
+                                    <h4>员工招聘</h4>
+                                    <p>招聘每一个行业的精英将每个行业做到最好最具有创新力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>业务外包</h4>
+                                    <p>是将公司业务、项目或客户需求，承包给他单位或第三方个人</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>企业定位</p></h3>
+                                <a href="#">
+                                    <h4>组合型</h4>
+                                    <p>对于一个企业而言，能力与性格互补型人才核心团队极为重要</p>
+                                </a>
+                                <a href="#">
+                                    <h4>多元化</h4>
+                                    <p>一个公司，从成立到发展上市；一般都会经历一个项目向多个项目同时发展的过程</p>
+                                </a>
+                                <a href="#">
+                                    <h4>精品店</h4>
+                                    <p>主要指特色店、加盟店和专卖店，以服装、小吃和培训居多，使我们生活中的风景</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col4-item clear">
+                    <div class="c4-item-hot">
+                        <a href="#">
+                            <h3>拓展训练</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c4-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>图形设计</p></h3>
+                                <a href="#">
+                                    <h4>平面图形</h4>
+                                    <p>不仅出现在数学上的教材上，还出现在我们的生活中</p>
+                                </a>
+                                <a href="#">
+                                    <h4>建筑图像</h4>
+                                    <p>主要内容分为：服务区域、装修风格和服务类型三个方面</p>
+                                </a>
+                                <a href="#">
+                                    <h4>网页设计</h4>
+                                    <p>主要网站内容的前台展示部分，分为首页和频道与子网页</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>团队组建</p></h3>
+                                <a href="#">
+                                    <h4>股份招募</h4>
+                                    <p>通过授权股份吸引资金和人才（包含管理权、技术股和资源股）</p>
+                                </a>
+                                <a href="#">
+                                    <h4>员工招聘</h4>
+                                    <p>招聘每一个行业的精英将每个行业做到最好最具有创新力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>业务外包</h4>
+                                    <p>是将公司业务、项目或客户需求，承包给他单位或第三方个人</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>企业定位</p></h3>
+                                <a href="#">
+                                    <h4>组合型</h4>
+                                    <p>对于一个企业而言，能力与性格互补型人才核心团队极为重要</p>
+                                </a>
+                                <a href="#">
+                                    <h4>多元化</h4>
+                                    <p>一个公司，从成立到发展上市；一般都会经历一个项目向多个项目同时发展的过程</p>
+                                </a>
+                                <a href="#">
+                                    <h4>精品店</h4>
+                                    <p>主要指特色店、加盟店和专卖店，以服装、小吃和培训居多，使我们生活中的风景</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col4-item clear">
+                    <div class="c4-item-hot">
+                        <a href="#">
+                            <h3>习惯养成</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c4-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>图形设计</p></h3>
+                                <a href="#">
+                                    <h4>平面图形</h4>
+                                    <p>不仅出现在数学上的教材上，还出现在我们的生活中</p>
+                                </a>
+                                <a href="#">
+                                    <h4>建筑图像</h4>
+                                    <p>主要内容分为：服务区域、装修风格和服务类型三个方面</p>
+                                </a>
+                                <a href="#">
+                                    <h4>网页设计</h4>
+                                    <p>主要网站内容的前台展示部分，分为首页和频道与子网页</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>团队组建</p></h3>
+                                <a href="#">
+                                    <h4>股份招募</h4>
+                                    <p>通过授权股份吸引资金和人才（包含管理权、技术股和资源股）</p>
+                                </a>
+                                <a href="#">
+                                    <h4>员工招聘</h4>
+                                    <p>招聘每一个行业的精英将每个行业做到最好最具有创新力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>业务外包</h4>
+                                    <p>是将公司业务、项目或客户需求，承包给他单位或第三方个人</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>企业定位</p></h3>
+                                <a href="#">
+                                    <h4>组合型</h4>
+                                    <p>对于一个企业而言，能力与性格互补型人才核心团队极为重要</p>
+                                </a>
+                                <a href="#">
+                                    <h4>多元化</h4>
+                                    <p>一个公司，从成立到发展上市；一般都会经历一个项目向多个项目同时发展的过程</p>
+                                </a>
+                                <a href="#">
+                                    <h4>精品店</h4>
+                                    <p>主要指特色店、加盟店和专卖店，以服装、小吃和培训居多，使我们生活中的风景</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col4-item clear">
+                    <div class="c4-item-hot">
+                        <a href="#">
+                            <h3>影视制作</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c4-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>图形设计</p></h3>
+                                <a href="#">
+                                    <h4>平面图形</h4>
+                                    <p>不仅出现在数学上的教材上，还出现在我们的生活中</p>
+                                </a>
+                                <a href="#">
+                                    <h4>建筑图像</h4>
+                                    <p>主要内容分为：服务区域、装修风格和服务类型三个方面</p>
+                                </a>
+                                <a href="#">
+                                    <h4>网页设计</h4>
+                                    <p>主要网站内容的前台展示部分，分为首页和频道与子网页</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>团队组建</p></h3>
+                                <a href="#">
+                                    <h4>股份招募</h4>
+                                    <p>通过授权股份吸引资金和人才（包含管理权、技术股和资源股）</p>
+                                </a>
+                                <a href="#">
+                                    <h4>员工招聘</h4>
+                                    <p>招聘每一个行业的精英将每个行业做到最好最具有创新力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>业务外包</h4>
+                                    <p>是将公司业务、项目或客户需求，承包给他单位或第三方个人</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>企业定位</p></h3>
+                                <a href="#">
+                                    <h4>组合型</h4>
+                                    <p>对于一个企业而言，能力与性格互补型人才核心团队极为重要</p>
+                                </a>
+                                <a href="#">
+                                    <h4>多元化</h4>
+                                    <p>一个公司，从成立到发展上市；一般都会经历一个项目向多个项目同时发展的过程</p>
+                                </a>
+                                <a href="#">
+                                    <h4>精品店</h4>
+                                    <p>主要指特色店、加盟店和专卖店，以服装、小吃和培训居多，使我们生活中的风景</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col4-item clear">
+                    <div class="c4-item-hot">
+                        <a href="#">
+                            <h3>运营管理</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c4-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>图形设计</p></h3>
+                                <a href="#">
+                                    <h4>平面图形</h4>
+                                    <p>不仅出现在数学上的教材上，还出现在我们的生活中</p>
+                                </a>
+                                <a href="#">
+                                    <h4>建筑图像</h4>
+                                    <p>主要内容分为：服务区域、装修风格和服务类型三个方面</p>
+                                </a>
+                                <a href="#">
+                                    <h4>网页设计</h4>
+                                    <p>主要网站内容的前台展示部分，分为首页和频道与子网页</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>团队组建</p></h3>
+                                <a href="#">
+                                    <h4>股份招募</h4>
+                                    <p>通过授权股份吸引资金和人才（包含管理权、技术股和资源股）</p>
+                                </a>
+                                <a href="#">
+                                    <h4>员工招聘</h4>
+                                    <p>招聘每一个行业的精英将每个行业做到最好最具有创新力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>业务外包</h4>
+                                    <p>是将公司业务、项目或客户需求，承包给他单位或第三方个人</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>企业定位</p></h3>
+                                <a href="#">
+                                    <h4>组合型</h4>
+                                    <p>对于一个企业而言，能力与性格互补型人才核心团队极为重要</p>
+                                </a>
+                                <a href="#">
+                                    <h4>多元化</h4>
+                                    <p>一个公司，从成立到发展上市；一般都会经历一个项目向多个项目同时发展的过程</p>
+                                </a>
+                                <a href="#">
+                                    <h4>精品店</h4>
+                                    <p>主要指特色店、加盟店和专卖店，以服装、小吃和培训居多，使我们生活中的风景</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col4-item clear">
+                    <div class="c4-item-hot">
+                        <a href="#">
+                            <h3>潜能开发</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c4-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>图形设计</p></h3>
+                                <a href="#">
+                                    <h4>平面图形</h4>
+                                    <p>不仅出现在数学上的教材上，还出现在我们的生活中</p>
+                                </a>
+                                <a href="#">
+                                    <h4>建筑图像</h4>
+                                    <p>主要内容分为：服务区域、装修风格和服务类型三个方面</p>
+                                </a>
+                                <a href="#">
+                                    <h4>网页设计</h4>
+                                    <p>主要网站内容的前台展示部分，分为首页和频道与子网页</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>团队组建</p></h3>
+                                <a href="#">
+                                    <h4>股份招募</h4>
+                                    <p>通过授权股份吸引资金和人才（包含管理权、技术股和资源股）</p>
+                                </a>
+                                <a href="#">
+                                    <h4>员工招聘</h4>
+                                    <p>招聘每一个行业的精英将每个行业做到最好最具有创新力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>业务外包</h4>
+                                    <p>是将公司业务、项目或客户需求，承包给他单位或第三方个人</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>企业定位</p></h3>
+                                <a href="#">
+                                    <h4>组合型</h4>
+                                    <p>对于一个企业而言，能力与性格互补型人才核心团队极为重要</p>
+                                </a>
+                                <a href="#">
+                                    <h4>多元化</h4>
+                                    <p>一个公司，从成立到发展上市；一般都会经历一个项目向多个项目同时发展的过程</p>
+                                </a>
+                                <a href="#">
+                                    <h4>精品店</h4>
+                                    <p>主要指特色店、加盟店和专卖店，以服装、小吃和培训居多，使我们生活中的风景</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col4-item clear">
+                    <div class="c4-item-hot">
+                        <a href="#">
+                            <h3>应用系统</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c4-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>图形设计</p></h3>
+                                <a href="#">
+                                    <h4>平面图形</h4>
+                                    <p>不仅出现在数学上的教材上，还出现在我们的生活中</p>
+                                </a>
+                                <a href="#">
+                                    <h4>建筑图像</h4>
+                                    <p>主要内容分为：服务区域、装修风格和服务类型三个方面</p>
+                                </a>
+                                <a href="#">
+                                    <h4>网页设计</h4>
+                                    <p>主要网站内容的前台展示部分，分为首页和频道与子网页</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>团队组建</p></h3>
+                                <a href="#">
+                                    <h4>股份招募</h4>
+                                    <p>通过授权股份吸引资金和人才（包含管理权、技术股和资源股）</p>
+                                </a>
+                                <a href="#">
+                                    <h4>员工招聘</h4>
+                                    <p>招聘每一个行业的精英将每个行业做到最好最具有创新力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>业务外包</h4>
+                                    <p>是将公司业务、项目或客户需求，承包给他单位或第三方个人</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>企业定位</p></h3>
+                                <a href="#">
+                                    <h4>组合型</h4>
+                                    <p>对于一个企业而言，能力与性格互补型人才核心团队极为重要</p>
+                                </a>
+                                <a href="#">
+                                    <h4>多元化</h4>
+                                    <p>一个公司，从成立到发展上市；一般都会经历一个项目向多个项目同时发展的过程</p>
+                                </a>
+                                <a href="#">
+                                    <h4>精品店</h4>
+                                    <p>主要指特色店、加盟店和专卖店，以服装、小吃和培训居多，使我们生活中的风景</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col4-item clear">
+                    <div class="c4-item-hot">
+                        <a href="#">
+                            <h3>人才资源</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c4-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>图形设计</p></h3>
+                                <a href="#">
+                                    <h4>平面图形</h4>
+                                    <p>不仅出现在数学上的教材上，还出现在我们的生活中</p>
+                                </a>
+                                <a href="#">
+                                    <h4>建筑图像</h4>
+                                    <p>主要内容分为：服务区域、装修风格和服务类型三个方面</p>
+                                </a>
+                                <a href="#">
+                                    <h4>网页设计</h4>
+                                    <p>主要网站内容的前台展示部分，分为首页和频道与子网页</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>团队组建</p></h3>
+                                <a href="#">
+                                    <h4>股份招募</h4>
+                                    <p>通过授权股份吸引资金和人才（包含管理权、技术股和资源股）</p>
+                                </a>
+                                <a href="#">
+                                    <h4>员工招聘</h4>
+                                    <p>招聘每一个行业的精英将每个行业做到最好最具有创新力</p>
+                                </a>
+                                <a href="#">
+                                    <h4>业务外包</h4>
+                                    <p>是将公司业务、项目或客户需求，承包给他单位或第三方个人</p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>企业定位</p></h3>
+                                <a href="#">
+                                    <h4>组合型</h4>
+                                    <p>对于一个企业而言，能力与性格互补型人才核心团队极为重要</p>
+                                </a>
+                                <a href="#">
+                                    <h4>多元化</h4>
+                                    <p>一个公司，从成立到发展上市；一般都会经历一个项目向多个项目同时发展的过程</p>
+                                </a>
+                                <a href="#">
+                                    <h4>精品店</h4>
+                                    <p>主要指特色店、加盟店和专卖店，以服装、小吃和培训居多，使我们生活中的风景</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cols">
+            <header class="col5-tab clear">
+                <p class="on">校园名人</p>
+                <p>作家</p>
+                <p>诗人</p>
+                <p>书画家</p>
+                <p>歌手</p>
+                <p>演员</p>
+                <p>记者</p>
+                <p>编辑</p>
+                <p>设计</p>
+                <p>制作</p>
+                <a href="#">更多</a>
+            </header>
+            <div class="col5-con">
+                <div class="col5-item clear">
+                    <div class="c5-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>教学研究</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>组织策划</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>影视编导</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c5-item-hot">
+                        <a href="#">
+                            <h3>作家</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col5-item clear">
+                    <div class="c5-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>教学研究</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>组织策划</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>影视编导</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c5-item-hot">
+                        <a href="#">
+                            <h3>作家</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col5-item clear">
+                    <div class="c5-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>教学研究</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>组织策划</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>影视编导</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c5-item-hot">
+                        <a href="#">
+                            <h3>诗人</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col5-item clear">
+                    <div class="c5-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>教学研究</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>组织策划</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>影视编导</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c5-item-hot">
+                        <a href="#">
+                            <h3>书画家</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col5-item clear">
+                    <div class="c5-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>教学研究</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>组织策划</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>影视编导</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c5-item-hot">
+                        <a href="#">
+                            <h3>歌手</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col5-item clear">
+                    <div class="c5-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>教学研究</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>组织策划</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>影视编导</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c5-item-hot">
+                        <a href="#">
+                            <h3>演员</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col5-item clear">
+                    <div class="c5-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>教学研究</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>组织策划</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>影视编导</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c5-item-hot">
+                        <a href="#">
+                            <h3>记者</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col5-item clear">
+                    <div class="c5-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>教学研究</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>组织策划</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>影视编导</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c5-item-hot">
+                        <a href="#">
+                            <h3>编辑</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col5-item clear">
+                    <div class="c5-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>教学研究</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>组织策划</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>影视编导</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c5-item-hot">
+                        <a href="#">
+                            <h3>设计</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col5-item clear">
+                    <div class="c5-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>教学研究</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>组织策划</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>影视编导</p></h3>
+                                <a href="#">
+                                    <h4>北京大学</h4>
+                                    <p><img src="/images/emp-02.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>中共中央党校</h4>
+                                    <p><img src="/images/emp-03.png" alt=" "></p>
+                                </a>
+                                <a href="#">
+                                    <h4>河南师范大学</h4>
+                                    <p><img src="/images/emp-04.png" alt=" "></p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="c5-item-hot">
+                        <a href="#">
+                            <h3>制作</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cols">
+            <header class="col6-tab clear">
+                <p class="on">创业合作</p>
+                <p>项目合作</p>
+                <p>场地合作</p>
+                <p>研发合作</p>
+                <p>业务外包</p>
+                <p>产业定位</p>
+                <p>投资洽谈</p>
+                <p>资质挂靠</p>
+                <p>资源共享</p>
+                <p>相互支援</p>
+                <a href="#">更多</a>
+            </header>
+            <div class="col6-con">
+                <div class="col6-item clear">
+                    <div class="swiper-container swiper6">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><img src="/images/emp-05.png"></div>
+                            <div class="swiper-slide"><img src="/images/emp-10.png"></div>
+                            <div class="swiper-slide"><img src="/images/emp-11.png"></div>
+                            <div class="swiper-slide"><img src="/images/emp-12.png"></div>
+                            <div class="swiper-slide"><img src="/images/emp-13.png"></div>
+                            <div class="swiper-slide"><img src="/images/emp-11.png"></div>
+                        </div>
+                        <div class="swiper-pagination swiper-pagination6"></div>
+                    </div>
+                    <div class="c6-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>顶层设计</p></h3>
+                                <a href="#">
+                                    <h4>股份配置</h4>
+                                    <p>
+                                        管理股权51%<br>
+                                        资金股（原始股和风投）49%<br>
+                                        核心管理层<br>
+                                        项目负责人享有股份<br>
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>核心团队</h4>
+                                    <p>
+                                        企划部&nbsp;&nbsp;&nbsp;&nbsp;市场部<br>
+                                        行政部&nbsp;&nbsp;&nbsp;&nbsp;人事部<br>
+                                        财务部&nbsp;&nbsp;&nbsp;&nbsp;后勤部<br>
+                                        外联部
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>组织结构</h4>
+                                    <p>
+                                        股东大董事会<br>
+                                        总公司子公司<br>
+                                        分公司项目组
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>发展规划</p></h3>
+                                <a href="#">
+                                    <h4>历史嫁接</h4>
+                                    <p>
+                                        河南广播电视台<br>
+                                        编辑社<br>
+                                        河南找家影视
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>管理系统</h4>
+                                    <p>
+                                        教育类<br>
+                                        员工培训<br>
+                                        市场开发<br>
+                                        教学管理<br>
+                                        课程研发
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>产业布局</h4>
+                                    <p>教育 中小学培训、全日制大学、职业与岗前文化 项目策划 社团大赛 门户网站 教程研发科技 植物纤维服装 </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>商业模式</p></h3>
+                                <a href="#">
+                                    <h4>金字塔</h4>
+                                    <p>由总公司与子公司和分公司组成，其中包含董事会与运营执行管理团队 </p>
+                                </a>
+                                <a href="#">
+                                    <h4>扇形</h4>
+                                    <p>的4-5个项目组成，企业没有项目组与核心管理</p>
+                                </a>
+                                <a href="#">
+                                    <h4>卫星城</h4>
+                                    <p>企业集团由多个产业构成，每个产业一个公司下设3-5个项目</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col6-item clear">
+                    <div class="c6-item-hot">
+                        <a href="#">
+                            <h3>项目合作</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c6-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>顶层设计</p></h3>
+                                <a href="#">
+                                    <h4>股份配置</h4>
+                                    <p>
+                                        管理股权51%<br>
+                                        资金股（原始股和风投）49%<br>
+                                        核心管理层<br>
+                                        项目负责人享有股份<br>
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>核心团队</h4>
+                                    <p>
+                                        企划部&nbsp;&nbsp;&nbsp;&nbsp;市场部<br>
+                                        行政部&nbsp;&nbsp;&nbsp;&nbsp;人事部<br>
+                                        财务部&nbsp;&nbsp;&nbsp;&nbsp;后勤部<br>
+                                        外联部
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>组织结构</h4>
+                                    <p>
+                                        股东大董事会<br>
+                                        总公司子公司<br>
+                                        分公司项目组
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>发展规划</p></h3>
+                                <a href="#">
+                                    <h4>历史嫁接</h4>
+                                    <p>
+                                        河南广播电视台<br>
+                                        编辑社<br>
+                                        河南找家影视
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>管理系统</h4>
+                                    <p>
+                                        教育类<br>
+                                        员工培训<br>
+                                        市场开发<br>
+                                        教学管理<br>
+                                        课程研发
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>产业布局</h4>
+                                    <p>教育 中小学培训、全日制大学、职业与岗前文化 项目策划 社团大赛 门户网站 教程研发科技 植物纤维服装 </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>商业模式</p></h3>
+                                <a href="#">
+                                    <h4>金字塔</h4>
+                                    <p>由总公司与子公司和分公司组成，其中包含董事会与运营执行管理团队 </p>
+                                </a>
+                                <a href="#">
+                                    <h4>扇形</h4>
+                                    <p>的4-5个项目组成，企业没有项目组与核心管理</p>
+                                </a>
+                                <a href="#">
+                                    <h4>卫星城</h4>
+                                    <p>企业集团由多个产业构成，每个产业一个公司下设3-5个项目</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col6-item clear">
+                    <div class="c6-item-hot">
+                        <a href="#">
+                            <h3>场地合作</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c6-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>顶层设计</p></h3>
+                                <a href="#">
+                                    <h4>股份配置</h4>
+                                    <p>
+                                        管理股权51%<br>
+                                        资金股（原始股和风投）49%<br>
+                                        核心管理层<br>
+                                        项目负责人享有股份<br>
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>核心团队</h4>
+                                    <p>
+                                        企划部&nbsp;&nbsp;&nbsp;&nbsp;市场部<br>
+                                        行政部&nbsp;&nbsp;&nbsp;&nbsp;人事部<br>
+                                        财务部&nbsp;&nbsp;&nbsp;&nbsp;后勤部<br>
+                                        外联部
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>组织结构</h4>
+                                    <p>
+                                        股东大董事会<br>
+                                        总公司子公司<br>
+                                        分公司项目组
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>发展规划</p></h3>
+                                <a href="#">
+                                    <h4>历史嫁接</h4>
+                                    <p>
+                                        河南广播电视台<br>
+                                        编辑社<br>
+                                        河南找家影视
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>管理系统</h4>
+                                    <p>
+                                        教育类<br>
+                                        员工培训<br>
+                                        市场开发<br>
+                                        教学管理<br>
+                                        课程研发
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>产业布局</h4>
+                                    <p>教育 中小学培训、全日制大学、职业与岗前文化 项目策划 社团大赛 门户网站 教程研发科技 植物纤维服装 </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>商业模式</p></h3>
+                                <a href="#">
+                                    <h4>金字塔</h4>
+                                    <p>由总公司与子公司和分公司组成，其中包含董事会与运营执行管理团队 </p>
+                                </a>
+                                <a href="#">
+                                    <h4>扇形</h4>
+                                    <p>的4-5个项目组成，企业没有项目组与核心管理</p>
+                                </a>
+                                <a href="#">
+                                    <h4>卫星城</h4>
+                                    <p>企业集团由多个产业构成，每个产业一个公司下设3-5个项目</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col6-item clear">
+                    <div class="c6-item-hot">
+                        <a href="#">
+                            <h3>研发合作</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c6-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>顶层设计</p></h3>
+                                <a href="#">
+                                    <h4>股份配置</h4>
+                                    <p>
+                                        管理股权51%<br>
+                                        资金股（原始股和风投）49%<br>
+                                        核心管理层<br>
+                                        项目负责人享有股份<br>
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>核心团队</h4>
+                                    <p>
+                                        企划部&nbsp;&nbsp;&nbsp;&nbsp;市场部<br>
+                                        行政部&nbsp;&nbsp;&nbsp;&nbsp;人事部<br>
+                                        财务部&nbsp;&nbsp;&nbsp;&nbsp;后勤部<br>
+                                        外联部
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>组织结构</h4>
+                                    <p>
+                                        股东大董事会<br>
+                                        总公司子公司<br>
+                                        分公司项目组
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>发展规划</p></h3>
+                                <a href="#">
+                                    <h4>历史嫁接</h4>
+                                    <p>
+                                        河南广播电视台<br>
+                                        编辑社<br>
+                                        河南找家影视
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>管理系统</h4>
+                                    <p>
+                                        教育类<br>
+                                        员工培训<br>
+                                        市场开发<br>
+                                        教学管理<br>
+                                        课程研发
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>产业布局</h4>
+                                    <p>教育 中小学培训、全日制大学、职业与岗前文化 项目策划 社团大赛 门户网站 教程研发科技 植物纤维服装 </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>商业模式</p></h3>
+                                <a href="#">
+                                    <h4>金字塔</h4>
+                                    <p>由总公司与子公司和分公司组成，其中包含董事会与运营执行管理团队 </p>
+                                </a>
+                                <a href="#">
+                                    <h4>扇形</h4>
+                                    <p>的4-5个项目组成，企业没有项目组与核心管理</p>
+                                </a>
+                                <a href="#">
+                                    <h4>卫星城</h4>
+                                    <p>企业集团由多个产业构成，每个产业一个公司下设3-5个项目</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col6-item clear">
+                    <div class="c6-item-hot">
+                        <a href="#">
+                            <h3>业务外包</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c6-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>顶层设计</p></h3>
+                                <a href="#">
+                                    <h4>股份配置</h4>
+                                    <p>
+                                        管理股权51%<br>
+                                        资金股（原始股和风投）49%<br>
+                                        核心管理层<br>
+                                        项目负责人享有股份<br>
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>核心团队</h4>
+                                    <p>
+                                        企划部&nbsp;&nbsp;&nbsp;&nbsp;市场部<br>
+                                        行政部&nbsp;&nbsp;&nbsp;&nbsp;人事部<br>
+                                        财务部&nbsp;&nbsp;&nbsp;&nbsp;后勤部<br>
+                                        外联部
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>组织结构</h4>
+                                    <p>
+                                        股东大董事会<br>
+                                        总公司子公司<br>
+                                        分公司项目组
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>发展规划</p></h3>
+                                <a href="#">
+                                    <h4>历史嫁接</h4>
+                                    <p>
+                                        河南广播电视台<br>
+                                        编辑社<br>
+                                        河南找家影视
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>管理系统</h4>
+                                    <p>
+                                        教育类<br>
+                                        员工培训<br>
+                                        市场开发<br>
+                                        教学管理<br>
+                                        课程研发
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>产业布局</h4>
+                                    <p>教育 中小学培训、全日制大学、职业与岗前文化 项目策划 社团大赛 门户网站 教程研发科技 植物纤维服装 </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>商业模式</p></h3>
+                                <a href="#">
+                                    <h4>金字塔</h4>
+                                    <p>由总公司与子公司和分公司组成，其中包含董事会与运营执行管理团队 </p>
+                                </a>
+                                <a href="#">
+                                    <h4>扇形</h4>
+                                    <p>的4-5个项目组成，企业没有项目组与核心管理</p>
+                                </a>
+                                <a href="#">
+                                    <h4>卫星城</h4>
+                                    <p>企业集团由多个产业构成，每个产业一个公司下设3-5个项目</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col6-item clear">
+                    <div class="c6-item-hot">
+                        <a href="#">
+                            <h3>产业定位</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c6-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>顶层设计</p></h3>
+                                <a href="#">
+                                    <h4>股份配置</h4>
+                                    <p>
+                                        管理股权51%<br>
+                                        资金股（原始股和风投）49%<br>
+                                        核心管理层<br>
+                                        项目负责人享有股份<br>
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>核心团队</h4>
+                                    <p>
+                                        企划部&nbsp;&nbsp;&nbsp;&nbsp;市场部<br>
+                                        行政部&nbsp;&nbsp;&nbsp;&nbsp;人事部<br>
+                                        财务部&nbsp;&nbsp;&nbsp;&nbsp;后勤部<br>
+                                        外联部
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>组织结构</h4>
+                                    <p>
+                                        股东大董事会<br>
+                                        总公司子公司<br>
+                                        分公司项目组
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>发展规划</p></h3>
+                                <a href="#">
+                                    <h4>历史嫁接</h4>
+                                    <p>
+                                        河南广播电视台<br>
+                                        编辑社<br>
+                                        河南找家影视
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>管理系统</h4>
+                                    <p>
+                                        教育类<br>
+                                        员工培训<br>
+                                        市场开发<br>
+                                        教学管理<br>
+                                        课程研发
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>产业布局</h4>
+                                    <p>教育 中小学培训、全日制大学、职业与岗前文化 项目策划 社团大赛 门户网站 教程研发科技 植物纤维服装 </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>商业模式</p></h3>
+                                <a href="#">
+                                    <h4>金字塔</h4>
+                                    <p>由总公司与子公司和分公司组成，其中包含董事会与运营执行管理团队 </p>
+                                </a>
+                                <a href="#">
+                                    <h4>扇形</h4>
+                                    <p>的4-5个项目组成，企业没有项目组与核心管理</p>
+                                </a>
+                                <a href="#">
+                                    <h4>卫星城</h4>
+                                    <p>企业集团由多个产业构成，每个产业一个公司下设3-5个项目</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col6-item clear">
+                    <div class="c6-item-hot">
+                        <a href="#">
+                            <h3>投资洽谈</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c6-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>顶层设计</p></h3>
+                                <a href="#">
+                                    <h4>股份配置</h4>
+                                    <p>
+                                        管理股权51%<br>
+                                        资金股（原始股和风投）49%<br>
+                                        核心管理层<br>
+                                        项目负责人享有股份<br>
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>核心团队</h4>
+                                    <p>
+                                        企划部&nbsp;&nbsp;&nbsp;&nbsp;市场部<br>
+                                        行政部&nbsp;&nbsp;&nbsp;&nbsp;人事部<br>
+                                        财务部&nbsp;&nbsp;&nbsp;&nbsp;后勤部<br>
+                                        外联部
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>组织结构</h4>
+                                    <p>
+                                        股东大董事会<br>
+                                        总公司子公司<br>
+                                        分公司项目组
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>发展规划</p></h3>
+                                <a href="#">
+                                    <h4>历史嫁接</h4>
+                                    <p>
+                                        河南广播电视台<br>
+                                        编辑社<br>
+                                        河南找家影视
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>管理系统</h4>
+                                    <p>
+                                        教育类<br>
+                                        员工培训<br>
+                                        市场开发<br>
+                                        教学管理<br>
+                                        课程研发
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>产业布局</h4>
+                                    <p>教育 中小学培训、全日制大学、职业与岗前文化 项目策划 社团大赛 门户网站 教程研发科技 植物纤维服装 </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>商业模式</p></h3>
+                                <a href="#">
+                                    <h4>金字塔</h4>
+                                    <p>由总公司与子公司和分公司组成，其中包含董事会与运营执行管理团队 </p>
+                                </a>
+                                <a href="#">
+                                    <h4>扇形</h4>
+                                    <p>的4-5个项目组成，企业没有项目组与核心管理</p>
+                                </a>
+                                <a href="#">
+                                    <h4>卫星城</h4>
+                                    <p>企业集团由多个产业构成，每个产业一个公司下设3-5个项目</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col6-item clear">
+                    <div class="c6-item-hot">
+                        <a href="#">
+                            <h3>资质挂靠</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c6-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>顶层设计</p></h3>
+                                <a href="#">
+                                    <h4>股份配置</h4>
+                                    <p>
+                                        管理股权51%<br>
+                                        资金股（原始股和风投）49%<br>
+                                        核心管理层<br>
+                                        项目负责人享有股份<br>
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>核心团队</h4>
+                                    <p>
+                                        企划部&nbsp;&nbsp;&nbsp;&nbsp;市场部<br>
+                                        行政部&nbsp;&nbsp;&nbsp;&nbsp;人事部<br>
+                                        财务部&nbsp;&nbsp;&nbsp;&nbsp;后勤部<br>
+                                        外联部
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>组织结构</h4>
+                                    <p>
+                                        股东大董事会<br>
+                                        总公司子公司<br>
+                                        分公司项目组
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>发展规划</p></h3>
+                                <a href="#">
+                                    <h4>历史嫁接</h4>
+                                    <p>
+                                        河南广播电视台<br>
+                                        编辑社<br>
+                                        河南找家影视
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>管理系统</h4>
+                                    <p>
+                                        教育类<br>
+                                        员工培训<br>
+                                        市场开发<br>
+                                        教学管理<br>
+                                        课程研发
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>产业布局</h4>
+                                    <p>教育 中小学培训、全日制大学、职业与岗前文化 项目策划 社团大赛 门户网站 教程研发科技 植物纤维服装 </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>商业模式</p></h3>
+                                <a href="#">
+                                    <h4>金字塔</h4>
+                                    <p>由总公司与子公司和分公司组成，其中包含董事会与运营执行管理团队 </p>
+                                </a>
+                                <a href="#">
+                                    <h4>扇形</h4>
+                                    <p>的4-5个项目组成，企业没有项目组与核心管理</p>
+                                </a>
+                                <a href="#">
+                                    <h4>卫星城</h4>
+                                    <p>企业集团由多个产业构成，每个产业一个公司下设3-5个项目</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col6-item clear">
+                    <div class="c6-item-hot">
+                        <a href="#">
+                            <h3>资源共享</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c6-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>顶层设计</p></h3>
+                                <a href="#">
+                                    <h4>股份配置</h4>
+                                    <p>
+                                        管理股权51%<br>
+                                        资金股（原始股和风投）49%<br>
+                                        核心管理层<br>
+                                        项目负责人享有股份<br>
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>核心团队</h4>
+                                    <p>
+                                        企划部&nbsp;&nbsp;&nbsp;&nbsp;市场部<br>
+                                        行政部&nbsp;&nbsp;&nbsp;&nbsp;人事部<br>
+                                        财务部&nbsp;&nbsp;&nbsp;&nbsp;后勤部<br>
+                                        外联部
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>组织结构</h4>
+                                    <p>
+                                        股东大董事会<br>
+                                        总公司子公司<br>
+                                        分公司项目组
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>发展规划</p></h3>
+                                <a href="#">
+                                    <h4>历史嫁接</h4>
+                                    <p>
+                                        河南广播电视台<br>
+                                        编辑社<br>
+                                        河南找家影视
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>管理系统</h4>
+                                    <p>
+                                        教育类<br>
+                                        员工培训<br>
+                                        市场开发<br>
+                                        教学管理<br>
+                                        课程研发
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>产业布局</h4>
+                                    <p>教育 中小学培训、全日制大学、职业与岗前文化 项目策划 社团大赛 门户网站 教程研发科技 植物纤维服装 </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>商业模式</p></h3>
+                                <a href="#">
+                                    <h4>金字塔</h4>
+                                    <p>由总公司与子公司和分公司组成，其中包含董事会与运营执行管理团队 </p>
+                                </a>
+                                <a href="#">
+                                    <h4>扇形</h4>
+                                    <p>的4-5个项目组成，企业没有项目组与核心管理</p>
+                                </a>
+                                <a href="#">
+                                    <h4>卫星城</h4>
+                                    <p>企业集团由多个产业构成，每个产业一个公司下设3-5个项目</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col6-item clear">
+                    <div class="c6-item-hot">
+                        <a href="#">
+                            <h3>相互支援</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                    <div class="c6-item-list">
+                        <ul>
+                            <li>
+                                <h3><p>顶层设计</p></h3>
+                                <a href="#">
+                                    <h4>股份配置</h4>
+                                    <p>
+                                        管理股权51%<br>
+                                        资金股（原始股和风投）49%<br>
+                                        核心管理层<br>
+                                        项目负责人享有股份<br>
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>核心团队</h4>
+                                    <p>
+                                        企划部&nbsp;&nbsp;&nbsp;&nbsp;市场部<br>
+                                        行政部&nbsp;&nbsp;&nbsp;&nbsp;人事部<br>
+                                        财务部&nbsp;&nbsp;&nbsp;&nbsp;后勤部<br>
+                                        外联部
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>组织结构</h4>
+                                    <p>
+                                        股东大董事会<br>
+                                        总公司子公司<br>
+                                        分公司项目组
+                                    </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>发展规划</p></h3>
+                                <a href="#">
+                                    <h4>历史嫁接</h4>
+                                    <p>
+                                        河南广播电视台<br>
+                                        编辑社<br>
+                                        河南找家影视
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>管理系统</h4>
+                                    <p>
+                                        教育类<br>
+                                        员工培训<br>
+                                        市场开发<br>
+                                        教学管理<br>
+                                        课程研发
+                                    </p>
+                                </a>
+                                <a href="#">
+                                    <h4>产业布局</h4>
+                                    <p>教育 中小学培训、全日制大学、职业与岗前文化 项目策划 社团大赛 门户网站 教程研发科技 植物纤维服装 </p>
+                                </a>
+                            </li>
+                            <li>
+                                <h3><p>商业模式</p></h3>
+                                <a href="#">
+                                    <h4>金字塔</h4>
+                                    <p>由总公司与子公司和分公司组成，其中包含董事会与运营执行管理团队 </p>
+                                </a>
+                                <a href="#">
+                                    <h4>扇形</h4>
+                                    <p>的4-5个项目组成，企业没有项目组与核心管理</p>
+                                </a>
+                                <a href="#">
+                                    <h4>卫星城</h4>
+                                    <p>企业集团由多个产业构成，每个产业一个公司下设3-5个项目</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cols2">
+            <h3 class="bmfw"><p>便民服务</p></h3>
+            <div class="cols2-txtlist">
+                <ul>
+                    <li><a href="#"><p>全国校园之星原创文艺作品争霸赛，在国内设8大赛区和南北美洲国际赛区与亚欧非洋国际赛区。决赛即将开始，欢迎有实力的企业独家冠名。15938726942</p><h3>寻人启事</h3></a></li>
+                    <li><a href="#"><p>河南慧涓文化传播有限公司，因业务发展需要诚聘各省市大学校园代理。要求大一或大三、研究生均可，只要业余时间比较多；主要负责赛事招商、组织参赛 </p><h3>公益公约</h3></a></li>
+                    <li><a href="#"><p>全国校园之星原创文艺作品争霸赛总决赛与颁奖文艺晚会，将于6月底至7月中旬拉开帷幕，敬请关注、欢迎参加！服务电话：0371-65339250</p><h3>赛事宣传</h3></a></li>
+                    <li><a href="#"><p>校园之星文艺杂志，将于首届全国校园之星文艺作品争霸赛决赛与颁奖文艺晚会后开始编辑并面向各赛区获奖选手与工作人员发行。敬请大家关注</p><h3>媒体社团</h3></a></li>
+                    <li><a href="#"><p>因赛事和中国校园文化网第二版上线需要，特向全国各地诚招城市合伙人。不需要你出技术和平台，只要有办公场地和员工即可。欢迎大家踊跃报名合作</p><h3>紧急求助</h3></a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="cols2">
+            <h3 class="cfzx"><p>财富之星</p></h3>
+            <div class="cols2-imglist clear">
+                <ul>
+                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="cols2">
+            <h3 class="bmfw"><p>娱乐快报</p></h3>
+            <div class="cols2-txtlist">
+                <ul>
+                    <li><a href="#"><p>中国校园文化艺术节，是全国校园之星原创文艺作品争霸赛组委会推出的一项国家级总决赛与国际赛区获奖选手与评审团在各赛区巡演的重要文艺活动。</p><h3>中国校园文化艺术节</h3></a></li>
+                    <li><a href="#"><p>主要面对民办全日制和培训机构展开的一项重要活动，侧重于办学资质、特色课程与专家团队、商业模式与发展规划、家长与学生评论为评价指标。</p><h3>十佳教育品牌综合实力排行榜</h3></a></li>
+                    <li><a href="#"><p>主要针对全国校园之星原创文艺作品争霸赛的历届获奖选手展开，也包括各赛区的艺术类评委（不含国家级与国际赛区评委），是赛事组委会推星的重 </p><h3>我喜爱的歌手/演员排行榜</h3></a></li>
+                    <li><a href="#"><p>排行榜针对各大民办学校讲师、获奖选手、各赛区主持人为活动参与对象，打造权威、知名、覆盖全面的赛事组委会8大排行榜单；为打造中华民族文化品牌</p><h3>我喜爱的主持人/讲师排行榜</h3></a></li>
+                    <li><a href="#"><p>本排行榜主要针对全国校园之星原创文艺作品争霸赛获奖选手参与拍摄和表演的微电影与电视剧而设的实力榜单，是校园文艺性活动的重要组成部分。</p><h3>我喜爱的微电影/电视剧排行榜</h3></a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="cols2">
+            <h3 class="sjgly"><p>十佳管理员</p></h3>
+            <div class="cols2-imglist clear">
+                <ul>
+                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="links">
+            <h3><p>友情链接</p></h3>
+            <div class="link-list"><a href="#">中国科技信息网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国视频文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国青年作家协会</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国五星文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">清华大学出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">人民文学出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">人民网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新华网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">央视网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">诗词在线</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">哈尔滨转介率科技发展有限公司</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">圣才学习网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新浪网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">一起写网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">陕西家教网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文联出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">江山文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">百度</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">365</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">行业搜索网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">腾讯</a&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新华网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">央视网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">诗词在线</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">哈尔滨转介率科技发展有限公司</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">圣才学习网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新浪网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">一起写网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">陕西家教网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文联出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">江山文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">百度</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">365</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">行业搜索网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">腾讯</a></div>
+        </section>
+    </section>
+    <footer class="footer c-con">
+        <div class="footer-nav">
+            <a href="#">企业简介</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">管理团队</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">主营项目</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">产业布局</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">诚聘英才</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">客户留言</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">联系我们 </a>
+        </div>
+        <div class="copyright">
+            Copyright ©1996-2018 hj Corporation All Right Reserved<br>
+            版权所有&nbsp;&nbsp;河南慧涓文化传播有限公司&nbsp;&nbsp;中国互联网举报中心 <br>
+
+            总部服务电话：0371-65339250　15938726942<br>
+            豫ICP备18021547号<br>
+        </div>
+    </footer>
+
+    <script>
+        var swiper1 = new Swiper('.swiper1', {
+            pagination: '.swiper-pagination1',
+            paginationClickable: true,
+            spaceBetween: 0,
+            autoplay: 3500,
+            loop: true
+        });
+        var swiper2 = new Swiper('.swiper2', {
+            pagination: '.swiper-pagination2',
+            paginationClickable: true,
+            spaceBetween: 0,
+            autoplay: 3000,
+            loop: true
+        });
+        /* var swiper3 = new Swiper('.swiper3', {
+             pagination: '.swiper-pagination3',
+             paginationClickable: true,
+             spaceBetween:0,
+             autoplay: 2500,
+             loop:true
+         }); */
+        var swiper4 = new Swiper('.swiper4', {
+            pagination: '.swiper-pagination4',
+            paginationClickable: true,
+            spaceBetween: 0,
+            autoplay: 3000,
+            loop: true
+        });
+        /*var swiper5 = new Swiper('.swiper5', {
+            pagination: '.swiper-pagination5',
+            paginationClickable: true,
+            spaceBetween:0,
+            autoplay: 2500,
+            loop:true
+        });*/
+        var swiper6 = new Swiper('.swiper6', {
+            pagination: '.swiper-pagination6',
+            paginationClickable: true,
+            spaceBetween: 0,
+            autoplay: 3000,
+            loop: true
+        });
+    </script>
+</body>
+</html>
