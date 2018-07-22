@@ -10,35 +10,32 @@ namespace ChineseCulture.Bll
 {
     public class FunctionBll
     {
-        FunctionDao funDao = new FunctionDao();
+        FunctionDao funDao;
+        public FunctionBll()
+        {
+            funDao = new FunctionDao();
+        }
         public List<AdminMenuViewModel> GetAllMenuFunction()
         {
             List<AdminMenuViewModel> adminLayoutViewModel = new List<AdminMenuViewModel>();
-
-            
             var mainFunction = new function();
-            mainFunction.function_father_id = 0;
+            mainFunction.function_id = 0;
             mainFunction.function_state = 1;
             var functionList = funDao.Select(mainFunction);
-            if (functionList.Count()>0)
+
+            foreach (var item in functionList)
             {
-                foreach (var item in functionList)
-                {
 
-                    var chiledFunctions = funDao.Select(item);
-                    //新增子节点
+                var chiledFunctions = funDao.Select(item);
+                AdminMenuViewModel m = new AdminMenuViewModel();
+                m.function = item;
+                m.chiledFunction = chiledFunctions;
+                adminLayoutViewModel.Add(m);
 
-                    if (chiledFunctions.Count() > 0)
-                    {
-                        AdminMenuViewModel m = new AdminMenuViewModel();
-                        m.function = item;
-                        m.chiledFunction = chiledFunctions;
-                        adminLayoutViewModel.Add(m);
-                    }
 
-                }
             }
-           
+
+
             return adminLayoutViewModel;
         }
     }

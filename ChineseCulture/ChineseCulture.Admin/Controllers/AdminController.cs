@@ -14,7 +14,13 @@ namespace ChineseCulture.Admin.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-            return View();
+            AdminIndexViewModel m = new AdminIndexViewModel();
+           
+            m.browser = Request.Browser.Browser;
+            m.IpAddress = Request.UserHostAddress;
+            m.serverName = Server.MachineName;
+            
+            return View(m);
         }
         public ActionResult Login()
         {

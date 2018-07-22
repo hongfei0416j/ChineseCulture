@@ -52,6 +52,7 @@
     <Compile Include="admin.cs">
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="AdminIndexViewModel.cs" />
     <Compile Include="AdminMenuViewModel.cs" />
     <Compile Include="admin_login_log.cs">
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>

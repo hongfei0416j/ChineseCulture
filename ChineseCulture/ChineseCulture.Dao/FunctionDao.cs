@@ -27,13 +27,10 @@ namespace ChineseCulture.Dao
 
         public IEnumerable<function> Select(function fun)
         {
-            var query = (from f in db.function
-                       
-                        select f).ToList();
-            if (query.Count>0)
-            {
-
-            }
+            int function_state = fun.function_state;
+            int function_id = fun.function_id;
+            var query = db.function.Where(t => t.function_state == function_state && t.function_father_id == function_id).OrderBy(s=>s.function_sort);
+           
             return query.ToList();
         }
 
