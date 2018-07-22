@@ -49,7 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdminDao.cs" />
+    <Compile Include="FunctionDao.cs" />
     <Compile Include="Interface\IAdminDao.cs" />
+    <Compile Include="Interface\IFunctionDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlHelperXhf.cs" />
   </ItemGroup>

@@ -1,5 +1,27 @@
-﻿<aside class="Hui-aside">
-    <div class="menu_dropdown bk_2">
+﻿@using ChineseCulture.Model;
+@model  List<AdminMenuViewModel>
+<aside class="Hui-aside">
+    <div id="menu" class="menu_dropdown bk_2">
+        @foreach (var item in Model)
+        {
+            <dl id="menu-article">
+                <dt><i class="Hui-iconfont">&#xe616;</i>  @item.function.function_name<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        @foreach (var ic in item.chiledFunction)
+                        {
+                            <li><a href="article-list.html" title="资讯管理">@ic.function_name</a></li>
+                        }
+
+                    </ul>
+                </dd>
+            </dl>
+
+        }
+    </div>
+</aside>
+<aside class="Hui-aside">
+    <div id="menu" class="menu_dropdown bk_2">
         <dl id="menu-article">
             <dt><i class="Hui-iconfont">&#xe616;</i> 资讯管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
@@ -76,7 +98,7 @@
         <dl id="menu-system">
             <dt><i class="Hui-iconfont">&#xe62e;</i> 系统管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
-                <ul>
+                <ul id="menu-system_ul">
                     <li><a href="system-base.html" title="系统设置">系统设置</a></li>
                     <li><a href="system-category.html" title="栏目管理">栏目管理</a></li>
                     <li><a href="system-data.html" title="数据字典">数据字典</a></li>
@@ -88,3 +110,4 @@
     </div>
 </aside>
 <div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
+

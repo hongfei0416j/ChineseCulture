@@ -30,8 +30,10 @@ namespace ChineseCulture.Admin
             bundles.Add(new ScriptBundle("~/bundles/h-ui-js").Include(
                  "~/Content/lib/jquery/1.9.1/jquery.min.js",
                  "~/Content/lib/layer/2.4/layer.js",
-
                  "~/Content/h-ui/js/H-ui.js",
+                 "~/Content/ib/My97DatePicker/4.8/WdatePicker.js",
+                 "~/Content/lib/laypage/1.2/laypage.js",
+                 "~/Content/lib/datatables/1.10.0/jquery.dataTables.min.js",
                  "~/Content/h-ui.admin/js/H-ui.admin.page.js"
                     ));
             bundles.Add(new StyleBundle("~/Content/h-ui-css").Include(
@@ -48,6 +50,13 @@ namespace ChineseCulture.Admin
 }
 
 /*
+ * 
+ * 
+ *  <script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script>
+    <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="lib/laypage/1.2/laypage.js"></script>
+
+
 <script type="text/javascript" src="lib/jquery/1.9.1/jquery.min.js"></script>
 <script type="text/javascript" src="lib/layer/2.4/layer.js"></script>
 

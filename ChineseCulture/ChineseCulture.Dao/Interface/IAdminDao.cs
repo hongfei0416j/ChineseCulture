@@ -10,7 +10,7 @@ namespace ChineseCulture.Dao.Interface
     public interface IAdminDao
     {
         bool Add(admin user);
-        bool Select(admin user);
+        IEnumerable<admin> Select(admin user);
         bool Delete(admin user);
         bool Update(admin user);
     }

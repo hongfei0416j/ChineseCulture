@@ -22,5 +22,7 @@ namespace ChineseCulture.Model
         public int function_state { get; set; }
         public System.DateTime kdate { get; set; }
         public string kuser { get; set; }
+        public string function_css { get; set; }
+        public int function_sort { get; set; }
     }
 }

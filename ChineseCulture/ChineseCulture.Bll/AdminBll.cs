@@ -19,7 +19,7 @@ namespace ChineseCulture.Bll
         {
             AdminDao adminDao = new AdminDao();
 
-            return adminDao.SelectAdmin(user);
+            return adminDao.Select(user).Count()>0;
         }
     }
 }

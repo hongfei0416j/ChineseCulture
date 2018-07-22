@@ -7,7 +7,11 @@
       <Diagram DiagramId="1cc611a611754b3baf68c8e66a2181cd" Name="Diagram1">
         <EntityTypeShape EntityType="ChineseCultureModel.admin" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="ChineseCultureModel.admin_login_log" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ChineseCultureModel.function" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ChineseCultureModel.article" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ChineseCultureModel.friend_link" Width="1.5" PointX="5.75" PointY="5.75" />
+        <EntityTypeShape EntityType="ChineseCultureModel.article_category" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ChineseCultureModel.article_type" Width="1.5" PointX="0.75" PointY="7.75" />
+        <EntityTypeShape EntityType="ChineseCultureModel.function" Width="1.5" PointX="8.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

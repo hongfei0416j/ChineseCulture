@@ -1,4 +1,5 @@
-﻿using ChineseCulture.Model;
+﻿using ChineseCulture.Bll;
+using ChineseCulture.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,8 +13,8 @@ namespace ChineseCulture.Admin.Controllers
         // GET: Function
         public ActionResult Index()
         {
-            AdminMenuViewModel adminLayoutViewModel = new AdminMenuViewModel();
-
+            FunctionBll funBll = new FunctionBll();
+            var adminLayoutViewModel = funBll.GetAllMenuFunction();
             return View(adminLayoutViewModel);
         }
     }

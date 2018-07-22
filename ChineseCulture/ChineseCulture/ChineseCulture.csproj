@@ -283,6 +283,20 @@
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChineseCulture.Common\ChineseCulture.Common.csproj">
+      <Project>{3b54fe6d-a54e-4008-b020-e40f918dafea}</Project>
+      <Name>ChineseCulture.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChineseCulture.Dao\ChineseCulture.Dao.csproj">
+      <Project>{f76ad7e4-aeee-45db-bcdd-b4293f524bcb}</Project>
+      <Name>ChineseCulture.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ChineseCulture.Model\ChineseCulture.Model.csproj">
+      <Project>{d7a75c45-580a-457b-93a1-e39561a4c319}</Project>
+      <Name>ChineseCulture.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

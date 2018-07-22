@@ -77,25 +77,6 @@ namespace ChineseCulture.Admin.Controllers
         {
             List<AdminMenuViewModel> smvmList = new List<AdminMenuViewModel>();
             
-            AdminMenuViewModel amvm1 = new AdminMenuViewModel();
-            amvm1.function = new function();
-            amvm1.function.function_name = "菜单1";
-            
-            AdminMenuViewModel amvm2 = new AdminMenuViewModel();
-            amvm2.function = new function();
-            amvm2.function.function_name = "菜单2";
-            AdminMenuViewModel amvm3 = new AdminMenuViewModel();
-            amvm3.function = new function();
-            amvm3.function.function_name = "菜单3";
-            amvm1.chiledFunction = new List<function>();
-            amvm1.chiledFunction.Add(new function { function_name = "Hello" });
-            amvm1.chiledFunction.Add(new function { function_name = "Hello2" });
-            amvm1.chiledFunction.Add(new function { function_name = "Hello3" });
-            amvm1.chiledFunction.Add(new function { function_name = "Hello4" });
-
-            smvmList.Add(amvm1);
-            smvmList.Add(amvm2);
-            smvmList.Add(amvm3);
             return PartialView(smvmList);
         }
 

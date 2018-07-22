@@ -16,37 +16,30 @@ namespace ChineseCulture.Dao
         {
             db = new ChineseCultureDBEntities();
         }
-        public bool SelectAdmin(admin user)
+        public IEnumerable<admin> Select(admin user)
         {
             var query = from an in db.admin
                     where an.admin_name ==user.admin_name &&
                     an.admin_password==user.admin_password
                     select an;
-            return query.Count() > 0;
+            return query;
           
         }
-      
-      
-
-       
-        bool IAdminDao.Add(admin user)
+        public bool Add(admin user)
         {
             db.admin.Add(user);
 
             return db.SaveChanges() > 0;
         }
 
-        bool IAdminDao.Select(admin user)
+
+
+        public bool Delete(admin user)
         {
             throw new NotImplementedException();
         }
 
-        bool IAdminDao.Delete(admin user)
-        {
-            throw new NotImplementedException();
-        }
-
-        bool IAdminDao.Update(admin user)
+        public bool Update(admin user)
         {
             throw new NotImplementedException();
         }

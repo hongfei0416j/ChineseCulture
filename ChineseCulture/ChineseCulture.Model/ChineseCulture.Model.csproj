@@ -56,6 +56,15 @@
     <Compile Include="admin_login_log.cs">
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="article.cs">
+      <DependentUpon>ChineseCultureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="article_category.cs">
+      <DependentUpon>ChineseCultureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="article_type.cs">
+      <DependentUpon>ChineseCultureDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="ChineseCultureDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -70,6 +79,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ChineseCultureDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="friend_link.cs">
+      <DependentUpon>ChineseCultureDB.tt</DependentUpon>
     </Compile>
     <Compile Include="function.cs">
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>

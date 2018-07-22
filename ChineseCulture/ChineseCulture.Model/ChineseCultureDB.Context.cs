@@ -27,6 +27,10 @@ namespace ChineseCulture.Model
     
         public virtual DbSet<admin> admin { get; set; }
         public virtual DbSet<admin_login_log> admin_login_log { get; set; }
+        public virtual DbSet<article> article { get; set; }
+        public virtual DbSet<friend_link> friend_link { get; set; }
+        public virtual DbSet<article_category> article_category { get; set; }
+        public virtual DbSet<article_type> article_type { get; set; }
         public virtual DbSet<function> function { get; set; }
     }
 }
