@@ -149,13 +149,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\ExceptionLogAttribute.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\HandleLoginAttribute.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\FunctionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PartinalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -403,6 +406,8 @@
     <Content Include="Content\lib\layer\2.4\skin\default\loading-1.gif" />
     <Content Include="Content\lib\layer\2.4\skin\default\loading-2.gif" />
     <Content Include="Content\lib\layer\2.4\skin\layer.css" />
+    <Content Include="Content\lib\laypage\1.2\laypage.js" />
+    <Content Include="Content\lib\laypage\1.2\skin\laypage.css" />
     <Content Include="Content\lib\My97DatePicker\4.8\calendar.js" />
     <Content Include="Content\lib\My97DatePicker\4.8\lang\en.js" />
     <Content Include="Content\lib\My97DatePicker\4.8\lang\zh-cn.js" />
@@ -752,7 +757,6 @@
     <Content Include="Content\lib\ueditor\1.4.3\ueditor.config.js" />
     <Content Include="Content\lib\ueditor\1.4.3\ueditor.parse.js" />
     <Content Include="Content\lib\ueditor\1.4.3\ueditor.parse.min.js" />
-    <Content Include="Views\Shared\_HeaderLayout.cshtml" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -770,8 +774,6 @@
     <Content Include="Views\Admin\Login.cshtml" />
     <Content Include="Views\Shared\_AdminLayout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Shared\_MenuLayout.cshtml" />
-    <Content Include="Views\Shared\_FooterLayout.cshtml" />
     <Content Include="Views\Function\Index.cshtml" />
     <Content Include="Content\lib\ueditor\1.4.3\net\.vs\net\v15\.suo" />
     <Content Include="Content\lib\ueditor\1.4.3\net\config.json" />
@@ -784,6 +786,10 @@
     <Content Include="Content\lib\ueditor\1.4.3\third-party\video-js\font\vjs.woff" />
     <Content Include="Views\Article\Index.cshtml" />
     <Content Include="Views\Article\Add.cshtml" />
+    <Content Include="Views\Partinal\HeaderTop.cshtml" />
+    <Content Include="Views\Partinal\Footer.cshtml" />
+    <Content Include="Views\Partinal\LeftMenu.cshtml" />
+    <Content Include="Views\Partinal\ContentNav.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

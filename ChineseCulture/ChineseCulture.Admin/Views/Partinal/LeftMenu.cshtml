@@ -1,4 +1,29 @@
-﻿
+﻿@{
+    Layout = null;
+}
+@using ChineseCulture.Model;
+@model  List<AdminMenuViewModel>
+<aside class="Hui-aside">
+    <div id="menu" class="menu_dropdown bk_2">
+        @foreach (var item in Model)
+        {
+            <dl id="@item.function.function_css">
+                <dt><i class="Hui-iconfont">&#xe616;</i>  @item.function.function_name<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
+                <dd>
+                    <ul>
+                        @foreach (var ic in item.chiledFunction)
+                        {
+                            <li><a href="@ic.function_url" title="资讯管理">@ic.function_name</a></li>
+                        }
+
+                    </ul>
+                </dd>
+            </dl>
+
+        }
+    </div>
+</aside>
+<!--
 <aside class="Hui-aside">
     <div id="menu" class="menu_dropdown bk_2">
         <dl id="menu-article">
@@ -90,7 +115,5 @@
 </aside>
 <div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
 
-<script>
-    var h = '<dl id="menu - article"><dt> <i class="Hui-iconfont">&#xe616;</i> 资讯管理123 < i class="Hui-iconfont menu_dropdown-arrow" >&#xe6d5;</i ></dt ><dd><ul><li><a href="article-list.html" title="资讯管理">资讯管理</a></li></ul></dd></dl >';
-    $("#menu").append(h);
-</script>
+-->
+<div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>

@@ -13,9 +13,7 @@ namespace ChineseCulture.Admin.Controllers
         // GET: Function
         public ActionResult Index()
         {
-            FunctionBll funBll = new FunctionBll();
-            var adminLayoutViewModel = funBll.GetAllMenuFunction();
-            return View(adminLayoutViewModel);
+            return View();
         }
     }
 }

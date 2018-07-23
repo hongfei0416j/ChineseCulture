@@ -2,9 +2,6 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    @Scripts.Render("~/bundles/jquery")
-
-
     @Styles.Render("~/Content/h-ui-css")
 
     @Scripts.Render("~/bundles/h-ui-js")
@@ -32,15 +29,14 @@
 </head>
 <body>
     <!--_header 作为公共模版分离出去-->
-    @RenderPage("_HeaderLayout.cshtml")
-
+    @{Html.RenderAction("HeaderTop", "Partinal");}
     <!--/_header 作为公共模版分离出去-->
     <!--_menu 作为公共模版分离出去-->
-    @{Html.RenderAction("Index", "Function");}
+    @{Html.RenderAction("LeftMenu", "Partinal");}
 
     <!--/_menu 作为公共模版分离出去-->
     @RenderBody()
-  
+
 
 
 

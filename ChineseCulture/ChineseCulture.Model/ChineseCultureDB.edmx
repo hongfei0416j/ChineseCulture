@@ -98,11 +98,12 @@
           <Property Name="function_name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="function_category" Type="int" Nullable="false" />
           <Property Name="function_site" Type="int" Nullable="false" />
+          <Property Name="function_css" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="function_url" Type="nvarchar" MaxLength="50" />
           <Property Name="function_state" Type="int" Nullable="false" />
+          <Property Name="function_sort" Type="int" Nullable="false" />
           <Property Name="kdate" Type="datetime" Nullable="false" />
           <Property Name="kuser" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="function_css" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="function_sort" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="ChineseCultureModelStoreContainer">
           <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
@@ -235,6 +236,7 @@
           <Property Name="kuser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="function_css" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="function_sort" Type="Int32" Nullable="false" />
+          <Property Name="function_url" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -326,6 +328,7 @@
           <EntitySetMapping Name="function">
             <EntityTypeMapping TypeName="ChineseCultureModel.function">
               <MappingFragment StoreEntitySet="function">
+                <ScalarProperty Name="function_url" ColumnName="function_url" />
                 <ScalarProperty Name="function_sort" ColumnName="function_sort" />
                 <ScalarProperty Name="function_css" ColumnName="function_css" />
                 <ScalarProperty Name="kuser" ColumnName="kuser" />

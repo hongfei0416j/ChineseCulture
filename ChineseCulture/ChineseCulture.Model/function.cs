@@ -24,5 +24,6 @@ namespace ChineseCulture.Model
         public string kuser { get; set; }
         public string function_css { get; set; }
         public int function_sort { get; set; }
+        public string function_url { get; set; }
     }
 }

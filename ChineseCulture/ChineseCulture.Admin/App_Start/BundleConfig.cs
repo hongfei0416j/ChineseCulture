@@ -31,7 +31,7 @@ namespace ChineseCulture.Admin
                  "~/Content/lib/jquery/1.9.1/jquery.min.js",
                  "~/Content/lib/layer/2.4/layer.js",
                  "~/Content/h-ui/js/H-ui.js",
-                 "~/Content/ib/My97DatePicker/4.8/WdatePicker.js",
+                 "~/Content/lib/My97DatePicker/4.8/WdatePicker.js",
                  "~/Content/lib/laypage/1.2/laypage.js",
                  "~/Content/lib/datatables/1.10.0/jquery.dataTables.min.js",
                  "~/Content/h-ui.admin/js/H-ui.admin.page.js"
@@ -44,13 +44,29 @@ namespace ChineseCulture.Admin
                         "~/Content/h-ui.admin/css/H-ui.login.css",
                         "~/Content/lib/Hui-iconfont/1.0.8/iconfont.css"
                       ));
-
+            bundles.Add(new ScriptBundle("~/bundles/ueditor").Include(
+              
+                "~/Content/lib/webuploader/0.1.5/webuploader.min.js",
+                "~/Content/lib/ueditor/1.4.3/ueditor.config.js",
+                "~/Content/lib/ueditor/1.4.3/ueditor.all.min.js",
+                "~/Content/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"
+                   ));
         }
     }
 }
 
 /*
- * 
+ * <!--请在下方写此页面业务相关的脚本-->
+    <script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script>
+    <script type="text/javascript" src="lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+    <script type="text/javascript" src="lib/jquery.validation/1.14.0/validate-methods.js"></script>
+    <script type="text/javascript" src="lib/jquery.validation/1.14.0/messages_zh.js"></script>
+    <script type="text/javascript" src="lib/webuploader/0.1.5/webuploader.min.js"></script>
+    <script type="text/javascript" src="lib/ueditor/1.4.3/ueditor.config.js"></script>
+    <script type="text/javascript" src="lib/ueditor/1.4.3/ueditor.all.min.js"></script>
+    <script type="text/javascript" src="lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"></script>
+
+
  * 
  *  <script type="text/javascript" src="lib/My97DatePicker/4.8/WdatePicker.js"></script>
     <script type="text/javascript" src="lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
