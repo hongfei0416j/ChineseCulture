@@ -47,9 +47,9 @@ namespace ChineseCulture.Admin
             bundles.Add(new ScriptBundle("~/bundles/ueditor").Include(
               
                 "~/Content/lib/webuploader/0.1.5/webuploader.min.js",
-                "~/Content/lib/ueditor/1.4.3/ueditor.config.js",
-                "~/Content/lib/ueditor/1.4.3/ueditor.all.min.js",
-                "~/Content/lib/ueditor/1.4.3/lang/zh-cn/zh-cn.js"
+                "~/Content/ueditor/1.4.3/ueditor.config.js",
+                "~/Content/ueditor/1.4.3/ueditor.all.js",
+                "~/Content/ueditor/1.4.3/lang/zh-cn/zh-cn.js"
                    ));
         }
     }
