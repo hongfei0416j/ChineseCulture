@@ -12,7 +12,7 @@ namespace ChineseCulture.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class article
+    public partial class Article
     {
         public int article_id { get; set; }
         public string article_title { get; set; }

@@ -12,18 +12,18 @@ namespace ChineseCulture.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class function
+    public partial class Function
     {
         public int function_id { get; set; }
         public int function_father_id { get; set; }
         public string function_name { get; set; }
         public int function_category { get; set; }
         public int function_site { get; set; }
+        public string function_css { get; set; }
+        public string function_url { get; set; }
         public int function_state { get; set; }
+        public int function_sort { get; set; }
         public System.DateTime kdate { get; set; }
         public string kuser { get; set; }
-        public string function_css { get; set; }
-        public int function_sort { get; set; }
-        public string function_url { get; set; }
     }
 }

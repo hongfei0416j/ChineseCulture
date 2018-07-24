@@ -25,12 +25,12 @@ namespace ChineseCulture.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<admin> admin { get; set; }
-        public virtual DbSet<admin_login_log> admin_login_log { get; set; }
-        public virtual DbSet<article> article { get; set; }
-        public virtual DbSet<friend_link> friend_link { get; set; }
-        public virtual DbSet<article_category> article_category { get; set; }
-        public virtual DbSet<article_type> article_type { get; set; }
-        public virtual DbSet<function> function { get; set; }
+        public virtual DbSet<Article> Article { get; set; }
+        public virtual DbSet<FriendLink> FriendLink { get; set; }
+        public virtual DbSet<Function> Function { get; set; }
+        public virtual DbSet<ArticleCategory> ArticleCategory { get; set; }
+        public virtual DbSet<ArticleType> ArticleType { get; set; }
+        public virtual DbSet<Member> Member { get; set; }
+        public virtual DbSet<MemberLoginLog> MemberLoginLog { get; set; }
     }
 }

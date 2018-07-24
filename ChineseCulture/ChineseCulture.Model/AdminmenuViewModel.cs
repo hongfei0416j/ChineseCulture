@@ -8,12 +8,12 @@ namespace ChineseCulture.Model
 {
     public class AdminMenuViewModel
     {
-       public function function { set; get; }
-        public IEnumerable<function> chiledFunction { set; get; }
+       public Function function { set; get; }
+        public IEnumerable<Function> chiledFunction { set; get; }
 
         public AdminMenuViewModel()
         {
-            function = new function();
+            function = new Function();
           
         }
     }

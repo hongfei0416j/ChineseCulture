@@ -15,26 +15,26 @@ namespace ChineseCulture.Dao
         {
             db = new ChineseCultureDBEntities();
         }
-        public bool Add(function fun)
+        public bool Add(Function fun)
         {
             throw new NotImplementedException();
         }
 
-        public bool Delete(function fun)
+        public bool Delete(Function fun)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<function> Select(function fun)
+        public IEnumerable<Function> Select(Function fun)
         {
             int function_state = fun.function_state;
             int function_id = fun.function_id;
-            var query = db.function.Where(t => t.function_state == function_state && t.function_father_id == function_id).OrderBy(s=>s.function_sort);
+            var query = db.Function.Where(t => t.function_state == function_state && t.function_father_id == function_id).OrderBy(s=>s.function_sort);
            
             return query.ToList();
         }
 
-        public bool Update(function fun)
+        public bool Update(Function fun)
         {
             throw new NotImplementedException();
         }

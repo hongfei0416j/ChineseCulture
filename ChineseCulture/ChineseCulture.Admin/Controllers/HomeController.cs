@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChineseCulture.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,7 +11,13 @@ namespace ChineseCulture.Admin.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            AdminIndexViewModel m = new AdminIndexViewModel();
+
+            m.browser = Request.Browser.Browser;
+            m.IpAddress = Request.UserHostAddress;
+            m.serverName = Server.MachineName;
+
+            return View(m);
         }
 
         public ActionResult About()

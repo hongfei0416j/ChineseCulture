@@ -1,4 +1,5 @@
-﻿using ChineseCulture.Bll;
+﻿using ChineseCulture.Admin.App_Start;
+using ChineseCulture.Bll;
 using ChineseCulture.Common;
 using ChineseCulture.Model;
 using System;
@@ -7,41 +8,34 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ChineseCulture.Admin.Controllers
+namespace ChineseCulture.Account.Controllers
 {
-    public class AdminController : Controller
+    public class AccountController : Controller
     {
         // GET: Admin
-        public ActionResult Index()
-        {
-            AdminIndexViewModel m = new AdminIndexViewModel();
-           
-            m.browser = Request.Browser.Browser;
-            m.IpAddress = Request.UserHostAddress;
-            m.serverName = Server.MachineName;
-            
-            return View(m);
-        }
+      
+        [HandleLoginAttribute(isCheck =false)]
         public ActionResult Login()
         {
             return View();
         }
+        [HandleLoginAttribute(isCheck = false)]
         public ActionResult LoginAction()
         {
-            admin user = new admin();
+            Member user = new Member();
             if (!string.IsNullOrEmpty(Request.Params["username"]))
             {
-                user.admin_name = Request.Params["username"].RepStr();
+                user.member_name = Request.Params["username"].RepStr();
 
             }
             if (!string.IsNullOrEmpty(Request.Params["password"]))
             {
-                user.admin_password = Request.Params["password"].RepStr();
+                user.member_password = Request.Params["password"].RepStr();
 
             }
 
 
-            AdminBll adminBll = new AdminBll();
+            MemberBll adminBll = new MemberBll();
             try
             {
                 if (adminBll.Login(user))
@@ -53,30 +47,30 @@ namespace ChineseCulture.Admin.Controllers
 
                     cookie.Expires = DateTime.Now.AddDays(1);
                     cookie["session_id"] = Session.SessionID;
-                    cookie["callid"] = user.admin_name;
+                    cookie["callid"] = user.member_name;
                     Response.Cookies.Add(cookie);
 
                     Session["logingmessage"] = "";
-                    Session["callid"] = user.admin_name;
+                    Session["callid"] = user.member_name;
 
-                    admin_login_log all = new admin_login_log();
+                    var all = new MemberLoginLog();
                     all.ip = CommonFunction.GetIP4Address(Request.UserHostAddress.ToString());
                     all.browser = Request.Browser.Browser;
 
                     return RedirectToAction("Index",
-                           "Admin");
+                           "Home");
                 }
                 else
                 {
                     Session["logingmessage"] = "账号或者密码错误，请重新登陆!!!";
-                    return RedirectToAction("login", "Admin");
+                    return RedirectToAction("login", "Account");
                     //Response.End();
                 }
             }
             catch (Exception ex)
             {
                 Session["logingmessage"] = "账号或者密码错误!!!";
-                return RedirectToAction("Login", "Admin");
+                return RedirectToAction("Login", "Account");
             }
         }
         public ActionResult AdminMenu()

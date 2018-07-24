@@ -8,18 +8,18 @@ using System.Threading.Tasks;
 
 namespace ChineseCulture.Bll
 {
-    public class AdminBll
+    public class MemberBll
     {
         /// <summary>
         /// 检查是是否登陆成功
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
-        public bool Login(admin user)
+        public bool Login(Member user)
         {
-            AdminDao adminDao = new AdminDao();
+            MemberDao memberDao = new MemberDao();
 
-            return adminDao.Select(user).Count()>0;
+            return memberDao.Select(user).Count()>0;
         }
     }
 }

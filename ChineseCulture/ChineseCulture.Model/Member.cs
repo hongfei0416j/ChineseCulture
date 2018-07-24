@@ -12,10 +12,15 @@ namespace ChineseCulture.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class article_type
+    public partial class Member
     {
-        public int type_id { get; set; }
-        public string type_name { get; set; }
-        public int type_sort { get; set; }
+        public int member_id { get; set; }
+        public string member_name { get; set; }
+        public string member_password { get; set; }
+        public int member_state { get; set; }
+        public string kuser { get; set; }
+        public System.DateTime kdate { get; set; }
+        public string muser { get; set; }
+        public System.DateTime mdate { get; set; }
     }
 }

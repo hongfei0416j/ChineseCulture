@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ChineseCulture.Dao.Interface
 {
-    public interface IFunctionDao
+    public interface IMemberDao
     {
-        bool Add(Function fun);
-         IEnumerable<Function> Select(Function fun);
-        bool Delete(Function fun);
-        bool Update(Function fun);
+        bool Add(Member user);
+        IEnumerable<Member> Select(Member user);
+        bool Delete(Member user);
+        bool Update(Member user);
     }
 }

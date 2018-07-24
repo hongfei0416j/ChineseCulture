@@ -9,37 +9,37 @@ using System.Threading.Tasks;
 
 namespace ChineseCulture.Dao
 {
-    public class AdminDao:IAdminDao
+    public class MemberDao:IMemberDao
     {
         ChineseCultureDBEntities db;
-        public AdminDao()
+        public MemberDao()
         {
             db = new ChineseCultureDBEntities();
         }
-        public IEnumerable<admin> Select(admin user)
+        public IEnumerable<Member> Select(Member user)
         {
-            var query = from an in db.admin
-                    where an.admin_name ==user.admin_name &&
-                    an.admin_password==user.admin_password
-                    select an;
+            var query = from an in db.Member
+                        where an.member_name ==user.member_name &&
+                    an.member_password == user.member_password
+                        select an;
             return query;
           
         }
-        public bool Add(admin user)
+        public bool Add(Member user)
         {
-            db.admin.Add(user);
+            db.Member.Add(user);
 
             return db.SaveChanges() > 0;
         }
 
 
 
-        public bool Delete(admin user)
+        public bool Delete(Member user)
         {
             throw new NotImplementedException();
         }
 
-        public bool Update(admin user)
+        public bool Update(Member user)
         {
             throw new NotImplementedException();
         }

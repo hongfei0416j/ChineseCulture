@@ -12,7 +12,7 @@ namespace ChineseCulture.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class friend_link
+    public partial class FriendLink
     {
         public int fl_id { get; set; }
         public string fl_title { get; set; }

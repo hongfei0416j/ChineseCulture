@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2018
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChineseCulture", "ChineseCulture\ChineseCulture.csproj", "{F4B8A141-7D8C-4CDF-BFC5-45A15D4103B1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChineseCulture.Admin", "ChineseCulture.Admin\ChineseCulture.Admin.csproj", "{B03723F6-923F-4706-BBCA-371C0197BF9A}"
 	ProjectSection(ProjectDependencies) = postProject
 		{65A71C0F-867A-4E0D-B24F-5506F632733B} = {65A71C0F-867A-4E0D-B24F-5506F632733B}
@@ -21,16 +19,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChineseCulture.Bll", "Chine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChineseCulture.Common", "ChineseCulture.Common\ChineseCulture.Common.csproj", "{3B54FE6D-A54E-4008-B020-E40F918DAFEA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChineseCulture", "ChineseCulture\ChineseCulture.csproj", "{F4B8A141-7D8C-4CDF-BFC5-45A15D4103B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{F4B8A141-7D8C-4CDF-BFC5-45A15D4103B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4B8A141-7D8C-4CDF-BFC5-45A15D4103B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F4B8A141-7D8C-4CDF-BFC5-45A15D4103B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F4B8A141-7D8C-4CDF-BFC5-45A15D4103B1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B03723F6-923F-4706-BBCA-371C0197BF9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B03723F6-923F-4706-BBCA-371C0197BF9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B03723F6-923F-4706-BBCA-371C0197BF9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +47,10 @@ Global
 		{3B54FE6D-A54E-4008-B020-E40F918DAFEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B54FE6D-A54E-4008-B020-E40F918DAFEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B54FE6D-A54E-4008-B020-E40F918DAFEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4B8A141-7D8C-4CDF-BFC5-45A15D4103B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4B8A141-7D8C-4CDF-BFC5-45A15D4103B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4B8A141-7D8C-4CDF-BFC5-45A15D4103B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4B8A141-7D8C-4CDF-BFC5-45A15D4103B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -20,7 +20,7 @@ namespace ChineseCulture.Admin.App_Start
                 if (cookie == null)
                 {
                     //跳转到登陆页
-                    filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { controller = "Admin", action = "Login", area = string.Empty }));
+                    filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { controller = "Account", action = "Login", area = string.Empty }));
                 }
 
                 else

@@ -49,21 +49,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="admin.cs">
-      <DependentUpon>ChineseCultureDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="AdminIndexViewModel.cs" />
     <Compile Include="AdminMenuViewModel.cs" />
-    <Compile Include="admin_login_log.cs">
+    <Compile Include="Article.cs">
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="article.cs">
+    <Compile Include="ArticleCategory.cs">
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="article_category.cs">
-      <DependentUpon>ChineseCultureDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="article_type.cs">
+    <Compile Include="ArticleType.cs">
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>
     </Compile>
     <Compile Include="ChineseCultureDB.Context.cs">
@@ -81,10 +75,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ChineseCultureDB.edmx</DependentUpon>
     </Compile>
-    <Compile Include="friend_link.cs">
+    <Compile Include="FriendLink.cs">
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="function.cs">
+    <Compile Include="Function.cs">
+      <DependentUpon>ChineseCultureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Member.cs">
+      <DependentUpon>ChineseCultureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberLoginLog.cs">
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

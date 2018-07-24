@@ -47,7 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AdminBll.cs" />
+    <Compile Include="ArticleBll.cs" />
+    <Compile Include="MemberBll.cs" />
     <Compile Include="FunctionBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

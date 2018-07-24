@@ -18,7 +18,7 @@ namespace ChineseCulture.Bll
         public List<AdminMenuViewModel> GetAllMenuFunction()
         {
             List<AdminMenuViewModel> adminLayoutViewModel = new List<AdminMenuViewModel>();
-            var mainFunction = new function();
+            var mainFunction = new Function();
             mainFunction.function_id = 0;
             mainFunction.function_state = 1;
             var functionList = funDao.Select(mainFunction);

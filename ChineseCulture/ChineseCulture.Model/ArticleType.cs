@@ -12,13 +12,10 @@ namespace ChineseCulture.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class admin_login_log
+    public partial class ArticleType
     {
-        public int all_id { get; set; }
-        public int admin_id { get; set; }
-        public string password { get; set; }
-        public System.DateTime kdate { get; set; }
-        public string ip { get; set; }
-        public string browser { get; set; }
+        public int type_id { get; set; }
+        public string type_name { get; set; }
+        public int type_sort { get; set; }
     }
 }
