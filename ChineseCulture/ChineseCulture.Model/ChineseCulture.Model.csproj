@@ -88,6 +88,9 @@
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SiteMenu.cs">
+      <DependentUpon>ChineseCultureDB.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

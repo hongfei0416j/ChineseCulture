@@ -7,15 +7,17 @@
         <span class="c-gray en">&gt;</span>
         资讯管理
         <span class="c-gray en">&gt;</span>
-        文章新增
+        文章编辑
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
     </nav>
     <article class="page-container">
-        <form class="form form-horizontal" id="form-article-add" action="/Article/Add" method="post" enctype="multipart/form-data">
+        <form class="form form-horizontal" id="form-article-add" action="/Article/Editor" method="post" enctype="multipart/form-data">
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章标题：</label>
                 <div class="formControls col-xs-8 col-sm-9">
                     @Html.TextBoxFor(model => model.article_title, htmlAttributes: new { @class = "input-text" })
+                    @Html.HiddenFor(model => model.article_id, htmlAttributes: new { @class = "input-text" })
+                    
                 </div>
             </div>
             <div class="row cl">
@@ -28,15 +30,7 @@
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类栏目：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    <span class="select-box">
-                        <select name="category_id" class="select">
-                            <option value="0">全部栏目</option>
-                            <option value="1">新闻资讯</option>
-                            <option value="11">├行业动态</option>
-                            <option value="12">├行业资讯</option>
-                            <option value="13">├行业新闻</option>
-                        </select>
-                    </span>
+                    @Html.DropDownListFor(model => model.category_id, ViewBag.ArticleCategory as IEnumerable<SelectListItem>, new { @class = "select-box" })
                 </div>
             </div>
 

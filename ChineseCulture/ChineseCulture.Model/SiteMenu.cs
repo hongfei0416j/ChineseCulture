@@ -12,15 +12,13 @@ namespace ChineseCulture.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class ArticleCategory
+    public partial class SiteMenu
     {
-        public int category_id { get; set; }
-        public string category_name { get; set; }
-        public int category_father_id { get; set; }
-        public int category_sort { get; set; }
-        public int category_type { get; set; }
-        public string category_type_name { get; set; }
-        public string category_code { get; set; }
-        public int category_state { get; set; }
+        public int menu_id { get; set; }
+        public string menu_name { get; set; }
+        public string menu_code { get; set; }
+        public string site_id { get; set; }
+        public int menu_state { get; set; }
+        public string menu_category { get; set; }
     }
 }

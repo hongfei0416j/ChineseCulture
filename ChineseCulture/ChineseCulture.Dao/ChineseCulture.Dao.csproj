@@ -48,7 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArticleCategoryDao.cs" />
     <Compile Include="ArticleDao.cs" />
+    <Compile Include="Interface\IArticleCategory.cs" />
     <Compile Include="MemberDao.cs" />
     <Compile Include="FunctionDao.cs" />
     <Compile Include="Interface\IMemberDao.cs" />

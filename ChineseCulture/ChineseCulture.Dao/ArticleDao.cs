@@ -29,13 +29,21 @@ namespace ChineseCulture.Dao
         public IEnumerable<Article> Select(Article article)
         {
             int article_id = article.article_id;
-            var query = db.Article.Where(t=>t.category_id==0||t.category_id==0&&t.article_id==0||t.article_id==article_id).OrderBy(s=>s.article_sort);
+            int category_id = article.category_id;
+
+            var query = db.Article.Where(t=>
+            (category_id==0||t.category_id== category_id )&& 
+            (article_id==0||t.article_id==article_id)).OrderBy(s=>s.article_sort);
             return query.ToList();
         }
 
-        public bool Update(Article article)
+        public bool Update(Article newArticle)
         {
-            throw new NotImplementedException();
+            Article nowArticle = db.Article.Single(x => x.article_id == newArticle.article_id);
+            db.Entry(nowArticle).CurrentValues.SetValues(newArticle);//更新
+            return db.SaveChanges()>0;
+
+           
         }
     }
 }

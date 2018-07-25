@@ -11,9 +11,11 @@ namespace ChineseCulture.Bll
     public class ArticleBll
     {
         ArticleDao articleDao;
+        ArticleCategoryBll acdBll;
         public ArticleBll()
         {
             articleDao = new ArticleDao();
+            acdBll = new ArticleCategoryBll();
 
         }
         public void AddArticle(Article article)
@@ -27,13 +29,25 @@ namespace ChineseCulture.Bll
         public List<Article> GetAllArticle()
         {
             Article a = new Article();
-           return  articleDao.Select(a).ToList();
+           var articleList=  articleDao.Select(a).ToList();
+           
+          
+            articleList.ForEach(t=>t.category_name= acdBll.GetCategory(t.category_id).category_name);
+            return articleList;
         }
+
 
         public Article GetArticle(Article article)
         {
             Article a = new Article();
             return articleDao.Select(a).FirstOrDefault();
+        }
+
+        public void EditArticle(Article article)
+        {
+            article.article_kdate = DateTime.Now;
+            article.article_mdate = DateTime.Now;
+            articleDao.Update(article);
         }
     }
 }

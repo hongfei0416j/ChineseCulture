@@ -24,22 +24,29 @@
           <Property Name="article_author" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="article_description" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="article_content" Type="text" Nullable="false" />
+          <Property Name="category_name" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--生成过程中发现错误:
 警告 6002: 表/视图“ChineseCulture.dbo.ArticleCategory”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
         <EntityType Name="ArticleCategory">
           <Key>
             <PropertyRef Name="category_id" />
-            <PropertyRef Name="catefory_name" />
-            <PropertyRef Name="catefory_father_id" />
-            <PropertyRef Name="catefory_sort" />
+            <PropertyRef Name="category_name" />
+            <PropertyRef Name="category_father_id" />
+            <PropertyRef Name="category_sort" />
+            <PropertyRef Name="category_type" />
+            <PropertyRef Name="category_type_name" />
+            <PropertyRef Name="category_code" />
+            <PropertyRef Name="category_state" />
           </Key>
-          <Property Name="category_id" Type="int" Nullable="false" />
-          <Property Name="catefory_name" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="catefory_father_id" Type="int" Nullable="false" />
-          <Property Name="catefory_sort" Type="int" Nullable="false" />
-          <Property Name="catefory_type" Type="int" />
-          <Property Name="catefory_type_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="category_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="category_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="category_father_id" Type="int" Nullable="false" />
+          <Property Name="category_sort" Type="int" Nullable="false" />
+          <Property Name="category_type" Type="int" Nullable="false" />
+          <Property Name="category_type_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="category_code" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="category_state" Type="int" Nullable="false" />
         </EntityType>
         <!--生成过程中发现错误:
 警告 6002: 表/视图“ChineseCulture.dbo.ArticleType”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
@@ -80,6 +87,7 @@
           <Property Name="function_sort" Type="int" Nullable="false" />
           <Property Name="kdate" Type="datetime" Nullable="false" />
           <Property Name="kuser" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="function_code" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Member">
           <Key>
@@ -105,6 +113,24 @@
           <Property Name="ip" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="browser" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“ChineseCulture.dbo.SiteMenu”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="SiteMenu">
+          <Key>
+            <PropertyRef Name="menu_id" />
+            <PropertyRef Name="menu_name" />
+            <PropertyRef Name="menu_code" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="menu_state" />
+            <PropertyRef Name="menu_category" />
+          </Key>
+          <Property Name="menu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="menu_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="menu_code" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="site_id" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="menu_state" Type="int" Nullable="false" />
+          <Property Name="menu_category" Type="nchar" MaxLength="10" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="ChineseCultureModelStoreContainer">
           <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FriendLink" EntityType="Self.FriendLink" Schema="dbo" store:Type="Tables" />
@@ -114,11 +140,13 @@
           <EntitySet Name="ArticleCategory" EntityType="Self.ArticleCategory" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [ArticleCategory].[category_id] AS [category_id], 
-    [ArticleCategory].[catefory_name] AS [catefory_name], 
-    [ArticleCategory].[catefory_father_id] AS [catefory_father_id], 
-    [ArticleCategory].[catefory_sort] AS [catefory_sort], 
-    [ArticleCategory].[catefory_type] AS [catefory_type], 
-    [ArticleCategory].[catefory_type_name] AS [catefory_type_name]
+    [ArticleCategory].[category_name] AS [category_name], 
+    [ArticleCategory].[category_father_id] AS [category_father_id], 
+    [ArticleCategory].[category_sort] AS [category_sort], 
+    [ArticleCategory].[category_type] AS [category_type], 
+    [ArticleCategory].[category_type_name] AS [category_type_name], 
+    [ArticleCategory].[category_code] AS [category_code], 
+    [ArticleCategory].[category_state] AS [category_state]
     FROM [dbo].[ArticleCategory] AS [ArticleCategory]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="ArticleType" EntityType="Self.ArticleType" store:Type="Tables" store:Schema="dbo">
@@ -127,6 +155,16 @@
     [ArticleType].[type_name] AS [type_name], 
     [ArticleType].[type_sort] AS [type_sort]
     FROM [dbo].[ArticleType] AS [ArticleType]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="SiteMenu" EntityType="Self.SiteMenu" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [SiteMenu].[menu_id] AS [menu_id], 
+    [SiteMenu].[menu_name] AS [menu_name], 
+    [SiteMenu].[menu_code] AS [menu_code], 
+    [SiteMenu].[site_id] AS [site_id], 
+    [SiteMenu].[menu_state] AS [menu_state], 
+    [SiteMenu].[menu_category] AS [menu_category]
+    FROM [dbo].[SiteMenu] AS [SiteMenu]</DefiningQuery>
           </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -137,10 +175,11 @@
           <EntitySet Name="Article" EntityType="ChineseCultureModel.Article" />
           <EntitySet Name="FriendLink" EntityType="ChineseCultureModel.FriendLink" />
           <EntitySet Name="Function" EntityType="ChineseCultureModel.Function" />
-          <EntitySet Name="ArticleCategory" EntityType="ChineseCultureModel.ArticleCategory" />
           <EntitySet Name="ArticleType" EntityType="ChineseCultureModel.ArticleType" />
           <EntitySet Name="Member" EntityType="ChineseCultureModel.Member" />
           <EntitySet Name="MemberLoginLog" EntityType="ChineseCultureModel.MemberLoginLog" />
+          <EntitySet Name="ArticleCategory" EntityType="ChineseCultureModel.ArticleCategory" />
+          <EntitySet Name="SiteMenu" EntityType="ChineseCultureModel.SiteMenu" />
         </EntityContainer>
         <EntityType Name="Article">
           <Key>
@@ -161,6 +200,7 @@
           <Property Name="article_author" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="article_description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="article_content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="category_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="FriendLink">
           <Key>
@@ -189,20 +229,7 @@
           <Property Name="function_sort" Type="Int32" Nullable="false" />
           <Property Name="kdate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="kuser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="ArticleCategory">
-          <Key>
-            <PropertyRef Name="category_id" />
-            <PropertyRef Name="catefory_name" />
-            <PropertyRef Name="catefory_father_id" />
-            <PropertyRef Name="catefory_sort" />
-          </Key>
-          <Property Name="category_id" Type="Int32" Nullable="false" />
-          <Property Name="catefory_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="catefory_father_id" Type="Int32" Nullable="false" />
-          <Property Name="catefory_sort" Type="Int32" Nullable="false" />
-          <Property Name="catefory_type" Type="Int32" />
-          <Property Name="catefory_type_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="function_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="ArticleType">
           <Key>
@@ -238,6 +265,42 @@
           <Property Name="ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="browser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <EntityType Name="ArticleCategory">
+          <Key>
+            <PropertyRef Name="category_id" />
+            <PropertyRef Name="category_name" />
+            <PropertyRef Name="category_father_id" />
+            <PropertyRef Name="category_sort" />
+            <PropertyRef Name="category_type" />
+            <PropertyRef Name="category_type_name" />
+            <PropertyRef Name="category_code" />
+            <PropertyRef Name="category_state" />
+          </Key>
+          <Property Name="category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="category_father_id" Type="Int32" Nullable="false" />
+          <Property Name="category_sort" Type="Int32" Nullable="false" />
+          <Property Name="category_type" Type="Int32" Nullable="false" />
+          <Property Name="category_type_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="category_code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="category_state" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SiteMenu">
+          <Key>
+            <PropertyRef Name="menu_id" />
+            <PropertyRef Name="menu_name" />
+            <PropertyRef Name="menu_code" />
+            <PropertyRef Name="site_id" />
+            <PropertyRef Name="menu_state" />
+            <PropertyRef Name="menu_category" />
+          </Key>
+          <Property Name="menu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="menu_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="menu_code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="site_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="menu_state" Type="Int32" Nullable="false" />
+          <Property Name="menu_category" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -247,6 +310,7 @@
           <EntitySetMapping Name="Article">
             <EntityTypeMapping TypeName="ChineseCultureModel.Article">
               <MappingFragment StoreEntitySet="Article">
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
                 <ScalarProperty Name="article_content" ColumnName="article_content" />
                 <ScalarProperty Name="article_description" ColumnName="article_description" />
                 <ScalarProperty Name="article_author" ColumnName="article_author" />
@@ -281,6 +345,7 @@
           <EntitySetMapping Name="Function">
             <EntityTypeMapping TypeName="ChineseCultureModel.Function">
               <MappingFragment StoreEntitySet="Function">
+                <ScalarProperty Name="function_code" ColumnName="function_code" />
                 <ScalarProperty Name="kuser" ColumnName="kuser" />
                 <ScalarProperty Name="kdate" ColumnName="kdate" />
                 <ScalarProperty Name="function_sort" ColumnName="function_sort" />
@@ -292,18 +357,6 @@
                 <ScalarProperty Name="function_name" ColumnName="function_name" />
                 <ScalarProperty Name="function_father_id" ColumnName="function_father_id" />
                 <ScalarProperty Name="function_id" ColumnName="function_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ArticleCategory">
-            <EntityTypeMapping TypeName="ChineseCultureModel.ArticleCategory">
-              <MappingFragment StoreEntitySet="ArticleCategory">
-                <ScalarProperty Name="catefory_type_name" ColumnName="catefory_type_name" />
-                <ScalarProperty Name="catefory_type" ColumnName="catefory_type" />
-                <ScalarProperty Name="catefory_sort" ColumnName="catefory_sort" />
-                <ScalarProperty Name="catefory_father_id" ColumnName="catefory_father_id" />
-                <ScalarProperty Name="catefory_name" ColumnName="catefory_name" />
-                <ScalarProperty Name="category_id" ColumnName="category_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -339,6 +392,32 @@
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="member_id" ColumnName="member_id" />
                 <ScalarProperty Name="mll_id" ColumnName="mll_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ArticleCategory">
+            <EntityTypeMapping TypeName="ChineseCultureModel.ArticleCategory">
+              <MappingFragment StoreEntitySet="ArticleCategory">
+                <ScalarProperty Name="category_state" ColumnName="category_state" />
+                <ScalarProperty Name="category_code" ColumnName="category_code" />
+                <ScalarProperty Name="category_type_name" ColumnName="category_type_name" />
+                <ScalarProperty Name="category_type" ColumnName="category_type" />
+                <ScalarProperty Name="category_sort" ColumnName="category_sort" />
+                <ScalarProperty Name="category_father_id" ColumnName="category_father_id" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteMenu">
+            <EntityTypeMapping TypeName="ChineseCultureModel.SiteMenu">
+              <MappingFragment StoreEntitySet="SiteMenu">
+                <ScalarProperty Name="menu_category" ColumnName="menu_category" />
+                <ScalarProperty Name="menu_state" ColumnName="menu_state" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="menu_code" ColumnName="menu_code" />
+                <ScalarProperty Name="menu_name" ColumnName="menu_name" />
+                <ScalarProperty Name="menu_id" ColumnName="menu_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -20,11 +20,36 @@ namespace ChineseCulture.Admin.Controllers
         }
         public ActionResult Add()
         {
-            return View();
+            ViewBag.ArticleCategory = GetAllCategoryForDLL().AsEnumerable();
+            return Redirect("Index");
         }
+
+        private SelectList GetAllCategoryForDLL(int selectValue=0)
+        {
+            var acBll = new ArticleCategoryBll();
+            //List<SelectListItem> ddlDPList = new List<SelectListItem>();
+
+            SelectList ddlDPList;
+            var dpList = acBll.GetAllCategory(1);
+            if (selectValue == 0)
+            {
+                 ddlDPList = new SelectList(dpList, "category_id", "category_name");
+            }
+            else
+            {
+                 ddlDPList = new SelectList(dpList, "category_id", "category_name", selectValue);
+            }
+           
+            
+
+            return ddlDPList;
+          
+        }
+
         public ActionResult Editor(int id)
         {
-            if (id==0)
+            
+            if (id==null||id==0)
             {
                 return View("Index");
             }
@@ -32,14 +57,46 @@ namespace ChineseCulture.Admin.Controllers
             Article article = new Article();
             article.article_id = id;
             article = articleBll.GetArticle(article);
+            article.article_id = id;
+            ViewBag.ArticleCategory = GetAllCategoryForDLL(article.category_id).AsEnumerable();
             return View(article);
+        }
+        [HttpPost]
+        [ValidateInput(false)]
+        public ActionResult Editor(Article ar)
+        {
+            //string  id = Request.Params["article_id"];
+            foreach (string upload in Request.Files.AllKeys)
+            {
+
+                HttpPostedFileBase excelFile = Request.Files["article_cover_image"];
+                DateTime now = DateTime.Now;
+                string newDirPath = string.Format(@"{0}\{1}\{2}\", Server.MapPath("../"), "Upload", now.ToString(@"yyyy\\mm\\dd"));
+                string newUrlPath = string.Format("/{0}/{1}/", "Upload", now.ToString("yyyy/mm/dd"));
+                string newPath = Path.Combine(Server.MapPath(@"..\"), "Upload", "");
+                string fileName = now.ToFileTime().ToString();
+                ar.article_cover_image = newUrlPath + fileName;
+                if (!Directory.Exists(newDirPath))
+                {
+                    Directory.CreateDirectory(newDirPath);
+                }
+                excelFile.SaveAs(newDirPath + fileName);
+            }
+            ar.article_kuser = Session["callid"].ToString();
+            ar.article_muser = Session["callid"].ToString();
+            if (ModelState.IsValid)
+            {
+                ArticleBll articleBll = new ArticleBll();
+                articleBll.EditArticle(ar);
+            }
+
+            //RedirectToAction("index");
+            return Redirect("Index");
         }
         [HttpPost]
         [ValidateInput(false)]
         public ActionResult Add(Article ar)
         {
-
-            string content = ar.article_content;
             foreach (string upload in Request.Files.AllKeys)
             {
                 
@@ -63,7 +120,7 @@ namespace ChineseCulture.Admin.Controllers
                 ArticleBll articleBll = new ArticleBll();
                 articleBll.AddArticle(ar);
             }
-            
+            RedirectToAction("index");
             return View(ar);
         }
     }

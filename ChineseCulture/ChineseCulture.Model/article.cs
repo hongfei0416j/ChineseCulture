@@ -29,5 +29,6 @@ namespace ChineseCulture.Model
         public string article_author { get; set; }
         public string article_description { get; set; }
         public string article_content { get; set; }
+        public string category_name { get; set; }
     }
 }
