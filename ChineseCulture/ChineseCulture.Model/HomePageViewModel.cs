@@ -14,6 +14,7 @@ namespace ChineseCulture.Model
         public IEnumerable<Article> WangzhanGonggao { set; get; }
         public IEnumerable<Article> Zuixinzixun { get; set; }
         public IEnumerable<Article> Wenxuezuopin { get; set; }
+        
     }
 
 }

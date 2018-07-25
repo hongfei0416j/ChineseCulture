@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="ArticleBll.cs" />
     <Compile Include="ArticleCategoryBll.cs" />
+    <Compile Include="HomePageBll.cs" />
     <Compile Include="MemberBll.cs" />
     <Compile Include="FunctionBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

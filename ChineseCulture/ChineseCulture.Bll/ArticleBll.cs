@@ -55,7 +55,19 @@ namespace ChineseCulture.Bll
             Article article = new Article();
             article.category_id = articleCategoryBll.GetCategoryIdByCode(category_code);
             article.article_state = 1;
-            return articleDao.Select(article , number);//获取网站公告
+            var articleList =articleDao.Select(article , number).ToList();//获取网站公告
+            articleList.ForEach(t => t.category_name = acdBll.GetCategory(t.category_id).category_name);
+            return articleList;
+        }
+        public IEnumerable<Article> GetArticleByFatherCategory(string father_category_code, int number)
+        {
+            ArticleCategoryBll articleCategoryBll = new ArticleCategoryBll();
+            Article article = new Article();
+            article.category_id = articleCategoryBll.GetCategoryIdByCode(father_category_code);
+            article.article_state = 1;
+            var articleList = articleDao.Select(article, number).ToList();//获取网站公告
+            articleList.ForEach(t => t.category_name = acdBll.GetCategory(t.category_id).category_name);
+            return articleList;
         }
     }
 }

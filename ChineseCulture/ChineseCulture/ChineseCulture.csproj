@@ -284,6 +284,10 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ChineseCulture.Bll\ChineseCulture.Bll.csproj">
+      <Project>{65a71c0f-867a-4e0d-b24f-5506f632733b}</Project>
+      <Name>ChineseCulture.Bll</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ChineseCulture.Common\ChineseCulture.Common.csproj">
       <Project>{3b54fe6d-a54e-4008-b020-e40f918dafea}</Project>
       <Name>ChineseCulture.Common</Name>
