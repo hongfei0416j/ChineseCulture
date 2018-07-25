@@ -95,6 +95,7 @@
           </Key>
           <Property Name="member_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="member_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="member_nickname" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="member_password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="member_state" Type="int" Nullable="false" />
           <Property Name="kuser" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -253,6 +254,7 @@
           <Property Name="kdate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="muser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="mdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="member_nickname" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="MemberLoginLog">
           <Key>
@@ -372,6 +374,7 @@
           <EntitySetMapping Name="Member">
             <EntityTypeMapping TypeName="ChineseCultureModel.Member">
               <MappingFragment StoreEntitySet="Member">
+                <ScalarProperty Name="member_nickname" ColumnName="member_nickname" />
                 <ScalarProperty Name="mdate" ColumnName="mdate" />
                 <ScalarProperty Name="muser" ColumnName="muser" />
                 <ScalarProperty Name="kdate" ColumnName="kdate" />

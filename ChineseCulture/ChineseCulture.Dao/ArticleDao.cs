@@ -18,7 +18,7 @@ namespace ChineseCulture.Dao
         public bool Add(Article article)
         {
             db.Article.Add(article);
-            return db.SaveChanges()>0;
+            return db.SaveChanges() > 0;
         }
 
         public bool Delete(Article article)
@@ -30,9 +30,10 @@ namespace ChineseCulture.Dao
         {
             int article_id = article.article_id;
             int category_id = article.category_id;
-
-            var query = db.Article.Where(t=>
-            (category_id==0||t.category_id== category_id )&& 
+            int article_state = article.article_state;
+            var query = db.Article.Where(t =>
+            (category_id == 0 || t.category_id == category_id) &&
+            (article_state == 0||t.article_state==article_state)&&
             (article_id==0||t.article_id==article_id)).OrderBy(s=>s.article_sort);
             return query.ToList();
         }

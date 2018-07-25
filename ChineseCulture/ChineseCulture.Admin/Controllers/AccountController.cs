@@ -73,13 +73,7 @@ namespace ChineseCulture.Account.Controllers
                 return RedirectToAction("Login", "Account");
             }
         }
-        public ActionResult AdminMenu()
-        {
-            List<AdminMenuViewModel> smvmList = new List<AdminMenuViewModel>();
-            
-            return PartialView(smvmList);
-        }
-
+        
         public ActionResult CheckCode()
         {
             //生成验证码
@@ -88,6 +82,14 @@ namespace ChineseCulture.Account.Controllers
             Session["ValidateCode"] = code;//把返回的字符串加入Sesstion里
             byte[] bytes = validateCode.CreateValidateGraphic(code);//这里也是调用了CreateValidataGraphic的这个方法，返回二进制位的字节，也就是图片的字节数据
             return File(bytes, @"image/jpeg");
+        }
+        public ActionResult AddMember()
+        {
+            return View();
+        }
+        public ActionResult MemberList()
+        {
+            return View();
         }
     }
 }

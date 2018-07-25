@@ -22,5 +22,6 @@ namespace ChineseCulture.Model
         public System.DateTime kdate { get; set; }
         public string muser { get; set; }
         public System.DateTime mdate { get; set; }
+        public string member_nickname { get; set; }
     }
 }
