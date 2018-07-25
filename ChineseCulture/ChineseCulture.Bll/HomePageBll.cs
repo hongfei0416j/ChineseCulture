@@ -10,15 +10,20 @@ namespace ChineseCulture.Bll
 {
     public class HomePageBll
     {
-        ArticleDao articleDao;
+        ArticleBll articleBll;
+        
         public HomePageBll()
         {
-            articleDao = new ArticleDao();
+            articleBll = new ArticleBll();
         }
         public HomePageViewModel CreateHomePageModel()
         {
             HomePageViewModel homePageModel = new HomePageViewModel();
-            homePageModel.WangzhanGonggao = articleDao.Select(new Article { article_state=1,category_id=2});//获取网站公告
+
+            homePageModel.WangzhanGonggao = articleBll.GetArticleByCategory("wangzhangonggao", 7);//获取网站公告
+            homePageModel.Zuixinzixun = articleBll.GetArticleByCategory("zuixinzixun", 3);//获取最新资讯
+            homePageModel.Wenxuezuopin = articleBll.GetArticleByCategory("wenxuezuopin", 5);//文学作品
+
 
             return homePageModel;
         }

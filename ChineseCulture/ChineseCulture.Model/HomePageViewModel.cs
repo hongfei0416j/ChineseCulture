@@ -12,7 +12,8 @@ namespace ChineseCulture.Model
         /// 网站公告
         /// </summary>
         public IEnumerable<Article> WangzhanGonggao { set; get; }
-        
+        public IEnumerable<Article> Zuixinzixun { get; set; }
+        public IEnumerable<Article> Wenxuezuopin { get; set; }
     }
 
 }

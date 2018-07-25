@@ -45,9 +45,17 @@ namespace ChineseCulture.Bll
 
         public void EditArticle(Article article)
         {
-            article.article_kdate = DateTime.Now;
+           
             article.article_mdate = DateTime.Now;
             articleDao.Update(article);
+        }
+        public IEnumerable<Article> GetArticleByCategory(string category_code,int number)
+        {
+            ArticleCategoryBll articleCategoryBll = new ArticleCategoryBll();
+            Article article = new Article();
+            article.category_id = articleCategoryBll.GetCategoryIdByCode(category_code);
+            article.article_state = 1;
+            return articleDao.Select(article , number);//获取网站公告
         }
     }
 }

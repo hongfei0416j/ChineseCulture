@@ -82,7 +82,7 @@ namespace ChineseCulture.Admin.Controllers
                 }
                 excelFile.SaveAs(newDirPath + fileName);
             }
-            ar.article_kuser = Session["callid"].ToString();
+           
             ar.article_muser = Session["callid"].ToString();
             if (ModelState.IsValid)
             {

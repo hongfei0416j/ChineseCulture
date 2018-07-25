@@ -1,4 +1,7 @@
 ﻿@{ Layout = null;}
+@using ChineseCulture.Model;
+
+@model HomePageViewModel
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,13 +59,12 @@
             <h3>网站公告</h3>
             <div class="affiche-list">
                 <ul>
-                    <li><a href="#">校园之星原创文艺作品争霸赛入围选手明星集训</a></li>
-                    <li><a href="#">首届全国校园之星原创文艺作品争霸赛初赛获奖榜单</a></li>
-                    <li><a href="#">世界校园之星原创文艺作品争霸赛赛区管理条例</a></li>
-                    <li><a href="#">首届全国校园之星原创文艺作品争霸赛独家冠名招商</a></li>
-                    <li><a href="#">世界校园之星原创文艺作品争霸赛赛区管理条例</a></li>
-                    <li><a href="#">首届全国校园之星原创文艺作品争霸赛中原赛区初赛</a></li>
-                    <li><a href="#">世界校园之星原创文艺作品争霸赛总体规划与布局</a></li>
+                    @foreach (var item in Model.WangzhanGonggao)
+                    {
+                        <li><a href="@item.article_click_url">@item.article_title</a></li>
+                        
+                    }
+                 
                 </ul>
             </div>
         </section>
@@ -71,9 +73,11 @@
                 <h3>最新资讯</h3>
                 <div class="news-list">
                     <ul>
-                        <li><a href="#">首届全国校园之星原创文艺作品争霸赛海选全面启动</a></li>
-                        <li><a href="#">首届全国校园之星原创文艺作品争霸赛初赛即将开赛</a></li>
-                        <li><a href="#">教育部关于开展校外培训机构 专项治理行动的通知</a></li>
+                        @foreach (var item in Model.Zuixinzixun)
+                        {
+                            <li><a href="@item.article_click_url">@item.article_title</a></li>
+
+                        }
                     </ul>
                 </div>
             </div>
@@ -81,11 +85,11 @@
                 <h3>书籍与文学作品</h3>
                 <div class="sjzp-list">
                     <ul>
-                        <li><p><a href="#">诗歌</a></p><p><a href="#">《剪不断的思念》</a></p><p>文清/著</p></li>
-                        <li><p><a href="#">散文</a></p><p><a href="#">《黄河摊上的明珠》</a></p><p>文清/著</p></li>
-                        <li><p><a href="#">小说</a></p><p><a href="#">《美丽的海岸》</a></p><p>文清/著</p></li>
-                        <li><p><a href="#">论文</a></p><p><a href="#">《成才的基石》</a></p><p>文清/著</p></li>
-                        <li><p><a href="#">作品集</a></p><p><a href="#">《粉红色的相思带》</a></p><p>文清/著</p></li>
+                        @foreach (var item in Model.Wenxuezuopin)
+                        {
+                             <li><p><a href="#">@item.category_name</a></p><p><a href="#">@item.article_title</a></p><p>@item.article_author</p></li>
+                           
+                        } 
                     </ul>
                 </div>
             </div>

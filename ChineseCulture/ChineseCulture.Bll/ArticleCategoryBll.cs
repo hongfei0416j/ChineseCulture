@@ -11,6 +11,7 @@ namespace ChineseCulture.Bll
     public class ArticleCategoryBll
     {
         ArticleCategoryDao acDao;
+       
         public ArticleCategoryBll()
         {
             acDao = new ArticleCategoryDao();
@@ -32,7 +33,13 @@ namespace ChineseCulture.Bll
             ArticleCategory ac = new ArticleCategory();
             ac.category_id = category_id;
             return acDao.Select(ac).FirstOrDefault();
-
+        }
+        public int GetCategoryIdByCode(string category_code)
+        {
+            ArticleCategory ac = new ArticleCategory();
+            ac.category_code = category_code;
+            ArticleCategory acNew = acDao.Select(ac).FirstOrDefault();
+            return acNew.category_id;
         }
     }
 }
