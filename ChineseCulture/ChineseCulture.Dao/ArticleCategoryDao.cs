@@ -15,9 +15,10 @@ namespace ChineseCulture.Dao
         {
             db = new ChineseCultureDBEntities();
         }
-        public bool Add(ArticleCategory user)
+        public bool Add(ArticleCategory ac)
         {
-            throw new NotImplementedException();
+            db.ArticleCategory.Add(ac);
+            return db.SaveChanges()>0;
         }
 
         public bool Delete(ArticleCategory user)
@@ -40,9 +41,11 @@ namespace ChineseCulture.Dao
             return query.ToList();
         }
 
-        public bool Update(ArticleCategory user)
+        public bool Update(ArticleCategory ac)
         {
-            throw new NotImplementedException();
+            ArticleCategory acModel = db.ArticleCategory.Single(x => x.category_id == ac.category_id);
+            db.Entry(acModel).CurrentValues.SetValues(acModel);
+            return db.SaveChanges() > 0;
         }
     }
 }

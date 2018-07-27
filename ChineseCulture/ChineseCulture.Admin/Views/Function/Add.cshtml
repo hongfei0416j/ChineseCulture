@@ -1,0 +1,95 @@
+﻿@using ChineseCulture.Model;
+@model Function
+
+<section class="Hui-article-box">
+    <nav class="breadcrumb">
+        <i class="Hui-iconfont">&#xe67f;</i> 首页
+        <span class="c-gray en">&gt;</span>
+        资讯管理
+        <span class="c-gray en">&gt;</span>
+        文章新增
+        <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
+    </nav>
+    <article class="page-container">
+        <form class="form form-horizontal" id="form-article-add" action="/Function/Add" method="post" enctype="multipart/form-data">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>功能名称：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    @Html.TextBoxFor(model => model.function_name, htmlAttributes: new { @class = "input-text" })
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">功能代码：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    @Html.TextBoxFor(model => model.function_code, htmlAttributes: new { @class = "input-text" })
+
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>上级功能：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    @Html.DropDownListFor(model => model.function_father_id, ViewBag.FunctionFather as IEnumerable<SelectListItem>, new { @class = "select-box" })
+                    @*<span class="select-box">
+                            <select name="category_id" class="select">
+                                <option value="0">全部栏目</option>
+                                <option value="1">新闻资讯</option>
+                                <option value="11">├行业动态</option>
+                                <option value="12">├行业资讯</option>
+                                <option value="13">├行业新闻</option>
+                            </select>
+                        </span>*@
+                </div>
+            </div>
+
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">CSS样式：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    @Html.TextBoxFor(model => model.function_css, htmlAttributes: new { @class = "input-text" })
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">功能站台：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    @Html.TextBoxFor(model => model.function_site, htmlAttributes: new { @class = "input-text" })
+
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">功能链接URL：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    @Html.TextAreaFor(model => model.function_url, htmlAttributes: new { @class = "input-text" })
+
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">功能类型：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    @Html.TextBoxFor(model => model.function_category, htmlAttributes: new { @class = "input-text" })
+
+                </div>
+            </div>
+
+
+            <div class="row cl">
+                <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
+                    <button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
+                    @*<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存草稿</button>
+                        <button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>*@
+                </div>
+            </div>
+        </form>
+    </article>
+
+    <!--/_footer /作为公共模版分离出去-->
+
+    <script type="text/javascript">
+        $(function () {
+            $('.skin-minimal input').iCheck({
+                checkboxClass: 'icheckbox-blue',
+                radioClass: 'iradio-blue',
+                increaseArea: '20%'
+            });
+
+    </script>
+    <!--/请在上方写此页面业务相关的脚本-->
+</section>

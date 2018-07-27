@@ -163,6 +163,7 @@
     <Compile Include="Content\ueditor\1.4.3\net\App_Code\UploadHandler.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ApplicationController.cs" />
+    <Compile Include="Controllers\ArticleCategoryController.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\FunctionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -791,6 +792,13 @@
     <Content Include="Views\Article\Editor.cshtml" />
     <Content Include="Views\Account\AddMember.cshtml" />
     <Content Include="Views\Account\MemberList.cshtml" />
+    <Content Include="Views\ArticleCategory\Index.cshtml" />
+    <Content Include="Views\ArticleCategory\Add.cshtml" />
+    <Content Include="Views\ArticleCategory\Edit.cshtml" />
+    <Content Include="Views\Account\MemberEdit.cshtml" />
+    <Content Include="Views\Function\Add.cshtml" />
+    <Content Include="Views\Function\Edit.cshtml" />
+    <Content Include="Views\Account\MemberLoginLogList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -8,22 +8,19 @@ using System.Web.Mvc;
 
 namespace ChineseCulture.Admin.Controllers
 {
-    public class FunctionController : Controller
+    public class ArticleCategoryController : Controller
     {
-        // GET: Function
+        // GET: ArticleCategory
         public ActionResult Index()
         {
-            return View();
+            ArticleCategoryBll acBll = new ArticleCategoryBll();
+            var cateGoryList = acBll.GetAllCategory(0);
+            return View(cateGoryList);
         }
-        public ActionResult Add()
+        public ActionResult Add(ArticleCategory ac)
         {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Add(Function f)
-        {
-            FunctionBll functionBll = new FunctionBll();
-            functionBll.AddFunction(f);
+            ArticleCategoryBll acBll = new ArticleCategoryBll();
+            acBll.AddArticleCategory(ac);
             return View();
         }
         public ActionResult Edit()

@@ -16,13 +16,16 @@ namespace ChineseCulture.Dao
         {
             db = new ChineseCultureDBEntities();
         }
-        public IEnumerable<Member> Select(Member user)
+        public IEnumerable<Member> Select(Member m)
         {
             var query = from an in db.Member
-                        where an.member_name ==user.member_name &&
-                    an.member_password == user.member_password
+                        where
+                         (0==m.member_id || an.member_id == m.member_id) &&
+                        (string.IsNullOrEmpty(m.member_name)|| an.member_name == m.member_name) &&
+                        (string.IsNullOrEmpty(m.member_password)|| an.member_password==m.member_password)
+                        
                         select an;
-            return query;
+            return query.ToList();
           
         }
         public bool Add(Member user)
@@ -39,9 +42,20 @@ namespace ChineseCulture.Dao
             throw new NotImplementedException();
         }
 
-        public bool Update(Member user)
+        public bool Update(Member m)
         {
-            throw new NotImplementedException();
+            Member mModel = db.Member.Single(x => x.member_id == m.member_id);
+            mModel.member_name = m.member_name;
+            mModel.member_nickname = m.member_nickname;
+            if (string.IsNullOrEmpty(m.member_password))
+            {
+                mModel.member_password = m.member_password;
+            }
+            mModel.muser = m.muser;
+            mModel.mdate = m.mdate;
+
+            db.Entry(mModel).CurrentValues.SetValues(mModel);
+            return db.SaveChanges() > 0;
         }
     }    
 }

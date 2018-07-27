@@ -87,7 +87,44 @@ namespace ChineseCulture.Account.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public ActionResult AddMember(Member m)
+        {
+            MemberBll memberBll = new MemberBll();
+            m.kuser = Session["callid"].ToString();
+            m.muser = Session["callid"].ToString();
+            m.kdate = DateTime.Now;
+            m.mdate = DateTime.Now;
+            memberBll.AddMember(m);
+            return Redirect("MemberList");
+        }
         public ActionResult MemberList()
+        {
+            MemberBll memberBll = new MemberBll();
+             var memberList = memberBll.GetAllMember();
+            return View(memberList);
+        }
+        public ActionResult MemberEdit(int id)
+        {
+            MemberBll memberBll = new MemberBll();
+           
+            Member m = memberBll.GetMemberNyid(id);
+
+            m.member_id = id;
+           
+            return View(m);
+        }
+       
+        [HttpPost]
+        public ActionResult MemberEdit(Member m)
+        {
+            MemberBll memberBll = new MemberBll();
+            m.muser = Session["callid"].ToString();
+            m.mdate = DateTime.Now;
+            memberBll.UpdateMember(m);
+            return Redirect("MemberList");
+        }
+        public ActionResult MemberLoginLogList()
         {
             return View();
         }

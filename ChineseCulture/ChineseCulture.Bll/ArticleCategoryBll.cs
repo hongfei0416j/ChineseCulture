@@ -28,6 +28,12 @@ namespace ChineseCulture.Bll
             return acDao.Select(ac).FirstOrDefault();
 
         }
+
+        public void AddArticleCategory(ArticleCategory ac)
+        {
+            acDao.Add(ac);
+        }
+
         public ArticleCategory GetCategory(int  category_id)
         {
             ArticleCategory ac = new ArticleCategory();
@@ -40,6 +46,11 @@ namespace ChineseCulture.Bll
             ac.category_code = category_code;
             ArticleCategory acNew = acDao.Select(ac).FirstOrDefault();
             return acNew.category_id;
+        }
+        public void UpdateArticleCategory(ArticleCategory ac)
+        {
+            acDao.Update(ac);
+
         }
     }
 }

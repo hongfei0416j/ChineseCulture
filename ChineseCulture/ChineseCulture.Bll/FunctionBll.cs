@@ -38,5 +38,10 @@ namespace ChineseCulture.Bll
 
             return adminLayoutViewModel;
         }
+
+        public void AddFunction(Function f)
+        {
+            funDao.Add(f);
+        }
     }
 }

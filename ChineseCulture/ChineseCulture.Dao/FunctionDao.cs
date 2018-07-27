@@ -17,7 +17,8 @@ namespace ChineseCulture.Dao
         }
         public bool Add(Function fun)
         {
-            throw new NotImplementedException();
+            db.Function.Add(fun);
+            return db.SaveChanges()>0;
         }
 
         public bool Delete(Function fun)
