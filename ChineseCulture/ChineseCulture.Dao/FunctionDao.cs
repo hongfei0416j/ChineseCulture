@@ -35,9 +35,17 @@ namespace ChineseCulture.Dao
             return query.ToList();
         }
 
-        public bool Update(Function fun)
+        public bool Update(Function m)
         {
-            throw new NotImplementedException();
+            Function mModel = db.Function.Single(x => x.function_id == m.function_id);
+            mModel.function_name = m.function_name;
+            mModel.function_code = m.function_code;
+           
+            mModel.function_css = m.function_css;
+            mModel.function_father_id = m.function_father_id;
+
+            db.Entry(mModel).CurrentValues.SetValues(mModel);
+            return db.SaveChanges() > 0;
         }
     }
 }

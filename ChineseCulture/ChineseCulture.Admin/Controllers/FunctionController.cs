@@ -13,7 +13,9 @@ namespace ChineseCulture.Admin.Controllers
         // GET: Function
         public ActionResult Index()
         {
-            return View();
+            FunctionBll funBll = new FunctionBll();
+            var funList = funBll.GetAllAdminFunction();
+            return View(funList);
         }
         public ActionResult Add()
         {
@@ -26,9 +28,19 @@ namespace ChineseCulture.Admin.Controllers
             functionBll.AddFunction(f);
             return View();
         }
-        public ActionResult Edit()
+        public ActionResult Edit(int id)
         {
-            return View();
+            FunctionBll funBll = new FunctionBll();
+            var fun = funBll.GetFunction(id);
+            return View(fun);
+            
+        }
+        [HttpPost]
+        public ActionResult Edit(Function fun )
+        {
+            FunctionBll funBll = new FunctionBll();
+            funBll.UpdateFunction(fun);
+            return Redirect("Index");
         }
     }
 }

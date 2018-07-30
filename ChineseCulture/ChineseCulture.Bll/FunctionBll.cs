@@ -39,6 +39,27 @@ namespace ChineseCulture.Bll
             return adminLayoutViewModel;
         }
 
+        public object GetFunction(int id)
+        {
+            var fun = new Function();
+           
+            fun.function_id = id;
+            return funDao.Select(fun).FirstOrDefault();
+        }
+
+        public void UpdateFunction(Function fun)
+        {
+            funDao.Update(fun);
+        }
+
+        public object GetAllAdminFunction()
+        {
+            var allFunction = new Function();
+            allFunction.function_id = 0;
+            allFunction.function_state = 1;
+            return funDao.Select(allFunction);
+        }
+
         public void AddFunction(Function f)
         {
             funDao.Add(f);
