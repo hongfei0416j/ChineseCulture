@@ -20,12 +20,13 @@ namespace ChineseCulture.Bll
             List<AdminMenuViewModel> adminLayoutViewModel = new List<AdminMenuViewModel>();
             var mainFunction = new Function();
             mainFunction.function_id = 0;
-            mainFunction.function_state = 1;
+            mainFunction.function_state = 0;
+            mainFunction.function_father_id = 0;
             var functionList = funDao.Select(mainFunction);
 
             foreach (var item in functionList)
             {
-
+                item.function_father_id = item.function_id;
                 var chiledFunctions = funDao.Select(item);
                 AdminMenuViewModel m = new AdminMenuViewModel();
                 m.function = item;
@@ -37,6 +38,15 @@ namespace ChineseCulture.Bll
 
 
             return adminLayoutViewModel;
+        }
+
+        public IEnumerable<Function> GetAllAdminFatherFunction()
+        {
+            var allFunction = new Function();
+            allFunction.function_id = 0;
+            allFunction.function_state = 1;
+            allFunction.function_father_id = 0;
+            return funDao.Select(allFunction);
         }
 
         public object GetFunction(int id)
@@ -56,7 +66,8 @@ namespace ChineseCulture.Bll
         {
             var allFunction = new Function();
             allFunction.function_id = 0;
-            allFunction.function_state = 1;
+            allFunction.function_state = 0;
+            allFunction.function_father_id=-1;
             return funDao.Select(allFunction);
         }
 

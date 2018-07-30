@@ -19,17 +19,46 @@ namespace ChineseCulture.Admin.Controllers
         }
         public ActionResult Add()
         {
+            ViewBag.FunctionFather = CreateFunctionFather().AsEnumerable(); ;
             return View();
         }
+
+        private SelectList CreateFunctionFather(int selectValue = 0)
+        {
+            var funBll = new FunctionBll();
+            //List<SelectListItem> ddlDPList = new List<SelectListItem>();
+
+            SelectList ddlDPList;
+            var dpList = funBll.GetAllAdminFatherFunction();
+            if (selectValue == 0)
+            {
+                ddlDPList = new SelectList(dpList, "function_id", "function_name");
+            }
+            else
+            {
+                ddlDPList = new SelectList(dpList, "function_id", "function_name", selectValue);
+            }
+
+
+
+            return ddlDPList;
+        }
+
         [HttpPost]
         public ActionResult Add(Function f)
         {
+            f.function_sort = 0;
+            f.kuser = Session["callid"].ToString();
+            f.kdate = DateTime.Now;
+            ViewBag.FunctionFather = CreateFunctionFather().AsEnumerable();
             FunctionBll functionBll = new FunctionBll();
             functionBll.AddFunction(f);
-            return View();
+
+            return Redirect("index");
         }
         public ActionResult Edit(int id)
         {
+            ViewBag.FunctionFather = CreateFunctionFather().AsEnumerable(); ;
             FunctionBll funBll = new FunctionBll();
             var fun = funBll.GetFunction(id);
             return View(fun);

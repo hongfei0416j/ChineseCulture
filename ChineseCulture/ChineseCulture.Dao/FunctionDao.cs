@@ -30,7 +30,9 @@ namespace ChineseCulture.Dao
         {
             int function_state = fun.function_state;
             int function_id = fun.function_id;
-            var query = db.Function.Where(t => t.function_state == function_state && t.function_father_id == function_id).OrderBy(s=>s.function_sort);
+            var query = db.Function.Where(t =>
+            (function_state==0||t.function_state == function_state) && (fun.function_father_id == -1||t.function_father_id == fun.function_father_id)
+            ).OrderBy(s=>s.function_sort);
            
             return query.ToList();
         }
