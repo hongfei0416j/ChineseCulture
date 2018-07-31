@@ -17,5 +17,13 @@ namespace ChineseCulture.Controllers
         {
             return View();
         }
+        public ActionResult Footer()
+        {
+            return View();
+        }
+        public ActionResult FriendLink()
+        {
+            return View();
+        }
     }
 }

@@ -150,6 +150,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ArticleController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PartinalController.cs" />
     <Compile Include="Global.asax.cs">
@@ -162,8 +163,10 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\cyfh.css" />
     <Content Include="Content\css\global.css" />
     <Content Include="Content\css\homepagestyle - 副本.css" />
+    <Content Include="Content\css\style-n.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\swiper.min.css" />
     <Content Include="Content\font\demo.css" />
@@ -176,6 +179,9 @@
     <Content Include="Content\global.css" />
     <Content Include="Content\images\body - 副本.png" />
     <Content Include="Content\images\body.png" />
+    <Content Include="Content\images\body2.png" />
+    <Content Include="Content\images\dasai-detail-btn.png" />
+    <Content Include="Content\images\dasai-list-li-btn.png" />
     <Content Include="Content\images\emp-01.png" />
     <Content Include="Content\images\emp-02.png" />
     <Content Include="Content\images\emp-03.png" />
@@ -191,6 +197,25 @@
     <Content Include="Content\images\emp-11.png" />
     <Content Include="Content\images\emp-12.png" />
     <Content Include="Content\images\emp-13.png" />
+    <Content Include="Content\images\emp-14.png" />
+    <Content Include="Content\images\emp-15.png" />
+    <Content Include="Content\images\emp-16.png" />
+    <Content Include="Content\images\emp-17.png" />
+    <Content Include="Content\images\emp-18.png" />
+    <Content Include="Content\images\emp-19.png" />
+    <Content Include="Content\images\emp-20.png" />
+    <Content Include="Content\images\emp-21.png" />
+    <Content Include="Content\images\emp-22.png" />
+    <Content Include="Content\images\emp-23.png" />
+    <Content Include="Content\images\emp-24.png" />
+    <Content Include="Content\images\emp-25.png" />
+    <Content Include="Content\images\emp-26.png" />
+    <Content Include="Content\images\emp-27.png" />
+    <Content Include="Content\images\err404.png" />
+    <Content Include="Content\images\jobs-search-header.png" />
+    <Content Include="Content\images\logo-cyfh.png" />
+    <Content Include="Content\images\logo-jobs.png" />
+    <Content Include="Content\images\logo-saishi.png" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\js\date.js" />
     <Content Include="Content\js\fun.js" />
@@ -234,6 +259,7 @@
     <Content Include="Content\font\iconfont.eot" />
     <Content Include="Content\font\iconfont.ttf" />
     <Content Include="Content\font\iconfont.woff" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\date.js" />
     <Content Include="Scripts\fun.js" />
@@ -265,10 +291,15 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Partinal\HomePageMenu.cshtml" />
     <Content Include="Views\Partinal\HomePageCategoryMenu.cshtml" />
+    <Content Include="Views\Article\List.cshtml" />
+    <Content Include="Views\Article\Detail.cshtml" />
+    <Content Include="Views\Partinal\Footer.cshtml" />
+    <Content Include="Views\Partinal\FriendLink.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\ArticleList\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

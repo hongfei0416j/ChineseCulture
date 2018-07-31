@@ -61,10 +61,10 @@
                 <ul>
                     @foreach (var item in Model.WangzhanGonggao)
                     {
-                        <li><a href="@item.article_click_url">@item.article_title</a></li>
-                        
+                        <li><a target="_blank" href="@item.article_click_url">@item.article_title</a></li>
+
                     }
-                 
+
                 </ul>
             </div>
         </section>
@@ -75,7 +75,7 @@
                     <ul>
                         @foreach (var item in Model.Zuixinzixun)
                         {
-                            <li><a href="@item.article_click_url">@item.article_title</a></li>
+                            <li><a target="_blank" href="@item.article_click_url">@item.article_title</a></li>
 
                         }
                     </ul>
@@ -87,9 +87,13 @@
                     <ul>
                         @foreach (var item in Model.Wenxuezuopin)
                         {
-                             <li><p><a href="#">@item.category_name</a></p><p><a href="#">@item.article_title</a></p><p>@item.article_author</p></li>
-                           
-                        } 
+                            <li>
+                                <p><a target="_blank" href="@item.article_click_url">@item.category_name</a></p>
+                                <p><a target="_blank" href="@item.article_click_url">@item.article_title</a></p>
+                                <p>@item.article_author</p>
+                            </li>
+
+                        }
                     </ul>
                 </div>
             </div>
@@ -114,48 +118,35 @@
                         <ul>
                             <li>
                                 <h3><p>全日制</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
+                                @foreach (var item in Model.Quanrizhi)
+                                {
+
+                                    <a target="_blank" href="@item.article_click_url">
+                                        <h4>@item.article_title</h4>
+                                        <p><img src="@item.article_cover_image" alt=" "></p>
+                                    </a>
+                                }
                             </li>
                             <li>
                                 <h3><p>自学考试</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
+                                @foreach (var item in Model.zixuekaoshi)
+                                {
+
+                                    <a target="_blank" href="@item.article_click_url">
+                                        <h4>@item.article_title</h4>
+                                        <p><img src="@item.article_cover_image" alt=" "></p>
+                                    </a>
+                                }
                             </li>
                             <li>
                                 <h3><p>成人教育</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
+                                @foreach (var item in Model.chengrenjiaoyu)
+                                {
+                                    <a target="_blank" href="@item.article_click_url">
+                                        <h4>@item.article_title</h4>
+                                        <p><img src="@item.article_cover_image" alt=" "></p>
+                                    </a>
+                                }
                             </li>
                         </ul>
                     </div>
@@ -172,54 +163,19 @@
                     <div class="c1-item-list">
                         <ul>
                             <li>
-                                
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                               
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                               
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
+
+                                @foreach (var item in Model.youeryuan)
+                                {
+                                    <a target="_blank" href="@item.article_click_url">
+                                        <h4>@item.article_title</h4>
+                                        <p><img src="@item.article_cover_image" alt=" "></p>
+                                    </a>
+                                }
                             </li>
                         </ul>
                     </div>
                     <div class="c1-item-hot">
-                        <a href="#">
+                        <a target="_blank" href="#">
                             <h3>幼儿园名称</h3>
                             <p><img src="/images/emp-05.png" alt=" "></p>
                         </a>
@@ -229,54 +185,18 @@
                     <div class="c1-item-list">
                         <ul>
                             <li>
-                                <h3><p>全日制</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>自学考试</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>成人教育</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
+                                @foreach (var item in Model.zaojiao)
+                                {
+                                    <a target="_blank" href="@item.article_click_url">
+                                        <h4>@item.article_title</h4>
+                                        <p><img src="@item.article_cover_image" alt=" "></p>
+                                    </a>
+                                }
                             </li>
                         </ul>
                     </div>
                     <div class="c1-item-hot">
-                        <a href="#">
+                        <a target="_blank" href="#">
                             <h3>早教园名称</h3>
                             <p><img src="/images/emp-05.png" alt=" "></p>
                         </a>
@@ -286,54 +206,18 @@
                     <div class="c1-item-list">
                         <ul>
                             <li>
-                                <h3><p>全日制</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>自学考试</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>成人教育</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
+                                @foreach (var item in Model.xueqianban)
+                                {
+                                    <a target="_blank" href="@item.article_click_url">
+                                        <h4>@item.article_title</h4>
+                                        <p><img src="@item.article_cover_image" alt=" "></p>
+                                    </a>
+                                }
                             </li>
                         </ul>
                     </div>
                     <div class="c1-item-hot">
-                        <a href="#">
+                        <a target="_blank" href="#">
                             <h3>学前班园名称</h3>
                             <p><img src="/images/emp-05.png" alt=" "></p>
                         </a>
@@ -343,49 +227,13 @@
                     <div class="c1-item-list">
                         <ul>
                             <li>
-                                <h3><p>全日制</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>自学考试</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>成人教育</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
+                                @foreach (var item in Model.xiaoxue)
+                                {
+                                    <a target="_blank" href="@item.article_click_url">
+                                        <h4>@item.article_title</h4>
+                                        <p><img src="@item.article_cover_image" alt=" "></p>
+                                    </a>
+                                }
                             </li>
                         </ul>
                     </div>
@@ -400,49 +248,13 @@
                     <div class="c1-item-list">
                         <ul>
                             <li>
-                                <h3><p>全日制</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>自学考试</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>成人教育</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
+                                @foreach (var item in Model.chuzhong)
+                                {
+                                    <a target="_blank" href="@item.article_click_url">
+                                        <h4>@item.article_title</h4>
+                                        <p><img src="@item.article_cover_image" alt=" "></p>
+                                    </a>
+                                }
                             </li>
                         </ul>
                     </div>
@@ -457,49 +269,13 @@
                     <div class="c1-item-list">
                         <ul>
                             <li>
-                                <h3><p>全日制</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>自学考试</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>成人教育</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
+                                @foreach (var item in Model.gaozhong)
+                                {
+                                    <a target="_blank" href="@item.article_click_url">
+                                        <h4>@item.article_title</h4>
+                                        <p><img src="@item.article_cover_image" alt=" "></p>
+                                    </a>
+                                }
                             </li>
                         </ul>
                     </div>
@@ -514,49 +290,13 @@
                     <div class="c1-item-list">
                         <ul>
                             <li>
-                                <h3><p>全日制</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>自学考试</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>成人教育</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
+                                @foreach (var item in Model.daxue)
+                                {
+                                    <a target="_blank" href="@item.article_click_url">
+                                        <h4>@item.article_title</h4>
+                                        <p><img src="@item.article_cover_image" alt=" "></p>
+                                    </a>
+                                }
                             </li>
                         </ul>
                     </div>
@@ -571,49 +311,13 @@
                     <div class="c1-item-list">
                         <ul>
                             <li>
-                                <h3><p>全日制</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>自学考试</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>成人教育</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
+                                @foreach (var item in Model.zhiyeyuanxiao)
+                                {
+                                    <a target="_blank" href="@item.article_click_url">
+                                        <h4>@item.article_title</h4>
+                                        <p><img src="@item.article_cover_image" alt=" "></p>
+                                    </a>
+                                }
                             </li>
                         </ul>
                     </div>
@@ -628,49 +332,13 @@
                     <div class="c1-item-list">
                         <ul>
                             <li>
-                                <h3><p>全日制</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>自学考试</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
-                            </li>
-                            <li>
-                                <h3><p>成人教育</p></h3>
-                                <a href="#">
-                                    <h4>北京大学</h4>
-                                    <p><img src="/images/emp-02.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>中共中央党校</h4>
-                                    <p><img src="/images/emp-03.png" alt=" "></p>
-                                </a>
-                                <a href="#">
-                                    <h4>河南师范大学</h4>
-                                    <p><img src="/images/emp-04.png" alt=" "></p>
-                                </a>
+                                @foreach (var item in Model.teshujiaoyu)
+                                {
+                                    <a target="_blank" href="@item.article_click_url">
+                                        <h4>@item.article_title</h4>
+                                        <p><img src="@item.article_cover_image" alt=" "></p>
+                                    </a>
+                                }
                             </li>
                         </ul>
                     </div>
@@ -3933,21 +3601,10 @@
         </section>
         <section class="links">
             <h3><p>友情链接</p></h3>
-            <div class="link-list"><a href="#">中国科技信息网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国视频文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国青年作家协会</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国五星文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">清华大学出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">人民文学出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">人民网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新华网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">央视网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">诗词在线</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">哈尔滨转介率科技发展有限公司</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">圣才学习网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新浪网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">一起写网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">陕西家教网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文联出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">江山文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">百度</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">365</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">行业搜索网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">腾讯</a&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新华网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">央视网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">诗词在线</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">哈尔滨转介率科技发展有限公司</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">圣才学习网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新浪网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">一起写网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">陕西家教网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文联出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">江山文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">百度</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">365</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">行业搜索网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">腾讯</a></div>
+            @{Html.RenderAction("FriendLink", "Partinal");}
         </section>
     </section>
-    <footer class="footer c-con">
-        <div class="footer-nav">
-            <a href="#">企业简介</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">管理团队</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">主营项目</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">产业布局</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">诚聘英才</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">客户留言</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">联系我们 </a>
-        </div>
-        <div class="copyright">
-            Copyright ©1996-2018 hj Corporation All Right Reserved<br>
-            版权所有&nbsp;&nbsp;河南慧涓文化传播有限公司&nbsp;&nbsp;中国互联网举报中心 <br>
-
-            总部服务电话：0371-65339250　15938726942<br>
-            豫ICP备18021547号<br>
-        </div>
-    </footer>
+    @{Html.RenderAction("Footer", "Partinal");}
 
     <script>
         var swiper1 = new Swiper('.swiper1', {

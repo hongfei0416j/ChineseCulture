@@ -57,6 +57,8 @@ namespace ChineseCulture.Bll
             article.article_state = 1;
             var articleList =articleDao.Select(article , number).ToList();//获取网站公告
             articleList.ForEach(t => t.category_name = acdBll.GetCategory(t.category_id).category_name);
+
+            articleList.ForEach(t=>t.article_click_url="/Article/Detail");
             return articleList;
         }
         public IEnumerable<Article> GetArticleByFatherCategory(string father_category_code, int number)
