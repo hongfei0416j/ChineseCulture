@@ -60,7 +60,8 @@ namespace ChineseCulture.Admin.Controllers
         {
             ViewBag.FunctionFather = CreateFunctionFather().AsEnumerable(); ;
             FunctionBll funBll = new FunctionBll();
-            var fun = funBll.GetFunction(id);
+            Function fun = funBll.GetFunction(id);
+            fun.function_id = id;
             return View(fun);
             
         }

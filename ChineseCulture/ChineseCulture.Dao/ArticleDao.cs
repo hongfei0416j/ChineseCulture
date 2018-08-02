@@ -53,6 +53,8 @@ namespace ChineseCulture.Dao
         public bool Update(Article newArticle)
         {
             Article nowArticle = db.Article.Single(x => x.article_id == newArticle.article_id);
+            newArticle.article_kuser = nowArticle.article_kuser;
+            newArticle.article_kdate = nowArticle.article_kdate;
             db.Entry(nowArticle).CurrentValues.SetValues(newArticle);//更新
             return db.SaveChanges()>0;
 

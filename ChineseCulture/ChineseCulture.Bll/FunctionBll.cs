@@ -49,7 +49,7 @@ namespace ChineseCulture.Bll
             return funDao.Select(allFunction);
         }
 
-        public object GetFunction(int id)
+        public Function GetFunction(int id)
         {
             var fun = new Function();
            

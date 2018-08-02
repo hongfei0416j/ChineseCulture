@@ -33,7 +33,7 @@ namespace ChineseCulture.Dao
             int category_id = article.category_id;
             string category_code = article.category_code;
 
-            var query = db.ArticleCategory.Where(t => (category_state == 0 || t.category_state == 1) &&
+            var query = db.ArticleCategory.Where(t => (category_state == 0 || t.category_state == article.category_state) &&
            (categry_father_id == 0 || t.category_father_id == categry_father_id) &&
            (category_id == 0 || t.category_id == category_id) &&
            (string.IsNullOrEmpty(category_code)||t.category_code== article.category_code)
@@ -44,7 +44,8 @@ namespace ChineseCulture.Dao
         public bool Update(ArticleCategory ac)
         {
             ArticleCategory acModel = db.ArticleCategory.Single(x => x.category_id == ac.category_id);
-            db.Entry(acModel).CurrentValues.SetValues(acModel);
+            ac.category_type_name = "";
+            db.Entry(acModel).CurrentValues.SetValues(ac);
             return db.SaveChanges() > 0;
         }
     }

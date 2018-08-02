@@ -1,5 +1,5 @@
 ﻿@using ChineseCulture.Model;
-@model Article
+@model ArticleCategory
 @Scripts.Render("~/bundles/ueditor")
 <section class="Hui-article-box">
     <nav class="breadcrumb">
@@ -11,90 +11,54 @@
         <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新"><i class="Hui-iconfont">&#xe68f;</i></a>
     </nav>
     <article class="page-container">
-        <form class="form form-horizontal" id="form-article-add" action="/Article/Add" method="post" enctype="multipart/form-data">
+        <form class="form form-horizontal" id="form-article-add" action="/ArticleCategory/Add" method="post" enctype="multipart/form-data">
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章标题：</label>
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>类别名称：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    @Html.TextBoxFor(model => model.article_title, htmlAttributes: new { @class = "input-text" })
+                    @Html.TextBoxFor(model => model.category_name, htmlAttributes: new { @class = "input-text" })
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">跳转链接（可空）：</label>
+                <label class="form-label col-xs-4 col-sm-2">类别code（可空）：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    @Html.TextBoxFor(model => model.article_click_url, htmlAttributes: new { @class = "input-text" })
+                    @Html.TextBoxFor(model => model.category_code, htmlAttributes: new { @class = "input-text" })
 
                 </div>
             </div>
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类栏目：</label>
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>父级节点：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    @Html.DropDownListFor(model => model.category_id, ViewBag.ArticleCategory as IEnumerable<SelectListItem>, new { @class = "select-box" })
+                    @Html.DropDownListFor(model => model.category_father_id, ViewBag.ArticleCategory as IEnumerable<SelectListItem>, new { @class = "select-box" })
                     @*<span class="select-box">
-                            <select name="category_id" class="select">
-                                <option value="0">全部栏目</option>
-                                <option value="1">新闻资讯</option>
-                                <option value="11">├行业动态</option>
-                                <option value="12">├行业资讯</option>
-                                <option value="13">├行业新闻</option>
-                            </select>
-                        </span>*@
+                    <select name="category_id" class="select">
+                        <option value="0">全部栏目</option>
+                        <option value="1">新闻资讯</option>
+                        <option value="11">├行业动态</option>
+                        <option value="12">├行业资讯</option>
+                        <option value="13">├行业新闻</option>
+                    </select>
+                </span>*@
                 </div>
             </div>
 
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2">排序值：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    @Html.TextBoxFor(model => model.article_sort, htmlAttributes: new { @class = "input-text" })
-                </div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">关键词：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    @Html.TextBoxFor(model => model.article_keywords, htmlAttributes: new { @class = "input-text" })
-
-                </div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">文章摘要：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    @Html.TextAreaFor(model => model.article_description, htmlAttributes: new { @class = "input-text" })
-
-                </div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">文章作者：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    @Html.TextBoxFor(model => model.article_author, htmlAttributes: new { @class = "input-text" })
-
+                    @Html.TextBoxFor(model => model.category_sort, htmlAttributes: new { @class = "input-text" })
                 </div>
             </div>
 
-
-
             <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">图片：</label>
+                <label class="form-label col-xs-4 col-sm-2">状态：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    <input id="File1" type="file" name="article_cover_image" />
-
-                    @*<div class="uploader-thum-container">
-                            <div id="fileList" class="uploader-list"></div>
-                            <div id="filePicker">选择图片</div>
-                            <button id="btn-star" class="btn btn-default btn-uploadstar radius ml-10">开始上传</button>
-                        </div>*@
-                </div>
-            </div>
-            <div class="row cl">
-                <label class="form-label col-xs-4 col-sm-2">文章内容：</label>
-                <div class="formControls col-xs-8 col-sm-9">
-                    @Html.TextAreaFor(model => model.article_content)
-
+                    @Html.TextBoxFor(model => model.category_state, htmlAttributes: new { @class = "input-text" })
                 </div>
             </div>
             <div class="row cl">
                 <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
                     <button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
                     @*<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存草稿</button>
-                        <button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>*@
+                <button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>*@
                 </div>
             </div>
         </form>

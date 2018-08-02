@@ -20,6 +20,7 @@ namespace ChineseCulture.Bll
         {
             ArticleCategory ac = new ArticleCategory();
             ac.category_state = state;
+            ac.category_father_id = 0;
             return acDao.Select(ac);
         }
 
@@ -44,6 +45,7 @@ namespace ChineseCulture.Bll
         {
             ArticleCategory ac = new ArticleCategory();
             ac.category_code = category_code;
+            ac.category_father_id = 0;
             ArticleCategory acNew = acDao.Select(ac).FirstOrDefault();
             return acNew.category_id;
         }
@@ -51,6 +53,14 @@ namespace ChineseCulture.Bll
         {
             acDao.Update(ac);
 
+        }
+
+        public IEnumerable<ArticleCategory> GetAllCategoryFather()
+        {
+            ArticleCategory ac = new ArticleCategory();
+            ac.category_father_id = 0;
+            ac.category_state = 1;
+            return acDao.Select(ac);
         }
     }
 }

@@ -18,7 +18,7 @@ x64/
 .vs/
 **/[Dd]ebug/
 **/obj/
-**/Upload/
+# **/Upload/
 
 ChineseCulture.Admin/[Dd]ebug/
 ChineseCulture.Admin/obj/

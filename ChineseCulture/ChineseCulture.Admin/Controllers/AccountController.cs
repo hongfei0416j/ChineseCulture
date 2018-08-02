@@ -73,7 +73,7 @@ namespace ChineseCulture.Account.Controllers
                 return RedirectToAction("Login", "Account");
             }
         }
-        
+        [HandleLoginAttribute(isCheck = false)]
         public ActionResult CheckCode()
         {
             //生成验证码
