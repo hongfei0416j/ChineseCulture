@@ -101,53 +101,31 @@
         <section class="cols">
             <header class="col1-tab clear">
                 <p class="on">学校</p>
-                <p>幼儿园</p>
-                <p>早教</p>
-                <p>学前班</p>
-                <p>小学</p>
-                <p>初中</p>
-                <p>高中</p>
-                <p>大学</p>
-                <p>职业院校</p>
-                <p>特殊教育</p>
+                @foreach (var item in Model.XuexiaoDetail)
+                {
+                    <p>@item.category_name</p>
+                }
+                
                 <a href="#">更多</a>
             </header>
             <div class="col1-con">
                 <div class="col1-item clear">
                     <div class="c1-item-list">
                         <ul>
-                            <li>
-                                <h3><p>全日制</p></h3>
-                                @foreach (var item in Model.Quanrizhi)
-                                {
+                            @foreach (var item in Model.XuexiaoFirst)
+                            {
+                                <li>
+                                    <h3><p>@item.category_name</p></h3>
+                                    @foreach (var xuexiaoDetail in item.articleList)
+                                    {
 
-                                    <a target="_blank" href="@item.article_click_url">
-                                        <h4>@item.article_title</h4>
-                                        <p><img src="@item.article_cover_image" alt=" "></p>
-                                    </a>
-                                }
-                            </li>
-                            <li>
-                                <h3><p>自学考试</p></h3>
-                                @foreach (var item in Model.zixuekaoshi)
-                                {
-
-                                    <a target="_blank" href="@item.article_click_url">
-                                        <h4>@item.article_title</h4>
-                                        <p><img src="@item.article_cover_image" alt=" "></p>
-                                    </a>
-                                }
-                            </li>
-                            <li>
-                                <h3><p>成人教育</p></h3>
-                                @foreach (var item in Model.chengrenjiaoyu)
-                                {
-                                    <a target="_blank" href="@item.article_click_url">
-                                        <h4>@item.article_title</h4>
-                                        <p><img src="@item.article_cover_image" alt=" "></p>
-                                    </a>
-                                }
-                            </li>
+                                        <a target="_blank" href="@xuexiaoDetail.article_click_url">
+                                            <h4>@xuexiaoDetail.article_title</h4>
+                                            <p><img src="@xuexiaoDetail.article_cover_image" alt=" "></p>
+                                        </a>
+                                    }
+                                </li>
+                            }
                         </ul>
                     </div>
                     <div class="c1-item-video">
@@ -159,210 +137,70 @@
                         </video>
                     </div>
                 </div>
-                <div class="col1-item clear">
-                    <div class="c1-item-list">
-                        <ul>
-                            <li>
 
-                                @foreach (var item in Model.youeryuan)
-                                {
-                                    <a target="_blank" href="@item.article_click_url">
-                                        <h4>@item.article_title</h4>
-                                        <p><img src="@item.article_cover_image" alt=" "></p>
-                                    </a>
-                                }
-                            </li>
-                        </ul>
+                @foreach (var xuexiaoSec in Model.XuexiaoDetail)
+                {
+                    <div class="col1-item clear">
+                        <div class="c1-item-list">
+                            <ul>
+                                <li>
+
+                                    @foreach (var item in xuexiaoSec.articleList)
+                                    {
+                                        <a target="_blank" href="@item.article_click_url">
+                                            <h4>@item.article_title</h4>
+                                            <p><img src="@item.article_cover_image" alt=" "></p>
+                                        </a>
+                                    }
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="c1-item-hot">
+                            <a target="_blank" href="#">
+                                <h3>幼儿园名称</h3>
+                                <p><img src="/images/emp-05.png" alt=" "></p>
+                            </a>
+                        </div>
                     </div>
-                    <div class="c1-item-hot">
-                        <a target="_blank" href="#">
-                            <h3>幼儿园名称</h3>
-                            <p><img src="/images/emp-05.png" alt=" "></p>
-                        </a>
+                }
+                <!--
+                    <div class="col1-item clear">
+                        <div class="c1-item-list">
+                            <ul>
+                                <li>
+
+                                   
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="c1-item-hot">
+                            <a target="_blank" href="#">
+                                <h3>幼儿园名称</h3>
+                                <p><img src="/images/emp-05.png" alt=" "></p>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col1-item clear">
-                    <div class="c1-item-list">
-                        <ul>
-                            <li>
-                                @foreach (var item in Model.zaojiao)
-                                {
-                                    <a target="_blank" href="@item.article_click_url">
-                                        <h4>@item.article_title</h4>
-                                        <p><img src="@item.article_cover_image" alt=" "></p>
-                                    </a>
-                                }
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="c1-item-hot">
-                        <a target="_blank" href="#">
-                            <h3>早教园名称</h3>
-                            <p><img src="/images/emp-05.png" alt=" "></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col1-item clear">
-                    <div class="c1-item-list">
-                        <ul>
-                            <li>
-                                @foreach (var item in Model.xueqianban)
-                                {
-                                    <a target="_blank" href="@item.article_click_url">
-                                        <h4>@item.article_title</h4>
-                                        <p><img src="@item.article_cover_image" alt=" "></p>
-                                    </a>
-                                }
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="c1-item-hot">
-                        <a target="_blank" href="#">
-                            <h3>学前班园名称</h3>
-                            <p><img src="/images/emp-05.png" alt=" "></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col1-item clear">
-                    <div class="c1-item-list">
-                        <ul>
-                            <li>
-                                @foreach (var item in Model.xiaoxue)
-                                {
-                                    <a target="_blank" href="@item.article_click_url">
-                                        <h4>@item.article_title</h4>
-                                        <p><img src="@item.article_cover_image" alt=" "></p>
-                                    </a>
-                                }
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="c1-item-hot">
-                        <a href="#">
-                            <h3>小学名称</h3>
-                            <p><img src="/images/emp-05.png" alt=" "></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col1-item clear">
-                    <div class="c1-item-list">
-                        <ul>
-                            <li>
-                                @foreach (var item in Model.chuzhong)
-                                {
-                                    <a target="_blank" href="@item.article_click_url">
-                                        <h4>@item.article_title</h4>
-                                        <p><img src="@item.article_cover_image" alt=" "></p>
-                                    </a>
-                                }
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="c1-item-hot">
-                        <a href="#">
-                            <h3>初中名称</h3>
-                            <p><img src="/images/emp-05.png" alt=" "></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col1-item clear">
-                    <div class="c1-item-list">
-                        <ul>
-                            <li>
-                                @foreach (var item in Model.gaozhong)
-                                {
-                                    <a target="_blank" href="@item.article_click_url">
-                                        <h4>@item.article_title</h4>
-                                        <p><img src="@item.article_cover_image" alt=" "></p>
-                                    </a>
-                                }
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="c1-item-hot">
-                        <a href="#">
-                            <h3>高中名称</h3>
-                            <p><img src="/images/emp-05.png" alt=" "></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col1-item clear">
-                    <div class="c1-item-list">
-                        <ul>
-                            <li>
-                                @foreach (var item in Model.daxue)
-                                {
-                                    <a target="_blank" href="@item.article_click_url">
-                                        <h4>@item.article_title</h4>
-                                        <p><img src="@item.article_cover_image" alt=" "></p>
-                                    </a>
-                                }
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="c1-item-hot">
-                        <a href="#">
-                            <h3>大学名称</h3>
-                            <p><img src="/images/emp-05.png" alt=" "></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col1-item clear">
-                    <div class="c1-item-list">
-                        <ul>
-                            <li>
-                                @foreach (var item in Model.zhiyeyuanxiao)
-                                {
-                                    <a target="_blank" href="@item.article_click_url">
-                                        <h4>@item.article_title</h4>
-                                        <p><img src="@item.article_cover_image" alt=" "></p>
-                                    </a>
-                                }
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="c1-item-hot">
-                        <a href="#">
-                            <h3>职业院校名称</h3>
-                            <p><img src="/images/emp-05.png" alt=" "></p>
-                        </a>
-                    </div>
-                </div>
-                <div class="col1-item clear">
-                    <div class="c1-item-list">
-                        <ul>
-                            <li>
-                                @foreach (var item in Model.teshujiaoyu)
-                                {
-                                    <a target="_blank" href="@item.article_click_url">
-                                        <h4>@item.article_title</h4>
-                                        <p><img src="@item.article_cover_image" alt=" "></p>
-                                    </a>
-                                }
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="c1-item-hot">
-                        <a href="#">
-                            <h3>特殊教育院校名称</h3>
-                            <p><img src="/images/emp-05.png" alt=" "></p>
-                        </a>
-                    </div>
-                </div>
+    -->
+
             </div>
         </section>
         <section class="cols">
             <header class="col2-tab clear">
                 <p class="on">培训机构</p>
-                <p>文化课</p>
-                <p>艺术课</p>
-                <p>心理咨询</p>
-                <p>野外训练</p>
-                <p>能力拓展</p>
-                <p>考研辅导</p>
-                <p>企业管理</p>
-                <p>资质认证</p>
-                <p>岗前培训</p>
+                @foreach (var item in Model.)
+                {
+                    <li>
+                        <h3><p>@item.category_name</p></h3>
+                        @foreach (var xuexiaoDetail in item.articleList)
+                        {
+
+                            <a target="_blank" href="@xuexiaoDetail.article_click_url">
+                                <h4>@xuexiaoDetail.article_title</h4>
+                                <p><img src="@xuexiaoDetail.article_cover_image" alt=" "></p>
+                            </a>
+                        }
+                    </li>
+                }
                 <a href="#">更多</a>
             </header>
             <div class="col2-con">

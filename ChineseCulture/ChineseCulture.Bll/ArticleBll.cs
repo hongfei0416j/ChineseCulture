@@ -55,6 +55,7 @@ namespace ChineseCulture.Bll
             Article article = new Article();
             article.category_id = articleCategoryBll.GetCategoryIdByCode(category_code);
             article.article_state = 1;
+            
             var articleList =articleDao.Select(article , number).ToList();//获取网站公告
             articleList.ForEach(t => t.category_name = acdBll.GetCategory(t.category_id).category_name);
 
@@ -71,5 +72,6 @@ namespace ChineseCulture.Bll
             articleList.ForEach(t => t.category_name = acdBll.GetCategory(t.category_id).category_name);
             return articleList;
         }
+       
     }
 }

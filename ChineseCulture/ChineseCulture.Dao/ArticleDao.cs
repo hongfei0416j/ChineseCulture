@@ -60,5 +60,21 @@ namespace ChineseCulture.Dao
 
            
         }
+        public IEnumerable<Article> SelectByCategory(Article article, int number, ArticleCategory ac)
+        {
+            int category_father_id = ac.category_father_id;
+
+            var query = from t in db.ArticleCategory
+                        join a in db.Article on t.category_id equals article.category_id
+                        where t.category_father_id == category_father_id
+                        orderby t.category_sort,a.article_sort
+                         select a;
+            return query.Take(number).ToList();
+            //var query = db.Article.Where(t =>
+            //(category_id == 0 || t.category_id == category_id) &&
+            //(article_state == 0 || t.article_state == article_state) &&
+            //(article_id == 0 || t.article_id == article_id)).OrderBy(t => t.article_sort).OrderByDescending(s => s.article_kdate);
+            //return query.Take(number).ToList();
+        }
     }
 }

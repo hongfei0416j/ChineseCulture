@@ -1,4 +1,5 @@
 ﻿using ChineseCulture.Bll;
+using ChineseCulture.Common;
 using ChineseCulture.Model;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,7 @@ namespace ChineseCulture.Admin.Controllers
         public ActionResult Add()
         {
             ViewBag.ArticleCategory = GetAllCategoryForDLL().AsEnumerable();
-            return Redirect("Index");
+            return View();
         }
 
         private SelectList GetAllCategoryForDLL(int selectValue=0)
@@ -65,6 +66,7 @@ namespace ChineseCulture.Admin.Controllers
         [ValidateInput(false)]
         public ActionResult Editor(Article ar)
         {
+            ar = (Article)ModelHelper.ModelSupplement(ar);
             //string  id = Request.Params["article_id"];
             foreach (string upload in Request.Files.AllKeys)
             {
@@ -74,7 +76,7 @@ namespace ChineseCulture.Admin.Controllers
                 string newDirPath = string.Format(@"{0}\{1}\{2}\", Server.MapPath("../"), "Upload", now.ToString(@"yyyy\\mm\\dd"));
                 string newUrlPath = string.Format("/{0}/{1}/", "Upload", now.ToString("yyyy/mm/dd"));
                 string newPath = Path.Combine(Server.MapPath(@"..\"), "Upload", "");
-                string fileName = now.ToFileTime().ToString();
+                string fileName = now.ToFileTime().ToString()+ excelFile.FileName.Substring(excelFile.FileName.LastIndexOf('.'));
                 ar.article_cover_image = newUrlPath + fileName;
                 if (!Directory.Exists(newDirPath))
                 {
@@ -97,6 +99,8 @@ namespace ChineseCulture.Admin.Controllers
         [ValidateInput(false)]
         public ActionResult Add(Article ar)
         {
+            ar = (Article)ModelHelper.ModelSupplement(ar);
+            ViewBag.ArticleCategory = GetAllCategoryForDLL(ar.category_id).AsEnumerable();
             foreach (string upload in Request.Files.AllKeys)
             {
                 
@@ -120,8 +124,8 @@ namespace ChineseCulture.Admin.Controllers
                 ArticleBll articleBll = new ArticleBll();
                 articleBll.AddArticle(ar);
             }
-            RedirectToAction("index");
-            return View(ar);
+           
+            return Redirect("index");
         }
     }
 }

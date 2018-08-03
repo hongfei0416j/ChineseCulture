@@ -5,7 +5,6 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="1cc611a611754b3baf68c8e66a2181cd" Name="Diagram1">
-        <EntityTypeShape EntityType="ChineseCultureModel.Article" Width="1.5" PointX="2.75" PointY="3.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.FriendLink" Width="1.5" PointX="4.75" PointY="0.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.Function" Width="1.5" PointX="4.75" PointY="4.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.Member" Width="1.5" PointX="7.75" PointY="6.75" />
@@ -13,6 +12,7 @@
         <EntityTypeShape EntityType="ChineseCultureModel.ArticleCategory" Width="1.5" PointX="0.75" PointY="8.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.SiteMenu" Width="1.5" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.ArticleType" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ChineseCultureModel.Article" Width="1.5" PointX="0.75" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

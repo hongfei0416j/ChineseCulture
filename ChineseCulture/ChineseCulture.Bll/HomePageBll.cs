@@ -11,33 +11,60 @@ namespace ChineseCulture.Bll
     public class HomePageBll
     {
         ArticleBll articleBll;
-        
+        ArticleCategoryBll articleCategoryBll;
         public HomePageBll()
         {
             articleBll = new ArticleBll();
+            articleCategoryBll = new ArticleCategoryBll();
         }
         public HomePageViewModel CreateHomePageModel()
         {
             HomePageViewModel homePageModel = new HomePageViewModel();
 
             homePageModel.WangzhanGonggao = articleBll.GetArticleByCategory("wangzhangonggao", 7);//获取网站公告
-            homePageModel.Zuixinzixun = articleBll.GetArticleByCategory("zuixinzixun", 3) ;//获取最新资讯
+            homePageModel.Zuixinzixun = articleBll.GetArticleByCategory("zuixinzixun", 3);//获取最新资讯
             homePageModel.Wenxuezuopin = articleBll.GetArticleByCategory("wenxuezuopin", 4);//文学作品
-            homePageModel.Quanrizhi = articleBll.GetArticleByCategory("quanrizhi", 3);//文学作品
-            homePageModel.zixuekaoshi = articleBll.GetArticleByCategory("zixuekaoshi", 3);//文学作品
-            homePageModel.chengrenjiaoyu = articleBll.GetArticleByCategory("chengrenjiaoyu", 3);//文学作品
 
-            homePageModel.youeryuan = articleBll.GetArticleByCategory("youeryuan", 9);//文学作品
-            homePageModel.zaojiao = articleBll.GetArticleByCategory("zaojiao", 9);//文学作品
-            homePageModel.xueqianban = articleBll.GetArticleByCategory("xueqianban", 9);//文学作品
-            homePageModel.xiaoxue = articleBll.GetArticleByCategory("xiaoxue", 9);//文学作品
-            homePageModel.chuzhong = articleBll.GetArticleByCategory("chuzhong", 9);//文学作品
-            homePageModel.gaozhong = articleBll.GetArticleByCategory("gaozhong", 9);//文学作品
-            homePageModel.daxue = articleBll.GetArticleByCategory("daxue", 9);//文学作品
-            homePageModel.zhiyeyuanxiao = articleBll.GetArticleByCategory("zhiyeyuanxiao", 9);//文学作品
-            homePageModel.teshujiaoyu = articleBll.GetArticleByCategory("teshujiaoyu", 9);//文学作品
+            homePageModel.XuexiaoFirst = GetAllCategoryByFatherCategory("xuexiao", 3,2);//首页学校
+            homePageModel.XuexiaoDetail = GetAllCategoryByFatherCategory("xuexiao", 9, 1);//学校导航
+
+            homePageModel.PeixunjigouFirst = GetAllCategoryByFatherCategory("peixunjigou", 3, 2);//培训机构
+            homePageModel.PeixunjigouDetail = GetAllCategoryByFatherCategory("peixunjigou", 9, 1);//培训机构导航
+
+            homePageModel.QiuzhizhaopinFirst = GetAllCategoryByFatherCategory("qiuzhizhaopin", 3, 2);//首页学校
+            homePageModel.QiuzhizhaopinDetail = GetAllCategoryByFatherCategory("qiuzhizhaopin", 9, 1);//学校导航
+
+            homePageModel.ZhuanjiajiangshiFirst = GetAllCategoryByFatherCategory("zhuanjiajiangshi", 3, 2);//首页学校
+            homePageModel.ZhuanjiajiangshiDetail = GetAllCategoryByFatherCategory("zhuanjiajiangshi", 9, 1);//学校导航
+
+            homePageModel.XiaoyuanmingrenFirst = GetAllCategoryByFatherCategory("xiaoyuanmiingren", 3, 2);//首页学校
+            homePageModel.XiaoyuanmingrenDetail = GetAllCategoryByFatherCategory("xiaoyuanmiingren", 9, 1);//学校导航
+
+            homePageModel.ChuangyehezuoFirst = GetAllCategoryByFatherCategory("chuangyehezuo", 3, 2);//首页学校
+            homePageModel.ChuangyehezuoDetail = GetAllCategoryByFatherCategory("chuangyehezuo", 9, 1);//学校导航
 
             return homePageModel;
+        }
+        public List<HomeCategoryArticleViewModel> GetAllCategoryByFatherCategory(string  fathercategory_code, int number, int category_type=1)
+        {
+            ArticleCategoryDao acDao = new ArticleCategoryDao();
+            int father_id = articleCategoryBll.GetCategoryIdByCode(fathercategory_code);
+            ArticleCategory ac = new ArticleCategory();
+            ac.category_father_id = father_id;
+            ac.category_state = 0;
+            ac.category_type = category_type;//1的时候小导航 2的时候首页三个  3的时候广告
+            IEnumerable<ArticleCategory> arList = acDao.Select(ac);//获取该类别下所有子类别 小导航条
+            List<HomeCategoryArticleViewModel> articleViewModelList = new List<HomeCategoryArticleViewModel>();
+            //获取各类别下面的文章
+            foreach (ArticleCategory item in arList)
+            {
+                HomeCategoryArticleViewModel articleViewModel = new HomeCategoryArticleViewModel();
+                articleViewModel.category_name = item.category_name;
+                articleViewModel.articleList = articleBll.GetArticleByCategory(item.category_code, number).ToList();
+                //articleViewModel.adArticle = articleBll.GetArticleByCategory(item.category_code, 1).FirstOrDefault();
+                articleViewModelList.Add(articleViewModel);
+            }
+            return articleViewModelList;
         }
     }
 }

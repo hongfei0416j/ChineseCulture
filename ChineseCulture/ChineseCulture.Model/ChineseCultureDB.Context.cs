@@ -25,7 +25,6 @@ namespace ChineseCulture.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Article> Article { get; set; }
         public virtual DbSet<FriendLink> FriendLink { get; set; }
         public virtual DbSet<Function> Function { get; set; }
         public virtual DbSet<Member> Member { get; set; }
@@ -33,5 +32,6 @@ namespace ChineseCulture.Model
         public virtual DbSet<ArticleCategory> ArticleCategory { get; set; }
         public virtual DbSet<SiteMenu> SiteMenu { get; set; }
         public virtual DbSet<ArticleType> ArticleType { get; set; }
+        public virtual DbSet<Article> Article { get; set; }
     }
 }

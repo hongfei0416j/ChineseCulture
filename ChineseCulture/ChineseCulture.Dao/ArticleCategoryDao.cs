@@ -36,7 +36,8 @@ namespace ChineseCulture.Dao
             var query = db.ArticleCategory.Where(t => (category_state == 0 || t.category_state == article.category_state) &&
            (categry_father_id == 0 || t.category_father_id == categry_father_id) &&
            (category_id == 0 || t.category_id == category_id) &&
-           (string.IsNullOrEmpty(category_code)||t.category_code== article.category_code)
+           (string.IsNullOrEmpty(category_code)||t.category_code== article.category_code)&&
+           (article.category_type==0||t.category_type==article.category_type)
             ).OrderBy(t=>t.category_sort);
             return query.ToList();
         }

@@ -62,5 +62,6 @@ namespace ChineseCulture.Bll
             ac.category_state = 1;
             return acDao.Select(ac);
         }
+        
     }
 }

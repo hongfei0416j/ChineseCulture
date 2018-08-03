@@ -81,6 +81,7 @@
     <Compile Include="Function.cs">
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="HomeCategoryArticleViewModel.cs" />
     <Compile Include="HomePageViewModel.cs" />
     <Compile Include="Member.cs">
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>
