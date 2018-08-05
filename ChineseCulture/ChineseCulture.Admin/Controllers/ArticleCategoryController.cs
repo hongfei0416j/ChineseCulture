@@ -19,15 +19,16 @@ namespace ChineseCulture.Admin.Controllers
         }
         public ActionResult Add()
         {
-            
+            ViewBag.ArticleCategory = GetAllCategoryFatherForDLL().AsEnumerable();
             return View();
         }
         [HttpPost]
         public ActionResult Add(ArticleCategory ac)
         {
+            ViewBag.ArticleCategory = GetAllCategoryFatherForDLL(ac.category_father_id).AsEnumerable();
             ArticleCategoryBll acBll = new ArticleCategoryBll();
             acBll.AddArticleCategory(ac);
-            return View();
+            return Redirect("index");
         }
         public ActionResult Edit(int id)
         {

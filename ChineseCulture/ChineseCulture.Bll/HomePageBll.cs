@@ -37,8 +37,8 @@ namespace ChineseCulture.Bll
             homePageModel.ZhuanjiajiangshiFirst = GetAllCategoryByFatherCategory("zhuanjiajiangshi", 3, 2);//首页学校
             homePageModel.ZhuanjiajiangshiDetail = GetAllCategoryByFatherCategory("zhuanjiajiangshi", 9, 1);//学校导航
 
-            homePageModel.XiaoyuanmingrenFirst = GetAllCategoryByFatherCategory("xiaoyuanmiingren", 3, 2);//首页学校
-            homePageModel.XiaoyuanmingrenDetail = GetAllCategoryByFatherCategory("xiaoyuanmiingren", 9, 1);//学校导航
+            homePageModel.XiaoyuanmingrenFirst = GetAllCategoryByFatherCategory("xiaoyuanmingren", 3, 2);//首页学校
+            homePageModel.XiaoyuanmingrenDetail = GetAllCategoryByFatherCategory("xiaoyuanmingren", 9, 1);//学校导航
 
             homePageModel.ChuangyehezuoFirst = GetAllCategoryByFatherCategory("chuangyehezuo", 3, 2);//首页学校
             homePageModel.ChuangyehezuoDetail = GetAllCategoryByFatherCategory("chuangyehezuo", 9, 1);//学校导航

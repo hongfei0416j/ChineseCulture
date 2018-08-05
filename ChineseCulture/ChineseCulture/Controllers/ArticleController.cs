@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ChineseCulture.Bll;
+using ChineseCulture.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,9 +15,13 @@ namespace ChineseCulture.Controllers
         {
             return View();
         }
-        public ActionResult Detail()
+        public ActionResult Detail(int id)
         {
-            return View();
+            ArticlePageViewModel articlePageViewModel = new ArticlePageViewModel();
+            ArticlePageBll articlePageBll = new ArticlePageBll();
+            articlePageViewModel =articlePageBll.CreateArticleDetailModel(id);
+
+            return View(articlePageViewModel);
         }
     }
 }

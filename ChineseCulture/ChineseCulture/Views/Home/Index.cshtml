@@ -441,28 +441,28 @@
                 </div>
                 @foreach (var xuexiaoSec in Model.XiaoyuanmingrenDetail)
                 {
-                    <div class="col3-item clear">
-                        <div class="c3-item-list">
-                            <ul>
-                                <li>
+                <div class="col5-item clear">
+                    <div class="c5-item-list">
+                        <ul>
+                            <li>
 
-                                    @foreach (var item in xuexiaoSec.articleList)
-                                    {
-                                        <a target="_blank" href="@item.article_click_url">
-                                            <h4>@item.article_title</h4>
-                                            <p><img src="@item.article_cover_image" alt=" "></p>
-                                        </a>
-                                    }
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="c1-item-hot">
-                            <a target="_blank" href="#">
-                                <h3>幼儿园名称</h3>
-                                <p><img src="/images/emp-05.png" alt=" "></p>
-                            </a>
-                        </div>
+                                @foreach (var item in xuexiaoSec.articleList)
+                                {
+                                    <a target="_blank" href="@item.article_click_url">
+                                        <h4>@item.article_title</h4>
+                                        <p><img src="@item.article_cover_image" alt=" "></p>
+                                    </a>
+                                }
+                            </li>
+                        </ul>
                     </div>
+                    <div class="c1-item-hot">
+                        <a target="_blank" href="#">
+                            <h3>幼儿园名称</h3>
+                            <p><img src="/images/emp-05.png" alt=" "></p>
+                        </a>
+                    </div>
+                </div>
                 }
 
              

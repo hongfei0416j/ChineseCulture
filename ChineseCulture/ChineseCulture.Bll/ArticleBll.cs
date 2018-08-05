@@ -39,8 +39,8 @@ namespace ChineseCulture.Bll
 
         public Article GetArticle(Article article)
         {
-            Article a = new Article();
-            return articleDao.Select(a).FirstOrDefault();
+           
+            return articleDao.Select(article).FirstOrDefault();
         }
 
         public void EditArticle(Article article)
@@ -59,7 +59,7 @@ namespace ChineseCulture.Bll
             var articleList =articleDao.Select(article , number).ToList();//获取网站公告
             articleList.ForEach(t => t.category_name = acdBll.GetCategory(t.category_id).category_name);
 
-            articleList.ForEach(t=>t.article_click_url="/Article/Detail");
+            articleList.ForEach(t=>t.article_click_url="/Article/Detail/"+t.article_id);
             return articleList;
         }
         public IEnumerable<Article> GetArticleByFatherCategory(string father_category_code, int number)
@@ -70,6 +70,7 @@ namespace ChineseCulture.Bll
             article.article_state = 1;
             var articleList = articleDao.Select(article, number).ToList();//获取网站公告
             articleList.ForEach(t => t.category_name = acdBll.GetCategory(t.category_id).category_name);
+            articleList.ForEach(t => t.article_click_url = "/Article/Detail/" + t.article_id);
             return articleList;
         }
        

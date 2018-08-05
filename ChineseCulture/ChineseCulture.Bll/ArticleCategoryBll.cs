@@ -58,7 +58,7 @@ namespace ChineseCulture.Bll
         public IEnumerable<ArticleCategory> GetAllCategoryFather()
         {
             ArticleCategory ac = new ArticleCategory();
-            ac.category_father_id = 0;
+            ac.category_father_id = 1;
             ac.category_state = 1;
             return acDao.Select(ac);
         }
