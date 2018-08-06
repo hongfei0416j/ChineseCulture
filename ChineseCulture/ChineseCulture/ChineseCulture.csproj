@@ -51,6 +51,10 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.5.0.0, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -107,6 +111,10 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Webdiyer.MvcPager, Version=3.0.2015.802, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\Webdiyer.MvcPager.dll</HintPath>
     </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
@@ -249,6 +257,11 @@
     <Content Include="images\emp-12.png" />
     <Content Include="images\emp-13.png" />
     <Content Include="images\logo.png" />
+    <Content Include="libs\ICSharpCode.SharpZipLib.dll" />
+    <Content Include="libs\Webdiyer.MvcPager.dll" />
+    <Content Include="libs\Webdiyer.MvcPager.xml" />
+    <Content Include="libs\zh-CHS\Webdiyer.MvcPager.resources.dll" />
+    <Content Include="libs\zh-CHT\Webdiyer.MvcPager.resources.dll" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -295,6 +308,7 @@
     <Content Include="Views\Article\Detail.cshtml" />
     <Content Include="Views\Partinal\Footer.cshtml" />
     <Content Include="Views\Partinal\FriendLink.cshtml" />
+    <Content Include="Views\Article\_ArticleListPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,7 +1,8 @@
 ﻿@{ Layout = null;}
 @using ChineseCulture.Model;
+@using Webdiyer.WebControls.Mvc;
 
-@model HomePageViewModel
+@model ArticlePageViewModel
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,132 +36,39 @@
     @{Html.RenderAction("HomePageMenu", "Partinal");}
     @{Html.RenderAction("HomePageCategoryMenu", "Partinal");}
     <section class="main c-con clear" style="background-color:#FFF;">
-        <section class="cyfh-cols clear">
+        <section class="cyfh-cols dasai-detail clear">
             <section class="cyfh-left">
-                <div class="cyfh-list">
-                    <ul>
-                        <li class="clear">
-                            <div class="cyfh-li-img"><a href="#"><img src="images/emp-17.png" alt=" "></a></div>
-                            <div class="cyfh-li-about clear">
-                                <h3><a href="#">大众汽车拥有悠久的历史</a></h3>
-                                <p>大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程.大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程...大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程。</p>
-                                <a href="#" class="cyfh-li-btn">浏览全文 <i class="iconfont">&#xe657;</i></a>
-                            </div>
-                        </li>
-                        <li class="clear">
-                            <div class="cyfh-li-img"><a href="#"><img src="images/emp-17.png" alt=" "></a></div>
-                            <div class="cyfh-li-about clear">
-                                <h3><a href="#">大众汽车拥有悠久的历史</a></h3>
-                                <p>大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程.大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程...大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程。</p>
-                                <a href="#" class="cyfh-li-btn">浏览全文 <i class="iconfont">&#xe657;</i></a>
-                            </div>
-                        </li>
-                        <li class="clear">
-                            <div class="cyfh-li-img"><a href="#"><img src="images/emp-17.png" alt=" "></a></div>
-                            <div class="cyfh-li-about clear">
-                                <h3><a href="#">大众汽车拥有悠久的历史</a></h3>
-                                <p>大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程.大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程...大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程。</p>
-                                <a href="#" class="cyfh-li-btn">浏览全文 <i class="iconfont">&#xe657;</i></a>
-                            </div>
-                        </li>
-                        <li class="clear">
-                            <div class="cyfh-li-img"><a href="#"><img src="images/emp-17.png" alt=" "></a></div>
-                            <div class="cyfh-li-about clear">
-                                <h3><a href="#">大众汽车拥有悠久的历史</a></h3>
-                                <p>大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程.大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程...大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程。</p>
-                                <a href="#" class="cyfh-li-btn">浏览全文 <i class="iconfont">&#xe657;</i></a>
-                            </div>
-                        </li>
-                        <li class="clear">
-                            <div class="cyfh-li-img"><a href="#"><img src="images/emp-17.png" alt=" "></a></div>
-                            <div class="cyfh-li-about clear">
-                                <h3><a href="#">大众汽车拥有悠久的历史</a></h3>
-                                <p>大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程.大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程...大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程。</p>
-                                <a href="#" class="cyfh-li-btn">浏览全文 <i class="iconfont">&#xe657;</i></a>
-                            </div>
-                        </li>
-                        <li class="clear">
-                            <div class="cyfh-li-img"><a href="#"><img src="images/emp-17.png" alt=" "></a></div>
-                            <div class="cyfh-li-about clear">
-                                <h3><a href="#">大众汽车拥有悠久的历史</a></h3>
-                                <p>大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程.大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程...大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程。</p>
-                                <a href="#" class="cyfh-li-btn">浏览全文 <i class="iconfont">&#xe657;</i></a>
-                            </div>
-                        </li>
-                        <li class="clear">
-                            <div class="cyfh-li-img"><a href="#"><img src="images/emp-17.png" alt=" "></a></div>
-                            <div class="cyfh-li-about clear">
-                                <h3><a href="#">大众汽车拥有悠久的历史</a></h3>
-                                <p>大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程.大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程...大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程。</p>
-                                <a href="#" class="cyfh-li-btn">浏览全文 <i class="iconfont">&#xe657;</i></a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="pages clear">
-                    <ul>
-                        <li><a href="#"><i class="iconfont">&#xe613;</i></a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                        <li><a href="#">6</a></li>
-                        <li><a href="#">7</a></li>
-                        <li><a href="#">8</a></li>
-                        <li><a href="#"><i class="iconfont">&#xe647;</i></a></li>
-                        <li>共70页，到第</li>
-                        <li><input type="text" name=" "></li>
-                        <li>页</li>
-                        <li><input type="submit" value="转到"></li>
-                    </ul>
-                </div>
+                
+                
+                @Html.Partial("_ArticleListPartial", Model)
+                @Html.Pager(Model.articlePageList).Options(o => o.SetPageIndexParameterName("pid").SetPagerItemTemplate("{0}&nbsp;").SetCssClass("pagesmain"))
             </section>
-            <aside class="cyfl-right">
-                <!--<section class="swiper-container swiper3">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="images/emp-19.png"></div>
-                        <div class="swiper-slide"><img src="images/emp-19.png"></div>
-                        <div class="swiper-slide"><img src="images/emp-19.png"></div>
-                        <div class="swiper-slide"><img src="images/emp-19.png"></div>
-                        <div class="swiper-slide"><img src="images/emp-19.png"></div>
-                        <div class="swiper-slide"><img src="images/emp-19.png"></div>
+            <section class=" dsd-right">
+
+                <section class="dsd-right-col">
+                    <header class="dsd-rcol-header">
+                        <h3>精彩分享</h3>
+                    </header>
+                    <div class="dsd-rcol-list">
+                        <ul>
+                            <li><a href="#">河南慧娟文化传播有限公司</a></li>
+                            <li><a href="#">全国各省市工作站与代理</a></li>
+                            <li><a href="#">中国校园文化文推荐书</a></li>
+                            <li><a href="#">校园之星原创文艺作品争霸赛</a></li>
+                            <li><a href="#">教师与校园运营管理团队岗前培训</a></li>
+                            <li><a href="#">寻找全国各地大学生校园代理</a></li>
+                            <li><a href="#">世界华语校园社团联合会</a></li>
+                            <li><a href="#">河南慧娟文化传播有限公司</a></li>
+                            <li><a href="#">全国各省市工作站与代理</a></li>
+                            <li><a href="#">中国校园文化文推荐书</a></li>
+                            <li><a href="#">校园之星原创文艺作品争霸赛</a></li>
+                            <li><a href="#">教师与校园运营管理团队岗前培训</a></li>
+                            <li><a href="#">寻找全国各地大学生校园代理</a></li>
+                            <li><a href="#">世界华语校园社团联合会</a></li>
+                        </ul>
                     </div>
-                    <div class="swiper-pagination swiper-pagination3"></div>
-                </section>-->
-                <div class="cyfl-r-hots">
-                    <ul>
-                        <li>
-                            <h3><a href="#">大众汽车拥有悠久的历史</a></h3>
-                            <div class="cyfh-rhots-about clear">
-                                <p><a href="#"><img src="images/emp-18.png" alt=" "></a></p>
-                                <h4>1937年成立以来，大众见证了20世纪汽车工业的发展历程大众见证了20世纪汽车工业的发展历程</h4>
-                            </div>
-                        </li>
-                        <li>
-                            <h3><a href="#">大众汽车拥有悠久的历史</a></h3>
-                            <div class="cyfh-rhots-about clear">
-                                <p><a href="#"><img src="images/emp-18.png" alt=" "></a></p>
-                                <h4>1937年成立以来，大众见证了20世纪汽车工业的发展历程大众见证了20世纪汽车工业的发展历程</h4>
-                            </div>
-                        </li>
-                        <li>
-                            <h3><a href="#">大众汽车拥有悠久的历史</a></h3>
-                            <div class="cyfh-rhots-about clear">
-                                <p><a href="#"><img src="images/emp-18.png" alt=" "></a></p>
-                                <h4>1937年成立以来，大众见证了20世纪汽车工业的发展历程大众见证了20世纪汽车工业的发展历程</h4>
-                            </div>
-                        </li>
-                        <li>
-                            <h3><a href="#">大众汽车拥有悠久的历史</a></h3>
-                            <div class="cyfh-rhots-about clear">
-                                <p><a href="#"><img src="images/emp-18.png" alt=" "></a></p>
-                                <h4>1937年成立以来，大众见证了20世纪汽车工业的发展历程大众见证了20世纪汽车工业的发展历程</h4>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </aside>
+                </section>
+            </section>
         </section>
         <section class="cyfh-blank"></section>
         <!--<section class="cols2">
@@ -224,15 +132,15 @@
     var swiper5 = new Swiper('.swiper5', {
         pagination: '.swiper-pagination5',
         paginationClickable: true,
-        spaceBetween:0,
-		autoplay: 2500,
-		loop:true
+        spaceBetween: 0,
+        autoplay: 2500,
+        loop: true
     });
     var swiper3 = new Swiper('.swiper3', {
         pagination: '.swiper-pagination3',
         paginationClickable: true,
-        spaceBetween:0,
-		autoplay: 2500,
-		loop:true
+        spaceBetween: 0,
+        autoplay: 2500,
+        loop: true
     });
 </script>

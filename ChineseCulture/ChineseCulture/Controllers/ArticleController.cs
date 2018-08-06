@@ -13,7 +13,10 @@ namespace ChineseCulture.Controllers
         // GET: Article
         public ActionResult List()
         {
-            return View();
+            ArticlePageViewModel articlePageViewModel = new ArticlePageViewModel();
+            ArticlePageBll articlePageBll = new ArticlePageBll();
+            articlePageViewModel = articlePageBll.CreateArticleListModel();
+            return View(articlePageViewModel);
         }
         public ActionResult Detail(int id)
         {

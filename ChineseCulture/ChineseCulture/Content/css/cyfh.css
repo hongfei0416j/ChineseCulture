@@ -16,7 +16,7 @@
 .cyfh-left > .cyfh-list > ul > li{ width:100%; padding:10px 0; box-sizing:border-box; border-bottom:1px solid #EEE; cursor:pointer;}
 .cyfh-left > .cyfh-list > ul > li > .cyfh-li-img{ display:block; width:180px; height:126px; float:left; border:10px solid #FFF; box-sizing:border-box; overflow:hidden;transition:all 0.3s ease-out; -webkit-transition:all 0.3s ease-out;}
 .cyfh-left > .cyfh-list > ul > li > .cyfh-li-img img{ width:100%; transition:all 0.3s ease-out; -webkit-transition:all 0.3s ease-out;}
-.cyfh-left > .cyfh-list > ul > li > .cyfh-li-about{ width:680px; height:126px; float:right; overflow:hidden; box-sizing:border-box; padding-left:00px; }
+.cyfh-left > .cyfh-list > ul > li > .cyfh-li-about{ width:850px; height:126px; float:right; overflow:hidden; box-sizing:border-box; padding-left:10px; }
 .cyfh-left > .cyfh-list > ul > li > .cyfh-li-about > h3{ width:100%; font-size:16px; height:36px; line-height:36px; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; font-weight:normal; }
 .cyfh-left > .cyfh-list > ul > li > .cyfh-li-about > p{ width:100%; height:auto; max-height:60px; line-height:20px; overflow:hidden; font-size:12px; color:#999;}
 .cyfh-left > .cyfh-list > ul > li > .cyfh-li-about > .cyfh-li-btn{ width:auto; height:20px; line-height:20px; display:inline-block; text-align:right; color:#0648e1; float:right;}

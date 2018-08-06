@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Webdiyer.WebControls.Mvc;
+
 namespace ChineseCulture.Bll
 {
     public class ArticlePageBll
@@ -32,6 +34,16 @@ namespace ChineseCulture.Bll
                
             }
             return articleDetailModel;
+        }
+
+        public ArticlePageViewModel CreateArticleListModel()
+        {
+            ArticlePageViewModel articleDetailModel = new ArticlePageViewModel();
+            ArticleBll acBll = new ArticleBll();
+           
+            articleDetailModel.articlePageList = new PagedList<Article>(acBll.GetAllArticle(),1,10);
+            return articleDetailModel;
+
         }
     }
 }
