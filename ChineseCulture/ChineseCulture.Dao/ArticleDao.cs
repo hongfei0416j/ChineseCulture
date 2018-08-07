@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Webdiyer.WebControls.Mvc;
 
 namespace ChineseCulture.Dao
 {
@@ -60,6 +61,16 @@ namespace ChineseCulture.Dao
 
            
         }
+
+        public PagedList<Article> SelectPageList(ArticlePageViewModel articleDetailModel)
+        {
+            var query = db.Article.Where(t =>
+            (articleDetailModel.category_id == 0 || t.category_id == articleDetailModel.category_id) &&
+            (articleDetailModel.article_state == 0 || t.article_state == articleDetailModel.article_state) &&
+            (articleDetailModel.article_id == 0 || t.article_id == articleDetailModel.article_id)).OrderBy(t => t.article_sort).OrderByDescending(s => s.article_kdate);
+            return query.ToPagedList<Article>(articleDetailModel.page_index, articleDetailModel.page_size);
+        }
+
         public IEnumerable<Article> SelectByCategory(Article article, int number, ArticleCategory ac)
         {
             int category_father_id = ac.category_father_id;

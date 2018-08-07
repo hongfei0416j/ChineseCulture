@@ -15,5 +15,10 @@ namespace ChineseCulture.Model
         public int page_index { set; get; }
         public int page_count { set; get; }
         public PagedList<Article> articlePageList{ set; get; }
-}
+        public int page_size { get; set; }
+        public int category_id { get; set; }
+        public int article_state { get; set; }
+        public int article_id { get; set; }
+        public PagedList<Article> articleRightList { get; set; }
+    }
 }

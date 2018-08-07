@@ -162,20 +162,10 @@
                     </header>
                     <div class="dsd-rcol-list">
                         <ul>
-                            <li><a href="#">河南慧娟文化传播有限公司</a></li>
-                            <li><a href="#">全国各省市工作站与代理</a></li>
-                            <li><a href="#">中国校园文化文推荐书</a></li>
-                            <li><a href="#">校园之星原创文艺作品争霸赛</a></li>
-                            <li><a href="#">教师与校园运营管理团队岗前培训</a></li>
-                            <li><a href="#">寻找全国各地大学生校园代理</a></li>
-                            <li><a href="#">世界华语校园社团联合会</a></li>
-                            <li><a href="#">河南慧娟文化传播有限公司</a></li>
-                            <li><a href="#">全国各省市工作站与代理</a></li>
-                            <li><a href="#">中国校园文化文推荐书</a></li>
-                            <li><a href="#">校园之星原创文艺作品争霸赛</a></li>
-                            <li><a href="#">教师与校园运营管理团队岗前培训</a></li>
-                            <li><a href="#">寻找全国各地大学生校园代理</a></li>
-                            <li><a href="#">世界华语校园社团联合会</a></li>
+                            @foreach (var item in Model.articleRightList)
+                            {
+                                <li><a href="@item.article_click_url">@item.article_title</a></li>
+                            }
                         </ul>
                     </div>
                 </section>

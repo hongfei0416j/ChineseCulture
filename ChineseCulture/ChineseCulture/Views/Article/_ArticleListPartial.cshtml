@@ -9,15 +9,17 @@
 
 <div class="cyfh-list">
     <ul>
-
-        <li class="clear">
-
-            <div class="cyfh-li-about clear">
-                <h3><a href="#">大众汽车拥有悠久的历史</a></h3>
-                <p>大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程.大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程...大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程。</p>
-                <a href="#" class="cyfh-li-btn">浏览全文 <i class="iconfont">&#xe657;</i></a>
-            </div>
-        </li>
+        @foreach (var item in Model.articlePageList)
+        {
+            <li class="clear">
+                <div class="cyfh-li-about clear">
+                    <h3><a  href="@item.article_click_url">@item.article_title</a></h3>
+                    <p>@Html.Raw(@item.article_description)</p>
+                    <a href="@item.article_click_url" class="cyfh-li-btn">浏览全文 <i class="iconfont">&#xe657;</i></a>
+                </div>
+            </li>
+        }
+        
 
     </ul>
 </div>
