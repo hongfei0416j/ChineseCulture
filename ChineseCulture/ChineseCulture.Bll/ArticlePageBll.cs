@@ -42,7 +42,7 @@ namespace ChineseCulture.Bll
             ArticleBll acBll = new ArticleBll();
             articleDetailModel.page_size = 20;
             articleDetailModel.page_index = page_index;
-            articleDetailModel.articleRightList = acBll.GetArticlePageList(articleDetailModel);
+            articleDetailModel.articleRightList = acBll.GetArticlePageList(new ArticlePageViewModel { article_state=1,page_index=1,page_size=15});
             articleDetailModel.articlePageList = acBll.GetArticlePageList(articleDetailModel);
             
             return articleDetailModel;

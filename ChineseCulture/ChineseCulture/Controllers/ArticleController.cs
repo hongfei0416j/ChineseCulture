@@ -13,13 +13,23 @@ namespace ChineseCulture.Controllers
         // GET: Article
         public ActionResult List(int page_index=0)
         {
+            
+            try
+            {
+                page_index = Convert.ToInt32(Request.Params["pid"]);
+            }
+            catch (Exception)
+            {
+
+               
+            }
             if (page_index==null|| page_index<0)
             {
                 page_index = 0;
             }
             ArticlePageViewModel articlePageViewModel = new ArticlePageViewModel();
             ArticlePageBll articlePageBll = new ArticlePageBll();
-            articlePageViewModel = articlePageBll.CreateArticleListModel();
+            articlePageViewModel = articlePageBll.CreateArticleListModel(page_index);
             return View(articlePageViewModel);
         }
         public ActionResult Detail(int id=0)
