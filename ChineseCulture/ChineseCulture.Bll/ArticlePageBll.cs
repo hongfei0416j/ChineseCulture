@@ -25,12 +25,13 @@ namespace ChineseCulture.Bll
                 Article ac = new Article();
                 ac.article_id = article_id;
                 Article acNew = acBll.GetArticle(ac);
-                articleDetailModel.articleRightList = acBll.GetArticlePageList(new ArticlePageViewModel { article_state=1,page_index=1,page_size=15});
+                
                 articleDetailModel.articleModel = acNew;
 
                 ArticleCategoryBll acateBll = new ArticleCategoryBll();
                 articleDetailModel.ThisArticleCategory = acBll.GetArticleCategoryByArticle(article_id);
                 articleDetailModel.ThisArticleFatherCategory = acBll.GetArticleFatherCategoryByArticle(article_id);
+                articleDetailModel.articleRightList = acBll.GetArticlePageList(new ArticlePageViewModel { article_state = 1, page_index = 1, page_size = 15 });
             }
             catch (Exception ex)
             {
