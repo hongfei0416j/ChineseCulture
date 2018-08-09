@@ -12,12 +12,24 @@ namespace ChineseCulture
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-
+            routes.MapRoute(
+               name: "MvcPager_Pager1",
+               url: "{controller}/{action}/page_{pageindex}",
+               defaults: new { controller = "Article", action = "List",cid  = UrlParameter.Optional, pageindex = UrlParameter.Optional }
+           );
+            routes.MapRoute(
+               name: "MvcPager_Default",
+               url: "{controller}/{action}/cid_{cid}",
+               defaults: new { controller = "Article", action = "List", cid = UrlParameter.Optional }
+           );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+           
+           
+           
         }
     }
 }

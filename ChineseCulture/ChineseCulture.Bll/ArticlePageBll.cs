@@ -27,6 +27,10 @@ namespace ChineseCulture.Bll
                 Article acNew = acBll.GetArticle(ac);
                 articleDetailModel.articleRightList = acBll.GetArticlePageList(new ArticlePageViewModel { article_state=1,page_index=1,page_size=15});
                 articleDetailModel.articleModel = acNew;
+
+                ArticleCategoryBll acateBll = new ArticleCategoryBll();
+                articleDetailModel.ThisArticleCategory = acBll.GetArticleCategoryByArticle(article_id);
+                articleDetailModel.ThisArticleFatherCategory = acBll.GetArticleFatherCategoryByArticle(article_id);
             }
             catch (Exception ex)
             {
@@ -36,16 +40,21 @@ namespace ChineseCulture.Bll
             return articleDetailModel;
         }
 
-        public ArticlePageViewModel CreateArticleListModel(int page_index=0)
+        public ArticlePageViewModel CreateArticleListModel(ArticlePageViewModel articlePageViewModel)
         {
             ArticlePageViewModel articleDetailModel = new ArticlePageViewModel();
             ArticleBll acBll = new ArticleBll();
             articleDetailModel.page_size = 20;
-            articleDetailModel.page_index = page_index;
+            articleDetailModel.page_index = articlePageViewModel.page_index;
             articleDetailModel.articleRightList = acBll.GetArticlePageList(new ArticlePageViewModel { article_state=1,page_index=1,page_size=15});
+            articleDetailModel.category_id = articlePageViewModel.category_id;
             articleDetailModel.articlePageList = acBll.GetArticlePageList(articleDetailModel);
-            
-            return articleDetailModel;
+
+            ArticleCategoryBll categoryBll = new ArticleCategoryBll();
+            articleDetailModel.ThisArticleCategory = categoryBll.GetCategory(new ArticleCategory { category_id = articlePageViewModel.ThisArticleCategory.category_id });
+            articleDetailModel.ThisArticleFatherCategory = categoryBll.GetCategory(new ArticleCategory { category_id = articlePageViewModel.ThisArticleCategory.category_father_id });
+            articleDetailModel.ArticleCategoryList = categoryBll.GetCategoryList(new ArticleCategory { category_father_id= articleDetailModel.ThisArticleCategory.category_father_id});
+                return articleDetailModel;
 
         }
     }

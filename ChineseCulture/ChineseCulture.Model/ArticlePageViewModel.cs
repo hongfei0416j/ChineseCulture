@@ -20,5 +20,8 @@ namespace ChineseCulture.Model
         public int article_state { get; set; }
         public int article_id { get; set; }
         public PagedList<Article> articleRightList { get; set; }
+        public ArticleCategory ThisArticleCategory { get; set; }
+        public ArticleCategory ThisArticleFatherCategory { get; set; }
+        public IEnumerable<ArticleCategory> ArticleCategoryList { get; set; }
     }
 }

@@ -66,5 +66,6 @@ namespace ChineseCulture.Bll
             }
             return articleViewModelList;
         }
+        
     }
 }

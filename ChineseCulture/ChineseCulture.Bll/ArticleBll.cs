@@ -45,6 +45,24 @@ namespace ChineseCulture.Bll
             return articleDao.Select(article).FirstOrDefault();
         }
 
+        internal ArticleCategory GetArticleCategoryByArticle(int article_id)
+        {
+            Article a = new Article();
+            a.article_id = article_id;
+            a = articleDao.Select(a).FirstOrDefault();
+            ArticleCategory ac =  acdBll.GetCategory(new ArticleCategory { category_id=a.category_id});
+            return ac;
+
+        }
+        internal ArticleCategory GetArticleFatherCategoryByArticle(int article_id)
+        {
+            Article a = new Article();
+            a.article_id = article_id;
+            a = articleDao.Select(a).FirstOrDefault();
+            ArticleCategory ac = acdBll.GetCategory(new ArticleCategory { category_id = a.category_id });
+            ArticleCategory acFather = acdBll.GetCategory(new ArticleCategory { category_id = ac.category_father_id });
+            return acFather;
+        }
         public void EditArticle(Article article)
         {
            

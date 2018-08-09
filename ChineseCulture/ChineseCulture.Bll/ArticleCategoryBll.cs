@@ -23,7 +23,13 @@ namespace ChineseCulture.Bll
             ac.category_father_id = 0;
             return acDao.Select(ac);
         }
+        public IEnumerable<ArticleCategory> GetCategoryList(ArticleCategory ac)
+        {
+            
+            ac.category_state = 1;
 
+            return acDao.Select(ac);
+        }
         public ArticleCategory GetCategory(ArticleCategory ac)
         {
             return acDao.Select(ac).FirstOrDefault();

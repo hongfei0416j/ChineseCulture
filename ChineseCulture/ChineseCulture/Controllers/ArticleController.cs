@@ -11,25 +11,24 @@ namespace ChineseCulture.Controllers
     public class ArticleController : Controller
     {
         // GET: Article
-        public ActionResult List(int page_index=0)
+        public ActionResult List(int pageindex = 1,int cid = 0)
         {
-            
-            try
+            if (cid>1)
             {
-                page_index = Convert.ToInt32(Request.Params["pid"]);
+                Session["category_id"] = cid;
+                
             }
-            catch (Exception)
+            if (pageindex == null|| pageindex < 0)
             {
-
-               
-            }
-            if (page_index==null|| page_index<0)
-            {
-                page_index = 0;
+                pageindex = 0;
             }
             ArticlePageViewModel articlePageViewModel = new ArticlePageViewModel();
             ArticlePageBll articlePageBll = new ArticlePageBll();
-            articlePageViewModel = articlePageBll.CreateArticleListModel(page_index);
+            articlePageViewModel.page_index = pageindex;
+            articlePageViewModel.ThisArticleCategory = new ArticleCategory();
+            articlePageViewModel.ThisArticleCategory.category_id =Convert.ToInt32(Session["category_id"]);
+            articlePageViewModel.category_id = Convert.ToInt32(Session["category_id"]);
+            articlePageViewModel = articlePageBll.CreateArticleListModel(articlePageViewModel);
             return View(articlePageViewModel);
         }
         public ActionResult Detail(int id=0)

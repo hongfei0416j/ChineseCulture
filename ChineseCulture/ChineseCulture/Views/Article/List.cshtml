@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>中国校园文化网</title>
+    <title>中国校园文化网-@Model.ThisArticleFatherCategory.category_name</title>
     @Styles.Render("~/Content/homepage")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/homepage")
@@ -18,7 +18,7 @@
 <body>
     <header class="header c-con">
         <div class="hd-con">
-            <a href="#" class="logo"><img src="/images/logo.png" alt=" "></a>
+            <a href="/" class="logo"><img src="/images/logo.png" alt=" "></a>
             <div class="city">
                 城市切换【<a href="javascript:;">郑州</a>】
             </div>
@@ -38,15 +38,22 @@
     <section class="main c-con clear" style="background-color:#FFF;">
         <section class="cyfh-cols dasai-detail clear">
             <section class="dasai-location">
-                <a href="#">中国校园文化网</a>&nbsp;>&nbsp;<a href="#">活动大赛</a>&nbsp;>&nbsp;文学教程
+                <a href="/">中国校园文化网</a>&nbsp;>&nbsp;<a href="/Article/List/cid_@Model.ThisArticleFatherCategory.category_id">@Model.ThisArticleFatherCategory.category_name</a>&nbsp;>&nbsp;@Model.ThisArticleCategory.category_name
             </section>
             <section class="dasai-types">
-                类别：<a href="#" class="dstypes-on">全部</a>&nbsp;&nbsp;<a href="#">文学教程</a>&nbsp;&nbsp;<a href="#">书画手工</a>&nbsp;&nbsp;<a href="#">艺术表演</a>&nbsp;&nbsp;<a href="#">龙虎榜</a>
+                类别：<a href="#" class="dstypes-on">全部</a>&nbsp;&nbsp;
+                @foreach (ArticleCategory ac in Model.ArticleCategoryList)
+                {
+                    <a href="/" class="dstypes-on">
+                @ac.category_name
+                        </a>
+                }
+    
             </section>
             <section class="cyfh-left">
 
                 @Html.Partial("_ArticleListPartial", Model)
-                @Html.Pager(Model.articlePageList).Options(o => o.SetPageIndexParameterName("pid").SetPagerItemTemplate("{0}&nbsp;").SetCssClass("pagesmain"))
+                @Html.Pager(Model.articlePageList).Options(o => o.SetFirstPageRouteName("MvcPager_Default").SetRouteName("MvcPager_Pager1").SetPagerItemTemplate("{0}&nbsp;").SetCssClass("pagesmain"))
             </section>
             <section class=" dsd-right">
 
