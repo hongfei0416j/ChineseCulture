@@ -159,6 +159,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ArticleController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PartinalController.cs" />
     <Compile Include="Global.asax.cs">
@@ -177,6 +178,7 @@
     <Content Include="Content\css\style-n.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\swiper.min.css" />
+    <Content Include="Content\css\dasai.css" />
     <Content Include="Content\font\demo.css" />
     <Content Include="Content\font\demo_fontclass.html" />
     <Content Include="Content\font\demo_symbol.html" />
@@ -309,6 +311,9 @@
     <Content Include="Views\Partinal\Footer.cshtml" />
     <Content Include="Views\Partinal\FriendLink.cshtml" />
     <Content Include="Views\Article\_ArticleListPartial.cshtml" />
+    <Content Include="Views\Event\Index.cshtml" />
+    <Content Include="Views\Event\List.cshtml" />
+    <Content Include="Views\Event\Detail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,500 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>中国校园文化网</title>
+    @Styles.Render("~/Content/dasai")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/homepage")
+    @*<link rel="stylesheet" type="text/css" href="./css/global.css">
+            <link rel="stylesheet" href="css/swiper.min.css">
+            <link rel="stylesheet" type="text/css" href="./css/style.css">
+            <link rel="stylesheet" type="text/css" href="./css/dasai.css">
+        <script src="js/jquery-1.11.1.min.js"></script>*@
+</head>
+<body style="background-image:url(/images/body2.png)">
+    <header class="header c-con">
+        <div class="hd-con">
+            <a href="#" class="logo-saishi"><img src="/images/logo-saishi.png" alt=" "></a>
+            <div class="city">
+                城市切换【<a href="javascript:;">郑州</a>】
+            </div>
+            <div class="search-saishi clear">
+                <p>搜&nbsp;&nbsp;索</p>
+                <p><input type="text" placeholder="大家正在搜：东北虎胖成气球"></p>
+                <p><input type="submit" value="&#xe66c;"></p>
+            </div>
+            <div class="sitedate" id="sitedate"><span id="date">
+            <script type="text/javascript" src="js/date.js"></script></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">会员登录</a>&nbsp;&nbsp;&nbsp;&nbsp;（<a href="#">注册</a>）</div>
+        </div>
+    </header>
+    <nav class="nav">
+        <div class="nav-list c-con clear">
+            <ul>
+                <li><a href="./index.html">首&nbsp;&nbsp;页</a></li>
+                <li><a href="#">会员登录</a></li>
+                <li><a href="#">赛事简介</a></li>
+                <li><a href="#">选手报名</a></li>
+                <li><a href="#">赛区分布</a></li>
+                <li><a href="#">学术交流</a></li>
+                <li><a href="#">历届大赛</a></li>
+                <li><a href="#">赛事管理</a></li>
+                <li><a href="#">专家评审</a></li>
+                <li><a href="#">支持媒体</a></li>
+                <li><a href="#">冠名单位</a></li>
+            </ul>
+        </div>
+    </nav>
+    <section class="main c-con clear">
+        <div class="swiper-container swiper1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
+                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
+                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
+                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
+                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
+                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
+            </div>
+            <div class="swiper-pagination swiper-pagination1"></div>
+        </div>
+        <section class="union">
+            <h3>赛区组织单位</h3>
+            <div class="union-list">
+                <ul>
+                    <li><a href="#">华中赛区：湖南卫视国际频道红烛中国栏目</a></li>
+                    <li><a href="#">西北赛区：盛世新西方教育</a></li>
+                    <li><a href="#">华北赛区：北京尚音雅乐艺术学校</a></li>
+                    <li><a href="#">中原赛区：河南电视台中原新干线栏目</a></li>
+                    <li><a href="#">南北美洲国际赛区：加拿大慧乐网络电视台</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="hjmingdan">
+            <h3>赛事获奖榜单</h3>
+            <div class="hjmingdan-list">
+                <ul>
+                    <li><a href="#">校园之星原创文艺作品争霸赛初赛获奖榜单</a></li>
+                    <li><a href="#">校园之星原创文艺作品争霸赛初赛获奖榜单</a></li>
+                    <li><a href="#">原创文艺作品争霸赛初赛获奖榜单</a></li>
+                    <li><a href="#">星原创文艺作品争霸赛初赛获奖榜单</a></li>
+                    <li><a href="#">园之星原创文艺作品争霸赛初赛获奖榜单</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="dscols">
+            <header class="col-tab clear">
+                <p class="on">文学教程</p>
+                <p><a href="#">诗歌</a></p>
+                <p><a href="#">散文</a></p>
+                <p><a href="#">朗诵</a></p>
+                <p><a href="#">论文</a></p>
+                <p><a href="#">小说</a></p>
+                <p><a href="#">剧本</a></p>
+                <p><a href="#">童话</a></p>
+                <p><a href="#">民间故事</a></p>
+                <p><a href="#">培训教程</a></p>
+                <p><a href="#">管理教程</a></p>
+                <p><a href="#">创意项目</a></p>
+                <a href="#">更多</a>
+            </header>
+            <div class="dscol-con">
+                <header class="dsc-header clear">
+                    <p></p><p>诗歌</p><p>散文</p><p>小说</p><p>剧本</p><p>教程</p>
+                </header>
+                <div class="dsc-list clear">
+                    <ul>
+                        <li>
+                            <p>参赛作者</p>
+                            <p>入选作品</p>
+                            <p>投票点评</p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p class="dsc-li-about"><a href="#"><span>大海</span>咆哮的火舍<br>点燃了新的曙光<br>一根红线<br>紧紧的系住你我的心肠</a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p class="dsc-li-about">
+                                <a href="#">
+                                    <span>滚滚红尘</span>夜已经很深很深，<br>除了天空中闪耀的星光<br>
+                                    和鸡叫的声音
+                                </a>
+                            </p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p class="dsc-li-about"><a href="#"><span>闪耀的星海</span>咆哮的火舍<br>点燃了新的曙光<br>一根红线<br>紧紧的系住你我的心肠</a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p class="dsc-li-about"><a href="#"><span>飘香的玫瑰</span>他，<br>风度翩翩、<br> 充满智慧：<br>却历尽了沧桑</a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p class="dsc-li-about"><a href="#"><span>大海</span>许多人只是把作文看作了升学的比赛的工具，却忽略了她在日常生活中的使用价值</a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="dscols">
+            <header class="col-tab clear">
+                <p class="on">书画手工</p>
+                <p><a href="#">沙画</a></p>
+                <p><a href="#">手工制作</a></p>
+                <p><a href="#">素描</a></p>
+                <p><a href="#">水粉</a></p>
+                <p><a href="#">油画</a></p>
+                <p><a href="#">国画</a></p>
+                <p><a href="#">雕刻</a></p>
+                <p><a href="#">摄影</a></p>
+                <p><a href="#">书法</a></p>
+                <p><a href="#">剪纸</a></p>
+                <p><a href="#">拼装</a></p>
+                <a href="#">更多</a>
+            </header>
+            <div class="dscol-con">
+                <header class="dsc-header clear">
+                    <p></p><p>书法</p><p>绘画</p><p>拼装</p><p>剪纸</p><p>雕刻</p>
+                </header>
+                <div class="dsc-list clear">
+                    <ul>
+                        <li>
+                            <p>参赛作者</p>
+                            <p>入选作品</p>
+                            <p>投票点评</p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="dscols">
+            <header class="col-tab clear">
+                <p class="on">艺术表演 </p>
+                <p><a href="#">朗诵</a></p>
+                <p><a href="#">主持</a></p>
+                <p><a href="#">歌曲</a></p>
+                <p><a href="#">戏曲</a></p>
+                <p><a href="#">舞蹈</a></p>
+                <p><a href="#">模特</a></p>
+                <p><a href="#">跆拳道</a></p>
+                <p><a href="#">演奏</a></p>
+                <p><a href="#">小品</a></p>
+                <p><a href="#">配音</a></p>
+                <p><a href="#">快板</a></p>
+                <p><a href="#">评书</a></p>
+                <p><a href="#">模仿秀</a></p>
+                <p><a href="#">绝技</a></p>
+                <a href="#">更多</a>
+            </header>
+            <div class="dscol-con">
+                <header class="dsc-header clear">
+                    <p></p><p>朗诵</p><p>主持</p><p>演讲</p><p>舞蹈</p><p>歌曲</p>
+                </header>
+                <div class="dsc-list clear">
+                    <ul>
+                        <li>
+                            <p>参赛作者</p>
+                            <p>入选作品</p>
+                            <p>投票点评</p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="dscols">
+            <header class="col-tab clear">
+                <p class="on">龙虎榜单</p>
+                <p><a href="#">十佳教育品牌</a></p>
+                <p><a href="#">我最喜爱的歌手</a></p>
+                <p><a href="#">我最喜爱的主持人</a></p>
+                <p><a href="#">我最喜爱的演员</a></p>
+                <p><a href="#">我最喜爱的讲师</a></p>
+                <p><a href="#">我最喜爱的作家</a></p>
+                <a href="#">更多</a>
+            </header>
+            <div class="dscol-con">
+                <header class="dsc-header clear">
+                    <p></p><p>教育品牌</p><p>歌手</p><p>演员</p><p>主持人</p><p>讲师</p>
+                </header>
+                <div class="dsc-list clear">
+                    <ul>
+                        <li>
+                            <p>参选代表</p>
+                            <p>入选作品</p>
+                            <p>投票点评</p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="dscols">
+            <header class="col-tab clear">
+                <p class="on">学术交流</p>
+                <p><a href="#">中外学术交流会</a></p>
+                <p><a href="#">文学诗词笔会</a></p>
+                <p><a href="#">教育专家座谈会</a></p>
+                <p><a href="#">高校大学生音乐盛典</a></p>
+                <p><a href="#">中国校园文化艺术节</a></p>
+                <a href="#">更多</a>
+            </header>
+            <div class="dscol-con">
+                <header class="dsc-header clear">
+                    <p></p><p>中外学术交流会</p><p>文学诗词笔会</p><p>教育专家座谈会</p><p>高校大学生音乐盛典</p><p>中国校园文化艺术节</p>
+                </header>
+                <div class="dsc-list clear">
+                    <ul>
+                        <li>
+                            <p>组织单位</p>
+                            <p>参加代表</p>
+                            <p>活动主题</p>
+                        </li>
+                        <li>
+                            <p class="dsc-li-user"><a href="#">加拿大慧乐网络电视</a></p>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                        </li>
+                        <li>
+                            <p class="dsc-li-user"><a href="#">中国卫视传媒集团</a></p>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                        </li>
+                        <li>
+                            <p class="dsc-li-user"><a href="#">湖南卫视国际频道</a></p>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                        </li>
+                        <li>
+                            <p class="dsc-li-user"><a href="#">广西黄丹艳有限公司</a></p>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                        </li>
+                        <li>
+                            <p class="dsc-li-user"><a href="#">澳大利亚联邦工商单位</a></p>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="dscols">
+            <header class="col-tab clear">
+                <p class="on">历届赛事</p>
+                <p><a href="#">首届全国中小学生诗歌散文朗诵争霸赛</a></p>
+                <p><a href="#">首届全国校园之星原创文艺作品争霸赛</a></p>
+                <p><a href="#">第二届全国校园之星原创文艺作品争霸赛</a></p>
+                <a href="#">更多</a>
+            </header>
+            <div class="dscol-con">
+                <header class="dsc-header clear">
+                    <p></p><p>获奖选手</p><p>参赛作品</p><p>组织单位</p><p>主持人</p><p>评委</p>
+                </header>
+                <div class="dsc-list clear">
+                    <ul>
+                        <li>
+                            <p>等级奖</p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                        </li>
+                        <li>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                        </li>
+                        <li>
+                            <p class="dsc-li-user"><a href="#">湖南卫视国际频道</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dsc-list clear" style="margin-top:10px;">
+                    <ul>
+                        <li>
+                            <p>人气奖</p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                        </li>
+                        <li>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                        </li>
+                        <li>
+                            <p class="dsc-li-user"><a href="#">湖南卫视国际频道</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dsc-list clear" style="margin-top:10px;">
+                    <ul>
+                        <li>
+                            <p>表演奖</p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                        </li>
+                        <li>
+                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                        </li>
+                        <li>
+                            <p class="dsc-li-user"><a href="#">湖南卫视国际频道</a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                        </li>
+                        <li>
+                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="cols2">
+            <h3 class="bmfw"><p>专家评委</p></h3>
+            <div class="cols2-imglist clear">
+                <ul>
+                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="cols2">
+            <h3 class="sjgly"><p>参赛单位</p></h3>
+            <div class="cols2-imglist clear">
+                <ul>
+                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
+                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="links">
+            <h3><p>友情链接</p></h3>
+            <div class="link-list"><a href="#">中国科技信息网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国视频文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国青年作家协会</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国五星文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">清华大学出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">人民文学出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">人民网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新华网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">央视网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">诗词在线</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">哈尔滨转介率科技发展有限公司</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">圣才学习网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新浪网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">一起写网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">陕西家教网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文联出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">江山文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">百度</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">365</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">行业搜索网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">腾讯</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新华网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">央视网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">诗词在线</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">哈尔滨转介率科技发展有限公司</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">圣才学习网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新浪网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">一起写网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">陕西家教网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文联出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">江山文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">百度</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">365</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">行业搜索网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">腾讯</a></div>
+        </section>
+    </section>
+    <footer class="footer c-con">
+        <div class="footer-nav">
+            <a href="#">企业简介</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">管理团队</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">主营项目</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">产业布局</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">诚聘英才</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">客户留言</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">联系我们 </a>
+        </div>
+        <div class="copyright">
+            Copyright ©1996-2018 hj Corporation All Right Reserved<br>
+            版权所有&nbsp;&nbsp;河南慧涓文化传播有限公司&nbsp;&nbsp;中国互联网举报中心 <br>
+
+            总部服务电话：0371-65339250　15938726942<br>
+            豫ICP备18021547号<br>
+        </div>
+    </footer>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/fun.js"></script>
+    <script>
+    var swiper1 = new Swiper('.swiper1', {
+        pagination: '.swiper-pagination1',
+        paginationClickable: true,
+        spaceBetween:0,
+		autoplay: 3500,
+		loop:true
+    });
+    </script>
+</body>
+</html>
