@@ -44,34 +44,34 @@
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2">排序值：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    @Html.TextBoxFor(model => model.article_sort, htmlAttributes: new { @class = "input-text" })
+                    @Html.TextBoxFor(model => model.article_sort, htmlAttributes: new { @class = "input-text", @Value = "1" })
                 </div>
             </div>
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2">关键词：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    @Html.TextBoxFor(model => model.article_keywords, htmlAttributes: new { @class = "input-text" })
+                    @Html.TextBoxFor(model => model.article_keywords, htmlAttributes: new { @class = "input-text", @Value = " " })
 
                 </div>
             </div>
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2">文章摘要：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    @Html.TextAreaFor(model => model.article_description, htmlAttributes: new { @class = "input-text" })
+                    @Html.TextAreaFor(model => model.article_description, htmlAttributes: new { @class = "input-text", @Value = " " })
 
                 </div>
             </div>
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2">文章作者：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    @Html.TextBoxFor(model => model.article_author, htmlAttributes: new { @class = "input-text" })
+                    @Html.TextBoxFor(model => model.article_author, htmlAttributes: new { @class = "input-text", @Value = "admin" })
 
                 </div>
             </div>
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2">状态：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    @Html.TextBoxFor(model => model.article_state, htmlAttributes: new { @class = "input-text" })
+                    @Html.TextBoxFor(model => model.article_state, htmlAttributes: new { @class = "input-text", @Value = "1" })
 
                 </div>
             </div>

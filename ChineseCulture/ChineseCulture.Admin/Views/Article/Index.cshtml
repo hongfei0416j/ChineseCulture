@@ -1,6 +1,6 @@
 ﻿<!--/_menu 作为公共模版分离出去-->
 @using ChineseCulture.Model;
-@model List<Article>
+@model ArticleListModel
 <section class="Hui-article-box">
     <nav class="breadcrumb">
         <i class="Hui-iconfont">&#xe67f;</i> 首页
@@ -12,26 +12,27 @@
     </nav>
     <article class="page-container">
         <div class="text-c">
-            <span class="select-box inline">
-                <select name="" class="select">
-                    <option value="0">全部分类</option>
-                    <option value="1">分类一</option>
-                    <option value="2">分类二</option>
-                </select>
-            </span>
-            日期范围：
-            <input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}'})" id="logmin" class="input-text Wdate" style="width:120px;">
-            -
-            <input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d'})" id="logmax" class="input-text Wdate" style="width:120px;">
-            <input type="text" name="" id="" placeholder=" 资讯名称" style="width:250px" class="input-text">
-            <button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜资讯</button>
+            <form action="/Article/Index" method="post">
+                <span class="select-box inline">
+                    @Html.DropDownListFor(model => model.category_id, ViewBag.ArticleCategory as IEnumerable<SelectListItem>, new { @class = "select" })
+                </span>
+                日期范围：
+                @*<input type="text" onfocus="WdatePicker({maxDate:'#F{$dp.$D(\'logmax\')||\'%y-%M-%d\'}'})" id="logmin" class="input-text Wdate" style="width:120px;">*@
+                @Html.TextBoxFor(model => model.dateStart, htmlAttributes: new { @class = "input-text Wdate", @style = "width:250px" })
+                -
+                @*<input type="text" onfocus="WdatePicker({minDate:'#F{$dp.$D(\'logmin\')}',maxDate:'%y-%M-%d'})" id="logmax" class="input-text Wdate" style="width:120px;">*@
+                @Html.TextBoxFor(model => model.dateEnd, htmlAttributes: new { @class = "input-text Wdate", @style = "width:250px" })
+
+                @Html.TextBoxFor(model => model.article_title, htmlAttributes: new { @class = "input-text", @style = "width:250px" })
+                <button name="" id="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜资讯</button>
+            </form>
         </div>
         <div class="cl pd-5 bg-1 bk-gray mt-20">
             <span class="l">
                 <a href="javascript:;" onclick="datadel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a>
                 <a class="btn btn-primary radius" data-title="添加资讯" _href="/article/add" href="/article/add"><i class="Hui-iconfont">&#xe600;</i> 添加资讯</a>
             </span>
-            <span class="r">共有数据：<strong>54</strong> 条</span>
+            <span class="r">共有数据：<strong>0</strong> 条</span>
         </div>
         <div class="mt-20">
             <table class="table table-border table-bordered table-bg table-hover table-sort">
@@ -50,7 +51,7 @@
                 </thead>
                 <tbody>
                     @{
-                        foreach (Article a in Model)
+                        foreach (Article a in Model.articleList)
                         {
                             <tr class="text-c">
                                 <td><input type="checkbox" value="" name=""></td>

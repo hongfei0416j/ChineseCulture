@@ -10,19 +10,19 @@
             <PropertyRef Name="article_id" />
           </Key>
           <Property Name="article_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="article_title" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="article_click_url" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="article_title" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="article_click_url" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="article_sort" Type="int" Nullable="false" />
           <Property Name="article_state" Type="int" Nullable="false" />
           <Property Name="article_kuser" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="article_kdate" Type="datetime" Nullable="false" />
           <Property Name="article_muser" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="article_mdate" Type="datetime" Nullable="false" />
-          <Property Name="article_cover_image" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="article_cover_image" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="category_id" Type="int" Nullable="false" />
-          <Property Name="article_keywords" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="article_keywords" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="article_author" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="article_description" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="article_description" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="article_content" Type="text" Nullable="false" />
           <Property Name="category_name" Type="nvarchar" MaxLength="50" />
         </EntityType>
@@ -227,19 +227,19 @@
             <PropertyRef Name="article_id" />
           </Key>
           <Property Name="article_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="article_title" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="article_click_url" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="article_title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="article_click_url" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="article_sort" Type="Int32" Nullable="false" />
           <Property Name="article_state" Type="Int32" Nullable="false" />
           <Property Name="article_kuser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="article_kdate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="article_muser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="article_mdate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="article_cover_image" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="article_cover_image" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="category_id" Type="Int32" Nullable="false" />
-          <Property Name="article_keywords" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="article_keywords" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="article_author" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="article_description" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="article_description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="article_content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="category_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>

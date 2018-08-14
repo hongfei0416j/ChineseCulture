@@ -28,9 +28,8 @@ namespace ChineseCulture.Bll
             articleDao.Add(article);
 
         }
-        public List<Article> GetAllArticle()
+        public List<Article> GetAllArticle(Article a)
         {
-            Article a = new Article();
            var articleList=  articleDao.Select(a).ToList();
            
           

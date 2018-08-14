@@ -15,9 +15,26 @@ namespace ChineseCulture.Admin.Controllers
         // GET: Article
         public ActionResult Index()
         {
+            ViewBag.ArticleCategory = GetAllCategoryForDLL().AsEnumerable();
             ArticleBll articleBll = new ArticleBll();
-            var articleList = articleBll.GetAllArticle();
-            return View(articleList);
+            ArticleListModel articleListModel = new ArticleListModel();
+            Article a = new Article();
+            articleListModel.articleList = articleBll.GetAllArticle(a);
+            
+            return View(articleListModel);
+        }
+        [HttpPost]
+        public ActionResult Index(ArticleListModel m)
+        {
+            ViewBag.ArticleCategory = GetAllCategoryForDLL().AsEnumerable();
+            ArticleBll articleBll = new ArticleBll();
+            ArticleListModel articleListModel = new ArticleListModel();
+            Article a = new Article();
+            a.article_title = m.article_title;
+            a.category_id = m.category_id;
+            articleListModel.articleList = articleBll.GetAllArticle(a);
+
+            return View(articleListModel);
         }
         public ActionResult Add()
         {
@@ -32,6 +49,7 @@ namespace ChineseCulture.Admin.Controllers
 
             SelectList ddlDPList;
             var dpList = acBll.GetAllCategory(1);
+
             if (selectValue == 0)
             {
                  ddlDPList = new SelectList(dpList, "category_id", "category_name");
@@ -40,8 +58,7 @@ namespace ChineseCulture.Admin.Controllers
             {
                  ddlDPList = new SelectList(dpList, "category_id", "category_name", selectValue);
             }
-           
-            
+
 
             return ddlDPList;
           
@@ -72,17 +89,20 @@ namespace ChineseCulture.Admin.Controllers
             {
 
                 HttpPostedFileBase excelFile = Request.Files["article_cover_image"];
-                DateTime now = DateTime.Now;
-                string newDirPath = string.Format(@"{0}\{1}\{2}\", Server.MapPath("../"), "Upload", now.ToString(@"yyyy\\mm\\dd"));
-                string newUrlPath = string.Format("/{0}/{1}/", "Upload", now.ToString("yyyy/mm/dd"));
-                string newPath = Path.Combine(Server.MapPath(@"..\"), "Upload", "");
-                string fileName = now.ToFileTime().ToString()+ excelFile.FileName.Substring(excelFile.FileName.LastIndexOf('.'));
-                ar.article_cover_image = newUrlPath + fileName;
-                if (!Directory.Exists(newDirPath))
+                if (excelFile.ContentLength > 0)
                 {
-                    Directory.CreateDirectory(newDirPath);
+                    DateTime now = DateTime.Now;
+                    string newDirPath = string.Format(@"{0}\{1}\{2}\", Server.MapPath("../"), "Upload", now.ToString(@"yyyy\\mm\\dd"));
+                    string newUrlPath = string.Format("/{0}/{1}/", "Upload", now.ToString("yyyy/mm/dd"));
+                    string newPath = Path.Combine(Server.MapPath(@"..\"), "Upload", "");
+                    string fileName = now.ToFileTime().ToString() + excelFile.FileName.Substring(excelFile.FileName.LastIndexOf('.'));
+                    ar.article_cover_image = newUrlPath + fileName;
+                    if (!Directory.Exists(newDirPath))
+                    {
+                        Directory.CreateDirectory(newDirPath);
+                    }
+                    excelFile.SaveAs(newDirPath + fileName);
                 }
-                excelFile.SaveAs(newDirPath + fileName);
             }
            
             ar.article_muser = Session["callid"].ToString();
@@ -103,19 +123,24 @@ namespace ChineseCulture.Admin.Controllers
             ViewBag.ArticleCategory = GetAllCategoryForDLL(ar.category_id).AsEnumerable();
             foreach (string upload in Request.Files.AllKeys)
             {
-                
+               
                 HttpPostedFileBase excelFile = Request.Files["article_cover_image"];
-                DateTime now = DateTime.Now;
-                string newDirPath = string.Format(@"{0}\{1}\{2}\",Server.MapPath("../"),"Upload",now.ToString(@"yyyy\\mm\\dd"));
-                string newUrlPath = string.Format("/{0}/{1}/","Upload", now.ToString("yyyy/mm/dd"));
-                string newPath = Path.Combine(Server.MapPath(@"..\"),"Upload","");
-                string fileName = now.ToFileTime().ToString();
-                ar.article_cover_image = newUrlPath + fileName;
-                if (!Directory.Exists(newDirPath))
+
+                if (excelFile.ContentLength > 0)
                 {
-                    Directory.CreateDirectory(newDirPath);
+                    DateTime now = DateTime.Now;
+                    string newDirPath = string.Format(@"{0}\{1}\{2}\", Server.MapPath("../"), "Upload", now.ToString(@"yyyy\\mm\\dd"));
+                    string newUrlPath = string.Format("/{0}/{1}/", "Upload", now.ToString("yyyy/mm/dd"));
+                    string newPath = Path.Combine(Server.MapPath(@"..\"), "Upload", "");
+                    string fileName = now.ToFileTime().ToString() + excelFile.FileName.Substring(excelFile.FileName.LastIndexOf('.'));
+                    ar.article_cover_image = newUrlPath + fileName;
+                    if (!Directory.Exists(newDirPath))
+                    {
+                        Directory.CreateDirectory(newDirPath);
+                    }
+                    excelFile.SaveAs(newDirPath + fileName);
                 }
-                excelFile.SaveAs(newDirPath+ fileName);
+               
             }
             ar.article_kuser = Session["callid"].ToString();
             ar.article_muser = Session["callid"].ToString();

@@ -29,6 +29,10 @@ namespace ChineseCulture.Model
         public List<HomeCategoryArticleViewModel> XiaoyuanmingrenDetail { get; set; }
         public List<HomeCategoryArticleViewModel> ChuangyehezuoFirst { get; set; }
         public List<HomeCategoryArticleViewModel> ChuangyehezuoDetail { get; set; }
+        public List<Article> Bianminfuwu { get; set; }
+        public List<Article> Caifuzhixing { get; set; }
+        public List<Article> Yulekuaibao { get; set; }
+        public List<Article> Shijiaguanliyuan { get; set; }
     }
 
 }

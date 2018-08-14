@@ -61,6 +61,7 @@
     <Compile Include="ArticleCategory.cs">
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="ArticleListModel.cs" />
     <Compile Include="ArticlePageViewModel.cs" />
     <Compile Include="ArticleType.cs">
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>

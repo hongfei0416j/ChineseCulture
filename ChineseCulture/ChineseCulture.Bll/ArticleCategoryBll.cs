@@ -21,7 +21,9 @@ namespace ChineseCulture.Bll
             ArticleCategory ac = new ArticleCategory();
             ac.category_state = state;
             ac.category_father_id = 0;
-            return acDao.Select(ac);
+            var list =  acDao.Select(ac);
+            
+            return list;
         }
         public IEnumerable<ArticleCategory> GetCategoryList(ArticleCategory ac)
         {

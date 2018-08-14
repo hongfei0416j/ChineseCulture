@@ -36,6 +36,7 @@ namespace ChineseCulture.Dao
             var query = db.Article.Where(t =>
             (category_id == 0 || t.category_id == category_id) &&
             (article_state == 0||t.article_state==article_state)&&
+            (string.IsNullOrEmpty(article.article_title)||t.article_title==article.article_title)&&
             (article_id==0||t.article_id==article_id)).OrderBy(t=>t.article_sort).OrderByDescending(s=>s.article_kdate);
             return query.ToList();
         }
@@ -56,6 +57,7 @@ namespace ChineseCulture.Dao
             Article nowArticle = db.Article.Single(x => x.article_id == newArticle.article_id);
             newArticle.article_kuser = nowArticle.article_kuser;
             newArticle.article_kdate = nowArticle.article_kdate;
+
             db.Entry(nowArticle).CurrentValues.SetValues(newArticle);//更新
             return db.SaveChanges()>0;
 

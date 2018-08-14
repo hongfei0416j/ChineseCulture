@@ -41,8 +41,12 @@ namespace ChineseCulture.Bll
             homePageModel.XiaoyuanmingrenDetail = GetAllCategoryByFatherCategory("xiaoyuanmingren", 9, 1);//学校导航
 
             homePageModel.ChuangyehezuoFirst = GetAllCategoryByFatherCategory("chuangyehezuo", 3, 2);//首页学校
-            homePageModel.ChuangyehezuoDetail = GetAllCategoryByFatherCategory("chuangyehezuo", 9, 1);//学校导航
+            homePageModel.ChuangyehezuoDetail = GetAllCategoryByFatherCategory("chuangyehezuo", 9, 1);//
 
+            homePageModel.Bianminfuwu = articleBll.GetArticleByCategory("bianminfuwu", 5).ToList();//便民服务
+            homePageModel.Caifuzhixing = articleBll.GetArticleByCategory("caifuzhixing", 5).ToList();
+                homePageModel.Yulekuaibao= articleBll.GetArticleByCategory("yulekuaibao", 5).ToList();//娱乐快报
+            homePageModel.Shijiaguanliyuan = articleBll.GetArticleByCategory("shijiaguanliyuan", 5).ToList();//十佳管理员
             return homePageModel;
         }
         public List<HomeCategoryArticleViewModel> GetAllCategoryByFatherCategory(string  fathercategory_code, int number, int category_type=1)
