@@ -12,11 +12,62 @@ namespace ChineseCulture.Bll
     {
         ArticleBll articleBll;
         ArticleCategoryBll articleCategoryBll;
+        ArticleCategoryDao acDao = new ArticleCategoryDao();
         public HomePageBll()
         {
             articleBll = new ArticleBll();
             articleCategoryBll = new ArticleCategoryBll();
+            acDao = new ArticleCategoryDao();
         }
+
+        public EventHomePageViewModel CreateEventPageModel()
+        {
+            EventHomePageViewModel eventHomePageViewModel = new EventHomePageViewModel();
+            ArticleCategoryDao acDao = new ArticleCategoryDao();
+            eventHomePageViewModel.SaiQuZuZhiDanWei = articleBll.GetArticleByCategory("saiquzuzhidanwei", 5);//赛区组织单位
+            eventHomePageViewModel.SaiShiHuojiangBangdan = articleBll.GetArticleByCategory("saishihuojiangbangdan",5);//赛区组织单位
+
+            /*文学教程*/
+            eventHomePageViewModel.WenxueZuopinCategoryList = GetEventCategoryByCategoryCode("event_wenxuejiaocheng", 15);
+            eventHomePageViewModel.WenxueZuopinCategoryArticleList = GetEventCategoryByFatherCategory("event_wenxuejiaocheng");
+
+            return eventHomePageViewModel;
+        }
+
+        private IEnumerable<ArticleCategory> GetEventCategoryByCategoryCode(string fathercategory_code, int category_number)
+        {
+            ArticleCategoryDao acDao = new ArticleCategoryDao();
+            int father_id = articleCategoryBll.GetCategoryIdByCode(fathercategory_code);
+            ArticleCategory ac = new ArticleCategory();
+            ac.category_father_id = father_id;
+
+            IEnumerable<ArticleCategory> arList = acDao.Select(ac).Take(category_number);//获取该类别下所有类别
+            return arList;
+        }
+
+        public List<HomeCategoryArticleViewModel> GetEventCategoryByFatherCategory(string fathercategory_code)
+        {
+            ArticleCategoryDao acDao = new ArticleCategoryDao();
+            int father_id = articleCategoryBll.GetCategoryIdByCode(fathercategory_code);
+            ArticleCategory ac = new ArticleCategory();
+            ac.category_father_id = father_id;
+            ac.category_state = 0;
+            ac.category_type = 2;//1的时候小导航 2的时候首页5个  3的时候广告
+            IEnumerable<ArticleCategory> arList = acDao.Select(ac).Take(5);//获取该类别下所有子类别 小导航条
+            List<HomeCategoryArticleViewModel> articleViewModelList = new List<HomeCategoryArticleViewModel>();
+            //获取各类别下面的文章
+            foreach (ArticleCategory item in arList)
+            {
+                HomeCategoryArticleViewModel articleViewModel = new HomeCategoryArticleViewModel();
+                articleViewModel.category_name = item.category_name;
+                articleViewModel.articleList = articleBll.GetArticleByCategory(item.category_code, 1).ToList();
+                //articleViewModel.adArticle = articleBll.GetArticleByCategory(item.category_code, 1).FirstOrDefault();
+                articleViewModelList.Add(articleViewModel);
+            }
+            return articleViewModelList;
+        }
+
+
         public HomePageViewModel CreateHomePageModel()
         {
             HomePageViewModel homePageModel = new HomePageViewModel();
@@ -51,7 +102,7 @@ namespace ChineseCulture.Bll
         }
         public List<HomeCategoryArticleViewModel> GetAllCategoryByFatherCategory(string  fathercategory_code, int number, int category_type=1)
         {
-            ArticleCategoryDao acDao = new ArticleCategoryDao();
+            
             int father_id = articleCategoryBll.GetCategoryIdByCode(fathercategory_code);
             ArticleCategory ac = new ArticleCategory();
             ac.category_father_id = father_id;

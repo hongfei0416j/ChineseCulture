@@ -2,7 +2,9 @@
 @{
     Layout = null;
 }
+@using ChineseCulture.Model;
 
+@model EventHomePageViewModel
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,8 +32,11 @@
                 <p><input type="text" placeholder="大家正在搜：东北虎胖成气球"></p>
                 <p><input type="submit" value="&#xe66c;"></p>
             </div>
-            <div class="sitedate" id="sitedate"><span id="date">
-            <script type="text/javascript" src="js/date.js"></script></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">会员登录</a>&nbsp;&nbsp;&nbsp;&nbsp;（<a href="#">注册</a>）</div>
+            <div class="sitedate" id="sitedate">
+                <span id="date">
+                    <script type="text/javascript" src="js/date.js"></script>
+                </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">会员登录</a>&nbsp;&nbsp;&nbsp;&nbsp;（<a href="#">注册</a>）
+            </div>
         </div>
     </header>
     <nav class="nav">
@@ -67,11 +72,10 @@
             <h3>赛区组织单位</h3>
             <div class="union-list">
                 <ul>
-                    <li><a href="#">华中赛区：湖南卫视国际频道红烛中国栏目</a></li>
-                    <li><a href="#">西北赛区：盛世新西方教育</a></li>
-                    <li><a href="#">华北赛区：北京尚音雅乐艺术学校</a></li>
-                    <li><a href="#">中原赛区：河南电视台中原新干线栏目</a></li>
-                    <li><a href="#">南北美洲国际赛区：加拿大慧乐网络电视台</a></li>
+                    @foreach (var item in Model.SaiQuZuZhiDanWei)
+                    {
+                        <li><a href="@item.article_click_url">@item.article_title</a></li>
+                    }
                 </ul>
             </div>
         </section>
@@ -79,33 +83,31 @@
             <h3>赛事获奖榜单</h3>
             <div class="hjmingdan-list">
                 <ul>
-                    <li><a href="#">校园之星原创文艺作品争霸赛初赛获奖榜单</a></li>
-                    <li><a href="#">校园之星原创文艺作品争霸赛初赛获奖榜单</a></li>
-                    <li><a href="#">原创文艺作品争霸赛初赛获奖榜单</a></li>
-                    <li><a href="#">星原创文艺作品争霸赛初赛获奖榜单</a></li>
-                    <li><a href="#">园之星原创文艺作品争霸赛初赛获奖榜单</a></li>
+                    @foreach (var item in Model.SaiShiHuojiangBangdan)
+                    {
+                        <li><a href="@item.article_click_url">@item.article_title</a></li>
+                    }
                 </ul>
             </div>
         </section>
         <section class="dscols">
             <header class="col-tab clear">
                 <p class="on">文学教程</p>
-                <p><a href="#">诗歌</a></p>
-                <p><a href="#">散文</a></p>
-                <p><a href="#">朗诵</a></p>
-                <p><a href="#">论文</a></p>
-                <p><a href="#">小说</a></p>
-                <p><a href="#">剧本</a></p>
-                <p><a href="#">童话</a></p>
-                <p><a href="#">民间故事</a></p>
-                <p><a href="#">培训教程</a></p>
-                <p><a href="#">管理教程</a></p>
-                <p><a href="#">创意项目</a></p>
-                <a href="#">更多</a>
+                @foreach (var item in Model.WenxueZuopinCategoryList)
+                {
+                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                }
+               
+                <a href="/Event/List">更多</a>
             </header>
             <div class="dscol-con">
                 <header class="dsc-header clear">
-                    <p></p><p>诗歌</p><p>散文</p><p>小说</p><p>剧本</p><p>教程</p>
+                    <p></p>
+                    @foreach (var item in Model.WenxueZuopinCategoryArticleList)
+                    {
+                        <p>@item.category_name</p>
+                    }
+                   
                 </header>
                 <div class="dsc-list clear">
                     <ul>
@@ -114,36 +116,21 @@
                             <p>入选作品</p>
                             <p>投票点评</p>
                         </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#"><span>大海</span>咆哮的火舍<br>点燃了新的曙光<br>一根红线<br>紧紧的系住你我的心肠</a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-about">
-                                <a href="#">
-                                    <span>滚滚红尘</span>夜已经很深很深，<br>除了天空中闪耀的星光<br>
-                                    和鸡叫的声音
-                                </a>
-                            </p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#"><span>闪耀的星海</span>咆哮的火舍<br>点燃了新的曙光<br>一根红线<br>紧紧的系住你我的心肠</a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#"><span>飘香的玫瑰</span>他，<br>风度翩翩、<br> 充满智慧：<br>却历尽了沧桑</a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#"><span>大海</span>许多人只是把作文看作了升学的比赛的工具，却忽略了她在日常生活中的使用价值</a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
+                        @foreach (var categoryList in Model.WenxueZuopinCategoryArticleList)
+                        {
+                            foreach (var item in categoryList.articleList)
+                            {
+                                <li>
+                                    <p><a href="#"><img src="@item.article_cover_image" alt=" "></a></p>
+                                    <p class="dsc-li-about">
+                                        <a href="@item.article_click_url">
+                                            
+                                            @Html.Raw(@item.article_description.Replace("\r\n", "<br>"))
+                                        </a></p>
+                                    <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                                </li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>
@@ -488,13 +475,13 @@
     <script src="js/swiper.min.js"></script>
     <script src="js/fun.js"></script>
     <script>
-    var swiper1 = new Swiper('.swiper1', {
-        pagination: '.swiper-pagination1',
-        paginationClickable: true,
-        spaceBetween:0,
-		autoplay: 3500,
-		loop:true
-    });
+        var swiper1 = new Swiper('.swiper1', {
+            pagination: '.swiper-pagination1',
+            paginationClickable: true,
+            spaceBetween: 0,
+            autoplay: 3500,
+            loop: true
+        });
     </script>
 </body>
 </html>

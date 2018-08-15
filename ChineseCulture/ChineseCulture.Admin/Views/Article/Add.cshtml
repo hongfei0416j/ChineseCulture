@@ -57,7 +57,7 @@
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2">文章摘要：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    @Html.TextAreaFor(model => model.article_description, htmlAttributes: new { @class = "input-text", @Value = " " })
+                    @Html.TextAreaFor(model => model.article_description, htmlAttributes: new { @class = "input-text", @style = "height:200px;", rows = 8 })
 
                 </div>
             </div>

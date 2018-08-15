@@ -81,6 +81,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>ChineseCultureDB.edmx</DependentUpon>
     </Compile>
+    <Compile Include="EventHomePageViewModel.cs" />
     <Compile Include="FriendLink.cs">
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>
     </Compile>

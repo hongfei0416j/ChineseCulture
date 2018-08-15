@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChineseCulture.Bll;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,10 @@ namespace ChineseCulture.Controllers
         // GET: Event
         public ActionResult Index()
         {
-            return View();
+            HomePageBll homePageBll = new HomePageBll();
+            var homePageModel = homePageBll.CreateEventPageModel();
+            return View(homePageModel);
+            
         }
         public ActionResult List()
         {
