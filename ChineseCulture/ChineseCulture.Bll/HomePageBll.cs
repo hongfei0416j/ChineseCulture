@@ -31,6 +31,26 @@ namespace ChineseCulture.Bll
             eventHomePageViewModel.WenxueZuopinCategoryList = GetEventCategoryByCategoryCode("event_wenxuejiaocheng", 15);
             eventHomePageViewModel.WenxueZuopinCategoryArticleList = GetEventCategoryByFatherCategory("event_wenxuejiaocheng");
 
+
+            /*书画手工*/
+            eventHomePageViewModel.ShuhuashougongCategoryList = GetEventCategoryByCategoryCode("event_shuhuashougong", 15);
+            eventHomePageViewModel.ShuhuashougongCategoryArticleList = GetEventCategoryByFatherCategory("event_shuhuashougong");
+
+            /*艺术表演*/
+            eventHomePageViewModel.YishubiaoyanCategoryList = GetEventCategoryByCategoryCode("event_yishubiaoyan", 15);
+            eventHomePageViewModel.YishubiaoyanCategoryArticleList = GetEventCategoryByFatherCategory("event_yishubiaoyan");
+
+            /*龙虎榜单*/
+            eventHomePageViewModel.LonghubangdanCategoryList = GetEventCategoryByCategoryCode("event_longhubangdan", 15);
+            eventHomePageViewModel.LonghubangdanCategoryArticleList = GetEventCategoryByFatherCategory("event_longhubangdan");
+            /*学术交流*/
+            eventHomePageViewModel.XueshujiaoliuCategoryList = GetEventCategoryByCategoryCode("event_xueshujiaoliu", 15);
+            eventHomePageViewModel.XueshujiaoliuCategoryArticleList = GetEventCategoryByFatherCategory("event_xueshujiaoliu");
+            /*历届赛事*/
+            eventHomePageViewModel.LijiesaishiCategoryList = GetEventCategoryByCategoryCode("event_lijiesaishi", 15);
+            eventHomePageViewModel.LijiesaishiCategoryArticleList = GetEventCategoryByFatherCategory("event_lijiesaishi");
+
+
             return eventHomePageViewModel;
         }
 

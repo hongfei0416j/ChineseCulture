@@ -356,6 +356,9 @@
     <Content Include="Views\Event\Index.cshtml" />
     <Content Include="Views\Event\List.cshtml" />
     <Content Include="Views\Event\Detail.cshtml" />
+    <Content Include="Views\Event\_ListPartial.cshtml" />
+    <Content Include="Views\Partinal\EventHomeMenu.cshtml" />
+    <Content Include="Views\Partinal\PageHeader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

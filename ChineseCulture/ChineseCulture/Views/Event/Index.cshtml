@@ -21,24 +21,7 @@
         <script src="js/jquery-1.11.1.min.js"></script>*@
 </head>
 <body style="background-image:url(/images/body2.png)">
-    <header class="header c-con">
-        <div class="hd-con">
-            <a href="#" class="logo-saishi"><img src="/images/logo-saishi.png" alt=" "></a>
-            <div class="city">
-                城市切换【<a href="javascript:;">郑州</a>】
-            </div>
-            <div class="search-saishi clear">
-                <p>搜&nbsp;&nbsp;索</p>
-                <p><input type="text" placeholder="大家正在搜：东北虎胖成气球"></p>
-                <p><input type="submit" value="&#xe66c;"></p>
-            </div>
-            <div class="sitedate" id="sitedate">
-                <span id="date">
-                    <script type="text/javascript" src="js/date.js"></script>
-                </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">会员登录</a>&nbsp;&nbsp;&nbsp;&nbsp;（<a href="#">注册</a>）
-            </div>
-        </div>
-    </header>
+    @{Html.RenderAction("PageHeader", "Partinal");}
     <nav class="nav">
         <div class="nav-list c-con clear">
             <ul>
@@ -97,7 +80,7 @@
                 {
                     <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
                 }
-               
+
                 <a href="/Event/List">更多</a>
             </header>
             <div class="dscol-con">
@@ -107,7 +90,7 @@
                     {
                         <p>@item.category_name</p>
                     }
-                   
+
                 </header>
                 <div class="dsc-list clear">
                     <ul>
@@ -124,9 +107,10 @@
                                     <p><a href="#"><img src="@item.article_cover_image" alt=" "></a></p>
                                     <p class="dsc-li-about">
                                         <a href="@item.article_click_url">
-                                            
+
                                             @Html.Raw(@item.article_description.Replace("\r\n", "<br>"))
-                                        </a></p>
+                                        </a>
+                                    </p>
                                     <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
                                 </li>
                             }
@@ -138,22 +122,18 @@
         <section class="dscols">
             <header class="col-tab clear">
                 <p class="on">书画手工</p>
-                <p><a href="#">沙画</a></p>
-                <p><a href="#">手工制作</a></p>
-                <p><a href="#">素描</a></p>
-                <p><a href="#">水粉</a></p>
-                <p><a href="#">油画</a></p>
-                <p><a href="#">国画</a></p>
-                <p><a href="#">雕刻</a></p>
-                <p><a href="#">摄影</a></p>
-                <p><a href="#">书法</a></p>
-                <p><a href="#">剪纸</a></p>
-                <p><a href="#">拼装</a></p>
+                @foreach (var item in Model.ShuhuashougongCategoryList)
+                {
+                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                }
                 <a href="#">更多</a>
             </header>
             <div class="dscol-con">
                 <header class="dsc-header clear">
-                    <p></p><p>书法</p><p>绘画</p><p>拼装</p><p>剪纸</p><p>雕刻</p>
+                    <p></p>@foreach (var item in Model.ShuhuashougongCategoryArticleList)
+                    {
+                        <p>@item.category_name</p>
+                    }
                 </header>
                 <div class="dsc-list clear">
                     <ul>
@@ -162,31 +142,22 @@
                             <p>入选作品</p>
                             <p>投票点评</p>
                         </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
+                        @foreach (var categoryList in Model.ShuhuashougongCategoryArticleList)
+                        {
+                            foreach (var item in categoryList.articleList)
+                            {
+                                <li>
+                                    <p><a href="#"><img src="@item.article_cover_image" alt=" "></a></p>
+                                    <p class="dsc-li-about">
+                                        <a href="@item.article_click_url">
+
+                                            @Html.Raw(@item.article_description.Replace("\r\n", "<br>"))
+                                        </a>
+                                    </p>
+                                    <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                                </li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>
@@ -194,25 +165,18 @@
         <section class="dscols">
             <header class="col-tab clear">
                 <p class="on">艺术表演 </p>
-                <p><a href="#">朗诵</a></p>
-                <p><a href="#">主持</a></p>
-                <p><a href="#">歌曲</a></p>
-                <p><a href="#">戏曲</a></p>
-                <p><a href="#">舞蹈</a></p>
-                <p><a href="#">模特</a></p>
-                <p><a href="#">跆拳道</a></p>
-                <p><a href="#">演奏</a></p>
-                <p><a href="#">小品</a></p>
-                <p><a href="#">配音</a></p>
-                <p><a href="#">快板</a></p>
-                <p><a href="#">评书</a></p>
-                <p><a href="#">模仿秀</a></p>
-                <p><a href="#">绝技</a></p>
+                @foreach (var item in Model.YishubiaoyanCategoryList)
+                {
+                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                }
                 <a href="#">更多</a>
             </header>
             <div class="dscol-con">
                 <header class="dsc-header clear">
-                    <p></p><p>朗诵</p><p>主持</p><p>演讲</p><p>舞蹈</p><p>歌曲</p>
+                    <p></p>@foreach (var item in Model.YishubiaoyanCategoryArticleList)
+                    {
+                        <p>@item.category_name</p>
+                    }
                 </header>
                 <div class="dsc-list clear">
                     <ul>
@@ -221,31 +185,22 @@
                             <p>入选作品</p>
                             <p>投票点评</p>
                         </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
+                        @foreach (var categoryList in Model.YishubiaoyanCategoryArticleList)
+                        {
+                            foreach (var item in categoryList.articleList)
+                            {
+                                <li>
+                                    <p><a href="#"><img src="@item.article_cover_image" alt=" "></a></p>
+                                    <p class="dsc-li-about">
+                                        <a href="@item.article_click_url">
+
+                                            @Html.Raw(@item.article_description.Replace("\r\n", "<br>"))
+                                        </a>
+                                    </p>
+                                    <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                                </li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>
@@ -253,17 +208,18 @@
         <section class="dscols">
             <header class="col-tab clear">
                 <p class="on">龙虎榜单</p>
-                <p><a href="#">十佳教育品牌</a></p>
-                <p><a href="#">我最喜爱的歌手</a></p>
-                <p><a href="#">我最喜爱的主持人</a></p>
-                <p><a href="#">我最喜爱的演员</a></p>
-                <p><a href="#">我最喜爱的讲师</a></p>
-                <p><a href="#">我最喜爱的作家</a></p>
+                @foreach (var item in Model.LonghubangdanCategoryList)
+                {
+                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                }
                 <a href="#">更多</a>
             </header>
             <div class="dscol-con">
                 <header class="dsc-header clear">
-                    <p></p><p>教育品牌</p><p>歌手</p><p>演员</p><p>主持人</p><p>讲师</p>
+                    <p></p>@foreach (var item in Model.LonghubangdanCategoryArticleList)
+                    {
+                        <p>@item.category_name</p>
+                    }
                 </header>
                 <div class="dsc-list clear">
                     <ul>
@@ -272,31 +228,22 @@
                             <p>入选作品</p>
                             <p>投票点评</p>
                         </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                            <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
-                        </li>
+                        @foreach (var categoryList in Model.LonghubangdanCategoryArticleList)
+                        {
+                            foreach (var item in categoryList.articleList)
+                            {
+                                <li>
+                                    <p><a href="#"><img src="@item.article_cover_image" alt=" "></a></p>
+                                    <p class="dsc-li-about">
+                                        <a href="@item.article_click_url">
+
+                                            @Html.Raw(@item.article_description.Replace("\r\n", "<br>"))
+                                        </a>
+                                    </p>
+                                    <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                                </li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>
@@ -304,16 +251,18 @@
         <section class="dscols">
             <header class="col-tab clear">
                 <p class="on">学术交流</p>
-                <p><a href="#">中外学术交流会</a></p>
-                <p><a href="#">文学诗词笔会</a></p>
-                <p><a href="#">教育专家座谈会</a></p>
-                <p><a href="#">高校大学生音乐盛典</a></p>
-                <p><a href="#">中国校园文化艺术节</a></p>
+                @foreach (var item in Model.XueshujiaoliuCategoryList)
+                {
+                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                }
                 <a href="#">更多</a>
             </header>
             <div class="dscol-con">
                 <header class="dsc-header clear">
-                    <p></p><p>中外学术交流会</p><p>文学诗词笔会</p><p>教育专家座谈会</p><p>高校大学生音乐盛典</p><p>中国校园文化艺术节</p>
+                    <p></p>@foreach (var item in Model.XueshujiaoliuCategoryArticleList)
+                    {
+                        <p>@item.category_name</p>
+                    }
                 </header>
                 <div class="dsc-list clear">
                     <ul>
@@ -322,46 +271,40 @@
                             <p>参加代表</p>
                             <p>活动主题</p>
                         </li>
-                        <li>
-                            <p class="dsc-li-user"><a href="#">加拿大慧乐网络电视</a></p>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-user"><a href="#">中国卫视传媒集团</a></p>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-user"><a href="#">湖南卫视国际频道</a></p>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-user"><a href="#">广西黄丹艳有限公司</a></p>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-user"><a href="#">澳大利亚联邦工商单位</a></p>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                        </li>
-                    </ul>
+                        @foreach (var categoryList in Model.xue)
+                        {
+                            foreach (var item in categoryList.articleList)
+                            {
+                                <li>
+                                    <p><a href="#"><img src="@item.article_cover_image" alt=" "></a></p>
+                                    <p class="dsc-li-about">
+                                        <a href="@item.article_click_url">
+
+                                            @Html.Raw(@item.article_description.Replace("\r\n", "<br>"))
+                                        </a>
+                                    </p>
+                                    <p><a href="#">123456&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+                                </li>
+                            }
+                        }
                 </div>
             </div>
         </section>
         <section class="dscols">
             <header class="col-tab clear">
                 <p class="on">历届赛事</p>
-                <p><a href="#">首届全国中小学生诗歌散文朗诵争霸赛</a></p>
-                <p><a href="#">首届全国校园之星原创文艺作品争霸赛</a></p>
-                <p><a href="#">第二届全国校园之星原创文艺作品争霸赛</a></p>
+                @foreach (var item in Model.LijiesaishiCategoryList)
+                {
+                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                }
                 <a href="#">更多</a>
             </header>
             <div class="dscol-con">
                 <header class="dsc-header clear">
-                    <p></p><p>获奖选手</p><p>参赛作品</p><p>组织单位</p><p>主持人</p><p>评委</p>
+                    <p></p>@foreach (var item in Model.LijiesaishiCategoryArticleList)
+                    {
+                        <p>@item.category_name</p>
+                    }
                 </header>
                 <div class="dsc-list clear">
                     <ul>

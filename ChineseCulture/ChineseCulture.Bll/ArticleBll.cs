@@ -62,6 +62,15 @@ namespace ChineseCulture.Bll
             ArticleCategory acFather = acdBll.GetCategory(new ArticleCategory { category_id = ac.category_father_id });
             return acFather;
         }
+
+        internal PagedList<Article> GetEventPageList(ArticlePageViewModel articleDetailModel)
+        {
+            var articleList = articleDao.SelectPageList(articleDetailModel);//获取网站公告
+            articleList.ForEach(t => t.article_click_url = "/Event/Detail/" + t.article_id);
+            articleList.ForEach(t => t.article_description = string.IsNullOrEmpty(t.article_description) ? StringHelper.ReplaceHtmlTag(t.article_content, 200) : t.article_description);
+            return articleList;
+        }
+
         public void EditArticle(Article article)
         {
            

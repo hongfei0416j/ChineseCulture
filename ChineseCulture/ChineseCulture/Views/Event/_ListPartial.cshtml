@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+
+@using ChineseCulture.Model;
+
+
+@model ArticlePageViewModel
+
+@foreach (var m in Model.articlePageList)
+{<li>
+        <a href="#" class="dsl-img"><img src="@m.article_cover_image" alt=" "></a>
+        <h3>
+            <a href="@m.article_click_url" target="_blank">@m.article_title</a>
+        </h3>
+        <p>@Html.Raw(@m.article_description)</p>
+        <h4>
+            <span>123456票</span>
+            <a href="#">我要投票</a>
+        </h4>
+    </li>
+}

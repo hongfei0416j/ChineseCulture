@@ -25,5 +25,13 @@ namespace ChineseCulture.Controllers
         {
             return View();
         }
+        public ActionResult EventHomeMenu()
+        {
+            return View();
+        }
+        public ActionResult PageHeader()
+        {
+            return View();
+        }
     }
 }

@@ -41,6 +41,24 @@ namespace ChineseCulture.Bll
             return articleDetailModel;
         }
 
+        public ArticlePageViewModel CreateEventListModel(ArticlePageViewModel articlePageViewModel)
+        {
+            ArticlePageViewModel articleDetailModel = new ArticlePageViewModel();
+            ArticleBll acBll = new ArticleBll();
+            articleDetailModel.page_size = 20;
+            articleDetailModel.page_index = articlePageViewModel.page_index;
+            articleDetailModel.articleRightList = acBll.GetEventPageList(new ArticlePageViewModel { article_state = 1, page_index = 1, page_size = 15,category_id=articlePageViewModel.category_id });
+            articleDetailModel.category_id = articlePageViewModel.category_id;
+            articleDetailModel.articlePageList = acBll.GetEventPageList(articleDetailModel);
+
+            ArticleCategoryBll categoryBll = new ArticleCategoryBll();
+            articleDetailModel.ThisArticleCategory = categoryBll.GetCategory(new ArticleCategory { category_id = articlePageViewModel.ThisArticleCategory.category_id });
+            articleDetailModel.ThisArticleFatherCategory = categoryBll.GetCategory(new ArticleCategory { category_id = articlePageViewModel.ThisArticleCategory.category_father_id });
+            articleDetailModel.ArticleCategoryList = categoryBll.GetCategoryList(new ArticleCategory { category_father_id = articleDetailModel.ThisArticleCategory.category_father_id });
+            return articleDetailModel;
+
+        }
+
         public ArticlePageViewModel CreateArticleListModel(ArticlePageViewModel articlePageViewModel)
         {
             ArticlePageViewModel articleDetailModel = new ArticlePageViewModel();
