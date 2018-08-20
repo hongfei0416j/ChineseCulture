@@ -25,6 +25,7 @@
           <Property Name="article_description" Type="nvarchar" MaxLength="500" Nullable="false" />
           <Property Name="article_content" Type="text" Nullable="false" />
           <Property Name="category_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="tick_number" Type="int" />
         </EntityType>
         <EntityType Name="ArticleCategory">
           <Key>
@@ -38,6 +39,18 @@
           <Property Name="category_type_name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="category_code" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="category_state" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ArticleTicks">
+          <Key>
+            <PropertyRef Name="at_id" />
+          </Key>
+          <Property Name="at_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="at_ipfrom" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="at_brower" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="at_device" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="at_kuser" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="at_kdate" Type="datetime" Nullable="false" />
+          <Property Name="article_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="ArticleType">
           <Key>
@@ -108,13 +121,17 @@
           <Property Name="menu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="menu_name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="menu_code" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="menu_category" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="menu_type" Type="int" Nullable="false" />
+          <Property Name="click_url" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="site_id" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="menu_state" Type="int" Nullable="false" />
-          <Property Name="menu_category" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="menu_father_id" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="ChineseCultureModelStoreContainer">
           <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ArticleCategory" EntityType="Self.ArticleCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ArticleTicks" EntityType="Self.ArticleTicks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ArticleType" EntityType="Self.ArticleType" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FriendLink" EntityType="Self.FriendLink" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Function" EntityType="Self.Function" Schema="dbo" store:Type="Tables" />
@@ -132,9 +149,10 @@
           <EntitySet Name="Member" EntityType="ChineseCultureModel.Member" />
           <EntitySet Name="MemberLoginLog" EntityType="ChineseCultureModel.MemberLoginLog" />
           <EntitySet Name="ArticleCategory" EntityType="ChineseCultureModel.ArticleCategory" />
-          <EntitySet Name="SiteMenu" EntityType="ChineseCultureModel.SiteMenu" />
           <EntitySet Name="ArticleType" EntityType="ChineseCultureModel.ArticleType" />
+          <EntitySet Name="ArticleTicks" EntityType="ChineseCultureModel.ArticleTicks" />
           <EntitySet Name="Article" EntityType="ChineseCultureModel.Article" />
+          <EntitySet Name="SiteMenu" EntityType="ChineseCultureModel.SiteMenu" />
         </EntityContainer>
         <EntityType Name="FriendLink">
           <Key>
@@ -203,17 +221,6 @@
           <Property Name="category_code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="category_state" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="SiteMenu">
-          <Key>
-            <PropertyRef Name="menu_id" />
-          </Key>
-          <Property Name="menu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="menu_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="menu_code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="site_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="menu_state" Type="Int32" Nullable="false" />
-          <Property Name="menu_category" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
-        </EntityType>
         <EntityType Name="ArticleType">
           <Key>
             <PropertyRef Name="type_id" />
@@ -221,6 +228,18 @@
           <Property Name="type_id" Type="Int32" Nullable="false" />
           <Property Name="type_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="type_sort" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ArticleTicks">
+          <Key>
+            <PropertyRef Name="at_id" />
+          </Key>
+          <Property Name="at_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="at_ipfrom" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="at_brower" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="at_device" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="at_kuser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="at_kdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="article_id" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Article">
           <Key>
@@ -242,6 +261,21 @@
           <Property Name="article_description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="article_content" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="category_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="tick_number" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SiteMenu">
+          <Key>
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Name="menu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="menu_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="menu_code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="menu_category" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="menu_type" Type="Int32" Nullable="false" />
+          <Property Name="click_url" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="site_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="menu_state" Type="Int32" Nullable="false" />
+          <Property Name="menu_father_id" Type="Int32" Nullable="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -321,18 +355,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="SiteMenu">
-            <EntityTypeMapping TypeName="ChineseCultureModel.SiteMenu">
-              <MappingFragment StoreEntitySet="SiteMenu">
-                <ScalarProperty Name="menu_category" ColumnName="menu_category" />
-                <ScalarProperty Name="menu_state" ColumnName="menu_state" />
-                <ScalarProperty Name="site_id" ColumnName="site_id" />
-                <ScalarProperty Name="menu_code" ColumnName="menu_code" />
-                <ScalarProperty Name="menu_name" ColumnName="menu_name" />
-                <ScalarProperty Name="menu_id" ColumnName="menu_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="ArticleType">
             <EntityTypeMapping TypeName="ChineseCultureModel.ArticleType">
               <MappingFragment StoreEntitySet="ArticleType">
@@ -342,9 +364,23 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="ArticleTicks">
+            <EntityTypeMapping TypeName="ChineseCultureModel.ArticleTicks">
+              <MappingFragment StoreEntitySet="ArticleTicks">
+                <ScalarProperty Name="article_id" ColumnName="article_id" />
+                <ScalarProperty Name="at_kdate" ColumnName="at_kdate" />
+                <ScalarProperty Name="at_kuser" ColumnName="at_kuser" />
+                <ScalarProperty Name="at_device" ColumnName="at_device" />
+                <ScalarProperty Name="at_brower" ColumnName="at_brower" />
+                <ScalarProperty Name="at_ipfrom" ColumnName="at_ipfrom" />
+                <ScalarProperty Name="at_id" ColumnName="at_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Article">
             <EntityTypeMapping TypeName="ChineseCultureModel.Article">
               <MappingFragment StoreEntitySet="Article">
+                <ScalarProperty Name="tick_number" ColumnName="tick_number" />
                 <ScalarProperty Name="category_name" ColumnName="category_name" />
                 <ScalarProperty Name="article_content" ColumnName="article_content" />
                 <ScalarProperty Name="article_description" ColumnName="article_description" />
@@ -361,6 +397,21 @@
                 <ScalarProperty Name="article_click_url" ColumnName="article_click_url" />
                 <ScalarProperty Name="article_title" ColumnName="article_title" />
                 <ScalarProperty Name="article_id" ColumnName="article_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SiteMenu">
+            <EntityTypeMapping TypeName="ChineseCultureModel.SiteMenu">
+              <MappingFragment StoreEntitySet="SiteMenu">
+                <ScalarProperty Name="menu_father_id" ColumnName="menu_father_id" />
+                <ScalarProperty Name="menu_state" ColumnName="menu_state" />
+                <ScalarProperty Name="site_id" ColumnName="site_id" />
+                <ScalarProperty Name="click_url" ColumnName="click_url" />
+                <ScalarProperty Name="menu_type" ColumnName="menu_type" />
+                <ScalarProperty Name="menu_category" ColumnName="menu_category" />
+                <ScalarProperty Name="menu_code" ColumnName="menu_code" />
+                <ScalarProperty Name="menu_name" ColumnName="menu_name" />
+                <ScalarProperty Name="menu_id" ColumnName="menu_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

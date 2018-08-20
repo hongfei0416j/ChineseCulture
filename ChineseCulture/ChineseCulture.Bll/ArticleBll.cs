@@ -71,6 +71,12 @@ namespace ChineseCulture.Bll
             return articleList;
         }
 
+        public void AddTick(ArticleTicks at)
+        {
+            articleDao.AddArticleTick(at);
+            articleDao.UpdateTickOfArticle(at);
+        }
+
         public void EditArticle(Article article)
         {
            

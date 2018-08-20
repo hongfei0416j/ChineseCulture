@@ -27,6 +27,7 @@ namespace ChineseCulture.Bll
             foreach (var item in functionList)
             {
                 item.function_father_id = item.function_id;
+                item.function_id = 0;
                 var chiledFunctions = funDao.Select(item);
                 AdminMenuViewModel m = new AdminMenuViewModel();
                 m.function = item;
@@ -54,6 +55,7 @@ namespace ChineseCulture.Bll
             var fun = new Function();
            
             fun.function_id = id;
+            fun.function_father_id = -1;
             return funDao.Select(fun).FirstOrDefault();
         }
 

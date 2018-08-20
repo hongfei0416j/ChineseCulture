@@ -32,6 +32,7 @@ namespace ChineseCulture.Dao
             int function_id = fun.function_id;
             var query = db.Function.Where(t =>
             (function_state==0||t.function_state == function_state) && (fun.function_father_id == -1||t.function_father_id == fun.function_father_id)
+            && (fun.function_id == 0 || t.function_id == fun.function_id)
             ).OrderBy(s=>s.function_sort);
            
             return query.ToList();
@@ -40,13 +41,10 @@ namespace ChineseCulture.Dao
         public bool Update(Function m)
         {
             Function mModel = db.Function.Single(x => x.function_id == m.function_id);
-            mModel.function_name = m.function_name;
-            mModel.function_code = m.function_code;
-           
-            mModel.function_css = m.function_css;
-            mModel.function_father_id = m.function_father_id;
+            m.kuser = mModel.kuser;
+            m.kdate = mModel.kdate;
 
-            db.Entry(mModel).CurrentValues.SetValues(mModel);
+            db.Entry(mModel).CurrentValues.SetValues(m);
             return db.SaveChanges() > 0;
         }
     }

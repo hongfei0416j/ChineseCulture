@@ -30,5 +30,6 @@ namespace ChineseCulture.Model
         public string article_description { get; set; }
         public string article_content { get; set; }
         public string category_name { get; set; }
+        public Nullable<int> tick_number { get; set; }
     }
 }

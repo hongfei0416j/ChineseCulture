@@ -73,6 +73,27 @@ namespace ChineseCulture.Dao
             return query.ToPagedList<Article>(articleDetailModel.page_index, articleDetailModel.page_size);
         }
 
+        public void UpdateTickOfArticle(ArticleTicks at)
+        {
+            db.Database.ExecuteSqlCommand("update ");
+        }
+
+        public bool AddArticleTick(ArticleTicks at)
+        {
+            //var 
+            try
+            {
+                db.ArticleTicks.Add(at);
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
         public IEnumerable<Article> SelectByCategory(Article article, int number, ArticleCategory ac)
         {
             int category_father_id = ac.category_father_id;

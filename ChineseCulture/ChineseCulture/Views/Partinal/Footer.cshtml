@@ -1,18 +1,24 @@
 ﻿
 @{
     Layout = null;
- 
 }
+<section class="main c-con clear" style="background-color:#FFF;">
+    <section class="cyfh-blank"></section>
+    <section class="links">
+        <h3><p>友情链接</p></h3>
+        @{Html.RenderAction("FriendLink", "Partinal");}
+    </section>
+    </section>
+    <footer class="footer c-con">
 
-<footer class="footer c-con">
-    <div class="footer-nav">
-        <a href="#">企业简介</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">管理团队</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">主营项目</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">产业布局</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">诚聘英才</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">客户留言</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">联系我们 </a>
-    </div>
-    <div class="copyright">
-        Copyright ©1996-2018 hj Corporation All Right Reserved<br>
-        版权所有&nbsp;&nbsp;河南慧涓文化传播有限公司&nbsp;&nbsp;中国互联网举报中心 <br>
+        <div class="footer-nav">
+            <a href="#">企业简介</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">管理团队</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">主营项目</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">产业布局</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">诚聘英才</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">客户留言</a>&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">联系我们 </a>
+        </div>
+        <div class="copyright">
+            Copyright ©1996-2018 hj Corporation All Right Reserved<br>
+            版权所有&nbsp;&nbsp;河南慧涓文化传播有限公司&nbsp;&nbsp;中国互联网举报中心 <br>
 
-        总部服务电话：0371-65339250　15938726942<br>
-        豫ICP备18021547号<br>
-    </div>
-</footer>
+            总部服务电话：0371-65339250　15938726942<br>
+            豫ICP备18021547号<br>
+        </div>
+    </footer>

@@ -57,6 +57,7 @@
     <Compile Include="HomePageBll.cs" />
     <Compile Include="MemberBll.cs" />
     <Compile Include="FunctionBll.cs" />
+    <Compile Include="SiteMenuBll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

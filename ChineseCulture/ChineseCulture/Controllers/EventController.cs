@@ -45,5 +45,21 @@ namespace ChineseCulture.Controllers
             articlePageViewModel = articlePageBll.CreateArticleDetailModel(id);
             return View(articlePageViewModel);
         }
+
+        public HttpContextBase AddTick(int id)
+        {
+            ArticleBll acBll = new ArticleBll();
+
+            ArticleTicks at = new ArticleTicks();
+            at.article_id = id;
+            at.at_brower = Request.Browser.Browser;
+            at.at_device = Request.UserHostName;
+            at.at_ipfrom = Request.UserHostAddress;
+            at.at_kdate = DateTime.Now;
+            at.at_kuser = "";
+            //acBll.AddTick();
+            acBll.AddTick(at);
+            return null;
+        }
     }
 }

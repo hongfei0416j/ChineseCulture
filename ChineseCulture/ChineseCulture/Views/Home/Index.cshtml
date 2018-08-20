@@ -11,27 +11,9 @@
     @Styles.Render("~/Content/homepage")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/homepage")
-
-
 </head>
 <body>
-    <header class="header c-con">
-        <div class="hd-con">
-            <a href="/" class="logo"><img src="/images/logo.png" alt=" "></a>
-            <div class="city">
-                城市切换【<a href="javascript:;">郑州</a>】
-            </div>
-            <div class="search clear">
-                <p>搜&nbsp;&nbsp;索</p>
-                <p><input type="text" placeholder="大家正在搜：东北虎胖成气球"></p>
-                <p><input type="submit" value="&#xe66c;"></p>
-            </div>
-            <div class="sitedate" id="sitedate">
-                <span id="date">
-                </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">会员登录</a>&nbsp;&nbsp;&nbsp;&nbsp;（<a href="#">注册</a>）
-            </div>
-        </div>
-    </header>
+    
     @{Html.RenderAction("HomePageMenu", "Partinal");}
     @{Html.RenderAction("HomePageCategoryMenu", "Partinal");}
     <section class="notic c-con">
@@ -575,7 +557,7 @@
                             <a href="">
                                 <p>
                                     <img src=" @item.article_cover_image" alt=" ">
-                               </p>
+                                </p>
                                 <h3>@item.article_title</h3>
                             </a>
                         </li>
@@ -622,11 +604,9 @@
                 </ul>
             </div>
         </section>
-        <section class="links">
-            <h3><p>友情链接</p></h3>
-            @{Html.RenderAction("FriendLink", "Partinal");}
-        </section>
+
     </section>
+    
     @{Html.RenderAction("Footer", "Partinal");}
 
     <script>

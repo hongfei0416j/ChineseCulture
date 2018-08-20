@@ -12,16 +12,14 @@ namespace ChineseCulture.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class SiteMenu
+    public partial class ArticleTicks
     {
-        public int menu_id { get; set; }
-        public string menu_name { get; set; }
-        public string menu_code { get; set; }
-        public string menu_category { get; set; }
-        public int menu_type { get; set; }
-        public string click_url { get; set; }
-        public string site_id { get; set; }
-        public int menu_state { get; set; }
-        public int menu_father_id { get; set; }
+        public int at_id { get; set; }
+        public string at_ipfrom { get; set; }
+        public string at_brower { get; set; }
+        public string at_device { get; set; }
+        public string at_kuser { get; set; }
+        public System.DateTime at_kdate { get; set; }
+        public int article_id { get; set; }
     }
 }

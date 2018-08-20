@@ -10,9 +10,10 @@
         <EntityTypeShape EntityType="ChineseCultureModel.Member" Width="1.5" PointX="7.75" PointY="6.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.MemberLoginLog" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.ArticleCategory" Width="1.5" PointX="0.75" PointY="8.75" />
-        <EntityTypeShape EntityType="ChineseCultureModel.SiteMenu" Width="1.5" PointX="7.375" PointY="0.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.ArticleType" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="ChineseCultureModel.ArticleTicks" Width="1.5" PointX="3.375" PointY="8.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.Article" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="ChineseCultureModel.SiteMenu" Width="1.5" PointX="9.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
