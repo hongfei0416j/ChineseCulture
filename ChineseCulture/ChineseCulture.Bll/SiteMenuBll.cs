@@ -33,5 +33,10 @@ namespace ChineseCulture.Bll
         {
             smDao.Add(sm);
         }
+
+        public SiteMenu GetOneMenu(SiteMenu sm)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

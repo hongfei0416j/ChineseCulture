@@ -33,6 +33,20 @@ namespace ChineseCulture.Model
         public List<Article> Caifuzhixing { get; set; }
         public List<Article> Yulekuaibao { get; set; }
         public List<Article> Shijiaguanliyuan { get; set; }
+        public IEnumerable<Article> ShouyeGundonggonggao { get; set; }
+        public IEnumerable<Article> Shouyegundonggonggaotupian { get; set; }
+        public IEnumerable<Article> Shouyexuexiaoshipin { get; set; }
+        public IEnumerable<Article> Shouyexuexiaotupian { get; set; }
+        public IEnumerable<Article> ShouyePeixunjigougundongtupian { get; set; }
+        public IEnumerable<Article> ShouyePeixunjigoutupian { get; set; }
+        public IEnumerable<Article> ShouyeQiuzhizhaopintupian { get; set; }
+        public IEnumerable<Article> ShouyeZhuanjiajiangshigundongtupian { get; set; }
+        public IEnumerable<Article> ShouyeZhuanjiajiangshitupian { get; set; }
+        public IEnumerable<Article> ShouyeXiaoyuanmingrentupian { get; set; }
+        public IEnumerable<Article> Shouyechuangyehezuogundongtupian { get; set; }
+        public IEnumerable<Article> Shouyechuangyehezuotupian { get; set; }
+        public Article ShouyexuexiaoshipinOne { get; set; }
+        public Article ShouyexuexiaoshipinOnePic { get; set; }
     }
 
 }

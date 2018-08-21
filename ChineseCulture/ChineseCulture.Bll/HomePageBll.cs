@@ -91,7 +91,19 @@ namespace ChineseCulture.Bll
         public HomePageViewModel CreateHomePageModel()
         {
             HomePageViewModel homePageModel = new HomePageViewModel();
-
+            homePageModel.ShouyeGundonggonggao = articleBll.GetArticleByCategory("shouyegundonggonggao", 1);
+            homePageModel.Shouyegundonggonggaotupian = articleBll.GetArticleByCategory("shouyegundonggonggaotupian", 6);
+            homePageModel.ShouyexuexiaoshipinOne = articleBll.GetArticleByCategory("Shouyexuexiaoshipin", 1).FirstOrDefault();
+            homePageModel.ShouyexuexiaoshipinOnePic = articleBll.GetArticleByCategory("ShouyexuexiaoshipinOnePic", 1).FirstOrDefault();
+            homePageModel.Shouyexuexiaotupian = articleBll.GetArticleByCategory("Shouyexuexiaotupian", 1);
+            homePageModel.ShouyePeixunjigougundongtupian = articleBll.GetArticleByCategory("ShouyePeixunjigougundongtupian", 6);
+            homePageModel.ShouyePeixunjigoutupian = articleBll.GetArticleByCategory("ShouyePeixunjigoutupian", 1);
+            homePageModel.ShouyeQiuzhizhaopintupian = articleBll.GetArticleByCategory("ShouyeQiuzhizhaopintupian", 1);
+            homePageModel.ShouyeZhuanjiajiangshigundongtupian = articleBll.GetArticleByCategory("ShouyeZhuanjiajiangshigundongtupian", 6);
+            homePageModel.ShouyeZhuanjiajiangshitupian = articleBll.GetArticleByCategory("ShouyeZhuanjiajiangshitupian", 1);
+            homePageModel.ShouyeXiaoyuanmingrentupian = articleBll.GetArticleByCategory("ShouyeXiaoyuanmingrentupian", 1);
+            homePageModel.Shouyechuangyehezuogundongtupian = articleBll.GetArticleByCategory("Shouyechuangyehezuogundongtupian", 6);
+            homePageModel.Shouyechuangyehezuotupian = articleBll.GetArticleByCategory("Shouyechuangyehezuotupian", 1);
             homePageModel.WangzhanGonggao = articleBll.GetArticleByCategory("wangzhangonggao", 7);//获取网站公告
             homePageModel.Zuixinzixun = articleBll.GetArticleByCategory("zuixinzixun", 3);//获取最新资讯
             homePageModel.Wenxuezuopin = articleBll.GetArticleByCategory("wenxuezuopin", 4);//文学作品

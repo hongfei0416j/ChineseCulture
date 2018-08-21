@@ -11,16 +11,22 @@
     @Styles.Render("~/Content/homepage")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/homepage")
+    <meta name="description" content="中国校园文化网，致力于教育培训行业一站式综合体规划与建设、致力于大学生创业就业服务与校园赛事活动组织策划、致力于企业品牌定制推广与项目设计和产业规划!">
+    <meta name="Keywords" content="赛事,活动,教育,培训,文化,艺术,校园,杂志,作,口才,舞蹈,书画,网站" />
+
 </head>
 <body>
-    
+
     @{Html.RenderAction("HomePageMenu", "Partinal");}
     @{Html.RenderAction("HomePageCategoryMenu", "Partinal");}
     <section class="notic c-con">
         <div class="notic-cen">
             <div class="nc-list clear">
                 <marquee direction="left" scrollamount="100" scrolldelay="1000" width="100%" onmouseover="this.stop();" onmouseout="this.start();">
-                    首届全国校园之星原创文艺作品争霸赛国家级总决赛与颁奖文艺晚会将于2018年7月29日举行，独家冠名与赞助企业火爆招商中，面向全国各省市诚招大学校园代理和赛区、分赛区与海选城市承办组织单位。服务热线：0371-65339250   15938726942
+                    @foreach (var item in Model.ShouyeGundonggonggao)
+                    {
+                        @item.article_description
+                    }
                 </marquee>
             </div>
         </div>
@@ -28,12 +34,15 @@
     <section class="main c-con clear">
         <div class="swiper-container swiper1">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
+                @foreach (var item in Model.Shouyegundonggonggaotupian)
+                {
+                    <div class="swiper-slide">
+                        <a target="_blank" href="@item.article_click_url">
+                            <img src="@item.article_cover_image">
+                        </a>
+                    </div>
+                }
+
             </div>
             <div class="swiper-pagination swiper-pagination1"></div>
         </div>
@@ -111,11 +120,11 @@
                         </ul>
                     </div>
                     <div class="c1-item-video">
-                        <video id="video" poster=".//images/emp-05.png" controls preload="auto" style="width:484px; height:380px;">
-                            <source src="./video/video.iphone.mp4" type="video/mp4"></source>
-                            <source src="./videvideo.mp4" type="video/mp4"></source>
-                            <source src="./videvideo.ogv" type="video/ogg"></source>
-                            <source src="./videvideo.webm" type="video/webm"></source>
+                        <video id="video" poster="@Model.ShouyexuexiaoshipinOnePic.article_cover_image" controls preload="auto" style="width:484px; height:380px;">
+                            <source src="@Model.ShouyexuexiaoshipinOne.article_cover_image" type="video/mp4"></source>
+                            <source src="/images/vedio/videvideo.mp4" type="video/mp4"></source>
+                            <source src="/images/vedio/videvideo.ogv" type="video/ogg"></source>
+                            <source src="/images/vedio/videvideo.webm" type="video/webm"></source>
                         </video>
                     </div>
                 </div>
@@ -138,10 +147,18 @@
                             </ul>
                         </div>
                         <div class="c1-item-hot">
-                            <a target="_blank" href="#">
-                                <h3>幼儿园名称</h3>
-                                <p><img src="/images/emp-05.png" alt=" "></p>
-                            </a>
+
+                            @foreach (var item in Model.Shouyexuexiaotupian)
+                            {
+                                <a target="_blank" href="@item.article_click_url">
+                                    <h3>@item.article_title</h3>
+                                    <p>
+                                    <img src="@item.article_cover_image" alt=" ">
+                                    </p>
+                                </a>
+                            }
+
+
                         </div>
                     </div>
                 }
@@ -180,12 +197,14 @@
                 <div class="col2-item clear">
                     <div class="swiper-container swiper2">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="/images/emp-05.png"></div>
-                            <div class="swiper-slide"><img src="/images/emp-10.png"></div>
-                            <div class="swiper-slide"><img src="/images/emp-11.png"></div>
-                            <div class="swiper-slide"><img src="/images/emp-12.png"></div>
-                            <div class="swiper-slide"><img src="/images/emp-13.png"></div>
-                            <div class="swiper-slide"><img src="/images/emp-11.png"></div>
+                            @foreach (var item in Model.ShouyePeixunjigougundongtupian)
+                            {
+                                <div class="swiper-slide">
+                                    <a target="_blank" href="@item.article_click_url">
+                                        <img src="@item.article_cover_image">
+                                    </a>
+                                </div>
+                            }
                         </div>
                         <div class="swiper-pagination swiper-pagination2"></div>
                     </div>
@@ -216,10 +235,14 @@
                 {
                     <div class="col2-item clear">
                         <div class="c2-item-hot">
-                            <a href="#">
-                                <h3>文化课</h3>
-                                <p><img src="/images/emp-08.png" alt=" "></p>
-                            </a>
+                            @foreach (var item in Model.ShouyePeixunjigoutupian)
+                            {
+                                <a target="_blank" href="@item.article_click_url">
+                                    <h3>@item.article_title</h3>
+                                    <p><img src="@item.article_cover_image" alt=" "></p>
+                                </a>
+                            }
+
                         </div>
                         <div class="c2-item-list">
                             <ul>
@@ -273,10 +296,13 @@
                         </ul>
                     </div>
                     <div class="c3-item-hot">
-                        <a href="#">
-                            <h3>求职招聘</h3>
-                            <p><img src="/images/emp-05.png" alt=" "></p>
-                        </a>
+                        @foreach (var item in Model.ShouyeQiuzhizhaopintupian)
+                        {
+                            <a target="_blank" href="@item.article_click_url">
+                                <h3>@item.article_title</h3>
+                                <p><img src="@item.article_cover_image" alt=" "></p>
+                            </a>
+                        }
                     </div>
                 </div>
 
@@ -301,10 +327,13 @@
                             </ul>
                         </div>
                         <div class="c1-item-hot">
-                            <a target="_blank" href="#">
-                                <h3>幼儿园名称</h3>
-                                <p><img src="/images/emp-05.png" alt=" "></p>
-                            </a>
+                            @foreach (var item in Model.ShouyeQiuzhizhaopintupian)
+                            {
+                                <a target="_blank" href="@item.article_click_url">
+                                    <h3>@item.article_title</h3>
+                                    <p><img src="@item.article_cover_image" alt=" "></p>
+                                </a>
+                            }
                         </div>
                     </div>
                 }
@@ -324,12 +353,14 @@
                 <div class="col4-item clear">
                     <div class="swiper-container swiper4">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="/images/emp-05.png"></div>
-                            <div class="swiper-slide"><img src="/images/emp-10.png"></div>
-                            <div class="swiper-slide"><img src="/images/emp-11.png"></div>
-                            <div class="swiper-slide"><img src="/images/emp-12.png"></div>
-                            <div class="swiper-slide"><img src="/images/emp-13.png"></div>
-                            <div class="swiper-slide"><img src="/images/emp-11.png"></div>
+                            @foreach (var item in Model.ShouyeZhuanjiajiangshigundongtupian)
+                            {
+                                <div class="swiper-slide">
+                                    <a target="_blank" href="@item.article_click_url">
+                                        <img src="@item.article_cover_image">
+                                    </a>
+                                </div>
+                            } 
                         </div>
                         <div class="swiper-pagination swiper-pagination4"></div>
                     </div>
@@ -359,10 +390,14 @@
                 {
                     <div class="col4-item clear">
                         <div class="c4-item-hot">
-                            <a href="#">
-                                <h3>文化课</h3>
-                                <p><img src="/images/emp-08.png" alt=" "></p>
-                            </a>
+                            @foreach (var item in Model.ShouyeZhuanjiajiangshitupian)
+                            {
+                                <a href="@item.article_click_url" target="_blank">
+                                    <h3>@item.article_title</h3>
+                                    <p><img src="@item.article_cover_image" alt=" "></p>
+                                </a>
+                            }
+
                         </div>
                         <div class="c2-item-list">
                             <ul>
@@ -415,10 +450,13 @@
                         </ul>
                     </div>
                     <div class="c5-item-hot">
-                        <a href="#">
-                            <h3>作家</h3>
-                            <p><img src="/images/emp-05.png" alt=" "></p>
-                        </a>
+                        @foreach (var item in Model.ShouyeXiaoyuanmingrentupian)
+                        {
+                            <a href="@item.article_click_url" target="_blank">
+                                <h3>@item.article_title</h3>
+                                <p><img src="@item.article_cover_image" alt=" "></p>
+                            </a>
+                        }
                     </div>
                 </div>
                 @foreach (var xuexiaoSec in Model.XiaoyuanmingrenDetail)
@@ -439,10 +477,13 @@
                             </ul>
                         </div>
                         <div class="c1-item-hot">
-                            <a target="_blank" href="#">
-                                <h3>幼儿园名称</h3>
-                                <p><img src="/images/emp-05.png" alt=" "></p>
-                            </a>
+                            @foreach (var item in Model.ShouyeXiaoyuanmingrentupian)
+                            {
+                                <a href="@item.article_click_url" target="_blank">
+                                    <h3>@item.article_title</h3>
+                                    <p><img src="@item.article_cover_image" alt=" "></p>
+                                </a>
+                            }
                         </div>
                     </div>
                 }
@@ -463,12 +504,15 @@
                 <div class="col6-item clear">
                     <div class="swiper-container swiper6">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="/images/emp-05.png"></div>
-                            <div class="swiper-slide"><img src="/images/emp-10.png"></div>
-                            <div class="swiper-slide"><img src="/images/emp-11.png"></div>
-                            <div class="swiper-slide"><img src="/images/emp-12.png"></div>
-                            <div class="swiper-slide"><img src="/images/emp-13.png"></div>
-                            <div class="swiper-slide"><img src="/images/emp-11.png"></div>
+                            @foreach (var item in Model.Shouyechuangyehezuogundongtupian)
+                            {
+                                <div class="swiper-slide">
+                                    <a href="@item.article_click_url" target="_blank">
+                                        <img src="@item.article_cover_image">
+                                    </a>
+                                </div>
+                            }
+
                         </div>
                         <div class="swiper-pagination swiper-pagination6"></div>
                     </div>
@@ -501,10 +545,13 @@
                 {
                     <div class="col6-item clear">
                         <div class="c6-item-hot">
-                            <a href="#">
-                                <h3>文化课</h3>
-                                <p><img src="/images/emp-08.png" alt=" "></p>
-                            </a>
+                            @foreach (var item in Model.Shouyechuangyehezuotupian)
+                            {
+                                <a href="@item.article_click_url" target="_blank">
+                                    <h3>@item.article_title</h3>
+                                    <p><img src="@item.article_cover_image" alt=" "></p>
+                                </a>
+                            }
                         </div>
                         <div class="c2-item-list">
                             <ul>
@@ -606,7 +653,7 @@
         </section>
 
     </section>
-    
+
     @{Html.RenderAction("Footer", "Partinal");}
 
     <script>
