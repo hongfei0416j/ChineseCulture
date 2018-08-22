@@ -30,14 +30,14 @@
                 <div class="formControls col-xs-8 col-sm-9">
                     @Html.DropDownListFor(model => model.menu_father_id, ViewBag.MenuFather as IEnumerable<SelectListItem>, new { @class = "select-box" })
                     @*<span class="select-box">
-                            <select name="category_id" class="select">
-                                <option value="0">全部栏目</option>
-                                <option value="1">新闻资讯</option>
-                                <option value="11">├行业动态</option>
-                                <option value="12">├行业资讯</option>
-                                <option value="13">├行业新闻</option>
-                            </select>
-                        </span>*@
+                    <select name="category_id" class="select">
+                        <option value="0">全部栏目</option>
+                        <option value="1">新闻资讯</option>
+                        <option value="11">├行业动态</option>
+                        <option value="12">├行业资讯</option>
+                        <option value="13">├行业新闻</option>
+                    </select>
+                </span>*@
                 </div>
             </div>
 
@@ -64,7 +64,14 @@
             <div class="row cl">
                 <label class="form-label col-xs-4 col-sm-2">状态：</label>
                 <div class="formControls col-xs-8 col-sm-9">
-                    @Html.TextBoxFor(model => model.menu_state, htmlAttributes: new { @class = "input-text",@Value = "1" })
+                    @Html.TextBoxFor(model => model.menu_state, htmlAttributes: new { @class = "input-text", @Value = "1" })
+
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">状态：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    @Html.TextBoxFor(model => model.menu_sort, htmlAttributes: new { @class = "input-text", @Value = "1" })
 
                 </div>
             </div>
@@ -74,7 +81,7 @@
                 <div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-2">
                     <button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="Hui-iconfont">&#xe632;</i> 保存</button>
                     @*<button onClick="article_save();" class="btn btn-secondary radius" type="button"><i class="Hui-iconfont">&#xe632;</i> 保存草稿</button>
-                        <button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>*@
+                <button onClick="removeIframe();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>*@
                 </div>
             </div>
         </form>

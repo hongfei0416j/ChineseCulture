@@ -93,14 +93,14 @@ namespace ChineseCulture.Bll
             var articleList =articleDao.Select(article , number).ToList();//获取网站公告
             articleList.ForEach(t => t.category_name = acdBll.GetCategory(t.category_id).category_name);
 
-            articleList.ForEach(t=>t.article_click_url="/Article/Detail/"+t.article_id);
+            articleList.ForEach(t=>t.article_click_url=string.IsNullOrEmpty(t.article_click_url)?"/Article/Detail/"+t.article_id: t.article_click_url);
             return articleList;
         }
 
         internal PagedList<Article> GetArticlePageList(ArticlePageViewModel articleDetailModel)
         {
             var articleList =  articleDao.SelectPageList(articleDetailModel);//获取网站公告
-            articleList.ForEach(t => t.article_click_url = "/Article/Detail/" + t.article_id);
+            articleList.ForEach(t => t.article_click_url = string.IsNullOrEmpty(t.article_click_url) ? "/Article/Detail/" + t.article_id : t.article_click_url);
             articleList.ForEach(t => t.article_description =string.IsNullOrEmpty(t.article_description)?StringHelper.ReplaceHtmlTag(t.article_content,200):t.article_description);
             return articleList;
         }
@@ -113,7 +113,7 @@ namespace ChineseCulture.Bll
             article.article_state = 1;
             var articleList = articleDao.Select(article, number).ToList();//获取网站公告
             articleList.ForEach(t => t.category_name = acdBll.GetCategory(t.category_id).category_name);
-            articleList.ForEach(t => t.article_click_url = "/Article/Detail/" + t.article_id);
+            articleList.ForEach(t => t.article_click_url = string.IsNullOrEmpty(t.article_click_url) ? "/Article/Detail/" + t.article_id : t.article_click_url);
             return articleList;
         }
        

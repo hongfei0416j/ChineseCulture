@@ -1,22 +1,15 @@
-﻿
-@{
-    Layout = null;
-}
+﻿@{ Layout = null;}
+@using ChineseCulture.Model;
 
+@model  IEnumerable<SiteMenu>
 <nav class="nav">
     <div class="nav-list c-con clear">
         <ul>
-            <li><a href="./index.html">首&nbsp;&nbsp;页</a></li>
-            <li><a href="#">会员登录</a></li>
-            <li><a href="#">赛事简介</a></li>
-            <li><a href="#">选手报名</a></li>
-            <li><a href="#">赛区分布</a></li>
-            <li><a href="#">学术交流</a></li>
-            <li><a href="#">历届大赛</a></li>
-            <li><a href="#">赛事管理</a></li>
-            <li><a href="#">专家评审</a></li>
-            <li><a href="#">支持媒体</a></li>
-            <li><a href="#">冠名单位</a></li>
+
+            @foreach (var item in Model)
+            {
+                <li><a target="_blank" href="@item.click_url">@item.menu_name</a></li>
+            }
         </ul>
     </div>
 </nav>

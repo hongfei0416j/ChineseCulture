@@ -19,7 +19,8 @@ namespace ChineseCulture.Dao
             var query = db.SiteMenu.Where(t => 
             (sm.menu_state == 0||t.menu_state==t.menu_state)
             &&(sm.menu_father_id==0||t.menu_father_id==sm.menu_father_id)
-            ).ToList();
+            && (string.IsNullOrEmpty(sm.menu_category) || t.menu_category == sm.menu_category)
+            ).OrderBy(t=>t.menu_sort).ToList();
             return query;
         }
 

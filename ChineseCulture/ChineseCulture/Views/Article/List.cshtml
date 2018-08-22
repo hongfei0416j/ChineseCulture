@@ -28,7 +28,7 @@
                 类别：<a href="#" class="dstypes-on">全部</a>&nbsp;&nbsp;
                 @foreach (ArticleCategory ac in Model.ArticleCategoryList)
                 {
-                    <a href="/" class="dstypes-on">
+                    <a href="/Article/List/cid_@ac.category_id" class="dstypes-on">
                         @ac.category_name
                     </a>
                 }

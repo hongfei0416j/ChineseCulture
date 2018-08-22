@@ -23,5 +23,6 @@ namespace ChineseCulture.Model
         public string site_id { get; set; }
         public int menu_state { get; set; }
         public int menu_father_id { get; set; }
+        public int menu_sort { get; set; }
     }
 }

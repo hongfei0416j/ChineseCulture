@@ -21,6 +21,13 @@ namespace ChineseCulture.Bll
             return smDao.Select(sm);
         }
 
+        public IEnumerable<SiteMenu> GetPageMenuByCategory(string v)
+        {
+            SiteMenu sm = new SiteMenu();
+            sm.menu_category = v;
+            return smDao.Select(sm);
+        }
+
         public IEnumerable<SiteMenu> GetAllMenuFather()
         {
             SiteMenu sm = new SiteMenu();

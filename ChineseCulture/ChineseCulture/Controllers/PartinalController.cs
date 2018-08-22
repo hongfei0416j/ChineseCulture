@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ChineseCulture.Bll;
+using ChineseCulture.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,11 +13,23 @@ namespace ChineseCulture.Controllers
         // GET: Partinal
         public ActionResult HomePageMenu()
         {
-            return View();
+            SiteMenuBll smBll = new SiteMenuBll();
+            IEnumerable<SiteMenu> siteMenuList =  smBll.GetPageMenuByCategory("shouyetop");
+            return View(siteMenuList);
         }
         public ActionResult HomePageCategoryMenu()
         {
-            return View();
+            SiteMenuBll smBll = new SiteMenuBll();
+            List<SiteMenuViewModel> siteMenuModelList = new List<SiteMenuViewModel>();
+            IEnumerable<SiteMenu> siteMenuList = smBll.GetPageMenuByCategory("3");
+            foreach (var item in siteMenuList)
+            {
+                SiteMenuViewModel smvm = new SiteMenuViewModel();
+                smvm.menu_name = item.menu_name;
+                smvm.siteMenuList = smBll.GetPageMenuByCategory(item.menu_code);
+                siteMenuModelList.Add(smvm);
+            }
+            return View(siteMenuModelList);
         }
         public ActionResult Footer()
         {
@@ -23,11 +37,16 @@ namespace ChineseCulture.Controllers
         }
         public ActionResult FriendLink()
         {
-            return View();
+            ArticleBll acBll = new ArticleBll();
+
+            var articleList = acBll.GetArticleByCategory("FriendLink", 100);
+            return View(articleList);
         }
         public ActionResult EventHomeMenu()
         {
-            return View();
+            SiteMenuBll smBll = new SiteMenuBll();
+            IEnumerable<SiteMenu> siteMenuList = smBll.GetPageMenuByCategory("saishidaohang");
+            return View(siteMenuList);
         }
         public ActionResult PageHeader()
         {

@@ -127,6 +127,7 @@
           <Property Name="site_id" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="menu_state" Type="int" Nullable="false" />
           <Property Name="menu_father_id" Type="int" Nullable="false" />
+          <Property Name="menu_sort" Type="int" Nullable="false" />
         </EntityType>
         <EntityContainer Name="ChineseCultureModelStoreContainer">
           <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
@@ -276,6 +277,7 @@
           <Property Name="site_id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="menu_state" Type="Int32" Nullable="false" />
           <Property Name="menu_father_id" Type="Int32" Nullable="false" />
+          <Property Name="menu_sort" Type="Int32" Nullable="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -403,6 +405,7 @@
           <EntitySetMapping Name="SiteMenu">
             <EntityTypeMapping TypeName="ChineseCultureModel.SiteMenu">
               <MappingFragment StoreEntitySet="SiteMenu">
+                <ScalarProperty Name="menu_sort" ColumnName="menu_sort" />
                 <ScalarProperty Name="menu_father_id" ColumnName="menu_father_id" />
                 <ScalarProperty Name="menu_state" ColumnName="menu_state" />
                 <ScalarProperty Name="site_id" ColumnName="site_id" />

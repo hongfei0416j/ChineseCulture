@@ -1,71 +1,22 @@
 ﻿@{ Layout = null;}
-<section class="types c-con clear">
-    <ul>
-        <li>
-            <h3>找名师</h3>
-            <p><a href="#">作文</a></p>
-            <p><a href="#">数学</a></p>
-            <p><a href="#">英语</a></p>
-            <p><a href="#">更多</a></p>
-            <p><a href="#">主持</a></p>
-            <p><a href="#">表演</a></p>
-            <p><a href="#">书画</a></p>
-            <p><a href="#">更多</a></p>
-        </li>
-        <li>
-            <h3>访名家</h3>
-            <p><a href="#">作家</a></p>
-            <p><a href="#">诗人</a></p>
-            <p><a href="#">歌唱家</a></p>
-            <p><a href="#">更多</a></p>
-            <p><a href="#">演员</a></p>
-            <p><a href="#">画家</a></p>
-            <p><a href="#">书法家</a></p>
-            <p><a href="#">更多</a></p>
-        </li>
-        <li>
-            <h3>下课程</h3>
-            <p><a href="#">成绩</a></p>
-            <p><a href="#">方法</a></p>
-            <p><a href="#">习惯</a></p>
-            <p><a href="#">更多</a></p>
-            <p><a href="#">教育</a></p>
-            <p><a href="#">文化</a></p>
-            <p><a href="#">科技</a></p>
-            <p><a href="#">更多</a></p>
-        </li>
-        <li>
-            <h3>选名校</h3>
-            <p><a href="#">文化</a></p>
-            <p><a href="#">艺术</a></p>
-            <p><a href="#">拓展</a></p>
-            <p><a href="#">更多</a></p>
-            <p><a href="#">小学</a></p>
-            <p><a href="#">中学</a></p>
-            <p><a href="#">大学</a></p>
-            <p><a href="#">更多</a></p>
-        </li>
-        <li>
-            <h3>看社团</h3>
-            <p><a href="#">文学</a></p>
-            <p><a href="#">书画</a></p>
-            <p><a href="#">科&nbsp;&nbsp;&nbsp;技</a></p>
-            <p><a href="#">更多</a></p>
-            <p><a href="#">文联</a></p>
-            <p><a href="#">协会</a></p>
-            <p><a href="#">联&nbsp;&nbsp;&nbsp;盟</a></p>
-            <p><a href="#">更多</a></p>
-        </li>
-        <li>
-            <h3>办活动</h3>
-            <p><a href="#">征文</a></p>
-            <p><a href="#">大赛</a></p>
-            <p><a href="#">聚会</a></p>
-            <p><a href="#">更多</a></p>
-            <p><a href="#">招聘</a></p>
-            <p><a href="#">求职</a></p>
-            <p><a href="#">交友</a></p>
-            <p><a href="#">更多</a></p>
-        </li>
-    </ul>
-</section>
+
+@using ChineseCulture.Model;
+
+@model  IEnumerable<SiteMenuViewModel>
+
+    <section class="types c-con clear">
+        <ul>
+
+            @foreach (var item in Model)
+            {
+            <li>
+                <h3>@item.menu_name</h3>
+                @foreach (var chItem in item.siteMenuList)
+                {
+                    <p><a href="@chItem.click_url">@chItem.menu_name</a></p>
+                }
+            </li>
+            }
+           
+        </ul>
+    </section>
