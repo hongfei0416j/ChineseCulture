@@ -93,7 +93,7 @@ body{ background-color:#FFF; background-image:url(../images/body.png); backgroun
 .col1-tab > p.on,.col2-tab > p.on,.col3-tab > p.on,.col4-tab > p.on,.col5-tab > p.on,.col6-tab > p.on{ background-color:#FFF; border-bottom:0; border-top:2px solid #ef7e1f; border-right:1px solid #c0bfbe;}
 .col1-tab > a,.col2-tab > a,.col3-tab > a,.col4-tab > a,.col5-tab > a,.col6-tab > a{ width:8%; height:42px; line-height:40px; float:left; box-sizing:border-box; border-top:1px solid #c0bfbe; border-bottom:1px solid #c0bfbe; text-align:center; padding-left:15px; font-size:15px; font-weight:bold; }
 .col1-con,.col2-con,.col3-con,.col4-con,.col5-con{ width:100%; box-sizing:border-box; padding:0 20px 20px 20px; height:auto;}
-.col1-con .col1-item,.col2-con .col2-item,.col3-con .col3-item,.col4-con .col4-item,.col5-con .col5-item,.col6-con .col6-item{ width:100%; height:auto; display:none;}
+.col1-con .col1-item,.col2-con .col2-item,.col3-con .col3-item,.col4-con .col4-item,.col5-con .col5-item,.col6-con .col6-item{ width:100%; height:100%; display:none;}
 .col1-con .col1-item:nth-of-type(1),.col2-con .col2-item:nth-of-type(1),.col3-con .col3-item:nth-of-type(1),.col4-con .col4-item:nth-of-type(1),.col5-con .col5-item:nth-of-type(1),.col6-con .col6-item:nth-of-type(1){ display:block;}
 .c1-item-list,.c3-item-list,.c5-item-list{ width:656px; height:390px; float:left; border-right:0px dashed #d56a10; padding-right:10px; box-sizing:border-box; margin-top:10px; position:relative;}
 .c1-item-list::after,.c3-item-list::after,.c5-item-list::after{ content:' '; width:0; height:380px; border-left:1px dashed #d56a10; position:absolute; right:0; bottom:0;}
@@ -117,11 +117,14 @@ body{ background-color:#FFF; background-image:url(../images/body.png); backgroun
 .swiper2 .swiper-pagination-bullet{opacity:1; background:rgba(255,255,255,0.8); margin:0 3px!important; width:8px; height:8px; border-radius:50%;}
 .swiper2 .swiper-pagination-bullet-active{background:rgba(194,27,111,1);}
 .swiper2 .swiper-container {width: 100%; height:100%; overflow:hidden; position:relative;}
-.swiper2 .swiper-slide img{ width:100%;}
+    .swiper2 .swiper-slide img {
+        width: 100%;
+        height: 100%;
+    }
 .swiper2 .swiper-button-next,.swiper2 .swiper-button-prev{ background-image:url(none); }
 .swiper2 .swiper-button-next,.swiper2 .swiper-button-prev{ width:54px; height:110px; line-height:110px; text-align:center; background-color:rgba(0,0,0,0.3)}
 .swiper2 .swiper-button-next i,.swiper2 .swiper-button-prev i{ font-size:30px; color:#FFF;}
-.swiper2 .swiper-button-next{ rigth:0;}
+.swiper2 .swiper-button-next{ right:0;}
 .swiper2 .swiper-button-prev{ left:0;}
 .swiper2 .swiper-button-next:hover,.swiper2 .swiper-button-prev:hover{  background-color:rgba(0,0,0,0.6); color:#000;}
 .c2-item-video{ background-color:#000;}
@@ -134,7 +137,10 @@ body{ background-color:#FFF; background-image:url(../images/body.png); backgroun
 .swiper3 .swiper-pagination-bullet,.swiper4 .swiper-pagination-bullet,.swiper5 .swiper-pagination-bullet,.swiper6 .swiper-pagination-bullet{opacity:1; background:rgba(255,255,255,1); margin:0 3px!important; width:8px; height:8px; border-radius:50%;}
 .swiper3 .swiper-pagination-bullet-active,.swiper4 .swiper-pagination-bullet-active,.swiper5 .swiper-pagination-bullet-active,.swiper6 .swiper-pagination-bullet-active{background:rgba(194,27,111,1);}
 .swiper3 .swiper-container {width: 100%; height:100%; overflow:hidden; position:relative;}
-.swiper3 .swiper-slide img,.swiper4 .swiper-slide img,.swiper5 .swiper-slide img,.swiper6 .swiper-slide img{ width:100%;}
+.swiper3 .swiper-slide img, .swiper4 .swiper-slide img, .swiper5 .swiper-slide img, .swiper6 .swiper-slide img {
+    width: 100%;
+    height: 100%;
+}
 .swiper3 .swiper-button-next,.swiper3 .swiper-button-prev,.swiper4 .swiper-button-next,.swiper4 .swiper-button-prev,.swiper5 .swiper-button-next,.swiper5 .swiper-button-prev,.swiper6 .swiper-button-next,.swiper6 .swiper-button-prev{ background-image:url(none); width:54px; height:110px; line-height:110px; text-align:center; background-color:rgba(0,0,0,0.3)}
 .swiper3 .swiper-button-next i,.swiper3 .swiper-button-prev i,.swiper4 .swiper-button-next i,.swiper4 .swiper-button-prev i,.swiper5 .swiper-button-next i,.swiper5 .swiper-button-prev i,.swiper6 .swiper-button-next i,.swiper6 .swiper-button-prev i{ font-size:30px; color:#FFF;}
 .swiper3 .swiper-button-next,.swiper4 .swiper-button-next,.swiper5 .swiper-button-next,.swiper6 .swiper-button-next{ rigth:0;}

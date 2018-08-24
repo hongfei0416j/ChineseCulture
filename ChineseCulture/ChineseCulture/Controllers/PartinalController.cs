@@ -33,7 +33,17 @@ namespace ChineseCulture.Controllers
         }
         public ActionResult Footer()
         {
+           
             return View();
+            
+        }
+        public ActionResult FooterGuanyuwomen()
+        {
+            ArticleBll acBll = new ArticleBll();
+
+            var articleList = acBll.GetArticleByCategory("footerguanyuwomen", 7);
+            return View(articleList);
+
         }
         public ActionResult FriendLink()
         {

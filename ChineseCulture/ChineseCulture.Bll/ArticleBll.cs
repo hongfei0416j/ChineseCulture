@@ -44,6 +44,15 @@ namespace ChineseCulture.Bll
             return articleDao.Select(article).FirstOrDefault();
         }
 
+        internal PagedList<Article> GetArticlePageListOrderByNewId(ArticlePageViewModel articlePageViewModel)
+        {
+            var articleList = articleDao.SelectOrderByNewId(articlePageViewModel.page_size);//获取随机文章
+            articleList.ForEach(t => t.article_click_url = "/Event/Detail/" + t.article_id);
+            articleList.ForEach(t => t.article_description = string.IsNullOrEmpty(t.article_description) ? StringHelper.ReplaceHtmlTag(t.article_content, 200) : t.article_description);
+            
+            return articleList;
+        }
+
         internal ArticleCategory GetArticleCategoryByArticle(int article_id)
         {
             Article a = new Article();

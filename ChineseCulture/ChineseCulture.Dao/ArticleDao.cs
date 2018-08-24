@@ -40,6 +40,15 @@ namespace ChineseCulture.Dao
             (article_id==0||t.article_id==article_id)).OrderBy(t=>t.article_sort).OrderByDescending(s=>s.article_kdate);
             return query.ToList();
         }
+
+        public PagedList<Article> SelectOrderByNewId(int number)
+        {
+
+
+            var query = db.Article.Where(t=>1==1).OrderBy(o => Guid.NewGuid()).Take(number);
+            return query.ToPagedList<Article>(1, number);
+        }
+
         public IEnumerable<Article> Select(Article article,int number)
         {
             int article_id = article.article_id;

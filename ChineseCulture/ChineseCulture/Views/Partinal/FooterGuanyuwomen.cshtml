@@ -1,0 +1,20 @@
+﻿
+@{
+    Layout = null;
+}
+@using ChineseCulture.Model;
+
+@model  IEnumerable<Article>
+<div class="footer-nav">
+    @foreach (var item in Model)
+    {
+        
+    <a href="@item.article_click_url" target="_blank">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        @item.article_title
+        &nbsp;&nbsp;&nbsp;&nbsp;
+    </a>
+    }
+
+
+</div>

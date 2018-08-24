@@ -359,6 +359,7 @@
     <Content Include="Views\Event\_ListPartial.cshtml" />
     <Content Include="Views\Partinal\EventHomeMenu.cshtml" />
     <Content Include="Views\Partinal\PageHeader.cshtml" />
+    <Content Include="Views\Partinal\FooterGuanyuwomen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
