@@ -22,13 +22,13 @@
     <section class="main c-con clear" style="background-color:#FFF;">
         <section class="cyfh-cols dasai-detail clear">
             <section class="dasai-location">
-                <a href="/">中国校园文化网</a>&nbsp;>&nbsp;<a href="/Article/List/cid_@Model.ThisArticleFatherCategory.category_id">@Model.ThisArticleFatherCategory.category_name</a>&nbsp;>&nbsp;@Model.ThisArticleCategory.category_name
+                <a href="/">中国校园文化网</a>&nbsp;>&nbsp;<a href="/Article/cid_@(Model.ThisArticleFatherCategory.category_id+".html")">@Model.ThisArticleFatherCategory.category_name</a>&nbsp;>&nbsp;@Model.ThisArticleCategory.category_name
             </section>
             <section class="dasai-types">
                 类别：<a href="#" class="dstypes-on">全部</a>&nbsp;&nbsp;
                 @foreach (ArticleCategory ac in Model.ArticleCategoryList)
                 {
-                    <a href="/Article/List/cid_@ac.category_id" class="dstypes-on">
+                    <a href="/Article/cid_@(ac.category_id+".html")" class="dstypes-on">
                         @ac.category_name
                     </a>
                 }

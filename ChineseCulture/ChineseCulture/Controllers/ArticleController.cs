@@ -31,6 +31,7 @@ namespace ChineseCulture.Controllers
             articlePageViewModel = articlePageBll.CreateArticleListModel(articlePageViewModel);
             return View(articlePageViewModel);
         }
+        
         public ActionResult Detail(int id=0)
         {
             ArticlePageViewModel articlePageViewModel = new ArticlePageViewModel();
