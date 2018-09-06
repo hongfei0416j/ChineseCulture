@@ -43,7 +43,13 @@ namespace ChineseCulture.Bll
 
         public SiteMenu GetOneMenu(SiteMenu sm)
         {
-            throw new NotImplementedException();
+           
+            return smDao.Select(sm).FirstOrDefault();
+        }
+
+        public void UpdateSiteMenu(SiteMenu sm)
+        {
+            smDao.Update(sm);
         }
     }
 }

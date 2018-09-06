@@ -29,5 +29,14 @@ namespace ChineseCulture.Dao
             db.SiteMenu.Add(sm);
             db.SaveChanges();
         }
+
+        public bool Update(SiteMenu sm)
+        {
+            SiteMenu mModel = db.SiteMenu.Single(x => x.menu_id == sm.menu_id);
+           
+
+            db.Entry(mModel).CurrentValues.SetValues(sm);
+            return db.SaveChanges() > 0;
+        }
     }
 }

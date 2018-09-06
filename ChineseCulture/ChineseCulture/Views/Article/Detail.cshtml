@@ -18,7 +18,7 @@
     @{Html.RenderAction("HomePageCategoryMenu", "Partinal");}
     <section class="main c-con clear" style="background-color:#FFF;">
         <section class="dasai-location">
-            <a href="#">中国校园文化网</a>&nbsp;>&nbsp;@Model.ThisArticleFatherCategory.category_name><a href="/Article/List/cid_@Model.ThisArticleCategory.category_id">@Model.ThisArticleCategory.category_name</a>
+            <a href="#">中国校园文化网</a>&nbsp;>&nbsp;@Model.ThisArticleFatherCategory.category_name><a href="/article/cid_@(Model.ThisArticleCategory.category_id+".html")">@Model.ThisArticleCategory.category_name</a>
         </section>
         <section class="dasai-detail clear">
             <section class="dsd-left">

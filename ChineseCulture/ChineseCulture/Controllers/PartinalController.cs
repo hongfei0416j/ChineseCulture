@@ -14,7 +14,7 @@ namespace ChineseCulture.Controllers
         public ActionResult HomePageMenu()
         {
             SiteMenuBll smBll = new SiteMenuBll();
-            IEnumerable<SiteMenu> siteMenuList =  smBll.GetPageMenuByCategory("shouyetop");
+            IEnumerable<SiteMenu> siteMenuList = smBll.GetPageMenuByCategory("shouyetop");
             return View(siteMenuList);
         }
         public ActionResult HomePageCategoryMenu()
@@ -33,9 +33,9 @@ namespace ChineseCulture.Controllers
         }
         public ActionResult Footer()
         {
-           
+
             return View();
-            
+
         }
         public ActionResult FooterGuanyuwomen()
         {
@@ -58,9 +58,16 @@ namespace ChineseCulture.Controllers
             IEnumerable<SiteMenu> siteMenuList = smBll.GetPageMenuByCategory("saishidaohang");
             return View(siteMenuList);
         }
+        public ActionResult WenyizashiHomeMenu()
+        {
+            SiteMenuBll smBll = new SiteMenuBll();
+            IEnumerable<SiteMenu> siteMenuList = smBll.GetPageMenuByCategory("wenyizazhidaohang");
+            return View(siteMenuList);
+        }
         public ActionResult PageHeader()
         {
             return View();
         }
+
     }
 }

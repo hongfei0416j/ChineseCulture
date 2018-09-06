@@ -162,6 +162,7 @@
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PartinalController.cs" />
+    <Compile Include="Controllers\WenyizazhiController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -360,6 +361,10 @@
     <Content Include="Views\Partinal\EventHomeMenu.cshtml" />
     <Content Include="Views\Partinal\PageHeader.cshtml" />
     <Content Include="Views\Partinal\FooterGuanyuwomen.cshtml" />
+    <Content Include="Views\Wenyizazhi\Index.cshtml" />
+    <Content Include="Views\Wenyizazhi\List.cshtml" />
+    <Content Include="Views\Wenyizazhi\Detail.cshtml" />
+    <Content Include="Views\Partinal\WenyizashiHomeMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

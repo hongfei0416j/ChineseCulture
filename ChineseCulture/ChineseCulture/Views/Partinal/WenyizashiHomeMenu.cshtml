@@ -1,0 +1,15 @@
+﻿@{ Layout = null;}
+@using ChineseCulture.Model;
+
+@model  IEnumerable<SiteMenu>
+<nav class="nav">
+    <div class="nav-list c-con clear">
+        <ul>
+
+            @foreach (var item in Model)
+            {
+                <li><a target="_blank" href="@item.click_url">@item.menu_name</a></li>
+            }
+        </ul>
+    </div>
+</nav>

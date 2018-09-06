@@ -71,7 +71,12 @@ namespace ChineseCulture.Admin.Controllers
         [HttpPost]
         public ActionResult Edit(SiteMenu sm)
         {
-            return View();
+            SiteMenuBll smBll = new SiteMenuBll();
+            ViewBag.MenuFather = GetAllMenuFatherForDLL().AsEnumerable();
+            SiteMenuBll funBll = new SiteMenuBll();
+            smBll.UpdateSiteMenu(sm);
+            return Redirect("Index");
+           
         }
     }
 }
