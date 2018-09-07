@@ -21,7 +21,7 @@
         <script src="js/jquery-1.11.1.min.js"></script>*@
 </head>
 <body style="background-image:url(/images/body2.png)">
-    @{Html.RenderAction("PageHeader", "Partinal");}
+    @{Html.RenderAction("EventPageHeader", "Partinal");}
     @{Html.RenderAction("EventHomeMenu", "Partinal");}
     <section class="main c-con clear">
         <div class="swiper-container swiper1">
@@ -33,12 +33,7 @@
                             <img src="@item.article_cover_image">
                         </a></div>
                 }
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
+              
             </div>
             <div class="swiper-pagination swiper-pagination1"></div>
         </div>
@@ -48,7 +43,7 @@
                 <ul>
                     @foreach (var item in Model.SaiQuZuZhiDanWei)
                     {
-                        <li><a href="@item.article_click_url">@item.article_title</a></li>
+                        <li><a  target="_blank"  href="@item.article_click_url">@item.article_title</a></li>
                     }
                 </ul>
             </div>
@@ -59,7 +54,7 @@
                 <ul>
                     @foreach (var item in Model.SaiShiHuojiangBangdan)
                     {
-                        <li><a href="@item.article_click_url">@item.article_title</a></li>
+                        <li><a  target="_blank" href="@item.article_click_url">@item.article_title</a></li>
                     }
                 </ul>
             </div>

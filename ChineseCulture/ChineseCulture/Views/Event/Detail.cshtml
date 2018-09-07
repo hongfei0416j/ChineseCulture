@@ -7,19 +7,19 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>中国校园文化网-@Model.articleModel.article_title</title>
+    <title>@Model.articleModel.article_title-@Model.ThisArticleCategory.category_name-中国校园文化网</title>
     @Styles.Render("~/Content/homepage")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/homepage")
 
 
 </head>
-<body>
-    @{Html.RenderAction("PageHeader", "Partinal");}
+<body style="background-image:url(/images/body2.png)">
+    @{Html.RenderAction("EventPageHeader", "Partinal");}
     @{Html.RenderAction("EventHomeMenu", "Partinal");}
     <section class="main c-con clear" style="background-color:#FFF;">
         <section class="dasai-location">
-            <a href="#">中国校园文化网</a>&nbsp;>&nbsp;@Model.ThisArticleFatherCategory.category_name><a href="/Article/List/cid_@Model.ThisArticleCategory.category_id">@Model.ThisArticleCategory.category_name</a>
+            <a href="#">中国校园文化网</a>&nbsp;>&nbsp;@Model.ThisArticleFatherCategory.category_name><a href="/event/ecid_@(Model.ThisArticleCategory.category_id+".html")">@Model.ThisArticleCategory.category_name</a>
         </section>
         <section class="dasai-detail clear">
             <section class="dsd-left">

@@ -24,11 +24,11 @@ namespace ChineseCulture.Bll
         {
             EventHomePageViewModel eventHomePageViewModel = new EventHomePageViewModel();
             ArticleCategoryDao acDao = new ArticleCategoryDao();
-            eventHomePageViewModel.SaiQuZuZhiDanWei = articleBll.GetArticleByCategory("saiquzuzhidanwei", 5);//赛区组织单位
-            eventHomePageViewModel.SaiShiHuojiangBangdan = articleBll.GetArticleByCategory("SaiShiHuojiangBangdan", 5);//赛事获奖榜单
-            eventHomePageViewModel.event_zhuanjiapingwei = articleBll.GetArticleByCategory("event_zhuanjiapingwei", 5);//专家评委
-            eventHomePageViewModel.saishigundongtupian = articleBll.GetArticleByCategory("saishigundongtupian", 5);//赛区组织单位
-            eventHomePageViewModel.event_cansaidanwei = articleBll.GetArticleByCategory("event_cansaidanwei", 5);//参赛单位
+            eventHomePageViewModel.SaiQuZuZhiDanWei = articleBll.GetEventArticleByCategory("saiquzuzhidanwei", 5);//赛区组织单位
+            eventHomePageViewModel.SaiShiHuojiangBangdan = articleBll.GetEventArticleByCategory("SaiShiHuojiangBangdan", 5);//赛事获奖榜单
+            eventHomePageViewModel.event_zhuanjiapingwei = articleBll.GetEventArticleByCategory("event_zhuanjiapingwei", 5);//专家评委
+            eventHomePageViewModel.saishigundongtupian = articleBll.GetEventArticleByCategory("saishigundongtupian", 5);//赛区组织单位
+            eventHomePageViewModel.event_cansaidanwei = articleBll.GetEventArticleByCategory("event_cansaidanwei", 5);//参赛单位
 
             /*文学教程*/
             eventHomePageViewModel.WenxueZuopinCategoryList = GetEventCategoryByCategoryCode("event_wenxuejiaocheng", 15);
@@ -83,7 +83,7 @@ namespace ChineseCulture.Bll
             {
                 HomeCategoryArticleViewModel articleViewModel = new HomeCategoryArticleViewModel();
                 articleViewModel.category_name = item.category_name;
-                articleViewModel.articleList = articleBll.GetArticleByCategory(item.category_code, 1).ToList();
+                articleViewModel.articleList = articleBll.GetEventArticleByCategory(item.category_code, 1).ToList();
                 //articleViewModel.adArticle = articleBll.GetArticleByCategory(item.category_code, 1).FirstOrDefault();
                 articleViewModelList.Add(articleViewModel);
             }

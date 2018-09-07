@@ -29,6 +29,11 @@ namespace ChineseCulture
               defaults: new { controller = "Article", action = "List", cid = UrlParameter.Optional }
           );
             routes.MapRoute(
+             name: "MvcPager_DefaultEvent",
+             url: "{controller}/ecid_{cid}.html",
+             defaults: new { controller = "Event", action = "List", cid = UrlParameter.Optional }
+         );
+            routes.MapRoute(
                name: "MvcPager_Default2",
                url: "{controller}/{action}/cid_{cid}",
                defaults: new { controller = "Article", action = "List", cid = UrlParameter.Optional }
@@ -38,6 +43,11 @@ namespace ChineseCulture
                 url: "{controller}/article_{id}.html",
                 defaults: new { controller = "Article", action = "Detail", id = UrlParameter.Optional }
             );
+            routes.MapRoute(
+               name: "Defaultevent",
+               url: "{controller}/event_{id}.html",
+               defaults: new { controller = "Event", action = "Detail", id = UrlParameter.Optional }
+           );
 
             routes.MapRoute(
                 name: "Default",

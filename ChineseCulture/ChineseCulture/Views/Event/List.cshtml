@@ -23,8 +23,8 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/homepage")
 </head>
-<body style="background-image:url(images/body2.png)">
-    @{Html.RenderAction("PageHeader", "Partinal");}
+<body style="background-image:url(/images/body2.png)">
+    @{Html.RenderAction("EventPageHeader", "Partinal");}
     @{Html.RenderAction("EventHomeMenu", "Partinal");}
     <section class="main c-con clear" style="padding-top:0;">
         <div class="swiper-container swiper8">
@@ -68,7 +68,7 @@
             </ul>
         </section>
         <div class="pages clear">
-            @Html.Pager(Model.articlePageList).Options(o => o.SetFirstPageRouteName("MvcPager_Default").SetRouteName("MvcPager_Pager1").SetPagerItemTemplate("{0}&nbsp;").SetCssClass("pagesmain"))
+            @Html.Pager(Model.articlePageList).Options(o => o.SetFirstPageRouteName("MvcPager_DefaultEvent").SetRouteName("MvcPager_Pager1").SetPagerItemTemplate("{0}&nbsp;").SetCssClass("pagesmain"))
 
         </div>
 

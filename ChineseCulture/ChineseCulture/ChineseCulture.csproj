@@ -365,6 +365,8 @@
     <Content Include="Views\Wenyizazhi\List.cshtml" />
     <Content Include="Views\Wenyizazhi\Detail.cshtml" />
     <Content Include="Views\Partinal\WenyizashiHomeMenu.cshtml" />
+    <Content Include="Views\Partinal\EventPageHeader.cshtml" />
+    <Content Include="Views\Partinal\WenyizazhiPageHeader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

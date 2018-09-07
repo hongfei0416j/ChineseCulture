@@ -64,10 +64,17 @@ namespace ChineseCulture.Controllers
             IEnumerable<SiteMenu> siteMenuList = smBll.GetPageMenuByCategory("wenyizazhidaohang");
             return View(siteMenuList);
         }
-        public ActionResult PageHeader()
+        public ActionResult PageHeader() 
         {
             return View();
         }
-
+        public ActionResult EventPageHeader()
+        {
+            return View();
+        }
+        public ActionResult WenyizazhiPageHeader()
+        {
+            return View();
+        }
     }
 }
