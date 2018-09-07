@@ -28,5 +28,8 @@ namespace ChineseCulture.Model
         public IEnumerable<ArticleCategory> XueshujiaoliuCategoryList { get; set; }
         public IEnumerable<ArticleCategory> LijiesaishiCategoryList { get; set; }
         public List<HomeCategoryArticleViewModel> LijiesaishiCategoryArticleList { get; set; }
+        public IEnumerable<Article> saishigundongtupian { get; set; }
+        public IEnumerable<Article> event_zhuanjiapingwei { get; set; }
+        public IEnumerable<Article> event_cansaidanwei { get; set; }
     }
 }

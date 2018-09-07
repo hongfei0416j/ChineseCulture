@@ -26,6 +26,13 @@
     <section class="main c-con clear">
         <div class="swiper-container swiper1">
             <div class="swiper-wrapper">
+                @foreach (var item in Model.saishigundongtupian)
+                {
+                    <div class="swiper-slide">
+                        <a href="@item.article_click_url" target="_blank">
+                            <img src="@item.article_cover_image">
+                        </a></div>
+                }
                 <div class="swiper-slide"><img src="/images/emp-01.png"></div>
                 <div class="swiper-slide"><img src="/images/emp-01.png"></div>
                 <div class="swiper-slide"><img src="/images/emp-01.png"></div>
@@ -274,99 +281,105 @@
                 </div>
             </div>
         </section>
-        <section class="dscols">
-            <header class="col-tab clear">
-                <p class="on">历届赛事</p>
-                @foreach (var item in Model.LijiesaishiCategoryList)
+        <!--
+    <section class="dscols">
+        <header class="col-tab clear">
+            <p class="on">历届赛事</p>
+            @foreach (var item in Model.LijiesaishiCategoryList)
+            {
+                <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+            }
+            <a href="#">更多</a>
+        </header>
+        <div class="dscol-con">
+            <header class="dsc-header clear">
+                <p></p>@foreach (var item in Model.LijiesaishiCategoryArticleList)
                 {
-                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                    <p>@item.category_name</p>
                 }
-                <a href="#">更多</a>
             </header>
-            <div class="dscol-con">
-                <header class="dsc-header clear">
-                    <p></p>@foreach (var item in Model.LijiesaishiCategoryArticleList)
-                    {
-                        <p>@item.category_name</p>
-                    }
-                </header>
-                <div class="dsc-list clear">
-                    <ul>
-                        <li>
-                            <p>等级奖</p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-user"><a href="#">湖南卫视国际频道</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="dsc-list clear" style="margin-top:10px;">
-                    <ul>
-                        <li>
-                            <p>人气奖</p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-user"><a href="#">湖南卫视国际频道</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="dsc-list clear" style="margin-top:10px;">
-                    <ul>
-                        <li>
-                            <p>表演奖</p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-user"><a href="#">湖南卫视国际频道</a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                        </li>
-                    </ul>
-                </div>
+            <div class="dsc-list clear">
+                <ul>
+                    <li>
+                        <p>等级奖</p>
+                    </li>
+                    <li>
+                        <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                    </li>
+                    <li>
+                        <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                    </li>
+                    <li>
+                        <p class="dsc-li-user"><a href="#">湖南卫视国际频道</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                    </li>
+                    <li>
+                        <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                    </li>
+                </ul>
             </div>
-        </section>
+            <div class="dsc-list clear" style="margin-top:10px;">
+                <ul>
+                    <li>
+                        <p>人气奖</p>
+                    </li>
+                    <li>
+                        <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                    </li>
+                    <li>
+                        <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                    </li>
+                    <li>
+                        <p class="dsc-li-user"><a href="#">湖南卫视国际频道</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                    </li>
+                    <li>
+                        <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                    </li>
+                </ul>
+            </div>
+            <div class="dsc-list clear" style="margin-top:10px;">
+                <ul>
+                    <li>
+                        <p>表演奖</p>
+                    </li>
+                    <li>
+                        <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                    </li>
+                    <li>
+                        <p class="dsc-li-title"><a href="#">那兰诗*致母亲</a></p>
+                    </li>
+                    <li>
+                        <p class="dsc-li-user"><a href="#">湖南卫视国际频道</a></p>
+                    </li>
+                    <li>
+                        <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                    </li>
+                    <li>
+                        <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+        -->
         <section class="cols2">
             <h3 class="bmfw"><p>专家评委</p></h3>
             <div class="cols2-imglist clear">
                 <ul>
-                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
+                    @foreach (var item in Model.event_zhuanjiapingwei)
+                    {
+                        <li>
+                    <a href="">
+                            <p><img src="@item.article_cover_image" alt="@item.article_title"></p>
+                            <h3>@item.article_title</h3>
+                        </a>
+                        </li>
+                    }
                 </ul>
             </div>
         </section>
@@ -374,11 +387,15 @@
             <h3 class="sjgly"><p>参赛单位</p></h3>
             <div class="cols2-imglist clear">
                 <ul>
-                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
+                    @foreach (var item in Model.event_cansaidanwei)
+                    {
+                        <li>
+                            <a href="">
+                                <p><img src="@item.article_cover_image" alt="@item.article_title"></p>
+                                <h3>@item.article_title</h3>
+                            </a>
+                        </li>
+                    }
                 </ul>
             </div>
         </section>
