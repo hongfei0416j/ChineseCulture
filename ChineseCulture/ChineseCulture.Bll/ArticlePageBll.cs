@@ -16,7 +16,7 @@ namespace ChineseCulture.Bll
         {
 
         }
-        public ArticlePageViewModel CreateArticleDetailModel(int article_id)
+        public ArticlePageViewModel CreateArticleDetailModel(int article_id,int type=0)
         {
             ArticlePageViewModel articleDetailModel = new ArticlePageViewModel();
             try
@@ -31,7 +31,14 @@ namespace ChineseCulture.Bll
                 ArticleCategoryBll acateBll = new ArticleCategoryBll();
                 articleDetailModel.ThisArticleCategory = acBll.GetArticleCategoryByArticle(article_id);
                 articleDetailModel.ThisArticleFatherCategory = acBll.GetArticleFatherCategoryByArticle(article_id);
-                articleDetailModel.articleRightList = acBll.GetArticlePageList(new ArticlePageViewModel { category_id= acNew.category_id, article_state = 1, page_index = 1, page_size = 20});
+                if (0==type)
+                {
+                    articleDetailModel.articleRightList = acBll.GetArticlePageList(new ArticlePageViewModel { category_id = acNew.category_id, article_state = 1, page_index = 1, page_size = 20 });
+                }
+                if (1 == type)
+                {
+                    articleDetailModel.articleRightList = acBll.GetEventArticlePageList(new ArticlePageViewModel { category_id = acNew.category_id, article_state = 1, page_index = 1, page_size = 20 });
+                }
             }
             catch (Exception ex)
             {

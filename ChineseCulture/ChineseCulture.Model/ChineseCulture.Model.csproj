@@ -104,6 +104,7 @@
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>
     </Compile>
     <Compile Include="SiteMenuViewModel.cs" />
+    <Compile Include="WenyizazhiHomePageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />

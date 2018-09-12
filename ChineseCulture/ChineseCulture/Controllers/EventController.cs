@@ -42,7 +42,7 @@ namespace ChineseCulture.Controllers
         {
             ArticlePageViewModel articlePageViewModel = new ArticlePageViewModel();
             ArticlePageBll articlePageBll = new ArticlePageBll();
-            articlePageViewModel = articlePageBll.CreateArticleDetailModel(id);
+            articlePageViewModel = articlePageBll.CreateArticleDetailModel(id,1);
             return View(articlePageViewModel);
         }
 

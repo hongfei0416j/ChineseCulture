@@ -2,6 +2,9 @@
 @{
     Layout = null;
 }
+@using ChineseCulture.Model;
+
+@model WenyizazhiHomePageViewModel
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +14,7 @@
     @Styles.Render("~/Content/dasai")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/homepage")
-    
+
 </head>
 <body style="background-image:url(/images/body2.png)">
     @{Html.RenderAction("WenyizazhiPageHeader", "Partinal");}
@@ -19,12 +22,15 @@
     <section class="main c-con clear">
         <div class="swiper-container swiper1">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
-                <div class="swiper-slide"><img src="/images/emp-01.png"></div>
+
+                @foreach (var item in Model.Zazhishouyegundongtupian)
+                {
+                    <div class="swiper-slide">
+                        <a href="@item.article_click_url" target="_blank">
+                            <img src="@item.article_cover_image">
+                        </a>
+                    </div>
+                }
             </div>
             <div class="swiper-pagination swiper-pagination1"></div>
         </div>
@@ -32,13 +38,10 @@
             <h3>本年度两期获奖选手名单</h3>
             <div class="union-list">
                 <ul>
-                    <li><a href="#">河南慧娟文化传播有限公司</a></li>
-                    <li><a href="#">全国各省市工作站与代理</a></li>
-                    <li><a href="#">中国校园文化文推荐书</a></li>
-                    <li><a href="#">校园之星原创文艺作品争霸赛</a></li>
-                    <li><a href="#">教师与校园运营管理团队岗前培训</a></li>
-                    <li><a href="#">河南慧娟文化传播有限公司</a></li>
-                    <li><a href="#">全国各省市工作站与代理</a></li>
+                    @foreach (var item in Model.zazhi_bennianduliangqihuojiangxuanshoumingdan)
+                    {
+                        <li><a target="_blank" href="@item.article_click_url">@item.article_title</a></li>
+                    }
                 </ul>
             </div>
         </section>
@@ -59,21 +62,20 @@
         <section class="dscols">
             <header class="col-tab clear">
                 <p class="on">名家风采</p>
-                <p><a href="#">作家</a></p>
-                <p><a href="#">诗人</a></p>
-                <p><a href="#">主持人</a></p>
-                <p><a href="#">书画家</a></p>
-                <p><a href="#">教育家</a></p>
-                <p><a href="#">讲师</a></p>
-                <p><a href="#">演员</a></p>
-                <p><a href="#">歌手</a></p>
-                <p><a href="#">记者</a></p>
-                <p><a href="#">模特</a></p>
+                @foreach (var item in Model.MingjiafengcaiCategoryList)
+                {
+                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                }
+
                 <a href="#">更多</a>
             </header>
             <div class="dscol-con">
                 <header class="dsc-header clear">
-                    <p></p><p>作家</p><p>演员</p><p>诗人</p><p>书画家</p><p>教育家</p>
+                    <p></p>
+                    @foreach (var item in Model.MingjiafengcaiCategoryArticleList)
+                    {
+                        <p>@item.category_name</p>
+                    }
                 </header>
                 <div class="dsc-list clear">
                     <ul>
@@ -82,31 +84,22 @@
                             <p>代表作品</p>
                             <p>所获荣誉</p>
                         </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p><a href="#"><img src="/images/emp-32.png" alt=" "></a></p>
-                            <p><a href="#"><img src="/images/emp-31.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p><a href="#"><img src="/images/emp-32.png" alt=" "></a></p>
-                            <p><a href="#"><img src="/images/emp-31.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p><a href="#"><img src="/images/emp-32.png" alt=" "></a></p>
-                            <p><a href="#"><img src="/images/emp-31.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p><a href="#"><img src="/images/emp-32.png" alt=" "></a></p>
-                            <p><a href="#"><img src="/images/emp-31.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p><a href="#"><img src="/images/emp-32.png" alt=" "></a></p>
-                            <p><a href="#"><img src="/images/emp-31.png" alt=" "></a></p>
-                        </li>
+                        @foreach (var categoryList in Model.MingjiafengcaiCategoryArticleList)
+                        {
+                            foreach (var item in categoryList.articleList)
+                            {
+                                <li>
+                                    <p><a href="#"><img src="@item.article_cover_image" alt=" "></a></p>
+                                    <p>
+                                        <a href="@item.article_click_url">
+
+                                            @Html.Raw(@item.article_description.Replace("\r\n", "<br>"))
+                                        </a>
+                                    </p>
+                                    <p>@Html.Raw(@item.article_keywords.Replace("\r\n", "<br>"))</p>
+                                </li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>
@@ -114,17 +107,19 @@
         <section class="dscols">
             <header class="col-tab clear">
                 <p class="on">青青校园</p>
-                <p><a href="#">成长故事</a></p>
-                <p><a href="#">爱的誓言</a></p>
-                <p><a href="#">岁月如歌</a></p>
-                <p><a href="#">激情燃烧</a></p>
-                <p><a href="#">祖国花开</a></p>
-                <p><a href="#">九霄云外</a></p>
+                @foreach (var item in Model.qingchunxiaoyuanCategoryList)
+                {
+                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                }
                 <a href="#">更多</a>
             </header>
             <div class="dscol-con">
                 <header class="dsc-header clear">
-                    <p></p><p>成长故事</p><p>爱的誓言</p><p>岁月如歌</p><p>激情燃烧</p><p>祖国花开</p>
+                    <p></p>
+                    @foreach (var item in Model.qingchunxiaoyuanCategoryArticleList)
+                    {
+                        <p>@item.category_name</p>
+                    }
                 </header>
                 <div class="dsc-list clear">
                     <ul>
@@ -133,31 +128,18 @@
                             <p>精品剧本</p>
                             <p>微型小说</p>
                         </li>
-                        <li>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                        </li>
+                        @foreach (var categoryList in Model.qingchunxiaoyuanCategoryArticleList)
+                        {
+                            foreach (var item in categoryList.articleList)
+                            {
+                                <li class="lizazhi">
+                                    <p class="dsc-li-about"><a href="@item.article_click_url" target="_blank"> @Html.Raw(@item.article_description.Replace("\r\n", "<br>"))</a></p>
+
+                                </li>
+
+                            }
+                        }
+
                     </ul>
                 </div>
             </div>
@@ -165,17 +147,19 @@
         <section class="dscols">
             <header class="col-tab clear">
                 <p class="on">火红年华</p>
-                <p><a href="#">遥不可及</a></p>
-                <p><a href="#">近在咫尺</a></p>
-                <p><a href="#">笑看人生</a></p>
-                <p><a href="#">民间荟萃</a></p>
-                <p><a href="#">恋恋风尘</a></p>
-                <p><a href="#">穿越时空</a></p>
+                @foreach (var item in Model.huohongnianhuaCategoryList)
+                {
+                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                }
                 <a href="#">更多</a>
             </header>
             <div class="dscol-con">
                 <header class="dsc-header clear">
-                    <p></p><p>近在咫尺</p><p>笑看人生</p><p>民间荟萃</p><p>恋恋风尘</p><p>穿越时空</p>
+                    <p></p>
+                    @foreach (var item in Model.huohongnianhuaCategoryArticleList)
+                    {
+                        <p>@item.category_name</p>
+                    }
                 </header>
                 <div class="dsc-list clear">
                     <ul>
@@ -184,31 +168,17 @@
                             <p>精彩故事</p>
                             <p>短篇小说</p>
                         </li>
-                        <li>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                            <p><a href="#"><img src="/images/emp-25.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#">展规划作为一种战略性、前瞻性、导向性的公共政策，在我国政府管理中具有十分重要的引领地位</a></p>
-                        </li>
+                        @foreach (var categoryList in Model.huohongnianhuaCategoryArticleList)
+                        {
+                            foreach (var item in categoryList.articleList)
+                            {
+                                <li class="lizazhi">
+                                    <p class="dsc-li-about"><a href="@item.article_click_url" target="_blank"> @Html.Raw(@item.article_description.Replace("\r\n", "<br>"))</a></p>
+
+                                </li>
+
+                            }
+                        }
                     </ul>
                 </div>
             </div>
@@ -216,17 +186,19 @@
         <section class="dscols">
             <header class="col-tab clear">
                 <p class="on">故乡之恋</p>
-                <p><a href="#">田园牧野</a></p>
-                <p><a href="#">街头巷尾</a></p>
-                <p><a href="#">特色小镇</a></p>
-                <p><a href="#">乡土文化</a></p>
-                <p><a href="#">杨柳野味</a></p>
-                <p><a href="#">桃李芬芳</a></p>
+                @foreach (var item in Model.guxiangzhilianCategoryList)
+                {
+                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                }
                 <a href="#">更多</a>
             </header>
             <div class="dscol-con">
                 <header class="dsc-header clear">
-                    <p></p><p>田园牧野</p><p>特色小镇</p><p>乡土文化</p><p>杨柳野味</p><p>桃李芬芳</p>
+                    <p></p>
+                    @foreach (var item in Model.guxiangzhilianCategoryArticleList)
+                    {
+                        <p>@item.category_name</p>
+                    }
                 </header>
                 <div class="dsc-list clear">
                     <ul>
@@ -235,30 +207,17 @@
                             <p>散文随笔</p>
                             <p>故事小说</p>
                         </li>
-                        <li>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                        </li>
-                        <li>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                        <li>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                        </li>
+                        @foreach (var categoryList in Model.guxiangzhilianCategoryArticleList)
+                        {
+                            foreach (var item in categoryList.articleList)
+                            {
+                                <li class="lizazhi">
+                                    <p class="dsc-li-about"><a href="@item.article_click_url" target="_blank"> @Html.Raw(@item.article_description.Replace("\r\n", "<br>"))</a></p>
+
+                                </li>
+
+                            }
+                        }
                     </ul>
                 </div>
             </div>
@@ -266,17 +225,19 @@
         <section class="dscols">
             <header class="col-tab clear">
                 <p class="on">放飞梦想</p>
-                <p><a href="#">大河上下</a></p>
-                <p><a href="#">指点江山</a></p>
-                <p><a href="#">鹏程万里</a></p>
-                <p><a href="#">梦在远方</a></p>
-                <p><a href="#">创业指南</a></p>
-                <p><a href="#">产业规划</a></p>
+                @foreach (var item in Model.fangfeimengxiangCategoryList)
+                {
+                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                }
                 <a href="#">更多</a>
             </header>
             <div class="dscol-con">
                 <header class="dsc-header clear">
-                    <p></p><p>大河上下</p><p>鹏程万里</p><p>梦在远方</p><p>创业指南</p><p>产业规划</p>
+                    <p></p>
+                    @foreach (var item in Model.fangfeimengxiangCategoryArticleList)
+                    {
+                        <p>@item.category_name</p>
+                    }
                 </header>
                 <div class="dsc-list clear">
                     <ul>
@@ -285,32 +246,22 @@
                             <p>佳作欣赏</p>
                             <p>荣誉展示</p>
                         </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                            <p><a href="#"><img src="/images/emp-31.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                            <p><a href="#"><img src="/images/emp-31.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                            <p><a href="#"><img src="/images/emp-31.png" alt=" "></a></p>
-                        </li>
-                        <li>
+                        @foreach (var categoryList in Model.fangfeimengxiangCategoryArticleList)
+                        {
+                            foreach (var item in categoryList.articleList)
+                            {
+                                <li>
+                                    <p><a href="#"><img src="@item.article_cover_image" alt=" "></a></p>
+                                    <p>
+                                        <a href="@item.article_click_url">
 
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                            <p><a href="#"><img src="/images/emp-31.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#">本书主要讲述了课程论的产生、发展与在实际生活中的应用，主要分为课程论的基础问题、主要的课程理论</a></p>
-                            <p><a href="#"><img src="/images/emp-31.png" alt=" "></a></p>
-                        </li>
+                                            @Html.Raw(@item.article_description.Replace("\r\n", "<br>"))
+                                        </a>
+                                    </p>
+                                    <p>@Html.Raw(@item.article_keywords.Replace("\r\n", "<br>"))</p>
+                                </li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>
@@ -318,22 +269,18 @@
         <section class="dscols">
             <header class="col-tab clear">
                 <p class="on">获奖作品</p>
-                <p><a href="#">文学</a></p>
-                <p><a href="#">艺术</a></p>
-                <p><a href="#">教程</a></p>
-                <p><a href="#">表演</a></p>
-                <p><a href="#">岗前</a></p>
-                <p><a href="#">项目</a></p>
-                <p><a href="#">拍摄</a></p>
-                <p><a href="#">影视</a></p>
-                <p><a href="#">讲师</a></p>
-                <p><a href="#">制作</a></p>
-                <p><a href="#">设计</a></p>
+                @foreach (var item in Model.huojiangzuopinCategoryList)
+                {
+                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                }
                 <a href="#">更多</a>
             </header>
             <div class="dscol-con">
                 <header class="dsc-header clear">
-                    <p></p><p>文学</p><p>教程</p><p>影视</p><p>项目</p><p>制作</p>
+                    <p></p>@foreach (var item in Model.huojiangzuopinCategoryArticleList)
+                    {
+                        <p>@item.category_name</p>
+                    }
                 </header>
                 <div class="dsc-list clear">
                     <ul>
@@ -342,32 +289,22 @@
                             <p>美文欣赏</p>
                             <p>荣誉成果</p>
                         </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#">书本很好，质量不错，孩子还很小，看不懂，但是买给他慢慢接触，我自己也可以复习复习中学的知识</a></p>
-                            <p><a href="#"><img src="/images/emp-31.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#">书本很好，质量不错，孩子还很小，看不懂，但是买给他慢慢接触，我自己也可以复习复习中学的知识</a></p>
-                            <p><a href="#"><img src="/images/emp-31.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#">书本很好，质量不错，孩子还很小，看不懂，但是买给他慢慢接触，我自己也可以复习复习中学的知识</a></p>
-                            <p><a href="#"><img src="/images/emp-31.png" alt=" "></a></p>
-                        </li>
-                        <li>
+                        @foreach (var categoryList in Model.huojiangzuopinCategoryArticleList)
+                        {
+                            foreach (var item in categoryList.articleList)
+                            {
+                                <li>
+                                    <p><a href="#"><img src="@item.article_cover_image" alt=" "></a></p>
+                                    <p>
+                                        <a href="@item.article_click_url">
 
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#">书本很好，质量不错，孩子还很小，看不懂，但是买给他慢慢接触，我自己也可以复习复习中学的知识</a></p>
-                            <p><a href="#"><img src="/images/emp-31.png" alt=" "></a></p>
-                        </li>
-                        <li>
-                            <p><a href="#"><img src="/images/emp-24.png" alt=" "></a></p>
-                            <p class="dsc-li-about"><a href="#">书本很好，质量不错，孩子还很小，看不懂，但是买给他慢慢接触，我自己也可以复习复习中学的知识</a></p>
-                            <p><a href="#"><img src="/images/emp-31.png" alt=" "></a></p>
-                        </li>
+                                            @Html.Raw(@item.article_description.Replace("\r\n", "<br>"))
+                                        </a>
+                                    </p>
+                                    <p>@Html.Raw(@item.article_keywords.Replace("\r\n", "<br>"))</p>
+                                </li>
+                            }
+                        }
                     </ul>
                 </div>
             </div>
@@ -376,30 +313,34 @@
             <h3 class="bmfw"><p>名人推荐</p></h3>
             <div class="cols2-imglist clear">
                 <ul>
-                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
-                </ul>
-            </div>
+                    @foreach (var item in Model.zazhi_mingrentuijian)
+                    {
+                        <li>
+                            <a href="@item.article_click_url" target="_blank">
+                                <p><img src="@item.article_cover_image" alt="@item.article_title"></p>
+                                <h3>@item.article_title</h3>
+                            </a>
+                        </li>
+                    }
+</div>
         </section>
         <section class="cols2">
             <h3 class="sjgly"><p>文艺新秀</p></h3>
             <div class="cols2-imglist clear">
                 <ul>
-                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-07.png" alt=" "></p><h3>李艳霞</h3></a></li>
-                    <li><a href="#"><p><img src="/images/emp-06.png" alt=" "></p><h3>殷桃</h3></a></li>
+                    @foreach (var item in Model.zazhi_wenyixinxiu)
+                    {
+                        <li>
+                            <a href="@item.article_click_url" target="_blank">
+                                <p><img src="@item.article_cover_image" alt="@item.article_title"></p>
+                                <h3>@item.article_title</h3>
+                            </a>
+                        </li>
+                    }
                 </ul>
             </div>
         </section>
-        <section class="links">
-            <h3><p>友情链接</p></h3>
-            <div class="link-list"><a href="#">中国科技信息网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国视频文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国青年作家协会</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国五星文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">清华大学出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">人民文学出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">人民网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新华网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">央视网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">诗词在线</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">哈尔滨转介率科技发展有限公司</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">圣才学习网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新浪网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">一起写网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">陕西家教网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文联出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">江山文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">百度</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">365</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">行业搜索网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">腾讯</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新华网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">央视网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">诗词在线</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">哈尔滨转介率科技发展有限公司</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">圣才学习网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">新浪网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">一起写网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">陕西家教网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文联出版社</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">江山文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">中国文学网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">百度</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">365</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">行业搜索网</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">腾讯</a></div>
-        </section>
+
     </section>
     <section class="c-con clear" style="background-color:#FFF;">
 
@@ -408,6 +349,7 @@
             @{Html.RenderAction("FriendLink", "Partinal");}
         </section>
     </section>
+    @{Html.RenderAction("Footer", "Partinal");}
     <script src="js/swiper.min.js"></script>
     <script src="js/fun.js"></script>
     <script>
@@ -419,5 +361,6 @@
             loop: true
         });
     </script>
+
 </body>
 </html>

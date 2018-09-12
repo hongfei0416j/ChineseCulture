@@ -369,7 +369,7 @@
                     @foreach (var item in Model.event_zhuanjiapingwei)
                     {
                         <li>
-                    <a href="">
+                    <a href="@item.article_click_url" target="_blank">
                             <p><img src="@item.article_cover_image" alt="@item.article_title"></p>
                             <h3>@item.article_title</h3>
                         </a>
@@ -385,7 +385,7 @@
                     @foreach (var item in Model.event_cansaidanwei)
                     {
                         <li>
-                            <a href="">
+                            <a href="@item.article_click_url" target="_blank">
                                 <p><img src="@item.article_cover_image" alt="@item.article_title"></p>
                                 <h3>@item.article_title</h3>
                             </a>
