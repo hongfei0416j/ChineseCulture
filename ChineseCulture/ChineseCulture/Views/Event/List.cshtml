@@ -48,7 +48,7 @@
             类别：<a href="#" class="dstypes-on">全部</a>&nbsp;&nbsp;
             @foreach (ArticleCategory ac in Model.ArticleCategoryList)
             {
-                <a href="/" class="dstypes-on">
+                <a href="/evevt/evevt_@(ac.category_id+".html")" class="dstypes-on">
                     @ac.category_name
                 </a>
             }
@@ -72,6 +72,23 @@
 
         </div>
 
+    </section>
+    <section class=" dsd-right">
+
+        <section class="dsd-right-col">
+            <header class="dsd-rcol-header">
+                <h3>精彩分享</h3>
+            </header>
+            <div class="dsd-rcol-list">
+                <ul>
+                    @foreach (var item in Model.articleRightList)
+                    {
+                        <li><a href="@item.article_click_url">@item.article_title</a></li>
+                    }
+
+                </ul>
+            </div>
+        </section>
     </section>
     <section class=" c-con clear" style="background-color:#FFF;">
         <section class="cyfh-blank"></section>

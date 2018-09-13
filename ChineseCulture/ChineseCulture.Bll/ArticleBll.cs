@@ -47,7 +47,15 @@ namespace ChineseCulture.Bll
             var articleList = articleDao.Select(article, number).ToList();//获取网站公告
             articleList.ForEach(t => t.category_name = acdBll.GetCategory(t.category_id).category_name);
 
-            articleList.ForEach(t => t.article_click_url = string.IsNullOrEmpty(t.article_click_url) ? "/article/article_" + t.article_id + ".html" : t.article_click_url);
+            articleList.ForEach(t => t.article_click_url = string.IsNullOrEmpty(t.article_click_url) ? "/zazhi/zazhi_" + t.article_id + ".html" : t.article_click_url);
+            return articleList;
+        }
+
+        internal PagedList<Article> GetZazhiArticlePageList(ArticlePageViewModel articleDetailModel)
+        {
+            var articleList = articleDao.SelectPageList(articleDetailModel);//获取网站公告
+            articleList.ForEach(t => t.article_click_url = string.IsNullOrEmpty(t.article_click_url) ? "/zazhi/zazhi_" + t.article_id + ".html" : t.article_click_url);
+            articleList.ForEach(t => t.article_description = string.IsNullOrEmpty(t.article_description) ? StringHelper.ReplaceHtmlTag(t.article_content, 200) : t.article_description);
             return articleList;
         }
 
@@ -63,6 +71,14 @@ namespace ChineseCulture.Bll
             articleList.ForEach(t => t.article_click_url = "/article/article_" + t.article_id+".html");
             articleList.ForEach(t => t.article_description = string.IsNullOrEmpty(t.article_description) ? StringHelper.ReplaceHtmlTag(t.article_content, 200) : t.article_description);
             
+            return articleList;
+        }
+
+        internal PagedList<Article> GetZazhiPageList(ArticlePageViewModel articleDetailModel)
+        {
+            var articleList = articleDao.SelectPageList(articleDetailModel);//获取网站公告
+            articleList.ForEach(t => t.article_click_url = "/zazhi/zazhi_" + t.article_id + ".html");
+            articleList.ForEach(t => t.article_description = string.IsNullOrEmpty(t.article_description) ? StringHelper.ReplaceHtmlTag(t.article_content, 200) : t.article_description);
             return articleList;
         }
 

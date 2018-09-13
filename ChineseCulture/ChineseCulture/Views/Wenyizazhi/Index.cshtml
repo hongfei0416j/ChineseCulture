@@ -64,7 +64,7 @@
                 <p class="on">名家风采</p>
                 @foreach (var item in Model.MingjiafengcaiCategoryList)
                 {
-                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                    <p><a href="/zazhi/zcid_@{item.category_id+".html"} ">@item.category_name</a></p>
                 }
 
                 <a href="#">更多</a>
@@ -109,7 +109,7 @@
                 <p class="on">青青校园</p>
                 @foreach (var item in Model.qingchunxiaoyuanCategoryList)
                 {
-                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                    <p><a href="/zazhi/zcid_@{item.category_id+".html"} ">@item.category_name</a><a href="/zazhi/zcid_@{item.category_id+".html"} ">@item.category_name</a></p>
                 }
                 <a href="#">更多</a>
             </header>
@@ -149,7 +149,7 @@
                 <p class="on">火红年华</p>
                 @foreach (var item in Model.huohongnianhuaCategoryList)
                 {
-                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                    <p><a href="/zazhi/zcid_@{item.category_id+".html"} ">@item.category_name</a></p>
                 }
                 <a href="#">更多</a>
             </header>
@@ -188,7 +188,7 @@
                 <p class="on">故乡之恋</p>
                 @foreach (var item in Model.guxiangzhilianCategoryList)
                 {
-                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                    <p><a href="/zazhi/zcid_@{item.category_id+".html"} ">@item.category_name</a></p>
                 }
                 <a href="#">更多</a>
             </header>
@@ -227,7 +227,7 @@
                 <p class="on">放飞梦想</p>
                 @foreach (var item in Model.fangfeimengxiangCategoryList)
                 {
-                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                    <p><a href="/zazhi/zcid_@{item.category_id+".html"} ">@item.category_name</a></p>
                 }
                 <a href="#">更多</a>
             </header>
@@ -271,7 +271,7 @@
                 <p class="on">获奖作品</p>
                 @foreach (var item in Model.huojiangzuopinCategoryList)
                 {
-                    <p><a href="/Event/List/cid_@item.category_id">@item.category_name</a></p>
+                    <p><a href="/zazhi/zcid_@{item.category_id+".html"} ">@item.category_name</a></p>
                 }
                 <a href="#">更多</a>
             </header>

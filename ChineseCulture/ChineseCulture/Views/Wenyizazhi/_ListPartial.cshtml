@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+
+@using ChineseCulture.Model;
+
+
+@model ArticlePageViewModel
+
+@foreach (var m in Model.articlePageList)
+{
+    <li class="clear">
+        <div class="cyfh-li-img"><a  href="@m.article_click_url"><img src="@m.article_cover_image" alt=" "></a></div>
+        <div class="cyfh-li-about clear">
+            <h3><a href="@m.article_click_url" target="_blank">@m.article_title</a></h3>
+            <p>@m.article_content</p>
+            <a href="@m.article_click_url" class="cyfh-li-btn">浏览全文 <i class="iconfont">&#xe657;</i></a>
+        </div>
+    </li>
+
+    
+}

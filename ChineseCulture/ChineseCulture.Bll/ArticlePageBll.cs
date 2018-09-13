@@ -39,12 +39,33 @@ namespace ChineseCulture.Bll
                 {
                     articleDetailModel.articleRightList = acBll.GetEventArticlePageList(new ArticlePageViewModel { category_id = acNew.category_id, article_state = 1, page_index = 1, page_size = 20 });
                 }
+                if (2 == type)
+                {
+                    articleDetailModel.articleRightList = acBll.GetZazhiArticlePageList(new ArticlePageViewModel { category_id = acNew.category_id, article_state = 1, page_index = 1, page_size = 20 });
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
                
             }
+            return articleDetailModel;
+        }
+
+        public ArticlePageViewModel CreateZazhiListModel(ArticlePageViewModel articlePageViewModel)
+        {
+            ArticlePageViewModel articleDetailModel = new ArticlePageViewModel();
+            ArticleBll acBll = new ArticleBll();
+            articleDetailModel.page_size = 20;
+            articleDetailModel.page_index = articlePageViewModel.page_index;
+            articleDetailModel.articleRightList = acBll.GetZazhiPageList(new ArticlePageViewModel { article_state = 1, page_index = 1, page_size = 15, category_id = articlePageViewModel.category_id });
+            articleDetailModel.category_id = articlePageViewModel.category_id;
+            articleDetailModel.articlePageList = acBll.GetZazhiPageList(articleDetailModel);
+
+            ArticleCategoryBll categoryBll = new ArticleCategoryBll();
+            articleDetailModel.ThisArticleCategory = categoryBll.GetCategory(new ArticleCategory { category_id = articlePageViewModel.ThisArticleCategory.category_id });
+            articleDetailModel.ThisArticleFatherCategory = categoryBll.GetCategory(new ArticleCategory { category_id = articlePageViewModel.ThisArticleCategory.category_father_id });
+            articleDetailModel.ArticleCategoryList = categoryBll.GetCategoryList(new ArticleCategory { category_father_id = articleDetailModel.ThisArticleCategory.category_father_id });
             return articleDetailModel;
         }
 

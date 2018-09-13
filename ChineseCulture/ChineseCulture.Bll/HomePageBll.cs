@@ -33,20 +33,20 @@ namespace ChineseCulture.Bll
             zazhiHomePageViewModel.MingjiafengcaiCategoryList = GetZazhiCategoryByCategoryCode("zazhi_Mingjiafengcai", 15);
             zazhiHomePageViewModel.MingjiafengcaiCategoryArticleList = GetZazhiCategoryByFatherCategory("zazhi_Mingjiafengcai");
             /*青青校园 */
-            zazhiHomePageViewModel.qingchunxiaoyuanCategoryList = GetEventCategoryByCategoryCode("zazhi_qingchunxiaoyuan", 15);
-            zazhiHomePageViewModel.qingchunxiaoyuanCategoryArticleList = GetEventCategoryByFatherCategory("zazhi_qingchunxiaoyuan");
+            zazhiHomePageViewModel.qingchunxiaoyuanCategoryList = GetZazhiCategoryByCategoryCode("zazhi_qingchunxiaoyuan", 15);
+            zazhiHomePageViewModel.qingchunxiaoyuanCategoryArticleList = GetZazhiCategoryByFatherCategory("zazhi_qingchunxiaoyuan");
             /*火红年华 */
-            zazhiHomePageViewModel.huohongnianhuaCategoryList = GetEventCategoryByCategoryCode("zazhi_huohongnianhua", 15);
-            zazhiHomePageViewModel.huohongnianhuaCategoryArticleList = GetEventCategoryByFatherCategory("zazhi_huohongnianhua");
+            zazhiHomePageViewModel.huohongnianhuaCategoryList = GetZazhiCategoryByCategoryCode("zazhi_huohongnianhua", 15);
+            zazhiHomePageViewModel.huohongnianhuaCategoryArticleList = GetZazhiCategoryByFatherCategory("zazhi_huohongnianhua");
 
             /*故乡之恋 */
-            zazhiHomePageViewModel.guxiangzhilianCategoryList = GetEventCategoryByCategoryCode("zazhi_guxiangzhilian", 15);
-            zazhiHomePageViewModel.guxiangzhilianCategoryArticleList = GetEventCategoryByFatherCategory("zazhi_guxiangzhilian");
+            zazhiHomePageViewModel.guxiangzhilianCategoryList = GetZazhiCategoryByCategoryCode("zazhi_guxiangzhilian", 15);
+            zazhiHomePageViewModel.guxiangzhilianCategoryArticleList = GetZazhiCategoryByFatherCategory("zazhi_guxiangzhilian");
             /*放飞梦想 */
-            zazhiHomePageViewModel.fangfeimengxiangCategoryList = GetEventCategoryByCategoryCode("zazhi_fangfeimengxiang", 15);
-            zazhiHomePageViewModel.fangfeimengxiangCategoryArticleList = GetEventCategoryByFatherCategory("zazhi_fangfeimengxiang");
+            zazhiHomePageViewModel.fangfeimengxiangCategoryList = GetZazhiCategoryByCategoryCode("zazhi_fangfeimengxiang", 15);
+            zazhiHomePageViewModel.fangfeimengxiangCategoryArticleList = GetZazhiCategoryByFatherCategory("zazhi_fangfeimengxiang");
             /*获奖作品 */
-            zazhiHomePageViewModel.huojiangzuopinCategoryList = GetEventCategoryByCategoryCode("zazhi_huojiangzuopin", 15);
+            zazhiHomePageViewModel.huojiangzuopinCategoryList = GetZazhiCategoryByCategoryCode("zazhi_huojiangzuopin", 15);
             zazhiHomePageViewModel.huojiangzuopinCategoryArticleList = GetEventCategoryByFatherCategory("zazhi_huojiangzuopin");
             return zazhiHomePageViewModel;
         }
@@ -104,7 +104,7 @@ namespace ChineseCulture.Bll
             {
                 HomeCategoryArticleViewModel articleViewModel = new HomeCategoryArticleViewModel();
                 articleViewModel.category_name = item.category_name;
-                articleViewModel.articleList = articleBll.GetEventArticleByCategory(item.category_code, 1).ToList();
+                articleViewModel.articleList = articleBll.GetZazhiArticleByCategory(item.category_code, 1).ToList();
                 //articleViewModel.adArticle = articleBll.GetArticleByCategory(item.category_code, 1).FirstOrDefault();
                 articleViewModelList.Add(articleViewModel);
             }

@@ -38,6 +38,13 @@ namespace ChineseCulture
                         "~/Content/css/dasai.css"
                       
                      ));
+            bundles.Add(new StyleBundle("~/Content/wyzz").Include(
+                      "~/Content/css/global.css",
+                       "~/Content/css/swiper.min.css",
+                        "~/Content/css/style.css",
+                        "~/Content/css/wyzz.css"
+
+                     ));
             bundles.Add(new ScriptBundle("~/bundles/homepage").Include(
                      "~/Content/js/swiper.min.js",
                      "~/Content/js/date.js",

@@ -1,4 +1,5 @@
 ﻿using ChineseCulture.Bll;
+using ChineseCulture.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,13 +17,32 @@ namespace ChineseCulture.Controllers
             var homePageModel = homePageBll.CreateWenyizazhiPageModel();
             return View(homePageModel);
         }
-        public ActionResult List()
+        public ActionResult List(int pageindex = 1, int cid = 0)
         {
-            return View();
+            if (cid > 1)
+            {
+                Session["category_id"] = cid;
+
+            }
+            if (pageindex == null || pageindex < 0)
+            {
+                pageindex = 0;
+            }
+            ArticlePageViewModel articlePageViewModel = new ArticlePageViewModel();
+            ArticlePageBll articlePageBll = new ArticlePageBll();
+            articlePageViewModel.page_index = pageindex;
+            articlePageViewModel.ThisArticleCategory = new ArticleCategory();
+            articlePageViewModel.ThisArticleCategory.category_id = Convert.ToInt32(Session["category_id"]);
+            articlePageViewModel.category_id = Convert.ToInt32(Session["category_id"]);
+            articlePageViewModel = articlePageBll.CreateZazhiListModel(articlePageViewModel);
+            return View(articlePageViewModel);
         }
-        public ActionResult Detail()
+        public ActionResult Detail(int id = 0)
         {
-            return View();
+            ArticlePageViewModel articlePageViewModel = new ArticlePageViewModel();
+            ArticlePageBll articlePageBll = new ArticlePageBll();
+            articlePageViewModel = articlePageBll.CreateArticleDetailModel(id, 2);
+            return View(articlePageViewModel);
         }
     }
 }
