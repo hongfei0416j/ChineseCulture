@@ -22,12 +22,15 @@
     <section class="notic c-con">
         <div class="notic-cen">
             <div class="nc-list clear">
-                <marquee direction="left" scrollamount="100" scrolldelay="1000" width="100%" onmouseover="this.stop();" onmouseout="this.start();">
+                <marquee direction="left" scrollamount="50" scrolldelay="1000" width="100%" onmouseover="this.stop();" onmouseout="this.start();">
                     @foreach (var item in Model.ShouyeGundonggonggao)
                     {
-                        @item.article_description
+                        <a  target="_blank" href="@item.article_click_url">
+                            <span style="color:#FFF;"> @item.article_description</span>
+   
+                    </a>
                     }
-                </marquee>
+</marquee>
             </div>
         </div>
     </section>
