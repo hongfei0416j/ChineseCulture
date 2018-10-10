@@ -15,5 +15,13 @@ namespace ChineseCulture.Controllers
             var homePageModel = homePageBll.CreateHomePageModel();
             return View(homePageModel);
         }
+        public ActionResult Reg()
+        {
+            return View();
+        }
+        public ActionResult Login()
+        {
+            return View();
+        }
     }
 }

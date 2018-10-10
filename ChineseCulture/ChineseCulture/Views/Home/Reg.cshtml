@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>中国校园文化网</title>
+    @Styles.Render("~/Content/Reg")
+</head>
+<body>
+    <header class="header"><a href="/" class="reg-btn">返回首页</a><a href="/home/login">已有账号，去登录</a></header>
+    <section class="container">
+        <header class="form-header"><a href="#"><img src="/images/logo.png" alt=" "></a></header>
+        <section class="forms">
+            <ul>
+                <li><input type="text" name=" " placeholder="手机号" id="reg-phone"><h3><i class="iconfont">&#xe6ea;</i>&nbsp;请填写正确的手机号</h3></li>
+                <li><p>获取动态码</p><input type="text" name=" " placeholder="动态码" id="reg-code"><h3><i class="iconfont">&#xe6ea;</i>&nbsp;请填写正确的手机号</h3></li>
+                <li><input type="text" name=" " placeholder="用户名"></li>
+                <li><input type="password" name=" " placeholder="设置密码"></li>
+                <li><input type="password" name=" " placeholder="确认密码"></li>
+                <li><input type="checkbox" name=" " value="1">&nbsp;&nbsp;我已阅读并同意<a href="#">《校园文化网会员注册须知》</a></li>
+            </ul>
+        </section>
+        <p class="form-submit"><input type="submit" value="注册"></p>
+    </section>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/fun.js"></script>
+</body>
+</html>

@@ -50,6 +50,16 @@ namespace ChineseCulture
                      "~/Content/js/date.js",
                      "~/Content/js/fun.js"
                      ));
+            bundles.Add(new StyleBundle("~/Content/Login").Include(
+                     "~/Content/css/global.css",
+                       "~/Content/css/login.css"
+
+                    ));
+            bundles.Add(new StyleBundle("~/Content/Reg").Include(
+                    "~/Content/css/global.css",
+                      "~/Content/css/reg.css"
+
+                   ));
             /*
              * <script src="js/swiper.min.js"></script>
     <script src="js/fun.js"></script>

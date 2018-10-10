@@ -61,5 +61,14 @@ namespace ChineseCulture.Controllers
             acBll.AddTick(at);
             return null;
         }
+        public ActionResult Baoming()
+        {
+            return View();
+        }
+        [HttpPost]
+        public HttpContextBase Baoming(BaomingXuanShou b)
+        {
+            return null;
+        }
     }
 }

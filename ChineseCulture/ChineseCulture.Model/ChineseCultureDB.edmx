@@ -60,6 +60,28 @@
           <Property Name="type_name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="type_sort" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="BaomingXuanShou">
+          <Key>
+            <PropertyRef Name="p_id" />
+          </Key>
+          <Property Name="p_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChuShengRiQi" Type="nvarchar" MaxLength="50" />
+          <Property Name="NianJi" Type="nvarchar" MaxLength="50" />
+          <Property Name="LianXiDianHua" Type="nvarchar" MaxLength="50" />
+          <Property Name="YouXiang" Type="nvarchar" MaxLength="500" />
+          <Property Name="suoShuFenLei" Type="nvarchar" MaxLength="500" />
+          <Property Name="ZuoPinXuHao" Type="nvarchar" MaxLength="50" />
+          <Property Name="XingQuAiHao" Type="nvarchar" MaxLength="500" />
+          <Property Name="Xuexiao" Type="nvarchar" MaxLength="500" />
+          <Property Name="CannSaiZuoPin" Type="nvarchar" MaxLength="500" />
+          <Property Name="CanSaiLeiBie" Type="nvarchar" MaxLength="500" />
+          <Property Name="CanSaiJingLi" Type="nvarchar" MaxLength="500" />
+          <Property Name="SuoHuoRongYu" Type="nvarchar" MaxLength="500" />
+          <Property Name="HuoDongShiJian" Type="nvarchar" MaxLength="500" />
+          <Property Name="MengXiangZhiYe" Type="nvarchar" MaxLength="500" />
+          <Property Name="state" Type="int" />
+        </EntityType>
         <EntityType Name="FriendLink">
           <Key>
             <PropertyRef Name="fl_id" />
@@ -134,6 +156,7 @@
           <EntitySet Name="ArticleCategory" EntityType="Self.ArticleCategory" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ArticleTicks" EntityType="Self.ArticleTicks" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ArticleType" EntityType="Self.ArticleType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BaomingXuanShou" EntityType="Self.BaomingXuanShou" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="FriendLink" EntityType="Self.FriendLink" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Function" EntityType="Self.Function" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
@@ -154,6 +177,7 @@
           <EntitySet Name="ArticleTicks" EntityType="ChineseCultureModel.ArticleTicks" />
           <EntitySet Name="Article" EntityType="ChineseCultureModel.Article" />
           <EntitySet Name="SiteMenu" EntityType="ChineseCultureModel.SiteMenu" />
+          <EntitySet Name="BaomingXuanShou" EntityType="ChineseCultureModel.BaomingXuanShou" />
         </EntityContainer>
         <EntityType Name="FriendLink">
           <Key>
@@ -278,6 +302,28 @@
           <Property Name="menu_state" Type="Int32" Nullable="false" />
           <Property Name="menu_father_id" Type="Int32" Nullable="false" />
           <Property Name="menu_sort" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BaomingXuanShou">
+          <Key>
+            <PropertyRef Name="p_id" />
+          </Key>
+          <Property Name="p_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChuShengRiQi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NianJi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LianXiDianHua" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YouXiang" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="suoShuFenLei" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ZuoPinXuHao" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="XingQuAiHao" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Xuexiao" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CannSaiZuoPin" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CanSaiLeiBie" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="CanSaiJingLi" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="SuoHuoRongYu" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="HuoDongShiJian" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="MengXiangZhiYe" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="state" Type="Int32" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -415,6 +461,29 @@
                 <ScalarProperty Name="menu_code" ColumnName="menu_code" />
                 <ScalarProperty Name="menu_name" ColumnName="menu_name" />
                 <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BaomingXuanShou">
+            <EntityTypeMapping TypeName="ChineseCultureModel.BaomingXuanShou">
+              <MappingFragment StoreEntitySet="BaomingXuanShou">
+                <ScalarProperty Name="state" ColumnName="state" />
+                <ScalarProperty Name="MengXiangZhiYe" ColumnName="MengXiangZhiYe" />
+                <ScalarProperty Name="HuoDongShiJian" ColumnName="HuoDongShiJian" />
+                <ScalarProperty Name="SuoHuoRongYu" ColumnName="SuoHuoRongYu" />
+                <ScalarProperty Name="CanSaiJingLi" ColumnName="CanSaiJingLi" />
+                <ScalarProperty Name="CanSaiLeiBie" ColumnName="CanSaiLeiBie" />
+                <ScalarProperty Name="CannSaiZuoPin" ColumnName="CannSaiZuoPin" />
+                <ScalarProperty Name="Xuexiao" ColumnName="Xuexiao" />
+                <ScalarProperty Name="XingQuAiHao" ColumnName="XingQuAiHao" />
+                <ScalarProperty Name="ZuoPinXuHao" ColumnName="ZuoPinXuHao" />
+                <ScalarProperty Name="suoShuFenLei" ColumnName="suoShuFenLei" />
+                <ScalarProperty Name="YouXiang" ColumnName="YouXiang" />
+                <ScalarProperty Name="LianXiDianHua" ColumnName="LianXiDianHua" />
+                <ScalarProperty Name="NianJi" ColumnName="NianJi" />
+                <ScalarProperty Name="ChuShengRiQi" ColumnName="ChuShengRiQi" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="p_id" ColumnName="p_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

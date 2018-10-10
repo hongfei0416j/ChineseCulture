@@ -176,6 +176,8 @@
     <Content Include="Content\css\cyfh.css" />
     <Content Include="Content\css\global.css" />
     <Content Include="Content\css\homepagestyle - 副本.css" />
+    <Content Include="Content\css\login.css" />
+    <Content Include="Content\css\reg.css" />
     <Content Include="Content\css\style-n.css" />
     <Content Include="Content\css\style.css" />
     <Content Include="Content\css\swiper.min.css" />
@@ -370,6 +372,9 @@
     <Content Include="Views\Partinal\EventPageHeader.cshtml" />
     <Content Include="Views\Partinal\WenyizazhiPageHeader.cshtml" />
     <Content Include="Views\Wenyizazhi\_ListPartial.cshtml" />
+    <Content Include="Views\Event\Baoming.cshtml" />
+    <Content Include="Views\Home\Reg.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
