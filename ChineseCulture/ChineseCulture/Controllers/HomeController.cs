@@ -17,6 +17,7 @@ namespace ChineseCulture.Controllers
         }
         public ActionResult Reg()
         {
+            string telphone = "";
             return View();
         }
         public ActionResult Login()

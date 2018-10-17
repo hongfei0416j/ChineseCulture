@@ -18,7 +18,7 @@
 .dscol-con > .dsc-header > p:nth-of-type(1),.dscol-con > .dsc-header > p:nth-last-of-type(1){ margin-right:0;}
 .dscol-con > .dsc-header > p:nth-of-type(1){ width:66px;}
 .dscol-con > .dsc-list{ width:100%; height:auto;}
-.dscol-con > .dsc-list > ul > li{width:198px; height:auto; float:left; margin-right:10px; cursor:pointer;}
+.dscol-con > .dsc-list > ul > li{width:198px; height:auto; float:left; margin-right:35px; cursor:pointer;}
 .dscol-con > .dsc-list > ul > li > p{ width:100%; height:154px; box-sizing:border-box; border:1px solid #EEE; box-sizing:border-box; overflow:hidden; background-color:#f0f1f6;}
 /*.dscol-con > .dsc-list > ul > li:hover > p{ background-color:rgba(100,100,100,0.05);}*/
 .dscol-con > .dsc-list > ul > li > p + p{ margin-top:10px;}
