@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="aliyun-net-sdk-core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\aliyun-net-sdk-core.dll</HintPath>
+    </Reference>
+    <Reference Include="aliyun-net-sdk-dysmsapi, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>libs\aliyun-net-sdk-dysmsapi.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -44,9 +52,14 @@
     <Compile Include="CommonFunction.cs" />
     <Compile Include="ModelHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SMSHelper.cs" />
     <Compile Include="StringHelper.cs" />
     <Compile Include="TripleDES.cs" />
     <Compile Include="ValidateCode.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="libs\aliyun-net-sdk-core.dll" />
+    <Content Include="libs\aliyun-net-sdk-dysmsapi.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

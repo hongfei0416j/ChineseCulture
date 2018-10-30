@@ -107,6 +107,12 @@
       <DependentUpon>ChineseCultureDB.tt</DependentUpon>
     </Compile>
     <Compile Include="SiteMenuViewModel.cs" />
+    <Compile Include="User.cs">
+      <DependentUpon>ChineseCultureDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserLoginLog.cs">
+      <DependentUpon>ChineseCultureDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="WenyizazhiHomePageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

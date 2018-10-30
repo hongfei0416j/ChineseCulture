@@ -151,6 +151,28 @@
           <Property Name="menu_father_id" Type="int" Nullable="false" />
           <Property Name="menu_sort" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_telephone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="user_state" Type="int" Nullable="false" />
+          <Property Name="user_regdate" Type="datetime" Nullable="false" />
+          <Property Name="user_generate_code" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UserLoginLog">
+          <Key>
+            <PropertyRef Name="ul_id" />
+          </Key>
+          <Property Name="ul_id" Type="int" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="kdate" Type="datetime" Nullable="false" />
+          <Property Name="ip" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="browser" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityContainer Name="ChineseCultureModelStoreContainer">
           <EntitySet Name="Article" EntityType="Self.Article" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ArticleCategory" EntityType="Self.ArticleCategory" Schema="dbo" store:Type="Tables" />
@@ -162,6 +184,8 @@
           <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MemberLoginLog" EntityType="Self.MemberLoginLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SiteMenu" EntityType="Self.SiteMenu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserLoginLog" EntityType="Self.UserLoginLog" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -178,6 +202,8 @@
           <EntitySet Name="Article" EntityType="ChineseCultureModel.Article" />
           <EntitySet Name="SiteMenu" EntityType="ChineseCultureModel.SiteMenu" />
           <EntitySet Name="BaomingXuanShou" EntityType="ChineseCultureModel.BaomingXuanShou" />
+          <EntitySet Name="User" EntityType="ChineseCultureModel.User" />
+          <EntitySet Name="UserLoginLog" EntityType="ChineseCultureModel.UserLoginLog" />
         </EntityContainer>
         <EntityType Name="FriendLink">
           <Key>
@@ -324,6 +350,28 @@
           <Property Name="HuoDongShiJian" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="MengXiangZhiYe" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="state" Type="Int32" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_telephone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_state" Type="Int32" Nullable="false" />
+          <Property Name="user_regdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="user_generate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UserLoginLog">
+          <Key>
+            <PropertyRef Name="ul_id" />
+          </Key>
+          <Property Name="ul_id" Type="Int32" Nullable="false" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="kdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="browser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -484,6 +532,30 @@
                 <ScalarProperty Name="ChuShengRiQi" ColumnName="ChuShengRiQi" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="p_id" ColumnName="p_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="ChineseCultureModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="user_generate_code" ColumnName="user_generate_code" />
+                <ScalarProperty Name="user_regdate" ColumnName="user_regdate" />
+                <ScalarProperty Name="user_state" ColumnName="user_state" />
+                <ScalarProperty Name="user_password" ColumnName="user_password" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="user_telephone" ColumnName="user_telephone" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserLoginLog">
+            <EntityTypeMapping TypeName="ChineseCultureModel.UserLoginLog">
+              <MappingFragment StoreEntitySet="UserLoginLog">
+                <ScalarProperty Name="browser" ColumnName="browser" />
+                <ScalarProperty Name="ip" ColumnName="ip" />
+                <ScalarProperty Name="kdate" ColumnName="kdate" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="ul_id" ColumnName="ul_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

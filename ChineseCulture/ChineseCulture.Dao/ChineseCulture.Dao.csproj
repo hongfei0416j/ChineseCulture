@@ -67,6 +67,7 @@
     <Compile Include="SiteMenuDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlHelperXhf.cs" />
+    <Compile Include="UserDao.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ChineseCulture.Common\ChineseCulture.Common.csproj">

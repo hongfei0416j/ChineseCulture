@@ -9,25 +9,126 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>中国校园文化网</title>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/homepage")
     @Styles.Render("~/Content/Reg")
 </head>
 <body>
     <header class="header"><a href="/" class="reg-btn">返回首页</a><a href="/home/login">已有账号，去登录</a></header>
     <section class="container">
-        <header class="form-header"><a href="#"><img src="/images/logo.png" alt=" "></a></header>
-        <section class="forms">
-            <ul>
-                <li><input type="text" name=" " placeholder="手机号" id="reg-phone"><h3><i class="iconfont">&#xe6ea;</i>&nbsp;请填写正确的手机号</h3></li>
-                <li><p>获取动态码</p><input type="text" name=" " placeholder="动态码" id="reg-code"><h3><i class="iconfont">&#xe6ea;</i>&nbsp;请填写正确的手机号</h3></li>
-                <li><input type="text" name=" " placeholder="用户名"></li>
-                <li><input type="password" name=" " placeholder="设置密码"></li>
-                <li><input type="password" name=" " placeholder="确认密码"></li>
-                <li><input type="checkbox" name=" " value="1">&nbsp;&nbsp;我已阅读并同意<a href="#">《校园文化网会员注册须知》</a></li>
-            </ul>
-        </section>
-        <p class="form-submit"><input type="submit" value="注册"></p>
+        <form name="form0" id="form0" action="/Home/RegCheck" method="post">
+            <header class="form-header"><a href="#"><img src="/images/logo.png" alt=" "></a></header>
+            <section class="forms">
+                <ul>
+                    <li><input type="text" name="mobile" placeholder="手机号" id="mobile"><h3><i class="iconfont">&#xe6ea;</i>&nbsp;请填写正确的手机号</h3></li>
+                    <li><input type="button" id="getVerCode" style="width: 100px;height: 40px;color: #666;" class="obtain generate_code" value=" 获取验证码"><input type="text" name="generate_code" placeholder="动态码" id="reg-code"><h3><i class="iconfont">&#xe6ea;</i>&nbsp;请填写验证码</h3>  </li>
+                    <li><input type="text" name="username" placeholder="用户名"></li>
+                    <li><input type="password" name="password" placeholder="设置密码"></li>
+                    <li><input type="password" name="repassword" placeholder="确认密码"></li>
+                    <li><input type="checkbox" name=" " checked value="1">&nbsp;&nbsp;我已阅读并同意<a href="#">《校园文化网会员注册须知》</a></li>
+                </ul>
+            </section>
+            <p class="form-submit"><input id="btnSub" onclick="return checksubmit();" type="submit" value="注册"></p>
+        </form>
     </section>
-    <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/fun.js"></script>
+    <script>
+
+        var returncode = "";
+        function checksubmit() {
+            alert("returncode" + returncode);
+            alert("reg-code" + $("#reg-code").val());
+            if (returncode != $("#reg-code").val()) {
+                alert("验证码不正确");
+                return false;
+            }
+            else {
+                return true;
+            }
+        };
+        $(function () {
+            $(".generate_code").click(function () {
+                var disabled = $(".generate_code").attr("disabled");
+                if (disabled) {
+                    return false;
+                }
+                if ($("#mobile").val() == "" || isNaN($("#mobile").val()) || $("#mobile").val().length != 11) {
+                    alert("请填写正确的手机号！");
+                    return false;
+                }
+
+                $.ajax({
+                    async: false,
+                    type: "GET",
+                    url: "/home/getcode",
+                    data: { mobile: $("#mobile").val() },
+                    dataType: "json",
+                    async: false,
+                    success: function (data) {
+                        returncode = data;
+                        console.log(data);
+                        settime();
+                    },
+                    error: function (err) {
+                        console.log(err);
+                    }
+                });
+            });
+            var countdown = 60;
+            var _generate_code = $(".generate_code");
+            function settime() {
+                if (countdown == 0) {
+                    _generate_code.attr("disabled", false);
+                    _generate_code.val("获取验证码");
+                    countdown = 60;
+                    return false;
+                } else {
+                    $(".generate_code").attr("disabled", true);
+                    _generate_code.val("重新发送(" + countdown + ")");
+                    countdown--;
+                }
+                setTimeout(function () {
+                    settime();
+                }, 1000);
+            }
+        })
+
+    </script>
+    <script type="text/javascript">
+
+        //倒计时
+        var countdown = 60;
+        function settime(val) {
+            if (countdown == 0) {
+                val.removeAttribute("disabled");
+                val.value = "获取验证码";
+                countdown = 60;
+                return false;
+            } else {
+                val.setAttribute("disabled", true);
+                val.value = "重新发送(" + countdown + ")";
+                countdown--;
+            }
+            setTimeout(function () {
+                settime(val);
+            }, 1000);
+        }
+    </script>
+    <style>
+        .obtain {
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            text-align: center;
+            color: #999;
+            cursor: pointer;
+            background-color: #ebebeb;
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            margin-top: -20px;
+            border-radius: 4px;
+        }
+    </style>
 </body>
 </html>
