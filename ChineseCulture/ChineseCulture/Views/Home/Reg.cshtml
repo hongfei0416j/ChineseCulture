@@ -35,18 +35,20 @@
 
         var returncode = "";
         function checksubmit() {
-            alert("returncode" + returncode);
-            alert("reg-code" + $("#reg-code").val());
-            if (returncode != $("#reg-code").val()) {
-                alert("验证码不正确");
-                return false;
-            }
-            else {
-                return true;
-            }
+            var userCode = $("#reg-code").val();
+            $.get("/Home/checkUserCode", { code: userCode }, function (data) {
+                if (null==data||data==false) {
+                    alert("验证码不正确"); return false;
+                }
+                else {
+                    return true;
+                }
+            });
+           
         };
         $(function () {
             $(".generate_code").click(function () {
+               
                 var disabled = $(".generate_code").attr("disabled");
                 if (disabled) {
                     return false;
@@ -56,21 +58,9 @@
                     return false;
                 }
 
-                $.ajax({
-                    async: false,
-                    type: "GET",
-                    url: "/home/getcode",
-                    data: { mobile: $("#mobile").val() },
-                    dataType: "json",
-                    async: false,
-                    success: function (data) {
-                        returncode = data;
-                        console.log(data);
-                        settime();
-                    },
-                    error: function (err) {
-                        console.log(err);
-                    }
+                $.post("/Home/getcode", { mobile: $("#mobile").val() }, function (data) {
+                    
+                    settime();
                 });
             });
             var countdown = 60;
@@ -93,26 +83,7 @@
         })
 
     </script>
-    <script type="text/javascript">
-
-        //倒计时
-        var countdown = 60;
-        function settime(val) {
-            if (countdown == 0) {
-                val.removeAttribute("disabled");
-                val.value = "获取验证码";
-                countdown = 60;
-                return false;
-            } else {
-                val.setAttribute("disabled", true);
-                val.value = "重新发送(" + countdown + ")";
-                countdown--;
-            }
-            setTimeout(function () {
-                settime(val);
-            }, 1000);
-        }
-    </script>
+  
     <style>
         .obtain {
             width: 100px;

@@ -66,7 +66,22 @@ namespace ChineseCulture.Controllers
         }
         public ActionResult PageHeader() 
         {
-            return View();
+            UserViewModel user = new UserViewModel();
+
+            if (null!= Session["username"]&&!string.IsNullOrEmpty(Session["username"].ToString()))
+            {
+                user.isLogin = true;
+                user.isLoginButtonShow = "hidden";
+                user.isUserShow = "";
+                user.username = Session["username"].ToString();
+            }
+            else
+            {
+                user.isLogin = false;
+                user.isLoginButtonShow = "";
+                user.isUserShow = "hidden";
+            }
+            return View(user);
         }
         public ActionResult EventPageHeader()
         {

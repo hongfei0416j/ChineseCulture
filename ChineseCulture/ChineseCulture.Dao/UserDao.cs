@@ -16,7 +16,7 @@ namespace ChineseCulture.Dao
         }
         public User SelectUser(User userModel)
         {
-           var query =  db.User.Where(t=>t.user_name==userModel.user_name&&t.user_password==userModel.user_password).FirstOrDefault();
+            var query = db.User.Where(t => (t.user_name == userModel.user_name || t.user_telephone == userModel.user_name) && t.user_password == userModel.user_password).FirstOrDefault();
             return query;
         }
         public bool AddUser(User userModel)
@@ -38,6 +38,33 @@ namespace ChineseCulture.Dao
         {
             var query = db.User.Where(t => t.user_telephone == mobile).FirstOrDefault();
             return query;
+        }
+
+        public void AddUserLoginLog(UserLoginLog uModel)
+        {
+            db.UserLoginLog.Add(uModel);
+            db.SaveChanges();
+
+        }
+
+        public void AddUserSmsLog(SMSLog sms)
+        {
+            db.SMSLog.Add(sms);
+            db.SaveChanges();
+        }
+
+        public bool SelectUserSmsLogByData(SMSLog smsLog)
+        {
+            DateTime dtLast = DateTime.Now.AddMinutes(-1);
+            var query = db.SMSLog.Where(t=>t.telephone== smsLog.telephone&&t.kdate> dtLast);
+            if (query.Count()>0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

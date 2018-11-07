@@ -31,13 +31,13 @@
                         <li><a href="#" class="forms-getpwd">忘记密码</a><input type="checkbox" name=" " checked value="1">&nbsp;&nbsp;记住密码</li>
                     </ul>
                 </section>
-                <p class="form-submit"><input type="submit" value="登录"></p>
+                <p class="form-submit"><input type="submit"  onclick="return checksubmit();"value="登录"></p>
             </section>
             <section class="login">
                 <section class="forms">
                     <ul>
-                        <li><input type="text" id="mobile" value="15638814321" name="mobile" placeholder="手机号" id="reg-phone"><h3><i class="iconfont">&#xe6ea;</i>&nbsp;请填写正确的手机号</h3></li>
-                        <li><input type="button" id="getVerCode" style="width: 100px;height: 40px;color: #666;" class="obtain generate_code" value=" 获取验证码"><input type="text" name=" " placeholder="动态码" id="reg-code"><h3><i class="iconfont">&#xe6ea;</i>&nbsp;请填写验证码</h3>  </li>
+                        <li><input type="text" id="mobile"  name="mobile" placeholder="手机号" id="reg-phone"><h3><i class="iconfont">&#xe6ea;</i>&nbsp;请填写正确的手机号</h3></li>
+                        <li><input type="button" id="getVerCode" style="width: 100px;height: 40px;color: #666;" class="obtain generate_code" value=" 获取验证码"><input type="text" name="generate_code" placeholder="动态码" id="reg-code"><h3><i class="iconfont">&#xe6ea;</i>&nbsp;请填写验证码</h3>  </li>
                         @*<li><p id="getVerCode" style="color:#666;">获取动态码</p><input type="text" name=" " placeholder="动态码" id="reg-code"><h3><i class="iconfont">&#xe6ea;</i>&nbsp;请填写验证码</h3></li>*@
                         <li><a href="#" class="forms-getpwd">忘记密码</a><input type="checkbox" name=" " value="1">&nbsp;&nbsp;记住密码</li>
                     </ul>
@@ -56,84 +56,54 @@
 
         var returncode = "";
         function checksubmit() {
-            alert("returncode" + returncode);
-            alert("reg-code" + $("#reg-code").val());
-            if (returncode != $("#reg-code").val()) {
-                alert("验证码不正确");
-                return false;
-            }
-            else {
-                return true;
-            }
-        };
-        $(function () {
-        $(".generate_code").click(function () {
-            var disabled = $(".generate_code").attr("disabled");
-            if (disabled) {
-                return false;
-            }
-            if ($("#mobile").val() == "" || isNaN($("#mobile").val()) || $("#mobile").val().length != 11) {
-                alert("请填写正确的手机号！");
-                return false;
-            }
-
-            $.ajax({
-                async: false,
-                type: "GET",
-                url: "/home/getcode",
-                data: { mobile: $("#mobile").val() },
-                dataType: "json",
-                async: false,
-                success: function (data) {
-                    returncode = data;
-                    console.log(data);
-                    settime();
-                },
-                error: function (err) {
-                    console.log(err);
+            var userCode = $("#reg-code").val();
+            $.get("/Home/checkUserCode", { code: userCode }, function (data) {
+                if (null == data || data == false) {
+                    alert("验证码不正确"); return false;
+                }
+                else {
+                    return true;
                 }
             });
+        };
+        $(function () {
+            $(".generate_code").click(function () {
+                var disabled = $(".generate_code").attr("disabled");
+                if (disabled) {
+                    return false;
+                }
+                if ($("#mobile").val() == "" || isNaN($("#mobile").val()) || $("#mobile").val().length != 11) {
+                    alert("请填写正确的手机号！");
+                    return false;
+                }
+                $.post("/Home/getcode", { mobile: $("#mobile").val()}, function (data) {
+                   
+                    settime();
+                });
+               
+            });
+            var countdown = 60;
+            var _generate_code = $(".generate_code");
+            function settime() {
+                if (countdown == 0) {
+                    _generate_code.attr("disabled", false);
+                    _generate_code.val("获取验证码");
+                    countdown = 60;
+                    return false;
+                } else {
+                    $(".generate_code").attr("disabled", true);
+                    _generate_code.val("重新发送(" + countdown + ")");
+                    countdown--;
+                }
+
+                setTimeout(function () {
+                    settime();
+                }, 1000);
+            }
         });
-        var countdown = 60;
-        var _generate_code = $(".generate_code");
-        function settime() {
-            if (countdown == 0) {
-                _generate_code.attr("disabled", false);
-                _generate_code.val("获取验证码");
-                countdown = 60;
-                return false;
-            } else {
-                $(".generate_code").attr("disabled", true);
-                _generate_code.val("重新发送(" + countdown + ")");
-                countdown--;
-            }
-            setTimeout(function () {
-                settime();
-            }, 1000);
-        }
-            })
 
     </script>
-    <script type="text/javascript">
-
-        //倒计时
-        var countdown = 60;
-        function settime(val) {
-            if (countdown == 0) {
-                val.removeAttribute("disabled");
-                val.value = "获取验证码";
-                countdown = 60;
-                return false;
-            } else {
-                val.setAttribute("disabled", true);
-                val.value = "重新发送(" + countdown + ")";
-                countdown--;
-            }
-            setTimeout(function () {
-                settime(val);
-            }, 1000);
-        }
-    </script>
+  
     <style>
         .obtain {
             width: 100px;

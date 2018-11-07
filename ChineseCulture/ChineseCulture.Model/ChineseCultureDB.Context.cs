@@ -19,7 +19,7 @@ namespace ChineseCulture.Model
             : base("name=ChineseCultureDBEntities")
         {
         }
-        
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -36,6 +36,7 @@ namespace ChineseCulture.Model
         public virtual DbSet<SiteMenu> SiteMenu { get; set; }
         public virtual DbSet<BaomingXuanShou> BaomingXuanShou { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<SMSLog> SMSLog { get; set; }
         public virtual DbSet<UserLoginLog> UserLoginLog { get; set; }
     }
 }

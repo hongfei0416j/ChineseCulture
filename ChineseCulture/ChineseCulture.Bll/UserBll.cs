@@ -53,5 +53,21 @@ namespace ChineseCulture.Bll
         {
             userDao.AddUser(uModel);
         }
+
+        public void AddUserLoginLog(UserLoginLog ull)
+        {
+            userDao.AddUserLoginLog(ull);
+        }
+
+        public void AddUserSMSLog(SMSLog smsLog)
+        {
+            userDao.AddUserSmsLog(smsLog);
+        }
+
+        public bool CheckCanSendSms(string mobile)
+        {
+            SMSLog smsLog = new SMSLog() { telephone=mobile};
+            return userDao.SelectUserSmsLogByData(smsLog);
+        }
     }
 }

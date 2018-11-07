@@ -36,6 +36,16 @@ namespace ChineseCulture.Controllers
         }
         public ActionResult Login()
         {
+            HttpCookie cookie = new HttpCookie("UserInfoRemember");
+            if (cookie!=null&&!string.IsNullOrEmpty(cookie["username"]) && !string.IsNullOrEmpty(cookie["user_id"]))
+            {
+                Session["username"] = cookie["username"].ToString();
+                Session["password"] = cookie["password"].ToString();
+                Session["mobile"] = cookie["mobile"].ToString();
+                Session["user_id"] = cookie["user_id"].ToString();
+                return Redirect("Index");
+            }
+            
             return View();
         }
         public ActionResult LoginCheck()
@@ -50,6 +60,17 @@ namespace ChineseCulture.Controllers
                 if (user!=null)
                 {
                     Session["username"] = user.user_name;
+                    UserLoginLog ull = new UserLoginLog() { user_id = user.user_id, browser = Request.Browser.Browser, kdate = DateTime.Now, ip = Request.UserHostAddress };
+                    HttpCookie cookie = new HttpCookie("UserInfoRemember");
+                    if (cookie != null)
+                    {
+                        Session["username"] = cookie["username"]= user.user_name;
+                        Session["password"] = cookie["password"] = user.user_password;
+                        Session["mobile"] = cookie["mobile"] = user.user_telephone;
+                        Session["user_id"] = cookie["user_id"] = user.user_id.ToString(); ;
+                        return Redirect("Index");
+                    }
+                    userBll.AddUserLoginLog(ull);
                     return Redirect("index");
                 }
                 else
@@ -67,6 +88,16 @@ namespace ChineseCulture.Controllers
                     if (user != null)
                     {
                         Session["username"] = user.user_name;
+                        UserLoginLog ull = new UserLoginLog() { user_id = user.user_id, browser = Request.Browser.Browser ,kdate=DateTime.Now,ip= Request.UserHostAddress}; HttpCookie cookie = new HttpCookie("UserInfoRemember");
+                        if (cookie != null)
+                        {
+                            Session["username"] = cookie["username"] = user.user_name;
+                            Session["password"] = cookie["password"] = user.user_password;
+                            Session["mobile"] = cookie["mobile"] = user.user_telephone;
+                            Session["user_id"] = cookie["user_id"] = user.user_id.ToString(); ;
+                            return Redirect("Index");
+                        }
+                        userBll.AddUserLoginLog(ull);
                         return Redirect("index");
                     }
                     else
@@ -79,15 +110,50 @@ namespace ChineseCulture.Controllers
             return View("login");
             // return View();
         }
-        public string getCode()
+        [HttpPost]
+        public bool getCode()
         {
-            string code = DateTime.Now.ToString("sfff");
-            code = "1234";
-            Session["generate_code"] = code;
+            
             var smsHelper = new SMSHelper();
-            //smsHelper.SendSms("15638814321","code");
-
-            return code;
+            string mobile, code = ""; 
+            try
+            {
+                UserBll uBll = new UserBll();
+                mobile =Request.Params["mobile"].ToString();
+                if (uBll.CheckCanSendSms(mobile))
+                {
+                    code = DateTime.Now.ToString("ssff");
+                    //code = "1234";
+                    Session["generate_code"] = code;
+                    smsHelper.SendSms(mobile, code);
+                    SMSLog smsLog = new SMSLog() { telephone = mobile, content = code, Browser = Request.Browser.Browser, ip = Request.UserHostAddress, kdate = DateTime.Now };
+                    uBll.AddUserSMSLog(smsLog);
+                }
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public bool checkUserCode()
+        {
+            string userCode = Request.Params["code"];
+            if (string.IsNullOrEmpty(userCode))
+            {
+                return false;
+            }
+            else
+            {
+                if (userCode== Session["generate_code"].ToString())
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
         }
     }
 }
