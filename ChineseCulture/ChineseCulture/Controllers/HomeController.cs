@@ -155,5 +155,9 @@ namespace ChineseCulture.Controllers
                 }
             }
         }
+        public ActionResult CityChange()
+        {
+            return View();
+        }
     }
 }

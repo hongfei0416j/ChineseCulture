@@ -9,7 +9,7 @@
     <div class="hd-con">
         <a href="/" class="logo"><img src="/images/logo.png" alt=" "></a>
         <div class="city">
-            城市切换【<a href="javascript:;">郑州</a>】
+            城市切换【<a href="/Home/CityChange">郑州</a>】
         </div>
         <div class="search clear">
             <p>搜&nbsp;&nbsp;索</p>
@@ -18,7 +18,10 @@
         </div>
         <div class="sitedate" id="sitedate">
             <span id="date">
-            </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a @Model.isLoginButtonShow href="/home/login">会员登录</a>&nbsp;&nbsp;&nbsp;&nbsp;<a @Model.isLoginButtonShow href="/home/reg">（注册）</a><a @Model.isUserShow>欢迎你,@Model.username</a>
+            </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a @Model.isLoginButtonShow href="/home/login">会员登录</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            <a @Model.isLoginButtonShow href="/home/reg">（注册）</a>
+            <a @Model.isUserShow>欢迎你,@Model.username</a>
         </div>
     </div>
 </header>
