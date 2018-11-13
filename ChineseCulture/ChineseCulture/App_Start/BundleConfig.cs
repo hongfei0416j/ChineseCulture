@@ -62,9 +62,16 @@ namespace ChineseCulture
                    ));
             bundles.Add(new StyleBundle("~/Content/citychangecss").Include(
                    "~/Content/citychange/changecity.css"
-
-
                   ));
+            bundles.Add(new StyleBundle("~/Content/usercenter").Include(
+                 "~/Content/global.css",
+                   "~/Content/center.css",
+                    "~/Content/global.css"
+                  ));
+            bundles.Add(new ScriptBundle("~/bundles/selCheckbox").Include(
+                    "~/Content/selCheckbox.js",
+                    "~/Content/js/center.js"
+                    ));
             bundles.Add(new ScriptBundle("~/bundles/citychangejs").Include(
                     "~/Content/citychange/jquery.min.js",
                      "~/Content/citychange/search.js",
@@ -72,6 +79,13 @@ namespace ChineseCulture
                      "~/Content/citychange/referrer4.js"
                      
                     ));
+            bundles.Add(new ScriptBundle("~/bundles/ueditor").Include(
+
+              "~/Content/lib/webuploader/0.1.5/webuploader.min.js",
+              "~/Content/ueditor/1.4.3/ueditor.config.js",
+              "~/Content/ueditor/1.4.3/ueditor.all.js",
+              "~/Content/ueditor/1.4.3/lang/zh-cn/zh-cn.js"
+                 ));
             /*
              * <script src="js/swiper.min.js"></script>
     <script src="js/fun.js"></script>

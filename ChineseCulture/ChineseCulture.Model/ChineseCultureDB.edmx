@@ -5,6 +5,18 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="ChineseCultureModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--生成过程中发现错误:
+警告 6002: 表/视图“ChineseCulture.dbo.Area”未定义主键。已推断出该键，并将定义创建为只读的表/视图。-->
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="codeID" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="parentID" />
+          </Key>
+          <Property Name="codeID" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="parentID" Type="char" MaxLength="6" Nullable="false" />
+        </EntityType>
         <EntityType Name="Article">
           <Key>
             <PropertyRef Name="article_id" />
@@ -173,6 +185,11 @@
           <Property Name="user_state" Type="int" Nullable="false" />
           <Property Name="user_regdate" Type="datetime" Nullable="false" />
           <Property Name="user_generate_code" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_sex" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_educational" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_birthday" Type="datetime" />
+          <Property Name="user_address" Type="nvarchar" MaxLength="100" />
+          <Property Name="user_email" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="UserLoginLog">
           <Key>
@@ -198,6 +215,13 @@
           <EntitySet Name="SMSLog" EntityType="Self.SMSLog" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UserLoginLog" EntityType="Self.UserLoginLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Area" EntityType="Self.Area" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Area].[codeID] AS [codeID], 
+    [Area].[name] AS [name], 
+    [Area].[parentID] AS [parentID]
+    FROM [dbo].[Area] AS [Area]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -214,9 +238,10 @@
           <EntitySet Name="Article" EntityType="ChineseCultureModel.Article" />
           <EntitySet Name="SiteMenu" EntityType="ChineseCultureModel.SiteMenu" />
           <EntitySet Name="BaomingXuanShou" EntityType="ChineseCultureModel.BaomingXuanShou" />
-          <EntitySet Name="User" EntityType="ChineseCultureModel.User" />
           <EntitySet Name="SMSLog" EntityType="ChineseCultureModel.SMSLog" />
           <EntitySet Name="UserLoginLog" EntityType="ChineseCultureModel.UserLoginLog" />
+          <EntitySet Name="User" EntityType="ChineseCultureModel.User" />
+          <EntitySet Name="Area" EntityType="ChineseCultureModel.Area" />
         </EntityContainer>
         <EntityType Name="FriendLink">
           <Key>
@@ -364,18 +389,6 @@
           <Property Name="MengXiangZhiYe" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
           <Property Name="state" Type="Int32" />
         </EntityType>
-        <EntityType Name="User">
-          <Key>
-            <PropertyRef Name="user_id" />
-          </Key>
-          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="user_telephone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="user_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="user_password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="user_state" Type="Int32" Nullable="false" />
-          <Property Name="user_regdate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="user_generate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
         <EntityType Name="SMSLog">
           <Key>
             <PropertyRef Name="sms_id" />
@@ -396,6 +409,33 @@
           <Property Name="kdate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="browser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_telephone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_state" Type="Int32" Nullable="false" />
+          <Property Name="user_regdate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="user_generate_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_sex" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_educational" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_birthday" Type="DateTime" Precision="3" />
+          <Property Name="user_address" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="user_email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Area">
+          <Key>
+            <PropertyRef Name="codeID" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="parentID" />
+          </Key>
+          <Property Name="codeID" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="parentID" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -559,19 +599,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="User">
-            <EntityTypeMapping TypeName="ChineseCultureModel.User">
-              <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="user_generate_code" ColumnName="user_generate_code" />
-                <ScalarProperty Name="user_regdate" ColumnName="user_regdate" />
-                <ScalarProperty Name="user_state" ColumnName="user_state" />
-                <ScalarProperty Name="user_password" ColumnName="user_password" />
-                <ScalarProperty Name="user_name" ColumnName="user_name" />
-                <ScalarProperty Name="user_telephone" ColumnName="user_telephone" />
-                <ScalarProperty Name="user_id" ColumnName="user_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="SMSLog">
             <EntityTypeMapping TypeName="ChineseCultureModel.SMSLog">
               <MappingFragment StoreEntitySet="SMSLog">
@@ -592,6 +619,33 @@
                 <ScalarProperty Name="kdate" ColumnName="kdate" />
                 <ScalarProperty Name="user_id" ColumnName="user_id" />
                 <ScalarProperty Name="ul_id" ColumnName="ul_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="ChineseCultureModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
+                <ScalarProperty Name="user_address" ColumnName="user_address" />
+                <ScalarProperty Name="user_birthday" ColumnName="user_birthday" />
+                <ScalarProperty Name="user_educational" ColumnName="user_educational" />
+                <ScalarProperty Name="user_sex" ColumnName="user_sex" />
+                <ScalarProperty Name="user_generate_code" ColumnName="user_generate_code" />
+                <ScalarProperty Name="user_regdate" ColumnName="user_regdate" />
+                <ScalarProperty Name="user_state" ColumnName="user_state" />
+                <ScalarProperty Name="user_password" ColumnName="user_password" />
+                <ScalarProperty Name="user_name" ColumnName="user_name" />
+                <ScalarProperty Name="user_telephone" ColumnName="user_telephone" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Area">
+            <EntityTypeMapping TypeName="ChineseCultureModel.Area">
+              <MappingFragment StoreEntitySet="Area">
+                <ScalarProperty Name="parentID" ColumnName="parentID" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="codeID" ColumnName="codeID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

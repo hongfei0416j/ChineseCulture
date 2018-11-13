@@ -3,13 +3,194 @@
     Layout = null;
 }
 @using ChineseCulture.Model;
+<style>
 
+    /*导航*/
+    .header {
+        margin: 0 auto;
+        text-align: right;
+        height: auto;
+        background-color: #FFF;
+    }
+
+        .header > .hd-con {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            box-sizing: border-box;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+            .header > .hd-con > .logo {
+                width: 200px;
+                display: block;
+            }
+
+            .header > .hd-con > .logo-saishi {
+                width: 290px;
+            }
+
+            .header > .hd-con > .logo-cyfh {
+                width: 400px;
+            }
+
+            .header > .hd-con > .logo-jobs {
+                width: 260px;
+            }
+
+                .header > .hd-con > .logo img, .header > .hd-con > .logo-saishi img, .header > .hd-con > .logo-cyfh img, .header > .hd-con > .logo-jobs img {
+                    width: 100%;
+                }
+
+            .header > .hd-con > .city {
+                align-self: center;
+                height: 24px;
+                line-height: 24px;
+                font-size: 13px;
+            }
+
+                .header > .hd-con > .city > a {
+                    color: #ef7e1f;
+                }
+
+            .header > .hd-con > .wea {
+                width: 180px;
+                height: 20px;
+                align-self: center;
+                transform: translateY(-3px);
+                -webkit-transform: translateY(-3px);
+            }
+
+            .header > .hd-con > .search, .header > .hd-con > .search-saishi, .header > .hd-con > .search-cyfh, .header > .hd-con > .search-jobs {
+                width: 402px;
+                height: 30px;
+                box-sizing: border-box;
+                border: 1px solid #EEE;
+                align-self: center;
+                border-radius: 5px;
+            }
+
+            .header > .hd-con > .search-cyfh {
+                width: 320px;
+            }
+
+            .header > .hd-con > .search-jobs {
+                width: 360px;
+            }
+
+                .header > .hd-con > .search > p, .header > .hd-con > .search-saishi > p, .header > .hd-con > .search-cyfh > p, .header > .hd-con > .search-jobs > p {
+                    height: 28px;
+                    float: left;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                    .header > .hd-con > .search > p:nth-of-type(1), .header > .hd-con > .search-cyfh > p:nth-of-type(1), .header > .hd-con > .search-saishi > p:nth-of-type(1), .header > .hd-con > .search-jobs > p:nth-of-type(1) {
+                        width: 72px;
+                        line-height: 28px;
+                        box-sizing: border-box;
+                        border-right: 1px solid #EEE;
+                        text-align: center;
+                        font-size: 13px;
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                        .header > .hd-con > .search > p:nth-of-type(1) > i, .header > .hd-con > .search-saishi > p:nth-of-type(1) > i, .header > .hd-con > .search-cyfh > p:nth-of-type(1) > i, .header > .hd-con > .search-jbos > p:nth-of-type(1) > i {
+                            font-size: 10px;
+                            color: #ef7e1f;
+                        }
+
+                    .header > .hd-con > .search > p:nth-of-type(2), .header > .hd-con > .search-saishi > p:nth-of-type(2), .header > .hd-con > .search-cyfh > p:nth-of-type(2) {
+                        width: 280px;
+                        background-color: #DDD;
+                        margin: 0;
+                        padding: 0;
+                    }
+
+                    .header > .hd-con > .search-cyfh > p:nth-of-type(2) {
+                        width: 198px;
+                    }
+
+                    .header > .hd-con > .search-jobs > p:nth-of-type(2) {
+                        width: 238px;
+                    }
+
+                        .header > .hd-con > .search > p:nth-of-type(2) > input, .header > .hd-con > .search-saishi > p:nth-of-type(2) > input, .header > .hd-con > .search-cyfh > p:nth-of-type(2) > input, .header > .hd-con > .search-jobs > p:nth-of-type(2) > input {
+                            width: 280px;
+                            height: 28px;
+                            line-height: 28px;
+                            box-sizing: border-box;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            border: 0;
+                            font-size: 13px;
+                        }
+
+                    .header > .hd-con > .search-cyfh > p:nth-of-type(2) > input {
+                        width: 198px;
+                    }
+
+                    .header > .hd-con > .search-jobs > p:nth-of-type(2) > input {
+                        width: 238px;
+                    }
+
+                    .header > .hd-con > .search > p:nth-of-type(3), .header > .hd-con > .search-saishi > p:nth-of-type(3), .header > .hd-con > .search-cyfh > p:nth-of-type(3), .header > .hd-con > .search-jobs > p:nth-of-type(3) {
+                        width: 48px;
+                        line-height: 28px;
+                        overflow: hidden;
+                        cursor: pointer;
+                    }
+
+                        .header > .hd-con > .search > p:nth-of-type(3) > input, .header > .hd-con > .search-saishi > p:nth-of-type(3) > input, .header > .hd-con > .search-cyfh > p:nth-of-type(3) > input, .header > .hd-con > .search-jobs > p:nth-of-type(3) > input {
+                            width: 48px;
+                            line-height: 28px;
+                            border: 0;
+                            background-color: #ef7e1f;
+                            color: #FFF;
+                            font-size: 16px;
+                            font-family: "iconfont" !important;
+                            margin: 0;
+                            padding: 0;
+                        }
+
+            .header > .hd-con > .sitedate {
+                align-self: center;
+                width: auto;
+                line-height: 30px;
+                height: 30px;
+                padding-right: 10px;
+                padding-left: 5px;
+                font-size: 13px;
+            }
+
+                .header > .hd-con > .sitedate > a:nth-last-of-type(1) {
+                    color: #ef7e1f;
+                }
+
+    body {
+        background-color: #FFF;
+        background-image: url(../images/body.png);
+        background-position: center top;
+        background-repeat: no-repeat;
+        padding-top: 20px; /*border-top:5px solid #ffd200;*/
+    }
+
+    .c-con {
+        width: 1200px;
+        margin: 0 auto;
+        height: auto;
+        box-sizing: border-box;
+    }
+</style>
 @model  UserViewModel
 <header class="header c-con">
     <div class="hd-con">
         <a href="/" class="logo"><img src="/images/logo.png" alt=" "></a>
         <div class="city">
-            城市切换【<a href="/Home/CityChange">郑州</a>】
+            城市切换【<a href="/Home/CityChange">@ViewBag.CurrentCity</a>】
         </div>
         <div class="search clear">
             <p>搜&nbsp;&nbsp;索</p>
@@ -21,7 +202,7 @@
             </span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <a @Model.isLoginButtonShow href="/home/login">会员登录</a>&nbsp;&nbsp;&nbsp;&nbsp;
             <a @Model.isLoginButtonShow href="/home/reg">（注册）</a>
-            <a @Model.isUserShow>欢迎你,@Model.username</a>
+            <a @Model.isUserShow href="/user/index">欢迎你,@Model.username</a>
         </div>
     </div>
 </header>

@@ -48,12 +48,27 @@
             }
         }); $("body").eq(0).on("click", function (event) { if (event.target.className.indexOf("selector") == -1) { $options.hide(); $arrow.removeClass("selector-arrow-up") } })
     } function makeCityList() {
-        var $contentBox = $("#content-box"); var list = ["A", "F", "G", "H", "J", "L", "N", "Q", "S", "X", "Y", "Z", " "]; for (var i = 0; i < list.length; i++) {
-            var $contentLetter = $('<div class="content-letter"><span class="content-letter-panel">' + list[i] + "</span></div>"); $contentBox.append($contentLetter); for (var provinceName in provinceList) {
+        var $contentBox = $("#content-box");
+        $("#hot").append($('<div id="hot-title">热门城市</div>'));
+        for (var cityName in independentCityList) {
+            address = "/?city=" + cityName
+
+            $("#hot").append($('<a href="' + address + '" class="hot-city">' + cityName + "</a>"))
+        }
+        var list = ["A", "F", "G", "H", "J", "L", "N", "Q", "S", "X", "Y", "Z", " "]; for (var i = 0; i < list.length; i++) {
+            var $contentLetter = $('<div class="content-letter"><span class="content-letter-panel">' + list[i] + "</span></div>");
+            $contentBox.append($contentLetter);
+           
+
+            for (var provinceName in provinceList) {
                 if (provinceList[provinceName] == list[i]) {
                     var $contentProvince = $('<div class="content-province"><span class="content-province-triangle"></span><div class="content-province-title">' + provinceName + "</div></div>"); var $contentCities = $('<div class="content-cities"></div>'); var address = "";
                     for (var cityName in cityList[provinceName]) {
-                        if (catepath == "post") { address = "//post.zgxywhw2014.com/" + cityList[provinceName][cityName].split("|")[1] + "/" } else { address = "//" + cityList[provinceName][cityName].split("|")[0] + ".zgxywhw2014.com/" + catepath } if (provinceName == "海外") {
+                        if (catepath == "post") { address = "//post.zgxywhw2014.com/" + cityList[provinceName][cityName].split("|")[1] + "/" }
+                        else {
+                            address = "/?city=" + cityName
+                            //address = "//" + cityList[provinceName][cityName].split("|")[0] + ".zgxywhw2014.com/" + catepath
+                        } if (provinceName == "海外") {
                             if (cityList[provinceName][cityName].split("|")[0] == "city") { address = "//g.zgxywhw2014.com/city/" }
                             else { address = "//g.zgxywhw2014.com/j-" + cityList[provinceName][cityName].split("|")[0] + "/" }
                         } $contentCities.append($('<a href="' + address + '" class="content-city">' + cityName + "</a>"))

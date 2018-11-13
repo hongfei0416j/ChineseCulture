@@ -1,0 +1,76 @@
+﻿
+@{
+    Layout = null;
+}
+@using ChineseCulture.Model;
+@model Article
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SendArticle</title>
+
+    @Styles.Render("~/Content/usercenter")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/selCheckbox")
+    @Scripts.Render("~/bundles/ueditor")
+</head>
+<body>
+    @{Html.RenderAction("PageHeader", "Partinal");}
+    <section class="main c-con">
+
+
+        <section class="zwform">
+            <ul>
+                <li class="clear">
+                    <h3><span>*</span>&nbsp;分类</h3><p>
+                        @Html.DropDownListFor(model => model.category_id, ViewBag.ArticleCategory as IEnumerable<SelectListItem>, new { @class = "select-box zwform-list zwform-sel zwform-selzwmail" })
+                    </p>
+
+
+                </li>
+                <li class="clear">
+                    <h3><span>*</span>&nbsp;标题</h3>
+                    <p>@Html.TextBoxFor(model => model.article_title, htmlAttributes: new { @class = "input-text" })</p>
+                </li>
+
+                <li class="clear">
+                    <h3><span>*</span>&nbsp;职位名称</h3>
+                    <p> @Html.TextAreaFor(model => model.article_content)</p>
+                </li>
+            </ul>
+            <section class="zwform-submit clear">
+                <p><input type="submit" value="发布"></p>
+                <p><input type="reset" value="预览"></p>
+            </section>
+        </section>
+
+    </section>
+
+    <section class="c-con clear" style="background-color:#FFF;">
+
+        <section class="links">
+            <h3><p>友情链接</p></h3>
+            @{Html.RenderAction("FriendLink", "Partinal");}
+        </section>
+    </section>
+    @{Html.RenderAction("Footer", "Partinal");}
+    <script type="text/javascript">
+        $(function () {
+            var ue = UE.getEditor('article_content', {
+                toolbars: [[
+                    'fullscreen', 'source', '|', 'undo', 'redo', '|',
+                    'bold', 'italic', 'underline', 'fontborder', 'strikethrough', 'superscript', 'subscript', 'removeformat', 'formatmatch', 'autotypeset', 'blockquote', 'pasteplain', '|', 'forecolor', 'backcolor', 'insertorderedlist', 'insertunorderedlist', '|',
+                    'simpleupload', 'insertimage', '|', 'selectall', 'cleardoc'
+                ]], initialFrameWidth: 1024, initialFrameHeight: 500
+            });
+
+
+
+
+        });
+    </script>
+</body>
+</html>

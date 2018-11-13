@@ -29,6 +29,11 @@ namespace ChineseCulture.Bll
            
         }
 
+        public User GetUser(int user_id)
+        {
+            return userDao.SelectUserByUserId(user_id);
+        }
+
         public User CheckUserGenerateCode(string code, string generate_code,string mobile)
         {
             if (generate_code==code)

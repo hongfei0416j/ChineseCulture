@@ -81,6 +81,15 @@ namespace ChineseCulture.Controllers
                 user.isLoginButtonShow = "";
                 user.isUserShow = "hidden";
             }
+            try
+            {
+                ViewBag.CurrentCity = Session["CurrentCity"];
+            }
+            catch (Exception)
+            {
+
+                ViewBag.CurrentCity = "郑州";
+            }
             return View(user);
         }
         public ActionResult EventPageHeader()

@@ -2,7 +2,83 @@
 @{
     Layout = null;
 }
+<style>
 
+    .footer {
+        height: auto;
+        margin: 0 auto;
+        background-color: #FFF;
+        padding-top: 1%;
+    }
+
+        .footer > .footer-nav {
+            height: 36px;
+            line-height: 36px;
+            background-color: #f7f7f7;
+            text-align: center;
+            color: #333;
+        }
+
+        .footer > .copyright {
+            width: 100%;
+            line-height: 24px;
+            text-align: center;
+            padding-top: 1%;
+            padding-bottom: 2%;
+        }
+    .links {
+        width: 1200px;
+        height: auto;
+        box-sizing: border-box;
+        border: 1px solid #949494;
+        float: left;
+        margin-top: 20px;
+        background-color: #d66a10;
+    }
+
+        .links > h3 {
+            width: 50px;
+            height: 90px;
+            float: left;
+            box-sizing: border-box;
+            color: #FFF;
+            font-size: 14px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .links > h3 > p {
+                width: 20px;
+                height: auto;
+                line-height: 16px;
+                text-align: center;
+                font-weight: bold;
+                font-family: "黑体";
+                font-size: 16px
+            }
+
+        .links > .link-list {
+            width: 1148px;
+            background-color: #FFF;
+            float: right;
+            height: auto;
+            min-height: 90px;
+            line-height: 30px;
+            float: right;
+            padding-left: 10px;
+            padding-right: 10px;
+            box-sizing: border-box;
+        }
+
+            .links > .link-list > a {
+                font-size: 12px;
+                color: #738099
+            }
+
+</style>
 <footer class="footer c-con">
 
     @{Html.RenderAction("FooterGuanyuwomen", "Partinal");}

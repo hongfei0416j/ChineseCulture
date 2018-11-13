@@ -34,6 +34,12 @@ namespace ChineseCulture.Dao
             }
         }
 
+        public User SelectUserByUserId(int user_id)
+        {
+            var query = db.User.Where(t => t.user_id == user_id).FirstOrDefault();
+            return query;
+        }
+
         public User SelectUserByMobile(string mobile)
         {
             var query = db.User.Where(t => t.user_telephone == mobile).FirstOrDefault();

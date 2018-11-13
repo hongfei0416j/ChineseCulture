@@ -35,8 +35,9 @@ namespace ChineseCulture.Model
         public virtual DbSet<Article> Article { get; set; }
         public virtual DbSet<SiteMenu> SiteMenu { get; set; }
         public virtual DbSet<BaomingXuanShou> BaomingXuanShou { get; set; }
-        public virtual DbSet<User> User { get; set; }
         public virtual DbSet<SMSLog> SMSLog { get; set; }
         public virtual DbSet<UserLoginLog> UserLoginLog { get; set; }
+        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Area> Area { get; set; }
     }
 }

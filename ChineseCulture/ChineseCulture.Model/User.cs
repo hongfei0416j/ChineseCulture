@@ -21,5 +21,10 @@ namespace ChineseCulture.Model
         public int user_state { get; set; }
         public System.DateTime user_regdate { get; set; }
         public string user_generate_code { get; set; }
+        public string user_sex { get; set; }
+        public string user_educational { get; set; }
+        public Nullable<System.DateTime> user_birthday { get; set; }
+        public string user_address { get; set; }
+        public string user_email { get; set; }
     }
 }

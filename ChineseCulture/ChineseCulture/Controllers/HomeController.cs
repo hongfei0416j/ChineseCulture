@@ -15,6 +15,22 @@ namespace ChineseCulture.Controllers
         {
             HomePageBll homePageBll = new HomePageBll();
             var homePageModel = homePageBll.CreateHomePageModel();
+            string city = "";
+            try
+            {
+                city = Request.Params["city"] ?? "";
+            }
+            catch (Exception)
+            {
+
+                
+            }
+            if (string.IsNullOrEmpty(city))
+            {
+                city = "郑州";
+            }
+            Session["CurrentCity"] = city;
+            
             return View(homePageModel);
         }
         public ActionResult Reg()
