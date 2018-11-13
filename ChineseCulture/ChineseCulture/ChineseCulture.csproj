@@ -695,6 +695,9 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\User\UserEdit.cshtml" />
     <Content Include="Views\User\SendArticle.cshtml" />
+    <Content Include="Views\User\_UserArticleListPartial.cshtml" />
+    <Content Include="Views\Partinal\UserIndexArticle.cshtml" />
+    <Content Include="Views\Partinal\_UserIndexArticlePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

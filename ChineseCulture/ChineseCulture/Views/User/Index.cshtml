@@ -54,35 +54,7 @@
                 <a href="javascript:;" class="user-info-edt">编&nbsp;&nbsp;辑</a>
             </section>
             <section class="center-item clear" style="">
-                <section class="user-sendlist">
-                    <div class="user-sl-item">
-                        <h3><span>2018-4-12</span><a href="#">大众汽车拥有悠久的历史</a></h3>
-                        <div class="user-slitem-cen">
-                            <a href="#" class="user-slitem-img"><img src="/images/emp-34.png" alt=" "></a>
-                            <a href="#" class="user-slitem-about">大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程.大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程...大众汽车拥有悠久的历史。1937年成立以来，大众见证了20世纪汽车工业的发展历程。</a>
-                        </div>
-                        <h4><a href="#">查看全文</a>&nbsp;&nbsp;<a href="#">阅读（2）</a>&nbsp;&nbsp;<a href="#">评论（1）</a>&nbsp;&nbsp;<a href="#">编辑</a>&nbsp;&nbsp;<a href="#">删除</a></h4>
-                    </div>
-
-                    <div class="pages clear" style="float:left">
-                        <ul>
-                            <li><a href="#"><i class="iconfont">&#xe613;</i></a></li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">6</a></li>
-                            <li><a href="#">7</a></li>
-                            <li><a href="#">8</a></li>
-                            <li><a href="#"><i class="iconfont">&#xe647;</i></a></li>
-                            <li>共70页，到第</li>
-                            <li><input type="text" name=" "></li>
-                            <li>页</li>
-                            <li><input type="submit" value="转到"></li>
-                        </ul>
-                    </div>
-                </section>
+                @{Html.RenderAction("UserIndexArticle", "Partinal");}
                 <aside class="user-sendaside">
                     <div class="user-r-send"><a href="/user/SendArticle"></a></div>
                     <div class="user-r-search">
@@ -108,21 +80,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="user-r-hots">
-                        <h3><a href="javascript:;" class="user-r-btn"><i class="iconfont">&#xe755;</i>&nbsp;换一换</a>热门话题</h3>
-                        <div class="user-r-hotlist">
-                            <ul>
-                                <li><i class="iconfont">&#xe666;</i>&nbsp;<a href="#">2018西安招聘会：中国西安第五届O2O人才交流会将于陕西省图书馆盛大召开</a></li>
-                                <li><i class="iconfont">&#xe666;</i>&nbsp;<a href="#">6种对付拖延症最牛的方法,总有一款解救你的职场拖延症!</a></li>
-                                <li><i class="iconfont">&#xe666;</i>&nbsp;<a href="#">2018最新超搞笑20个短笑话段子，没看过都不好意思叫做段子手！</a></li>
-                                <li><i class="iconfont">&#xe666;</i>&nbsp;<a href="#">当众侮辱员工，韩泼水门高管停职，作为企业高管这些管理常识你要懂</a></li>
-                                <li><i class="iconfont">&#xe666;</i>&nbsp;<a href="#">能笑死人的搞笑短句子，好笑不好笑你看了就知道！</a></li>
-                                <li><i class="iconfont">&#xe666;</i>&nbsp;<a href="#">江西省樟树市采取各项惠民政策大力推进就业创业工作</a></li>
-                                <li><i class="iconfont">&#xe666;</i>&nbsp;<a href="#">济南招聘会：山东省应往届毕业生就业</a></li>
-                            </ul>
-                        </div>
-                        <a href="#" class="user-r-more">查看更多 <i class="iconfont">&#xe6a3;</i></a>
-                    </div>
+                    
                 </aside>
             </section>
 

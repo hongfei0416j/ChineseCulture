@@ -87,6 +87,21 @@ namespace ChineseCulture.Bll
 
         }
 
+        public ArticlePageViewModel CreateUserArticleListModel(ArticlePageViewModel articlePageViewModel)
+        {
+            ArticlePageViewModel articleDetailModel = new ArticlePageViewModel();
+            ArticleBll acBll = new ArticleBll();
+            articleDetailModel.page_size = 200;
+            articleDetailModel.page_index = articlePageViewModel.page_index;
+           
+            articleDetailModel.category_id = articlePageViewModel.category_id;
+            articleDetailModel.user_id = articlePageViewModel.user_id;
+            articleDetailModel.articlePageList = acBll.GetArticlePageList(articleDetailModel);
+
+            
+            return articleDetailModel;
+        }
+
         public ArticlePageViewModel CreateArticleListModel(ArticlePageViewModel articlePageViewModel)
         {
             ArticlePageViewModel articleDetailModel = new ArticlePageViewModel();

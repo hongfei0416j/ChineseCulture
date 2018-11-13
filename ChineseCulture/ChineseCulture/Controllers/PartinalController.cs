@@ -100,5 +100,28 @@ namespace ChineseCulture.Controllers
         {
             return View();
         }
+
+        public ActionResult UserIndexArticle(int pageindex = 1, int cid = 0)
+        {
+            if (cid > 1)
+            {
+                Session["category_id"] = cid;
+
+            }
+            if (pageindex == null || pageindex < 0)
+            {
+                pageindex = 0;
+            }
+            ArticlePageViewModel articlePageViewModel = new ArticlePageViewModel();
+            ArticlePageBll articlePageBll = new ArticlePageBll();
+            articlePageViewModel.page_index = pageindex;
+            articlePageViewModel.ThisArticleCategory = new ArticleCategory();
+            articlePageViewModel.ThisArticleCategory.category_id = 0;
+            articlePageViewModel.category_id = 0;
+            articlePageViewModel.user_id = Session["user_id"].ToString();
+            articlePageViewModel = articlePageBll.CreateUserArticleListModel(articlePageViewModel);
+            return View(articlePageViewModel);
+            
+        }
     }
 }

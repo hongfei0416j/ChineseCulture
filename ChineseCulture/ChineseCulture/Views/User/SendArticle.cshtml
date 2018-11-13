@@ -21,32 +21,36 @@
     @{Html.RenderAction("PageHeader", "Partinal");}
     <section class="main c-con">
 
+        <form class="form form-horizontal" id="form-article-add" action="/user/AddArticle" method="post" enctype="multipart/form-data">
+            <section class="zwform">
+                <ul>
+                    <li class="clear">
+                        <h3><span>*</span>&nbsp;分类</h3><p>
+                            @Html.DropDownListFor(model => model.category_id, ViewBag.ArticleCategory as IEnumerable<SelectListItem>, new { @class = "select-box zwform-list zwform-sel zwform-selzwmail" })
+                        </p>
 
-        <section class="zwform">
-            <ul>
-                <li class="clear">
-                    <h3><span>*</span>&nbsp;分类</h3><p>
-                        @Html.DropDownListFor(model => model.category_id, ViewBag.ArticleCategory as IEnumerable<SelectListItem>, new { @class = "select-box zwform-list zwform-sel zwform-selzwmail" })
-                    </p>
 
+                    </li>
+                    <li class="clear">
+                        <h3><span>*</span>&nbsp;标题</h3>
+                        <p>@Html.TextBoxFor(model => model.article_title, htmlAttributes: new { @class = "input-text" })</p>
+                    </li>
+                    <li class="clear">
+                        <h3><span>*</span>&nbsp;封面</h3>
+                        <p>  <input id="File1" type="file" name="article_cover_image" /></p>
+                    </li>
 
-                </li>
-                <li class="clear">
-                    <h3><span>*</span>&nbsp;标题</h3>
-                    <p>@Html.TextBoxFor(model => model.article_title, htmlAttributes: new { @class = "input-text" })</p>
-                </li>
-
-                <li class="clear">
-                    <h3><span>*</span>&nbsp;职位名称</h3>
-                    <p> @Html.TextAreaFor(model => model.article_content)</p>
-                </li>
-            </ul>
-            <section class="zwform-submit clear">
-                <p><input type="submit" value="发布"></p>
-                <p><input type="reset" value="预览"></p>
+                    <li class="clear">
+                        <h3><span>*</span>&nbsp;内容</h3>
+                        <p> @Html.TextAreaFor(model => model.article_content)</p>
+                    </li>
+                </ul>
+                <section class="zwform-submit clear">
+                    <p><input type="submit" value="发布"></p>
+                    <p><input type="reset" value="预览"></p>
+                </section>
             </section>
-        </section>
-
+            </form>
     </section>
 
     <section class="c-con clear" style="background-color:#FFF;">

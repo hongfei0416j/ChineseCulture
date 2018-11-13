@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+@using ChineseCulture.Model;
+@using Webdiyer.WebControls.Mvc;
+
+@model ArticlePageViewModel
+
+
+        @foreach (var item in Model.articlePageList)
+        {
+           
+
+            <div class="user-sl-item">
+                <h3><span>@item.article_kdate</span><a href="#">@item.article_title</a></h3>
+                <div class="user-slitem-cen">
+                    <a href="@item.article_click_url" class="user-slitem-img"><img src="@item.article_cover_image" alt=" "></a>
+                    <a href="@item.article_click_url" class="user-slitem-about">@item.article_content</a>
+                </div>
+                <h4><a href="#">查看全文</a>&nbsp;&nbsp;<a href="#">阅读（2）</a>&nbsp;&nbsp;<a href="/User/UserEdit/?article_id=@item.article_id">编辑</a>&nbsp;&nbsp;<a href="#">删除</a></h4>
+            </div>
+
+        }
+

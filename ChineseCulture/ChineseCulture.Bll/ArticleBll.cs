@@ -142,7 +142,7 @@ namespace ChineseCulture.Bll
             article.category_id = articleCategoryBll.GetCategoryIdByCode(category_code);
             article.article_state = 1;
 
-            var articleList = articleDao.Select(article, number).ToList();//获取网站公告
+            var articleList = articleDao.Select(article, number).ToList();
             articleList.ForEach(t => t.category_name = acdBll.GetCategory(t.category_id).category_name);
 
             articleList.ForEach(t => t.article_click_url = string.IsNullOrEmpty(t.article_click_url) ? "/event/event_" + t.article_id + ".html" : t.article_click_url);
@@ -150,14 +150,14 @@ namespace ChineseCulture.Bll
         }
         internal PagedList<Article> GetArticlePageList(ArticlePageViewModel articleDetailModel)
         {
-            var articleList =  articleDao.SelectPageList(articleDetailModel);//获取网站公告
+            var articleList =  articleDao.SelectPageList(articleDetailModel);
             articleList.ForEach(t => t.article_click_url = string.IsNullOrEmpty(t.article_click_url) ? "/article/article_" + t.article_id + ".html" : t.article_click_url);
             articleList.ForEach(t => t.article_description =string.IsNullOrEmpty(t.article_description)?StringHelper.ReplaceHtmlTag(t.article_content,200):t.article_description);
             return articleList;
         }
         internal PagedList<Article> GetEventArticlePageList(ArticlePageViewModel articleDetailModel)
         {
-            var articleList = articleDao.SelectPageList(articleDetailModel);//获取网站公告
+            var articleList = articleDao.SelectPageList(articleDetailModel);
             articleList.ForEach(t => t.article_click_url = string.IsNullOrEmpty(t.article_click_url) ? "/event/event_" + t.article_id + ".html" : t.article_click_url);
             articleList.ForEach(t => t.article_description = string.IsNullOrEmpty(t.article_description) ? StringHelper.ReplaceHtmlTag(t.article_content, 200) : t.article_description);
             return articleList;

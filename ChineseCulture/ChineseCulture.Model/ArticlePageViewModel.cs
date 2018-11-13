@@ -23,5 +23,6 @@ namespace ChineseCulture.Model
         public ArticleCategory ThisArticleCategory { get; set; }
         public ArticleCategory ThisArticleFatherCategory { get; set; }
         public IEnumerable<ArticleCategory> ArticleCategoryList { get; set; }
+        public string user_id { set; get; }
     }
 }

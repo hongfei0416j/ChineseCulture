@@ -76,6 +76,7 @@ namespace ChineseCulture.Dao
         public PagedList<Article> SelectPageList(ArticlePageViewModel articleDetailModel)
         {
             var query = db.Article.Where(t =>
+            (string.IsNullOrEmpty(articleDetailModel.user_id) || t.article_kuser == articleDetailModel.user_id) &&
             (articleDetailModel.category_id == 0 || t.category_id == articleDetailModel.category_id) &&
             (articleDetailModel.article_state == 0 || t.article_state == articleDetailModel.article_state) &&
             (articleDetailModel.article_id == 0 || t.article_id == articleDetailModel.article_id)).OrderBy(t => t.article_sort).OrderByDescending(s => s.article_kdate);
