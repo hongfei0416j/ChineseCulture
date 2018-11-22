@@ -30,6 +30,10 @@ namespace ChineseCulture.Bll
             
             ac.category_state = 1;
 
+            if (ac.category_level==2)
+            {
+                return acDao.Select(new ArticleCategory { category_father_id = ac.category_father_id, category_state = 1 });
+            }
             return acDao.Select(ac);
         }
         public ArticleCategory GetCategory(ArticleCategory ac)

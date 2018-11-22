@@ -14,7 +14,7 @@ namespace ChineseCulture.Model
         public int page_number { set; get; }
         public int page_index { set; get; }
         public int page_count { set; get; }
-        public PagedList<Article> articlePageList{ set; get; }
+        public PagedList<Article> articlePageList { set; get; }
         public int page_size { get; set; }
         public int category_id { get; set; }
         public int article_state { get; set; }
@@ -24,5 +24,10 @@ namespace ChineseCulture.Model
         public ArticleCategory ThisArticleFatherCategory { get; set; }
         public IEnumerable<ArticleCategory> ArticleCategoryList { get; set; }
         public string user_id { set; get; }
+        public IEnumerable<ArticleCategory> FatherBrotherCategoryList { get; set; }
+        public ArticlePageViewModel()
+            {
+            FatherBrotherCategoryList = new List<ArticleCategory>();
+            }
     }
 }

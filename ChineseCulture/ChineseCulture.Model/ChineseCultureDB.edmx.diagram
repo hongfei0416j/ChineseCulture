@@ -9,7 +9,6 @@
         <EntityTypeShape EntityType="ChineseCultureModel.Function" Width="1.5" PointX="4.75" PointY="4.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.Member" Width="1.5" PointX="7.75" PointY="6.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.MemberLoginLog" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="ChineseCultureModel.ArticleCategory" Width="1.5" PointX="0.75" PointY="8.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.ArticleType" Width="1.5" PointX="7.375" PointY="3.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.ArticleTicks" Width="1.5" PointX="3.375" PointY="8.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.Article" Width="1.5" PointX="0.75" PointY="3.75" />
@@ -19,6 +18,7 @@
         <EntityTypeShape EntityType="ChineseCultureModel.UserLoginLog" Width="1.5" PointX="7.375" PointY="10.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.User" Width="1.5" PointX="11.75" PointY="0.75" />
         <EntityTypeShape EntityType="ChineseCultureModel.Area" Width="1.5" PointX="0.75" PointY="12.75" />
+        <EntityTypeShape EntityType="ChineseCultureModel.ArticleCategory" Width="1.5" PointX="0.75" PointY="8.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

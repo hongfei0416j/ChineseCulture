@@ -22,5 +22,6 @@ namespace ChineseCulture.Model
         public string category_type_name { get; set; }
         public string category_code { get; set; }
         public int category_state { get; set; }
+        public Nullable<int> category_level { get; set; }
     }
 }

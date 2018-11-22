@@ -115,8 +115,17 @@ namespace ChineseCulture.Bll
             ArticleCategoryBll categoryBll = new ArticleCategoryBll();
             articleDetailModel.ThisArticleCategory = categoryBll.GetCategory(new ArticleCategory { category_id = articlePageViewModel.ThisArticleCategory.category_id });
             articleDetailModel.ThisArticleFatherCategory = categoryBll.GetCategory(new ArticleCategory { category_id = articleDetailModel.ThisArticleCategory.category_father_id });
+            
             articleDetailModel.ArticleCategoryList = categoryBll.GetCategoryList(new ArticleCategory { category_father_id= articleDetailModel.ThisArticleCategory.category_father_id});
-                return articleDetailModel;
+
+            if (articleDetailModel.ThisArticleFatherCategory.category_level>2)
+            {
+                //ArticleCategory acFather  =  categoryBll.GetCategory(new ArticleCategory { category_id = articleDetailModel.ThisArticleFatherCategory.category_father_id });
+                articleDetailModel.FatherBrotherCategoryList = categoryBll.GetCategoryList(new ArticleCategory { category_father_id = articleDetailModel.ThisArticleFatherCategory.category_father_id, category_level = 2 ,category_id= articleDetailModel.ThisArticleFatherCategory.category_id });
+            }
+            
+
+            return articleDetailModel;
 
         }
     }

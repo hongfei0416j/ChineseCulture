@@ -51,6 +51,7 @@
           <Property Name="category_type_name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="category_code" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="category_state" Type="int" Nullable="false" />
+          <Property Name="category_level" Type="int" />
         </EntityType>
         <EntityType Name="ArticleTicks">
           <Key>
@@ -232,7 +233,6 @@
           <EntitySet Name="Function" EntityType="ChineseCultureModel.Function" />
           <EntitySet Name="Member" EntityType="ChineseCultureModel.Member" />
           <EntitySet Name="MemberLoginLog" EntityType="ChineseCultureModel.MemberLoginLog" />
-          <EntitySet Name="ArticleCategory" EntityType="ChineseCultureModel.ArticleCategory" />
           <EntitySet Name="ArticleType" EntityType="ChineseCultureModel.ArticleType" />
           <EntitySet Name="ArticleTicks" EntityType="ChineseCultureModel.ArticleTicks" />
           <EntitySet Name="Article" EntityType="ChineseCultureModel.Article" />
@@ -242,6 +242,7 @@
           <EntitySet Name="UserLoginLog" EntityType="ChineseCultureModel.UserLoginLog" />
           <EntitySet Name="User" EntityType="ChineseCultureModel.User" />
           <EntitySet Name="Area" EntityType="ChineseCultureModel.Area" />
+          <EntitySet Name="ArticleCategory" EntityType="ChineseCultureModel.ArticleCategory" />
         </EntityContainer>
         <EntityType Name="FriendLink">
           <Key>
@@ -296,19 +297,6 @@
           <Property Name="kdate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="ip" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="browser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-        </EntityType>
-        <EntityType Name="ArticleCategory">
-          <Key>
-            <PropertyRef Name="category_id" />
-          </Key>
-          <Property Name="category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="category_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="category_father_id" Type="Int32" Nullable="false" />
-          <Property Name="category_sort" Type="Int32" Nullable="false" />
-          <Property Name="category_type" Type="Int32" Nullable="false" />
-          <Property Name="category_type_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="category_code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="category_state" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="ArticleType">
           <Key>
@@ -437,6 +425,20 @@
           <Property Name="name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="parentID" Type="String" Nullable="false" MaxLength="6" FixedLength="true" Unicode="false" />
         </EntityType>
+        <EntityType Name="ArticleCategory">
+          <Key>
+            <PropertyRef Name="category_id" />
+          </Key>
+          <Property Name="category_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="category_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="category_father_id" Type="Int32" Nullable="false" />
+          <Property Name="category_sort" Type="Int32" Nullable="false" />
+          <Property Name="category_type" Type="Int32" Nullable="false" />
+          <Property Name="category_type_name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="category_code" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="category_state" Type="Int32" Nullable="false" />
+          <Property Name="category_level" Type="Int32" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -498,20 +500,6 @@
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="member_id" ColumnName="member_id" />
                 <ScalarProperty Name="mll_id" ColumnName="mll_id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ArticleCategory">
-            <EntityTypeMapping TypeName="ChineseCultureModel.ArticleCategory">
-              <MappingFragment StoreEntitySet="ArticleCategory">
-                <ScalarProperty Name="category_state" ColumnName="category_state" />
-                <ScalarProperty Name="category_code" ColumnName="category_code" />
-                <ScalarProperty Name="category_type_name" ColumnName="category_type_name" />
-                <ScalarProperty Name="category_type" ColumnName="category_type" />
-                <ScalarProperty Name="category_sort" ColumnName="category_sort" />
-                <ScalarProperty Name="category_father_id" ColumnName="category_father_id" />
-                <ScalarProperty Name="category_name" ColumnName="category_name" />
-                <ScalarProperty Name="category_id" ColumnName="category_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -646,6 +634,21 @@
                 <ScalarProperty Name="parentID" ColumnName="parentID" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="codeID" ColumnName="codeID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ArticleCategory">
+            <EntityTypeMapping TypeName="ChineseCultureModel.ArticleCategory">
+              <MappingFragment StoreEntitySet="ArticleCategory">
+                <ScalarProperty Name="category_level" ColumnName="category_level" />
+                <ScalarProperty Name="category_state" ColumnName="category_state" />
+                <ScalarProperty Name="category_code" ColumnName="category_code" />
+                <ScalarProperty Name="category_type_name" ColumnName="category_type_name" />
+                <ScalarProperty Name="category_type" ColumnName="category_type" />
+                <ScalarProperty Name="category_sort" ColumnName="category_sort" />
+                <ScalarProperty Name="category_father_id" ColumnName="category_father_id" />
+                <ScalarProperty Name="category_name" ColumnName="category_name" />
+                <ScalarProperty Name="category_id" ColumnName="category_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

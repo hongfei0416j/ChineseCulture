@@ -29,7 +29,6 @@ namespace ChineseCulture.Model
         public virtual DbSet<Function> Function { get; set; }
         public virtual DbSet<Member> Member { get; set; }
         public virtual DbSet<MemberLoginLog> MemberLoginLog { get; set; }
-        public virtual DbSet<ArticleCategory> ArticleCategory { get; set; }
         public virtual DbSet<ArticleType> ArticleType { get; set; }
         public virtual DbSet<ArticleTicks> ArticleTicks { get; set; }
         public virtual DbSet<Article> Article { get; set; }
@@ -39,5 +38,6 @@ namespace ChineseCulture.Model
         public virtual DbSet<UserLoginLog> UserLoginLog { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Area> Area { get; set; }
+        public virtual DbSet<ArticleCategory> ArticleCategory { get; set; }
     }
 }

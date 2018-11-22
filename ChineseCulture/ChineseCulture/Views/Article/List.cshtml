@@ -21,8 +21,15 @@
     @{Html.RenderAction("HomePageCategoryMenu", "Partinal");}
     <section class="main c-con clear" style="background-color:#FFF;">
         <section class="cyfh-cols dasai-detail clear">
-            <section class="dasai-location">
+            <section class="dasai-location" style="height:auto;">
                 <a href="/">中国校园文化网</a>&nbsp;>&nbsp;<a href="/article/ecid_@(Model.ThisArticleFatherCategory.category_id+".html")">@Model.ThisArticleFatherCategory.category_name</a>&nbsp;>&nbsp;@Model.ThisArticleCategory.category_name
+                @foreach (var ac in Model.FatherBrotherCategoryList)
+                {<span>&nbsp;&nbsp;</span>
+                    <a href="/article/ecid_@(ac.category_level + ".html")" class="dstypes-on">
+                        @ac.category_name
+                    </a>
+                    
+                }
             </section>
             <section class="dasai-types">
                 类别：<a href="#" class="dstypes-on">全部</a>&nbsp;&nbsp;
