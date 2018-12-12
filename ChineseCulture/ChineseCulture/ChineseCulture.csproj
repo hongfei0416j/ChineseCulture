@@ -637,6 +637,7 @@
     <Content Include="Content\ueditor\1.4.3\third-party\video-js\font\vjs.eot" />
     <Content Include="Content\ueditor\1.4.3\third-party\video-js\font\vjs.ttf" />
     <Content Include="Content\ueditor\1.4.3\third-party\video-js\font\vjs.woff" />
+    <Content Include="images\20181204.pdf" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\date.js" />
@@ -698,13 +699,13 @@
     <Content Include="Views\User\_UserArticleListPartial.cshtml" />
     <Content Include="Views\Partinal\UserIndexArticle.cshtml" />
     <Content Include="Views\Partinal\_UserIndexArticlePartial.cshtml" />
+    <Content Include="Upload\20171204.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\ueditor\1.4.3\net\.vs\net\v15\" />
     <Folder Include="Content\ueditor\1.4.3\net\Bin\" />
     <Folder Include="Models\" />
-    <Folder Include="Upload\" />
     <Folder Include="Views\ArticleList\" />
   </ItemGroup>
   <ItemGroup>

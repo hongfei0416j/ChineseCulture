@@ -22,7 +22,7 @@
     <section class="main c-con clear" style="background-color:#FFF;">
         <section class="cyfh-cols dasai-detail clear">
             <section class="dasai-location" style="height:auto;">
-                <a href="/">中国校园文化网</a>&nbsp;>&nbsp;<a href="/article/ecid_@(Model.ThisArticleFatherCategory.category_id+".html")">@Model.ThisArticleFatherCategory.category_name</a>&nbsp;>&nbsp;@Model.ThisArticleCategory.category_name
+                <a href="/">中国校园文化网</a>&nbsp;>&nbsp;@Model.ThisArticleFatherCategory.category_name&nbsp;>&nbsp;@Model.ThisArticleCategory.category_name
                 @foreach (var ac in Model.FatherBrotherCategoryList)
                 {<span>&nbsp;&nbsp;</span>
                     <a href="/article/ecid_@(ac.category_level + ".html")" class="dstypes-on">
@@ -36,7 +36,7 @@
                 @foreach (ArticleCategory ac in Model.ArticleCategoryList)
                 {
                     <a href="/article/ecid_@(ac.category_id+".html")" class="dstypes-on">
-                        @ac.category_name
+                        @(ac.category_name+ "&nbsp;&nbsp;")
                     </a>
                 }
 
