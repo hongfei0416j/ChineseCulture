@@ -32,11 +32,11 @@
                 }
             </section>
             <section class="dasai-types">
-                类别：<a href="#" class="dstypes-on">全部</a>&nbsp;&nbsp;
+                类别：<a href="#" class="dstypes-on">全部</a>
                 @foreach (ArticleCategory ac in Model.ArticleCategoryList)
-                {
+                {<span>&nbsp;&nbsp;</span>
                     <a href="/article/ecid_@(ac.category_id+".html")" class="dstypes-on">
-                        @(ac.category_name+ "&nbsp;&nbsp;")
+                        @(ac.category_name)
                     </a>
                 }
 

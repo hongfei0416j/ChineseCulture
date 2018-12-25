@@ -26,7 +26,7 @@
                 <header class="dsd-l-header">@Model.articleModel.article_title</header>
                 <div class="dsd-l-canshu">
                     <a href="#"><i class="iconfont">&#xe6bd;</i>&nbsp;分享</a>
-                    <a href="#"><i class="iconfont">&#xe6c1;</i>&nbsp;评论</a>
+                    
                     <a href="#"><i class="iconfont">&#xe740;</i>&nbsp;收藏</a>@Model.articleModel.article_kdate
                 </div>
                 @*<div class="dsd-l-author">
@@ -38,13 +38,7 @@
                     @Html.Raw(@Model.articleModel.article_content)
                 </div>
 
-                <section class="dsd-l-pinglun">
-                    <header class="dsd-lpl-header"><a href="#">0条评论</a>网友评论</header>
-                    <div class="dsd-lpl-form clear">
-                        <p><textarea name=" " placeholder="说两句吧......"></textarea></p>
-                        <p><input type="submit" value="发布评论"></p>
-                    </div>
-                </section>
+             
               
             </section>
             <section class="dsd-right">
