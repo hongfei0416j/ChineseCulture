@@ -145,7 +145,7 @@ namespace ChineseCulture.Bll
             {
                 HomeCategoryArticleViewModel articleViewModel = new HomeCategoryArticleViewModel();
                 articleViewModel.category_name = item.category_name;
-                articleViewModel.articleList = articleBll.GetZazhiArticleByCategory(item.category_code, 1).ToList();
+                articleViewModel.articleList = articleBll.GetEventArticleByCategory(item.category_code, 1).ToList();
                 //articleViewModel.adArticle = articleBll.GetArticleByCategory(item.category_code, 1).FirstOrDefault();
                 articleViewModelList.Add(articleViewModel);
             }

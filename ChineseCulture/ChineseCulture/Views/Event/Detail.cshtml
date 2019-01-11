@@ -26,20 +26,20 @@
                 <header class="dsd-l-header">@Model.articleModel.article_title</header>
                 <div class="dsd-l-canshu">
                     <a href="#"><i class="iconfont">&#xe6bd;</i>&nbsp;分享</a>
-                    
+
                     <a href="#"><i class="iconfont">&#xe740;</i>&nbsp;收藏</a>@Model.articleModel.article_kdate
                 </div>
                 @*<div class="dsd-l-author">
-                        <h3>习近平出席博鳌亚洲论坛2018年年会开幕式并发表主旨演讲</h3>
-                        <h3>强调顺应时代潮流坚持开放共赢</h3>
-                        <h3>宣布中国扩大开放新的重大举措</h3>
-                    </div>*@
+            <h3>习近平出席博鳌亚洲论坛2018年年会开幕式并发表主旨演讲</h3>
+            <h3>强调顺应时代潮流坚持开放共赢</h3>
+            <h3>宣布中国扩大开放新的重大举措</h3>
+        </div>*@
                 <div class="dsd-l-cen">
                     @Html.Raw(@Model.articleModel.article_content)
                 </div>
 
-             
-              
+                <p><a href="#">@Model.articleModel.tick_number&nbsp;<span>票</span></a><a href="javascript:;">我要投票</a></p>
+
             </section>
             <section class="dsd-right">
 

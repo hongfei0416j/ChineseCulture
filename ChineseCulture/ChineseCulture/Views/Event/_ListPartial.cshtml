@@ -15,8 +15,14 @@
         </h3>
         <p>@Html.Raw(@m.article_description)</p>
         <h4>
-            <span>123456票</span>
-            <a href="#">我要投票</a>
+            <span>@m.tick_number 票</span>
+            <a article_id="article_id" href="#" class="toupiaoButton">我要投票</a>
         </h4>
     </li>
 }
+
+<script>
+    $(".toupiaoButton").click(function () {
+        alert(123);;
+    });
+</script>
