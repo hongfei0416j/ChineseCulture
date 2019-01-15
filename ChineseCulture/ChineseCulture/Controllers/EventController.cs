@@ -49,7 +49,7 @@ namespace ChineseCulture.Controllers
             articlePageViewModel = articlePageBll.CreateArticleDetailModel(id,1);
             return View(articlePageViewModel);
         }
-
+        [HttpPost]
         public HttpContextBase AddTick(int id)
         {
             ArticleBll acBll = new ArticleBll();

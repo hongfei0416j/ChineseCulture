@@ -85,7 +85,9 @@ namespace ChineseCulture.Dao
 
         public void UpdateTickOfArticle(ArticleTicks at)
         {
-            db.Database.ExecuteSqlCommand("update ");
+            var article =  db.Article.Where(t=>t.article_id==at.article_id).FirstOrDefault();
+            article.tick_number = article.tick_number + 1;
+            db.SaveChanges();
         }
 
         public bool AddArticleTick(ArticleTicks at)
