@@ -36,10 +36,45 @@ namespace ChineseCulture.Admin.Controllers
 
             return View(articleListModel);
         }
-        public ActionResult Add()
+        public ActionResult Add(int category_id=0)
         {
-            ViewBag.ArticleCategory = GetAllCategoryForDLL().AsEnumerable();
+            ViewBag.ArticleCategory = GetAllCategoryForDLL(category_id).AsEnumerable();
             return View();
+        }
+        public ActionResult ArticleNewAdd()
+        {
+            var acBll = new ArticleCategoryBll();
+            //List<SelectListItem> ddlDPList = new List<SelectListItem>();
+
+            List<CategoryZuzhiModel> categoryZuzhiModelList = new List<CategoryZuzhiModel>();
+            var rootCategoryList = acBll.GetAllCategoryFatherForZuzhi();
+            foreach (ArticleCategory ac in rootCategoryList)
+            {
+                
+                CategoryZuzhiModel zcM = new CategoryZuzhiModel();
+                zcM.ThisArticleCategory = acBll.GetCategory(ac);
+                zcM.ChildCategorys = (List<ArticleCategory>)acBll.GetCategoryList(new ArticleCategory { category_father_id=ac.category_id});
+                categoryZuzhiModelList.Add(zcM);
+            }
+
+
+            
+            //GetCompleteCategoryList(ac, ref categoryZuzhiModelList);
+            //ViewBag.ArticleCategory = GetAllCategoryForDLL().AsEnumerable();
+            return View(categoryZuzhiModelList);
+        }
+
+        private void GetCompleteCategoryList(ArticleCategory ac,ref List<CategoryZuzhiModel> categoryZuzhiModelList)
+        {
+            CategoryZuzhiModel categoryZuzhiModel = new CategoryZuzhiModel();
+               var acBll = new ArticleCategoryBll();
+            
+            categoryZuzhiModelList.Add(categoryZuzhiModel);
+            foreach (ArticleCategory item in categoryZuzhiModel.ChildCategorys)
+            {
+                GetCompleteCategoryList(item,ref  categoryZuzhiModelList);
+            }
+            
         }
 
         private SelectList GetAllCategoryForDLL(int selectValue=0)

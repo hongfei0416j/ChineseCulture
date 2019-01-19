@@ -51,6 +51,16 @@ namespace ChineseCulture.Admin
                 "~/Content/ueditor/1.4.3/ueditor.all.js",
                 "~/Content/ueditor/1.4.3/lang/zh-cn/zh-cn.js"
                    ));
+            bundles.Add(new ScriptBundle("~/bundles/zuzhijs").Include(
+
+                
+                "~/Content/zuzhi/main.js"
+                   ));
+            bundles.Add(new StyleBundle("~/Content/zuzhicss").Include(
+                      "~/Content/zuzhi/css.css"
+                       
+                       
+                      ));
         }
     }
 }

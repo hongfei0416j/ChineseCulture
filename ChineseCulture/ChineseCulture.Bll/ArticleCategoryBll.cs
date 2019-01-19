@@ -72,8 +72,16 @@ namespace ChineseCulture.Bll
             ArticleCategory ac = new ArticleCategory();
             ac.category_father_id = 1;
             ac.category_state = 1;
+           
             return acDao.Select(ac);
         }
-        
+        public IEnumerable<ArticleCategory> GetAllCategoryFatherForZuzhi()
+        {
+            ArticleCategory ac = new ArticleCategory();
+            ac.category_father_id = 1;
+            ac.category_state = 1;
+            ac.category_level = -1;
+            return acDao.Select(ac);
+        }
     }
 }

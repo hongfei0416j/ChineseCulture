@@ -625,9 +625,6 @@
     <Content Include="Content\ueditor\1.4.3\lang\zh-cn\images\music.png" />
     <Content Include="Content\ueditor\1.4.3\lang\zh-cn\images\upload.png" />
     <Content Include="Content\ueditor\1.4.3\lang\zh-cn\zh-cn.js" />
-    <Content Include="Content\ueditor\1.4.3\net\Bin\Newtonsoft.Json.dll" />
-    <Content Include="Content\ueditor\1.4.3\net\Bin\Newtonsoft.Json.pdb" />
-    <Content Include="Content\ueditor\1.4.3\net\Bin\Newtonsoft.Json.xml" />
     <Content Include="Content\ueditor\1.4.3\net\net.sln" />
     <Content Include="Content\ueditor\1.4.3\themes\default\css\ueditor.css" />
     <Content Include="Content\ueditor\1.4.3\themes\default\css\ueditor.min.css" />
@@ -733,6 +730,11 @@
     <Content Include="Content\ueditor\1.4.3\ueditor.config.js" />
     <Content Include="Content\ueditor\1.4.3\ueditor.parse.js" />
     <Content Include="Content\ueditor\1.4.3\ueditor.parse.min.js" />
+    <Content Include="Content\zuzhi\css.css" />
+    <Content Include="Content\zuzhi\index.html" />
+    <Content Include="Content\zuzhi\jquery-1.8.3.min.js" />
+    <Content Include="Content\zuzhi\jquery.ui.draggable.min.js" />
+    <Content Include="Content\zuzhi\main.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -748,11 +750,9 @@
     <Content Include="Content\lib\webuploader\0.1.5\images\icons.psd" />
     <Content Include="Content\lib\webuploader\0.1.5\images\progress.psd" />
     <Content Include="Content\lib\webuploader\0.1.5\README.md" />
-    <Content Include="Content\ueditor\1.4.3\net\.vs\net\v15\.suo" />
     <Content Include="Content\ueditor\1.4.3\net\config.json" />
     <Content Include="Content\ueditor\1.4.3\net\controller.ashx" />
     <Content Include="Content\ueditor\1.4.3\net\README.md" />
-    <Content Include="Content\ueditor\1.4.3\net\Web.config" />
     <Content Include="Content\ueditor\1.4.3\third-party\jquery-1.10.2.min.map" />
     <Content Include="Content\ueditor\1.4.3\third-party\video-js\font\vjs.eot" />
     <Content Include="Content\ueditor\1.4.3\third-party\video-js\font\vjs.ttf" />
@@ -804,9 +804,12 @@
     <Content Include="Views\SiteMenu\Index.cshtml" />
     <Content Include="Views\SiteMenu\Add.cshtml" />
     <Content Include="Views\SiteMenu\Edit.cshtml" />
+    <Content Include="Views\Article\ArticleNewAdd.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\ueditor\1.4.3\net\.vs\net\v15\" />
+    <Folder Include="Content\ueditor\1.4.3\net\Bin\" />
     <Folder Include="Models\" />
     <Folder Include="Upload\" />
     <Folder Include="Views\Application\" />

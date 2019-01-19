@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "ArticleNewAdd";
+}
+@using ChineseCulture.Model;
+@model List<CategoryZuzhiModel>
+@Scripts.Render("~/bundles/zuzhijs")
+@Styles.Render("~/Content/zuzhicss")
+<section class="Hui-article-box" style="overflow:scroll">
+
+    <div class="strt-wrap" id="strtWrap">
+        <div class="strt-block">
+            <div class="strt-part">
+                <span class="strt-name">中国校园文化网</span>
+                <div class="line-v"><span></span></div>
+                <div class="strt-block">
+                    @foreach (var cz in Model)
+                    {
+
+                    <div class="strt-part">
+                        <span class="line-h line-h-c"></span>
+                        <div class="line-v"><span></span></div>
+                        <span class="strt-name"><a href="/Article/Add?category_id=@cz.ThisArticleCategory.category_id">@cz.ThisArticleCategory.category_name</a> </span>
+                        <div class="line-v"><span></span></div>
+                        
+                        <div class="strt-block">
+                            @for (int i = 0; i < @cz.ChildCategorys.Count(); i++)
+                            {
+
+                                <div class="strt-part">
+                                    <span class="line-h line-h-c"></span>
+                                    <div class="line-v"><span></span></div>
+                                    <span class="strt-name"><a href="/Article/Add?category_id=@cz.ChildCategorys[i].category_id">@cz.ChildCategorys[i].category_name</a></span>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+
+                        }
+
+
+                    </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
