@@ -109,6 +109,11 @@ namespace ChineseCulture.Bll
             return articleList;
         }
 
+        public void RefrubishArticle(Article article)
+        {
+            articleDao.Refrush(article);
+        }
+
         public void AddTick(ArticleTicks at)
         {
             articleDao.AddArticleTick(at);

@@ -116,6 +116,23 @@ namespace ChineseCulture.Admin.Controllers
         }
         [HttpPost]
         [ValidateInput(false)]
+        public HttpContextBase Refrubish(int id)
+        {
+
+            if (id == null || id == 0)
+            {
+                return null; ;
+            }
+            ArticleBll articleBll = new ArticleBll();
+            Article article = new Article();
+            article.article_id = id;
+            article.article_muser = Session["callid"].ToString();
+            article.article_mdate = DateTime.Now;
+            articleBll.RefrubishArticle(article);
+            return null;
+        }
+        [HttpPost]
+        [ValidateInput(false)]
         public ActionResult Editor(Article ar)
         {
             ar = (Article)ModelHelper.ModelSupplement(ar);

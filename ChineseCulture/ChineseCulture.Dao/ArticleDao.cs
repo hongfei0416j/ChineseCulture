@@ -37,7 +37,7 @@ namespace ChineseCulture.Dao
             (category_id == 0 || t.category_id == category_id) &&
             (article_state == 0||t.article_state==article_state)&&
             (string.IsNullOrEmpty(article.article_title)||t.article_title==article.article_title)&&
-            (article_id==0||t.article_id==article_id)).OrderBy(t=>t.article_sort).OrderByDescending(s=>s.article_kdate);
+            (article_id==0||t.article_id==article_id)).OrderBy(t=>t.article_sort).OrderByDescending(s=>s.article_mdate);
             return query.ToList();
         }
 
@@ -58,7 +58,7 @@ namespace ChineseCulture.Dao
             var query = db.Article.Where(t =>
             (category_id == 0 || t.category_id == category_id) &&
             (article_state == 0 || t.article_state == article_state) &&
-            (article_id == 0 || t.article_id == article_id)).OrderByDescending(s => s.article_kdate).OrderBy(t => t.article_sort);
+            (article_id == 0 || t.article_id == article_id)).OrderByDescending(s => s.article_mdate).OrderBy(t => t.article_sort);
             return query.Take(number).ToList();
         }
         public bool Update(Article newArticle)
@@ -72,14 +72,24 @@ namespace ChineseCulture.Dao
 
            
         }
+        public bool Refrush(Article newArticle)
+        {
+            Article nowArticle = db.Article.Single(x => x.article_id == newArticle.article_id);
+            nowArticle.article_muser = newArticle.article_muser;
+            nowArticle.article_mdate = newArticle.article_mdate;
 
+            db.Entry(nowArticle).CurrentValues.SetValues(nowArticle);//更新
+            return db.SaveChanges() > 0;
+
+
+        }
         public PagedList<Article> SelectPageList(ArticlePageViewModel articleDetailModel)
         {
             var query = db.Article.Where(t =>
             (string.IsNullOrEmpty(articleDetailModel.user_id) || t.article_kuser == articleDetailModel.user_id) &&
             (articleDetailModel.category_id == 0 || t.category_id == articleDetailModel.category_id) &&
             (articleDetailModel.article_state == 0 || t.article_state == articleDetailModel.article_state) &&
-            (articleDetailModel.article_id == 0 || t.article_id == articleDetailModel.article_id)).OrderBy(t => t.article_sort).OrderByDescending(s => s.article_kdate);
+            (articleDetailModel.article_id == 0 || t.article_id == articleDetailModel.article_id)).OrderBy(t => t.article_sort).OrderByDescending(s => s.article_mdate);
             return query.ToPagedList<Article>(articleDetailModel.page_index, articleDetailModel.page_size);
         }
 
